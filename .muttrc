@@ -1,4 +1,4 @@
-# $Id: .muttrc,v 1.19 2001/08/23 18:47:10 richardc Exp $
+# $Id: .muttrc,v 1.20 2001/08/28 15:57:02 richardc Exp $
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -367,6 +367,7 @@ auto_view text/html
 #score '~f ^me@cs\.hmc\.edu$' 1000
 #score '~t mutt | ~c mutt' =500
 #score '~f aol\.com$' -9999
+score ~F 100
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #

@@ -1,4 +1,4 @@
-# $Id: .muttrc,v 1.10 2001/07/01 00:12:17 richardc Exp $
+# $Id: .muttrc,v 1.11 2001/07/06 23:22:22 richardc Exp $
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -56,6 +56,7 @@ set copy=yes			# always save a copy of outgoing messages
 set edit_headers		# let me edit the message header when composing
 #set editor="jed %s -tmp -f mail_mode"
 set editor="emacsclient"
+#set editor=vi
 #set fast_reply			# skip initial prompts when replying
 #set fcc_attach			# keep attachments in copies of sent messages?
 #set force_name			# fcc by recipient, create if mailbox doesn't exist
@@ -162,22 +163,22 @@ color hdrdefault red black
 color quoted cyan black
 color quoted1 red black
 color quoted2 blue black
-color quoted3 brightblue black
+color quoted3 blue black
 color signature red black
-color indicator brightyellow red
-color error brightred black
+color indicator yellow red
+color error red black
 color status yellow blue
 color tree yellow black	# the thread tree in the index menu
 color tilde magenta black
-color message brightcyan black
-color markers brightcyan black
-color attachment brightmagenta black
+color message cyan black
+color markers cyan black
+color attachment magenta black
 color search black green	# how to hilite search patterns in the pager
 
 color header green black "^(From|Subject): "
-color body magenta default "(ftp|http)://[^ ]+"	# point out URLs
-color body magenta default [-a-z_0-9.]+@[-a-z_0-9.]+	# e-mail addresses
-color underline brightgreen default
+color body magenta black "(ftp|http)://[^ ]+"	# point out URLs
+color body magenta black [-a-z_0-9.]+@[-a-z_0-9.]+	# e-mail addresses
+color underline green black
 
 # attributes when using a mono terminal
 #mono header underline ^(From|Subject):

@@ -59,7 +59,7 @@
   (and (file-exists-p (expand-file-name ".svn/entries"
                                         (file-name-directory file)))
        (not (null (vc-svn-run-status file)))))
-(defun vc-svn-registered (file) "Cheesy hack" nil)
+
 
 (put 'vc-svn-with-output-buffer 'lisp-indent-function 0)
 (defmacro vc-svn-with-output-buffer (&rest body)
@@ -68,7 +68,7 @@
      ;; Let's not delete this buffer when we're done --- leave
      ;; it around for debugging.
      (set-buffer (get-buffer-create " *Subversion Output*"))
-     ;;(erase-buffer)
+     (erase-buffer)
      ,@body))
 
 
@@ -130,12 +130,13 @@ If the file is newly added, LOCAL is \"0\" and CHANGED is nil."
     (cond
      ((not state) nil)
      ;; A newly added file has no revision.
-     ((looking-at "\\S-+\\s-+\\(\\*\\s-+\\)?\\0\\s-+\\?")
+     ((looking-at "....\\s-+\\(\\*\\s-+\\)?[-0]\\s-+\\?")
       (list state "0" nil))
-     ((looking-at "\\S-+\\s-+\\(\\*\\s-+\\)?\\([0-9]+\\)\\s-+\\([0-9]+\\)")
+     ((looking-at "....\\s-+\\(\\*\\s-+\\)?\\([0-9]+\\)\\s-+\\([0-9]+\\)")
       (list state
             (match-string 2)
             (match-string 3)))
+     ((looking-at " \\{40\\}") nil)  ;; A file that is not in the wc nor svn?
      (t (error "Couldn't parse output from `svn status -v'")))))
 
 
@@ -154,12 +155,17 @@ The documentation for the function `vc-state' describes the possible values."
    ;;                     user, but there is a more recent version
    ;;                     on the current branch stored in the
    ;;                     master file.
-   ((looking-at "_[_ ]..\\s-+\\*") 'needs-patch)
+   ((looking-at "  ..\\s-+\\*") 'needs-patch)
 
    ;; 'up-to-date         The working file is unmodified with
    ;;                     respect to the latest version on the
    ;;                     current branch, and not locked.
-   ((looking-at "_[_ ]") 'up-to-date)
+   ;;
+   ;;                     This is also returned for files which do not
+   ;;                     exist, as will be the case when finding a
+   ;;                     new file in a svn-controlled directory.  That
+   ;;                     case is handled in vc-svn-parse-status.
+   ((looking-at "  ") 'up-to-date)
 
    ;; 'needs-merge        The file has been edited by the user,
    ;;                     and there is also a more recent version

@@ -147,6 +147,7 @@ set write_inc=10		# show progress while writing mailboxes
 # be able to send mail!!!
 #set dsn_notify='failure,delay'	# when to return an error message
 #set dsn_return=hdrs		# what to return in the error message
+unset pipe_decode
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #

@@ -1,4 +1,4 @@
-#	$Id: .j2mrc,v 1.19 2002/03/11 17:47:57 richardc Exp $	
+#	$Id: .j2mrc,v 1.20 2002/03/21 17:14:59 richardc Exp $	
 
 # I am very interested in your ideas, please add me to your mailing list
 
@@ -11,7 +11,7 @@
             Elian exeunt 
             garron geoff gizmo_mathboy gnat godoy grinder
             hfb 
-            ingy 
+            IlyaM ingy 
             james jdavidb jeffsu jhi jjohn jns jouke 
             kellan KM koschei 
             lachoy lenzo
@@ -26,7 +26,7 @@
             unimatrix 
             vek vsergu
             Whammo Wob 
-            ziggy
+            ZenHam ziggy
            );
 
 @recipients = qw( richardc@unixbeard.net );

@@ -1,4 +1,4 @@
-# $Id: .muttrc,v 1.7 2001/06/18 22:37:20 richardc Exp $
+# $Id: .muttrc,v 1.8 2001/06/22 00:16:59 richardc Exp $
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -54,7 +54,8 @@ set confirmcreate		# prompt when creating new files
 set copy=yes			# always save a copy of outgoing messages
 #set delete=yes			# purge deleted messages without asking
 set edit_headers		# let me edit the message header when composing
-set editor="jed %s -tmp -f mail_mode"
+#set editor="jed %s -tmp -f mail_mode"
+set editor="emacsclient"
 #set fast_reply			# skip initial prompts when replying
 #set fcc_attach			# keep attachments in copies of sent messages?
 #set force_name			# fcc by recipient, create if mailbox doesn't exist

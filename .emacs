@@ -1,5 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.29 2001/10/07 19:10:08 richardc Exp $
+;       $Id: .emacs,v 1.30 2001/10/16 16:52:04 richardc Exp $
 
 (add-to-list 'load-path "~/.elisp")
 (add-to-list 'load-path "~/hck/tramp/lisp")
@@ -33,7 +33,6 @@
        (turn-on-lazy-shot)
        (custom-set-variables
 	'(load-home-init-file t t)
-	'(gnuserv-program (concat exec-directory "/gnuserv"))
 	'(toolbar-visible-p nil))
 
        (custom-set-faces
@@ -125,7 +124,6 @@
       column-number-mode 1
       indent-tabs-mode nil
       next-line-add-newlines nil
-      flyspell-default-dictionary "british"
       diff-command "diff -u"
       diff-switches '("-u")
       c-default-style "linux"

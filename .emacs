@@ -1,5 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.23 2001/08/20 10:40:30 richardc Exp $
+;       $Id: .emacs,v 1.24 2001/08/22 01:14:49 richardc Exp $
 
 (add-to-list 'load-path "~/.elisp")
 
@@ -104,6 +104,7 @@
        (server-start)
        
        (global-font-lock-mode 1)
+       (transient-mark-mode)
        
        (custom-set-faces
 	'(mmm-default-submode-face ((t (:background "gray9"))))

@@ -116,6 +116,7 @@ export PILOTRATE=38400
 export PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/bin:/usr/bin/X11:/usr/X11R6/bin:/usr/games:/opt/jdk1.3/bin:$HOME/bin"
 export FRAMEBUFFER=/dev/fb0
 export SYBASE=/usr/local/freetds
+export QT_XFT=true
 
 HISTFILE=~/.zshhistory
 HISTSIZE=3000

@@ -109,7 +109,6 @@ zshrc_load_status 'setting environment'
 
 umask 002
 
-PROMPT='%n@%m:%~%# '
 export CVSUMASK=002
 export CVS_RSH=ssh
 export PILOTRATE=38400
@@ -119,6 +118,8 @@ export PAGER=less
 export FRAMEBUFFER=/dev/fb0
 export SYBASE=/usr/local/freetds
 export QT_XFT=true
+prompt_newline=$'\n%{\r%}'
+PROMPT='%B[%D{%F} %*] %n@%m %~%b$prompt_newline%# '
 
 HISTFILE=~/.zshhistory
 HISTSIZE=3000

@@ -35,7 +35,7 @@
        ;; I'm not sure if I like this cond t stuff for defaults
        ;; other emacsen (probably GNU Emacs)
 
-	(require 'vc-svn)
+       ;;(require 'vc-svn)
        (server-start)
        ;(gnuserv-start)
        

@@ -59,7 +59,7 @@
   (and (file-exists-p (expand-file-name ".svn/entries"
                                         (file-name-directory file)))
        (not (null (vc-svn-run-status file)))))
-
+(defun vc-svn-registered (file) "Cheesy hack" nil)
 
 (put 'vc-svn-with-output-buffer 'lisp-indent-function 0)
 (defmacro vc-svn-with-output-buffer (&rest body)

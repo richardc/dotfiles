@@ -57,8 +57,8 @@ set copy=yes			# always save a copy of outgoing messages
 #set delete=yes			# purge deleted messages without asking
 set edit_headers		# let me edit the message header when composing
 #set editor="jed %s -tmp -f mail_mode"
-set editor="gnuclient -nw"
-#set editor="emacsclient"
+#set editor="gnuclient -nw"
+set editor="emacsclient"
 #set editor="nano -r 72"
 #set editor=vi
 #set fast_reply			# skip initial prompts when replying
@@ -220,6 +220,10 @@ macro pager S s+spam\n
 macro index A |refilter\nd
 macro pager A |refilter\nd
 
+# see the spamassassin ratings
+macro index R "|spamc -R|less\n"
+macro pager R "|spamc -R|less\n"
+
 #macro index \# /bug^M	# search for bugs
 #macro index "\""        ":set realname=\"real hairy macro\"^M:set ?realname^M" # and a comment to boot!
 #macro index f1 :woohoo!
@@ -326,7 +330,7 @@ source ~/Mail/aliases
 
 #mailboxes ! +mutt-dev +mutt-users +open-pgp +wmaker +hurricane +vim +ietf \
 	+drums
-mailboxes `echo +inbox ~/Mail/object1_* ~/Mail/last_* ~/Mail/list_*`
+mailboxes `echo +inbox +maybe_spam ~/Mail/object1_* ~/Mail/last_* ~/Mail/list_*`
 #mailboxes `echo +inbox ~/Mail/*/*/*`
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

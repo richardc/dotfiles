@@ -3,11 +3,25 @@ MAILDIR=$HOME/Mail
 DEFAULT=$MAILDIR/inbox/
 LOGFILE=$MAILDIR/from
 
+# W ait
+# h eaders
+# c arbon copy
 :0 Whc: msgid.lock
 | formail -D 8192 msgid.cache
 
-:0 a:
+# a preceding rule matched
+:0 a
 duplicates/
+
+# W ait
+# c arbon copy
+:0 Wc: spamc.lock
+* < 256000
+| spamc -c
+
+# e preceding rule failed
+:0 e
+maybe_spam/
 
 WHERE=`where_to_guv`
 

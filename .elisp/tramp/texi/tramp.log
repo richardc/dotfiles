@@ -1,0 +1,690 @@
+This is TeX, Version 3.14159 (Web2C 7.3.1) (format=tex 2001.8.22)  18 SEP 2001 15:58
+**/home/richardc/hck/tramp/texi/tramp.texi
+(/home/richardc/hck/tramp/texi/tramp.texi
+(/usr/share/texmf/tex/texinfo/texinfo.tex
+Loading texinfo [version 2001-03-28.08]: Basics,
+\bindingoffset=\dimen16
+\normaloffset=\dimen17
+\pagewidth=\dimen18
+\pageheight=\dimen19
+\outerhsize=\dimen20
+\outervsize=\dimen21
+\cornerlong=\dimen22
+\cornerthick=\dimen23
+\topandbottommargin=\dimen24
+\headlinebox=\box16
+\footlinebox=\box17
+\margin=\insert252
+\EMsimple=\toks12
+\singlespaceskip=\skip18
+\groupinvalidhelp=\toks13
+\mil=\dimen25
+\exdentamount=\skip19
+\inmarginspacing=\skip20
+ pdf,
+\tempnum=\count26
+\lnkcount=\count27
+\filename=\toks14
+\filenamelength=\count28
+\pgn=\count29
+\toksA=\toks15
+\toksB=\toks16
+\toksC=\toks17
+\toksD=\toks18
+\boxA=\box18
+\countA=\count30
+ fonts,
+\sffam=\fam8
+\mainmagstep=\count31
+\fontdepth=\count32
+ page headings,
+\titlepagetopglue=\skip21
+\titlepagebottomglue=\skip22
+\evenheadline=\toks19
+\oddheadline=\toks20
+\evenfootline=\toks21
+\oddfootline=\toks22
+
+tables,
+\tableindent=\dimen26
+\itemindent=\dimen27
+\itemmargin=\dimen28
+\itemmax=\dimen29
+\itemno=\count33
+\multitableparskip=\skip23
+\multitableparindent=\skip24
+\multitablecolspace=\dimen30
+\multitablelinespace=\skip25
+\colcount=\count34
+ conditionals, indexing,
+\secondaryindent=\skip26
+\partialpage=\box19
+\doublecolumnhsize=\dimen31
+ sectioning,
+\chapno=\count35
+\secno=\count36
+\subsecno=\count37
+\subsubsecno=\count38
+\appendixno=\count39
+\absseclevel=\count40
+\secbase=\count41
+\chapheadingskip=\skip27
+\secheadingskip=\skip28
+\subsecheadingskip=\skip29
+ toc,
+\tocfile=\write0
+\contentsrightmargin=\skip30
+\savepageno=\count42
+\lastnegativepageno=\count43
+\shortappendixwidth=\dimen32
+\tocindent=\dimen33
+ environments,
+\dblarrowbox=\box20
+\longdblarrowbox=\box21
+\pushcharbox=\box22
+\bullbox=\box23
+\equivbox=\box24
+\errorbox=\box25
+\lispnarrowing=\skip31
+\envskipamount=\skip32
+\circthick=\dimen34
+\cartouter=\dimen35
+\cartinner=\dimen36
+\normbskip=\skip33
+\normpskip=\skip34
+\normlskip=\skip35
+\lskip=\skip36
+\rskip=\skip37
+\tabw=\dimen37
+ defuns,
+\defbodyindent=\skip38
+\defargsindent=\skip39
+\deftypemargin=\skip40
+\deflastargmargin=\skip41
+\parencount=\count44
+ macros,
+\macscribble=\write1
+\paramno=\count45
+\macname=\toks23
+
+cross references,
+\auxfile=\write2
+\savesfregister=\count46
+\footnoteno=\count47
+ (/usr/share/texmf/tex/plain/dvips/epsf.tex
+\epsffilein=\read0
+\epsfframemargin=\dimen38
+\epsfframethickness=\dimen39
+\epsfrsize=\dimen40
+\epsftmp=\dimen41
+\epsftsize=\dimen42
+\epsfxsize=\dimen43
+\epsfysize=\dimen44
+\pspoints=\dimen45
+\epsfnoopenhelp=\toks24
+)
+\noepsfhelp=\toks25
+ localization,
+\nolanghelp=\toks26
+\defaultparindent=\dimen46
+
+and turning on texinfo input format.) (tramp.aux)
+@cpindfile=@write3
+@fnindfile=@write4
+@vrindfile=@write5
+@tpindfile=@write6
+@kyindfile=@write7
+@pgindfile=@write8
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp) [1
+\openout2 = `tramp.aux'.
+
+\openout3 = `tramp.cp'.
+
+\openout4 = `tramp.fn'.
+
+\openout5 = `tramp.vr'.
+
+\openout6 = `tramp.tp'.
+
+\openout7 = `tramp.ky'.
+
+\openout8 = `tramp.pg'.
+
+] [2]
+Chapter 1
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout0 = `tramp.toc'.
+
+ Chapter 2
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp) [1] [2]
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+
+(tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+
+(tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+
+(tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp) [3]
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+
+(tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+
+(tramp.tmp)
+Underfull \hbox (badness 10000) in paragraph at lines 341--345
+ []@textrm For in-line trans-fers, @textsc tramp @textrm is-sues a com-mand lik
+e @texttt mimencode -b
+
+@hbox(7.60416+2.12917)x433.62, glue set 6.65904
+.@glue(@leftskip) 21.68121
+.@hbox(0.0+0.0)x0.0
+.@textrm F
+.@kern-0.91252
+.@textrm o
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--345
+ @texttt /path/to/remote/file[]@textrm , waits un-til the out-put has ac-cu-mu-
+lated in the
+
+@hbox(7.60416+2.43333)x433.62, glue set 4.66512
+.@glue(@leftskip) 21.68121
+.@texttt /
+.@texttt p
+.@texttt a
+.@texttt t
+.etc.
+
+\openout1 = `tramp.tmp'.
+
+(tramp.tmp)
+Overfull \hbox (46.2255pt too wide) in paragraph at lines 346--350
+ []@textrm For out-of-band trans-fers, @textsc tramp @textrm is-sues a com-mand
+ like @texttt rcp user@host:/path/to/remote/file|
+
+@hbox(7.60416+2.43333)x433.62, glue set - 1.0
+.@glue(@leftskip) 21.68121
+.@hbox(0.0+0.0)x0.0
+.@textrm F
+.@kern-0.91252
+.@textrm o
+.etc.
+
+\openout1 = `tramp.tmp'.
+
+(tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp) Chapter 3 [4]
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+
+(tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+Underfull \hbox (badness 10000) in paragraph at lines 381--386
+[]@textrm Instructions for ob-tain-ing the lat-est de-vel-op-ment ver-sion of @
+textsc tramp
+
+@hbox(7.60416+2.12917)x433.62, glue set 6.60802
+.@hbox(0.0+0.0)x15.0
+.@textrm I
+.@textrm n
+.@textrm s
+.@textrm t
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--386
+@textrm from CVS can be found by go-ing to the Source-Forge project page at
+
+@hbox(7.60416+2.12917)x433.62, glue set 4.80179
+.@textrm f
+.@textrm r
+.@textrm o
+.@textrm m
+.@glue 3.65 plus 1.825 minus 1.21666
+.etc.
+
+
+Underfull \hbox (badness 5260) in paragraph at lines 381--386
+@texttt http://sourceforge.net/projects/tramp/[] @textrm and then click-ing on 
+the CVS link
+
+@hbox(7.60416+2.43333)x433.62, glue set 3.74834
+.@texttt h
+.@texttt t
+.@texttt t
+.@texttt p
+.@texttt :
+.etc.
+
+\openout1 = `tramp.tmp'.
+
+(tramp.tmp) Chapter 4
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp) [5] [6]
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp) Chapter 5
+\openout1 = `tramp.tmp'.
+
+
+(tramp.tmp) [7] [8]
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+479: Undefined cross reference `Packages-snt'.
+479: Undefined cross reference `Packages-snt'.
+479: Undefined cross reference `Packages-pg'. Chapter 6
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp) [9]
+[10]
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+
+(tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp) [11]
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp) [12]
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp) [13]
+\openout1 = `tramp.tmp'.
+
+
+(tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp) [14]
+Overfull \hbox (26.43913pt too wide) in paragraph at lines 837--837
+ []             @texttt '("sshf" tramp-multi-connect-rlogin "ssh %h -l %u -p 44
+00%n"))[] |
+
+@hbox(7.60416+2.43333)x433.62
+.@glue(@leftskip) 28.90755
+.@hbox(0.0+0.0)x0.0
+.@penalty 10000
+.@glue 5.74869
+.@penalty 10000
+.etc.
+
+\openout1 = `tramp.tmp'.
+
+(tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp) [15]
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+
+(tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+
+(tramp.tmp) [16]
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+Chapter 7
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp) [17] [18]
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+(tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+Underfull \hbox (badness 3323) in paragraph at lines 1054--1058
+[]@textrm To log in to the re-mote ma-chine as a spe-cific user, you use the sy
+n-tax
+
+@hbox(7.60416+2.12917)x433.62, glue set 3.21736
+.@hbox(0.0+0.0)x15.0
+.@textrm T
+.@kern-0.91252
+.@textrm o
+.@glue 3.65 plus 1.825 minus 1.21666
+.etc.
+
+
+Underfull \hbox (badness 6608) in paragraph at lines 1054--1058
+@textrm as @texttt daniel[] @textrm and edit-ing `@texttt .emacs[]@textrm '[] i
+n your home di-rec-tory you would spec-ify
+
+@hbox(7.60416+2.12917)x433.62, glue set 4.047
+.@textrm a
+.@textrm s
+.@glue 3.65 plus 1.825 minus 1.21666
+.@texttt d
+.@texttt a
+.etc.
+
+\openout1 = `tramp.tmp'.
+
+(tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp) [19]
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp) Chapter 8
+[20]
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp) Chapter 9
+[21] [22]
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+Overfull \hbox (32.53621pt too wide) in paragraph at lines 1--1171
+ []@textsc tramp @textrm is avail-able at @texttt ftp://ls6-ftp.cs.uni-dortmund
+.de/pub/src/emacs/tramp.tar.gz[]@textrm . |
+
+@hbox(7.60416+2.43333)x433.62, glue set - 1.0
+.@glue(@leftskip) 21.68121
+.@hbox(0.0+0.0)x0.0
+.@textsc t
+.@textsc r
+.@textsc a
+.etc.
+
+\openout1 = `tramp.tmp'.
+
+(tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+
+(tramp.tmp) [23]
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+Chapter 10 [24]
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+
+(tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp) [25]
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp) Chapter 11
+[26]
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp) Chapter 12 [27] [28]
+\openout1 = `tramp.tmp'.
+
+
+(tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp)
+\openout1 = `tramp.tmp'.
+
+ (tramp.tmp) [29] [30] ) 
+Here is how much of TeX's memory you used:
+ 1348 strings out of 13007
+ 15561 string characters out of 97120
+ 37164 words of memory out of 263001
+ 2232 multiletter control sequences out of 10000+0
+ 30704 words of font info for 106 fonts, out of 400000 for 1000
+ 19 hyphenation exceptions out of 1000
+ 18i,7n,11p,264b,325s stack positions out of 300i,100n,500p,50000b,4000s
+
+Output written on tramp.dvi (32 pages, 63416 bytes).

@@ -1,0 +1,6 @@
+% -*- SLang -*-
+
+autoload( "muttrc_mode", "~/.slang/muttrc" );
+autoload( "mail_mode", "~/.slang/mail_mode" );
+() = evalfile("emacs");
+() = evalfile("colors/black2");

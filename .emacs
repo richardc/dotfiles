@@ -1,5 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.36 2002/08/17 11:59:22 richardc Exp $
+;       $Id: .emacs,v 1.37 2002/08/17 12:12:35 richardc Exp $
 
 (add-to-list 'load-path "~/.elisp")
 (add-to-list 'load-path "~/.elisp/tramp/lisp")
@@ -20,25 +20,9 @@
 ;      tramp-debug-buffer t)
 (load "mutt")
 
-(load "erc")
-(setq erc-server "irc.rhizomatic.net" 
-      erc-port 6667 
-      erc-nick "rjc_erc"
-      erc-user-name (user-full-name))
-
-;; Taken from the comment section in inf-ruby.el
-(setq ruby-program-name "/usr/local/bin/ruby")
-(autoload 'ruby-mode "ruby-mode" "Mode for editing ruby source files")
-(add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
-(add-to-list 'interpreter-mode-alist '("ruby" . ruby-mode))
-(autoload 'run-ruby "inf-ruby" "Run an inferior Ruby process")
-(autoload 'inf-ruby-keys "inf-ruby" "Set local key defs for inf-ruby in ruby-mode")
-(add-hook 'ruby-mode-hook '(lambda () (inf-ruby-keys)))
-
 (cond ((string-match "XEmacs\\|Lucid" emacs-version)
        ;; yup - we're in XEmacs
        (load "vc")
-;;       (setq tty-erase-char nil)
 
        (gnuserv-start)
        (turn-on-lazy-shot)

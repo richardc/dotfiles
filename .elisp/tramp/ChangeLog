@@ -1,0 +1,4 @@
+2001-09-07  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	* Makefile (Module): Rule for submitting to SourceForge.
+

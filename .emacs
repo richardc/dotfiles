@@ -1,5 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.26 2001/08/23 08:28:55 richardc Exp $
+;       $Id: .emacs,v 1.27 2001/08/24 16:38:02 richardc Exp $
 
 (add-to-list 'load-path "~/.elisp")
 
@@ -112,7 +112,7 @@
        )
       )
 
-(setq cperl-indent-level 8
+(setq cperl-indent-level 4
       line-number-mode 1
       column-number-mode 1
       indent-tabs-mode nil

@@ -1,7 +1,8 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.27 2001/08/24 16:38:02 richardc Exp $
+;       $Id: .emacs,v 1.28 2001/09/21 12:38:24 richardc Exp $
 
 (add-to-list 'load-path "~/.elisp")
+(add-to-list 'load-path "~/hck/tramp/lisp")
 
 ;; If running under screen, disable C-z.
 (if (and (getenv "STY") (not window-system))
@@ -13,7 +14,8 @@
 (setq frame-title-format (list "" 
 			       'invocation-name "@" 'system-name' ": %b"))
 
-;;(load "python-mode")
+(require 'tramp)
+(setq tramp-default-method "su")
 (load "mutt")
 
 
@@ -149,8 +151,8 @@
         (untabify (1- (point)) (point-max))))
   nil)
 
-;;(add-hook 'cperl-mode-hook
-;;          '(lambda ()
-;;             (make-local-variable 'write-contents-hooks)
-;;             (add-hook 'write-contents-hooks 'hacking-untabify-buffer)))
+(add-hook 'cperl-mode-hook
+          '(lambda ()
+             (make-local-variable 'write-contents-hooks)
+             (add-hook 'write-contents-hooks 'hacking-untabify-buffer)))
 

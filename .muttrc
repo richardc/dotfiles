@@ -216,9 +216,9 @@ bind generic \177 last-entry
 
 macro index \cb |urlview\n	# simulate the old browse-url function
 
-# reinforce spam score, and junk it
-macro index S "|sa-learn --spam --no-rebuild\ns+spam\n"
-macro pager S "|sa-learn --spam --no-rebuild\ns+spam\n"
+## reinforce spam score, and junk it
+macro index S "|sa-learn --spam\ns+spam\n"
+macro pager S "|sa-learn --spam\ns+spam\n"
 #macro index S s+spam\n
 #macro pager S s+spam\n
 

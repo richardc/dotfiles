@@ -114,14 +114,14 @@ umask 002
 export CVSUMASK=002
 export CVS_RSH=ssh
 export PILOTRATE=38400
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/sw/bin:/sw/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/games"
+export PATH="$HOME/bin:/usr/lib/ccache/bin:/usr/local/bin:/usr/local/sbin:/sw/bin:/sw/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/games"
 export LANG=C
 export PAGER=less
 export FRAMEBUFFER=/dev/fb0
 export SYBASE=/usr/local/freetds
 export QT_XFT=true
 export INFOPATH="/sw/share/info:/usr/share/info"
-export MANPATH="/sw/share/man:/usr/share/man"
+export MANPATH="/sw/share/man:/usr/share/man:/usr/X11R6/man"
 prompt_newline=$'\n%{\r%}'
 PROMPT='%B[%D{%Y-%m-%d} %*] %n@%m:%~%b$prompt_newline%# '
 
@@ -214,6 +214,8 @@ alias xt='fc -e - tvf=xf ztf=zxf -1'
 
 zshrc_load_status 'key bindings'
 
+# start with emacs
+bindkey -e
 bindkey -s '^X^Z' '%-^M'
 bindkey '^[e' expand-cmd-path
 bindkey -s '^X?' '\eb=\ef\C-x*'

@@ -15,6 +15,10 @@
 (setq frame-title-format (list "" 
 			       'invocation-name "@" 'system-name' ": %b"))
 
+(require 'saveplace)
+(setq-default save-place t)
+
+
 (require 'tramp)
 (setq tramp-default-method "sshx")
 ;(setq tramp-verbose 10

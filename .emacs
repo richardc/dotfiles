@@ -1,5 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.25 2001/08/22 03:24:26 richardc Exp $
+;       $Id: .emacs,v 1.26 2001/08/23 08:28:55 richardc Exp $
 
 (add-to-list 'load-path "~/.elisp")
 
@@ -119,6 +119,7 @@
       next-line-add-newlines nil
       flyspell-default-dictionary "british"
       diff-command "diff -u"
+      diff-switches '("-u")
       c-default-style "linux"
       c-basic-offset 4)
 

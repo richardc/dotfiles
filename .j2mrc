@@ -1,10 +1,10 @@
-#	$Id: .j2mrc,v 1.29 2002/07/04 23:09:57 richardc Exp $	
+#	$Id: .j2mrc,v 1.30 2002/07/13 15:28:05 richardc Exp $	
 
 # I am very interested in your ideas, please add me to your mailing list
 
 @folks = qw(
 	    2shortplanks 
-            Abigail abw acme adam ajtaylor Allison amelia ask autarch 
+            Abigail abw acme adam ajt ajtaylor Allison amelia ask autarch 
             barbie binky blech BooK boo_radley broquaint
             chip chromatic cwest cogent 
             darobin davorg djberg96 drhyde 

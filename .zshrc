@@ -113,7 +113,7 @@ PROMPT='%n@%m:%~%# '
 export CVSUMASK=002
 export CVS_RSH=ssh
 export PILOTRATE=38400
-export PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/bin:/usr/bin/X11:/usr/X11R6/bin:/usr/games:/opt/jdk1.3/bin:$HOME/bin"
+export PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/bin:/usr/bin/X11:/usr/X11R6/bin:/usr/games:/opt/jdk1.3/bin:$HOME/bin"
 export FRAMEBUFFER=/dev/fb0
 export SYBASE=/usr/local/freetds
 

@@ -1,5 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.17 2001/07/18 00:50:56 richardc Exp $
+;       $Id: .emacs,v 1.18 2001/07/18 00:58:00 richardc Exp $
 
 (add-to-list 'load-path "~/.elisp")
 
@@ -29,8 +29,6 @@
 	'(toolbar-visible-p nil))
 
        (custom-set-faces
-	'(default ((((type x) (class color) (background light)) (:background "linen")) 
-		   (((type tty) (background dark)) (:foreground "white"))) t)
 	'(info-xref ((((type x) (class color) (background light)) (:foreground "red3" :bold t :underline t)) 
 		     (((type tty) (class color) (background dark)) (:foreground "brightred" :bold t))))
 	'(gui-button-face ((t (:inverse-video t))) t)
@@ -61,15 +59,11 @@
 					(((class grayscale) (background dark)) (:foreground "DimGray" :bold t :italic t)) (t (:underline t))))
 	'(paren-match ((((type x) (class color)) (:background "seagreen1")) 
 		       (((type tty) (class color)) (:foreground "white" :background "green"))) t)
-	'(green ((((type x) (class color)) (:foreground "green4")) (t (:foreground "green"))) t)
-	'(toolbar ((t (:background "grey80"))) t)
 	'(font-lock-warning-face ((((type tty) (class color)) (:foreground "brightred")) 
 				  (((class color) (background light)) (:foreground "Red" :bold t)) 
 				  (((class color) (background dark)) (:foreground "Pink" :bold t)) (t (:bold t :inverse-video t))))
 	'(font-lock-keyword-face ((((type tty) (class color)) (:foreground "brightwhite")) 
 				  (((class color) (background light)) (:foreground "red4" :bold t))))
-	'(yellow ((((type x) (class color) (background light)) (:foreground "yellow4")) 
-		  (((type tty) (class color)) (:foreground "brightyellow"))) t)
 	'(font-lock-type-face ((((type tty) (class color)) (:foreground "brightmagenta")) 
 			       (((class color) (background dark)) (:foreground "wheat")) 
 			       (((class color) (background light)) (:foreground "steelblue")) 
@@ -90,8 +84,9 @@
 		    (((type tty) (class color)) (:foreground "black" :background "cyan"))) t)
 	'(dired-face-symlink ((((type x) (class color)) (:foreground "cyan4")) 
 			      (((type tty) (class color)) (:foreground "cyan")) (t (:bold t))))
-	'(zmacs-region ((((type x) (class color) (background light)) (:background "yellow")) 
-			(((type tty)) (:inverse-video t))) t)
+	'(yellow ((((type x) (class color) (background light)) (:foreground "yellow4")) 
+		  (((type tty) (class color)) (:foreground "brightyellow"))) t)
+	'(green ((((type x) (class color)) (:foreground "green4")) (t (:foreground "green"))) t)
 	)
        )
       (t 

@@ -1,4 +1,4 @@
-# $Id: .muttrc,v 1.3 2000/06/20 16:23:42 richardc Exp $
+# $Id: .muttrc,v 1.4 2000/06/26 20:50:04 richardc Exp $
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -31,7 +31,7 @@ set confirmcreate		# prompt when creating new files
 set copy=yes			# always save a copy of outgoing messages
 #set delete=yes			# purge deleted messages without asking
 set edit_headers		# let me edit the message header when composing
-set editor="xemacs"		# editor to use when composing messages
+set editor="emacs"	# editor to use when composing messages
 #set fast_reply			# skip initial prompts when replying
 #set fcc_attach			# keep attachments in copies of sent messages?
 #set force_name			# fcc by recipient, create if mailbox doesn't exist
@@ -237,6 +237,7 @@ bind pager G bottom	# just like vi and less
 # <command> is executed when sending mail to an address matching <pattern>
 
 #send-hook mutt- 'set signature=~/.sigmutt; my_hdr From: Mutt User <user@example.com>'
+send-hook void@slab.org 'set signature=~/.signature.unixbeard; my_hdr From: Richard Clamp <richardc@unixbeard.net>'
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #

@@ -93,7 +93,7 @@ trailing whitespace."
   :type 'string
   :group 'mutt)
 
-(defcustom mutt-file-pattern "mutt-[a-z]+-[0-9]+-[0-9]+\\'"
+(defcustom mutt-file-pattern "mutt-[a-z]+-[0-9]+-[0-9]+-[0-9]+\\'"
   "*Regular expression which matches Mutt's temporary files."
   :type 'string
   :group 'mutt)

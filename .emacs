@@ -20,9 +20,8 @@
 
 (require 'desktop)
 
-
-(require 'tramp)
-(setq tramp-default-method "sshx")
+;;(require 'tramp)
+;;(setq tramp-default-method "sshx")
 ;(setq tramp-verbose 10
 ;      tramp-debug-buffer t)
 (load "mutt")

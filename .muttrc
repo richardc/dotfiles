@@ -1,4 +1,4 @@
-# $Id: .muttrc,v 1.23 2001/09/27 17:08:16 richardc Exp $
+# $Id: .muttrc,v 1.24 2001/10/10 13:02:29 richardc Exp $
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -109,7 +109,8 @@ set reverse_name		# use my address as it appears in the message
 set nosave_empty		# remove files when no messages are left
 #set save_name			# save outgoing messages by recipient, if the
 #set sendmail="/usr/bin/ssh localhost -p 2021 -x /usr/sbin/sendmail -oi -oem"
-set sendmail="/usr/sbin/sendmail -oi -oem"	# how to deliver mail
+set sendmail="/usr/bin/ssh www.unixbeard.net /usr/sbin/sendmail -oi -oem"
+#set sendmail="/usr/sbin/sendmail -oi -oem"	# how to deliver mail
 #set shell="/bin/zsh"		# program to use for shell escapes
 
 

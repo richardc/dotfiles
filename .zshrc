@@ -1,6 +1,8 @@
 # .zshrc is sourced in interactive shells.  It
 # should contain commands to set up aliases, functions,
 # options, key bindings, etc.
+# 	$Id: .zshrc,v 1.19 2002/08/17 12:03:50 richardc Exp $	
+
 
 zshrc_load_status () {
     echo -n "\r.zshrc load: $* ... \e[0K"
@@ -112,7 +114,7 @@ umask 002
 export CVSUMASK=002
 export CVS_RSH=ssh
 export PILOTRATE=38400
-export PATH="$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/X11R6/bin:/usr/games"
+export PATH="$HOME/bin:/sw/bin:/sw/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/X11R6/bin:/usr/games"
 export LANG=C
 export PAGER=less
 export FRAMEBUFFER=/dev/fb0

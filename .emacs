@@ -1,5 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.35 2002/08/17 11:53:26 richardc Exp $
+;       $Id: .emacs,v 1.36 2002/08/17 11:59:22 richardc Exp $
 
 (add-to-list 'load-path "~/.elisp")
 (add-to-list 'load-path "~/.elisp/tramp/lisp")
@@ -71,7 +71,8 @@
       indent-tabs-mode nil
       next-line-add-newlines nil
       diff-command "diff -u"
-      diff-switches '("-u", "-p")
+      diff-switches '("-up")
+      vc-diff-switches '("-up")
       c-default-style "linux"
       c-basic-offset 4)
 

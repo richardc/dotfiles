@@ -1,5 +1,7 @@
-image/gif; feh '%s';test=test "$DISPLAY" != ""
-image/jpeg; feh '%s';test=test "$DISPLAY" != ""
+#image/gif; feh '%s';test=test "$DISPLAY" != ""
+#image/jpeg; feh '%s';test=test "$DISPLAY" != ""
+image/gif; display '%s';test=test "$DISPLAY" != ""
+image/jpeg; display '%s';test=test "$DISPLAY" != ""
 #image/gif; slow-open '%s'
 #image/jpeg; slow-open '%s'
 

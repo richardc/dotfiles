@@ -22,3 +22,4 @@ wterm*foreground: wheat
 wterm*background: blue
 wterm*scrollBar_right: true
 wterm*visualBell: true
+Xft.rgba: rgb

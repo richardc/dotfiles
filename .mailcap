@@ -1,3 +1,4 @@
 image/gif; feh '%s';test=test "$DISPLAY" != ""
 image/jpeg; feh '%s';test=test "$DISPLAY" != ""
 text/html; w3m -dump -T text/html '%s'; copiousoutput
+application/msword; antiword '%s'; copiousoutput; description="Microsoft Word Text"; nametemplate=%s.doc

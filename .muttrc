@@ -1,4 +1,4 @@
-# $Id: .muttrc,v 1.6 2000/10/07 13:33:43 richardc Exp $
+# $Id: .muttrc,v 1.7 2001/06/18 22:37:20 richardc Exp $
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -8,25 +8,24 @@
 set folder=~/Mail		# where i keep my mailboxes
 
 # Who I masquerade as:
-set alternates="(richardc?@oven.com|@mirth.demon.co.uk|richardc@unixbeard.net)" 
+set alternates="(richardc?@oven\.com|richardc@tw2\.com|@mirth\.demon\.co\.uk|richardc@unixbeard\.net)" 
 
 macro generic "<f10>u" ":set signature=~/.signature.unixbeard^M:set from=\"Richard Clamp <richardc@unixbeard.net>\"^M:set ?from^M"
 macro generic "<f10>m" ":set signature=~/.signature.mirth^M:set from=\"Richard Clamp <richardc@mirth.demon.co.uk>\"^M:set ?from^M"
 macro generic "<f10>o" ":set signature=~/.signature.oven^M:set from=\"Richard Clamp <richardc@oven.com>\"^M:set ?from^M"
 
-macro pager  "<f10>u" ":set signature=~/.signature.unixbeard^M:set from=\"Richard Clamp <richardc@unixbeard.net>\"^M:set ?from^M"
-macro pager  "<f10>m" ":set signature=~/.signature.mirth^M:set from=\"Richard Clamp <richardc@mirth.demon.co.uk>\"^M:set ?from^M"
-macro pager  "<f10>o" ":set signature=~/.signature.oven^M:set from=\"Richard Clamp <richardc@oven.com>\"^M:set ?from^M"
+macro pager   "<f10>u" ":set signature=~/.signature.unixbeard^M:set from=\"Richard Clamp <richardc@unixbeard.net>\"^M:set ?from^M"
+macro pager   "<f10>m" ":set signature=~/.signature.mirth^M:set from=\"Richard Clamp <richardc@mirth.demon.co.uk>\"^M:set ?from^M"
+macro pager   "<f10>o" ":set signature=~/.signature.oven^M:set from=\"Richard Clamp <richardc@oven.com>\"^M:set ?from^M"
 
-#send-hook .             "set signature=~/.signature.oven; my_hdr From: Richard Clamp <richardc@oven.com>"
-send-hook void@slab.org "set signature=~/.signature.unixbeard; my_hdr From: Richard Clamp <richardc@unixbeard.net>"
-send-hook yapc-europe@lists.dircon.co.uk \
-			"set signature=~/.signature.mirth; my_hdr From: Richard Clamp <richardc@mirth.demon.co.uk>"
+#send-hook .             "set signature=~/.signature.oven; set from=\"Richard Clamp <richardc@oven.com>\""
+send-hook void@slab\.org "set signature=~/.signature.unixbeard; set from=\"Richard Clamp <richardc@unixbeard.net>\""
+send-hook yapc-europe@lists\.dircon\.co\.uk \
+			 "set signature=~/.signature.mirth; set from=\"Richard Clamp <richardc@mirth.demon.co.uk>\""
 
-set signature=~/.signature.oven
-my_hdr From: Richard Clamp <richardc@oven.com>
-
-
+set signature=~/.signature.unixbeard
+set from="Richard Clamp <richardc@unixbeard.net>"
+ 
 source ~/Mail/gpg.rc
 
 set query_command="lbdbq %s"
@@ -55,7 +54,7 @@ set confirmcreate		# prompt when creating new files
 set copy=yes			# always save a copy of outgoing messages
 #set delete=yes			# purge deleted messages without asking
 set edit_headers		# let me edit the message header when composing
-set editor="e"	# editor to use when composing messages
+set editor="jed %s -tmp -f mail_mode"
 #set fast_reply			# skip initial prompts when replying
 #set fcc_attach			# keep attachments in copies of sent messages?
 #set force_name			# fcc by recipient, create if mailbox doesn't exist
@@ -68,7 +67,7 @@ set hdr_format="%4C %Z %[%d/%m-%H:%M] %-15.15F (%4c) %s" # format of the index
 #set header			# include message header when replying
 set help			# show the help lines
 #set history=20			# number of lines of history to remember
-#set hostname="mirth.demon.co.uk"	# my DNS domain
+set hostname="mirth.demon.co.uk"	# my DNS domain
 set include			# always include messages when replying
 set indent_string="> "		# how to quote replied text
 #set locale="C"			# locale to use for printing time
@@ -104,7 +103,8 @@ set reverse_name		# use my address as it appears in the message
 				# i am replying to
 set nosave_empty		# remove files when no messages are left
 #set save_name			# save outgoing messages by recipient, if the
-#set sendmail="/usr/sbin/sendmail -oi -oem"	# how to deliver mail
+#set sendmail="/usr/bin/ssh www.unixbeard.net /usr/sbin/sendmail -oi -oem"
+set sendmail="/usr/sbin/sendmail -oi -oem"	# how to deliver mail
 #set shell="/bin/zsh"		# program to use for shell escapes
 
 
@@ -209,6 +209,9 @@ macro index \cb |urlview\n	# simulate the old browse-url function
 
 macro index S s+spam\n
 macro pager S s+spam\n
+
+macro index A |refilter\nd
+macro pager A |refilter\nd
 
 #macro index \# /bug^M	# search for bugs
 #macro index "\""        ":set realname=\"real hairy macro\"^M:set ?realname^M" # and a comment to boot!
@@ -317,6 +320,7 @@ source ~/Mail/aliases
 #mailboxes ! +mutt-dev +mutt-users +open-pgp +wmaker +hurricane +vim +ietf \
 	+drums
 mailboxes `echo +inbox ~/Mail/list_*`
+#mailboxes `echo +inbox ~/Mail/*/*/*`
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #

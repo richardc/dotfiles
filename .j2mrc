@@ -1,3 +1,5 @@
+#	$Id: .j2mrc,v 1.15 2002/02/25 01:20:27 richardc Exp $	
+
 # I am very interested in your ideas, please add me to your mailing list
 
 @folks = qw(
@@ -11,7 +13,7 @@
             hfb 
             ingy 
             james jdavidb jeffsu jhi jjohn jns jouke 
-            KM koschei 
+            kellan KM koschei 
             lachoy
             Matts mendel miyagawa muttley mr_stru
             NatalieF nivek 

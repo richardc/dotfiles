@@ -13,6 +13,7 @@ set alternates="(richardc?@oven\.com|richardc@tw2\.com|@mirth\.demon\.co\.uk|ric
 macro generic "<f10>u" ":set signature=~/.signature.unixbeard^M:set from=\"Richard Clamp <richardc@unixbeard.net>\"^M:set ?from^M"
 macro generic "<f10>m" ":set signature=~/.signature.mirth^M:set from=\"Richard Clamp <richardc@mirth.demon.co.uk>\"^M:set ?from^M"
 macro generic "<f10>o" ":set signature=~/.signature.oven^M:set from=\"Richard Clamp <richardc@oven.com>\"^M:set ?from^M"
+macro generic "<f10>f" ":set signature=~/.signature.fotango^M:set from=\"Richard Clamp <richardc@fotango.com>\"^M:set ?from^M"
 
 macro pager   "<f10>u" ":set signature=~/.signature.unixbeard^M:set from=\"Richard Clamp <richardc@unixbeard.net>\"^M:set ?from^M"
 macro pager   "<f10>m" ":set signature=~/.signature.mirth^M:set from=\"Richard Clamp <richardc@mirth.demon.co.uk>\"^M:set ?from^M"
@@ -215,8 +216,11 @@ bind generic \177 last-entry
 
 macro index \cb |urlview\n	# simulate the old browse-url function
 
-macro index S s+spam\n
-macro pager S s+spam\n
+# reinforce spam score, and junk it
+macro index S "|sa-learn --spam --no-rebuild\ns+spam\n"
+macro pager S "|sa-learn --spam --no-rebuild\ns+spam\n"
+#macro index S s+spam\n
+#macro pager S s+spam\n
 
 macro index A |refilter\nd
 macro pager A |refilter\nd

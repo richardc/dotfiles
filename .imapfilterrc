@@ -14,6 +14,10 @@ filter rt
   header X-RT-Loop-Prevention fotango.com
 action move rt
 
+filter fit
+  header List-Post "fit@"
+action move fit
+
 filter team
   header List-Post "team@"
 action move team
@@ -22,9 +26,14 @@ filter development
   header List-Post "development@"
 action move development
 
+filter cigm
+  header List-Post "cig-meeting@"
+action move cig-meeting
+
+
 filter nagios
   header from "nagios@argus.cig.private.net"
 action move systems.nagios
 
 # declare which filters to apply to which incoming folders
-job nagios,systems,team,development,rt inbox
+job nagios,systems,team,development,rt,fit,cigm inbox

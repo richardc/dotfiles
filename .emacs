@@ -1,5 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.20 2001/07/18 22:21:11 richardc Exp $
+;       $Id: .emacs,v 1.21 2001/08/17 13:09:06 richardc Exp $
 
 (add-to-list 'load-path "~/.elisp")
 
@@ -102,9 +102,6 @@
        ;; other emacsen (probably GNU Emacs)
 
        (server-start)
-       
-       (load "mmm-mode")
-       (mmm-add-find-file-hook)
        
        (global-font-lock-mode 1)
        

@@ -19,8 +19,6 @@
 ;(setq tramp-verbose 10
 ;      tramp-debug-buffer t)
 (load "mutt")
-;(require 'vc)
-;(require 'vc-svn)
 
 (cond ((string-match "XEmacs\\|Lucid" emacs-version)
        ;; yup - we're in XEmacs
@@ -37,6 +35,7 @@
        ;; I'm not sure if I like this cond t stuff for defaults
        ;; other emacsen (probably GNU Emacs)
 
+	(require 'vc-svn)
        (server-start)
        ;(gnuserv-start)
        

@@ -46,7 +46,7 @@
 
 ;;; Commentary:
 
-;; $Id: cperl-mode.el,v 4.32 2000/05/31 05:13:15 ilya Exp ilya $
+;; $Id$
 
 ;;; If your Emacs does not default to `cperl-mode' on Perl files:
 ;;; To use this mode put the following into

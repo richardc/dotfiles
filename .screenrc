@@ -2,6 +2,7 @@
 
 escape ^]]
 bind ^[ paste .
+termcapinfo ansi 'ti@:te@:hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007'
 termcapinfo xterm 'ti@:te@:hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007'
 termcapinfo vt100 'ti@:te@:hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007'
 vbell off

@@ -4,12 +4,16 @@ expunge = yes
 
 # define an account, and incoming folders
 account fotango richardc@fotango.com@mx1.fotango.com ssl3
-  folder inbox   INBOX
+  folder inbox INBOX
 
 # define filters
 filter systems
   header List-Post "systems@"
 action move systems
+
+filter rt
+  header X-RT-Loop-Prevention fotango.com
+action move rt
 
 filter team
   header List-Post "team@"
@@ -24,4 +28,4 @@ filter nagios
 action move systems.nagios
 
 # declare which filters to apply to which incoming folders
-job nagios,systems,team,development inbox
+job nagios,systems,team,development,rt inbox

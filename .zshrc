@@ -1,7 +1,7 @@
 # .zshrc is sourced in interactive shells.  It
 # should contain commands to set up aliases, functions,
 # options, key bindings, etc.
-# 	$Id: .zshrc,v 1.19 2002/08/17 12:03:50 richardc Exp $	
+# 	$Id: .zshrc,v 1.20 2002/08/27 09:05:41 richardc Exp $	
 
 
 zshrc_load_status () {
@@ -130,22 +130,22 @@ SAVEHIST=3000
 stty erase '^?' quit '^~'
 
 case $TERM in
-    xterm*)
-	precmd () {
-	    print -Pn "\e]0;%n@%m:%~\a"
-	}
-	preexec () {
-	    print -Pn "\e]0;["
-	    print -Rn "$1"
-	    print -Pn "] %n@%m:%~\a"
-	}
-	;;
     screen*)
 	precmd () {
 	    print -Pn "\e]0;screen> %n@%m:%~\a"
 	}
 	preexec () {
 	    print -Pn "\e]0;screen> ["
+	    print -Rn "$1"
+	    print -Pn "] %n@%m:%~\a"
+	}
+	;;
+    *)
+	precmd () {
+	    print -Pn "\e]0;%n@%m:%~\a"
+	}
+	preexec () {
+	    print -Pn "\e]0;["
 	    print -Rn "$1"
 	    print -Pn "] %n@%m:%~\a"
 	}

@@ -68,7 +68,7 @@
      ;; Let's not delete this buffer when we're done --- leave
      ;; it around for debugging.
      (set-buffer (get-buffer-create " *Subversion Output*"))
-     (erase-buffer)
+     ;;(erase-buffer)
      ,@body))
 
 

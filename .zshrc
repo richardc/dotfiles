@@ -120,6 +120,7 @@ export PAGER=less
 export FRAMEBUFFER=/dev/fb0
 export SYBASE=/usr/local/freetds
 export QT_XFT=true
+export INFOPATH="/sw/share/info:/usr/share/info"
 export MANPATH="/sw/share/man:/usr/share/man"
 prompt_newline=$'\n%{\r%}'
 PROMPT='%B[%D{%Y-%m-%d} %*] %n@%m:%~%b$prompt_newline%# '

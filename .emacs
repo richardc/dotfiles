@@ -1,5 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;	$Id: .emacs,v 1.2 2000/04/24 20:09:26 richardc Exp $	
+;	$Id: .emacs,v 1.3 2000/06/05 13:11:03 richardc Exp $	
 
 (setq load-path (cons (expand-file-name "~/.stuff/elisp") load-path))
 (load "mutt")
@@ -12,13 +12,11 @@
       indent-tabs-mode nil
       c-default-style "linux")
 (global-font-lock-mode)
+
 (defun perl-mode ()
   "overriden by a dirty hack to invoke cperl-mode"
   (interactive)
   (cperl-mode))
-
-(defun turn-off-backup ()
-  (set (make-local-variable 'backup-inhibited) t))
 
 (custom-set-variables
  '(ange-ftp-ftp-program-name "pftp")

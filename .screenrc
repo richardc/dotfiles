@@ -1,8 +1,8 @@
-#	$rcs = ' $Id: .screenrc,v 1.4 2001/07/01 17:35:28 richardc Exp $ ' ;	
+#	$rcs = ' $Id: .screenrc,v 1.5 2001/07/08 22:45:16 richardc Exp $ ' ;	
 
 escape ^]]
 bind ^[ paste .
-termcapinfo xterm 'ti@:te@:hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007'
+termcapinfo xterm 'ti@:te@:hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007
 vbell off
 debug off
 bind ^\

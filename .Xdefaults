@@ -19,6 +19,6 @@ wterm*cursorColor: grey
 wterm*transparent: true
 wterm*shade: true
 wterm*foreground: wheat
-wterm*background: red
+wterm*background: blue
 wterm*scrollBar_right: true
 wterm*visualBell: true

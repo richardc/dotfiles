@@ -1,4 +1,4 @@
-# $Id: .muttrc,v 1.5 2000/09/26 22:14:41 richardc Exp $
+# $Id: .muttrc,v 1.6 2000/10/07 13:33:43 richardc Exp $
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -7,7 +7,27 @@
 #
 set folder=~/Mail		# where i keep my mailboxes
 
-source ~/.stuff/gpg.rc
+# Who I masquerade as:
+set alternates="(richardc?@oven.com|@mirth.demon.co.uk|richardc@unixbeard.net)" 
+
+macro generic "<f10>u" ":set signature=~/.signature.unixbeard^M:set from=\"Richard Clamp <richardc@unixbeard.net>\"^M:set ?from^M"
+macro generic "<f10>m" ":set signature=~/.signature.mirth^M:set from=\"Richard Clamp <richardc@mirth.demon.co.uk>\"^M:set ?from^M"
+macro generic "<f10>o" ":set signature=~/.signature.oven^M:set from=\"Richard Clamp <richardc@oven.com>\"^M:set ?from^M"
+
+macro pager  "<f10>u" ":set signature=~/.signature.unixbeard^M:set from=\"Richard Clamp <richardc@unixbeard.net>\"^M:set ?from^M"
+macro pager  "<f10>m" ":set signature=~/.signature.mirth^M:set from=\"Richard Clamp <richardc@mirth.demon.co.uk>\"^M:set ?from^M"
+macro pager  "<f10>o" ":set signature=~/.signature.oven^M:set from=\"Richard Clamp <richardc@oven.com>\"^M:set ?from^M"
+
+#send-hook .             "set signature=~/.signature.oven; my_hdr From: Richard Clamp <richardc@oven.com>"
+send-hook void@slab.org "set signature=~/.signature.unixbeard; my_hdr From: Richard Clamp <richardc@unixbeard.net>"
+send-hook yapc-europe@lists.dircon.co.uk \
+			"set signature=~/.signature.mirth; my_hdr From: Richard Clamp <richardc@mirth.demon.co.uk>"
+
+set signature=~/.signature.oven
+my_hdr From: Richard Clamp <richardc@oven.com>
+
+
+source ~/Mail/gpg.rc
 
 set query_command="lbdbq %s"
 
@@ -15,8 +35,7 @@ set query_command="lbdbq %s"
 set pgp_replyencrypt
 set pgp_replysign
 
-set from="Richard Clamp <richardc@oven.com>"
-set alternates="(richardc?@oven.com|@mirth.demon.co.uk|richardc@unixbeard.net)" 
+
 
 set envelope_from
 #set abort_unmodified=yes	# automatically abort replies if I don't
@@ -87,7 +106,7 @@ set nosave_empty		# remove files when no messages are left
 #set save_name			# save outgoing messages by recipient, if the
 #set sendmail="/usr/sbin/sendmail -oi -oem"	# how to deliver mail
 #set shell="/bin/zsh"		# program to use for shell escapes
-#set signature="~/.signature"	# file which contains my signature
+
 
 # I subscribe to a lot of mailing lists, so this is _very_ useful.  This
 # groups messages on the same subject to make it easier to follow a
@@ -242,8 +261,6 @@ bind pager G bottom	# just like vi and less
 # <command> is executed when sending mail to an address matching <pattern>
 
 #send-hook mutt- 'set signature=~/.sigmutt; my_hdr From: Mutt User <user@example.com>'
-send-hook void@slab.org 'set signature=~/.signature.unixbeard; my_hdr From: Richard Clamp <richardc@unixbeard.net>'
-send-hook yapc-europe@lists.dircon.co.uk 'set signature=~/.signature.mirth; my_hdr From: Richard Clamp <richardc@mirth.demon.co.uk>'
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #
@@ -299,7 +316,7 @@ source ~/Mail/aliases
 
 #mailboxes ! +mutt-dev +mutt-users +open-pgp +wmaker +hurricane +vim +ietf \
 	+drums
-mailboxes `echo /home/richardc/Mail/inbox /home/richardc/Mail/list_*`
+mailboxes `echo +inbox ~/Mail/list_*`
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #

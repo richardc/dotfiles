@@ -1,5 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.30 2001/10/16 16:52:04 richardc Exp $
+;       $Id: .emacs,v 1.31 2001/11/12 15:25:34 richardc Exp $
 
 (add-to-list 'load-path "~/.elisp")
 (add-to-list 'load-path "~/hck/tramp/lisp")
@@ -18,11 +18,11 @@
 (setq tramp-default-method "su")
 (load "mutt")
 
-;(load "erc")
-;(setq erc-server "irc.rhizomatic.net" 
-;      erc-port 6667 
-;      erc-nick "rjc_erc"
-;      erc-user-name (user-full-name))
+(load "erc")
+(setq erc-server "irc.rhizomatic.net" 
+      erc-port 6667 
+      erc-nick "rjc_erc"
+      erc-user-name (user-full-name))
 
 
 (cond ((string-match "XEmacs\\|Lucid" emacs-version)

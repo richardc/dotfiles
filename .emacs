@@ -1,5 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.21 2001/08/17 13:09:06 richardc Exp $
+;       $Id: .emacs,v 1.23 2001/08/20 10:40:30 richardc Exp $
 
 (add-to-list 'load-path "~/.elisp")
 
@@ -13,7 +13,7 @@
 (setq frame-title-format (list "" 
 			       'invocation-name "@" 'system-name' ": %b"))
 
-(load "python-mode")
+;;(load "python-mode")
 (load "mutt")
 
 
@@ -111,7 +111,7 @@
        )
       )
 
-(setq cperl-indent-level 4
+(setq cperl-indent-level 8
       line-number-mode 1
       column-number-mode 1
       indent-tabs-mode nil
@@ -147,8 +147,8 @@
         (untabify (1- (point)) (point-max))))
   nil)
 
-(add-hook 'cperl-mode-hook
-          '(lambda ()
-             (make-local-variable 'write-contents-hooks)
-             (add-hook 'write-contents-hooks 'hacking-untabify-buffer)))
+;;(add-hook 'cperl-mode-hook
+;;          '(lambda ()
+;;             (make-local-variable 'write-contents-hooks)
+;;             (add-hook 'write-contents-hooks 'hacking-untabify-buffer)))
 

@@ -1,4 +1,4 @@
-# $Id: .muttrc,v 1.28 2001/12/14 12:10:57 richardc Exp $
+# $Id: .muttrc,v 1.29 2001/12/17 17:35:14 richardc Exp $
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -88,7 +88,7 @@ set move=no
 #set pager=less			# some people prefer an external pager
 set pager_context=2		# no. of lines of context to give when scrolling
 #set pager_format="-%S- %-20.20f %s"	# format of the pager status bar
-set pager_index_lines=6		# how many index lines to show in the pager
+set pager_index_lines=4		# how many index lines to show in the pager
 set pager_stop			# don't move to the next message on next-page
 #set pgp_strict_enc		# use Q-P encoding when needed for PGP
 set postponed=+postponed	# mailbox to store postponed messages in

@@ -1,7 +1,6 @@
 # .zshrc is sourced in interactive shells.  It
 # should contain commands to set up aliases, functions,
 # options, key bindings, etc.
-# 	$Id: .zshrc,v 1.2 2000/04/24 20:05:32 richardc Exp $	
 
 zshrc_load_status () {
   echo -n "\r.zshrc load: $* ... \e[0K"
@@ -115,7 +114,6 @@ CVSUMASK=002
 PILOTRATE=38400
 CVSROOT=':pserver:richardc@china.tw2.com:/home/cvs/repository'
 PATH="/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/X11R6/bin:/usr/games"
-IRCSERVER=irc.homelien.no
 
 
 HISTFILE=~/.zshhistory
@@ -143,46 +141,36 @@ fi
 
 zshrc_load_status 'completion system'
 
-_compdir=/usr/share/zsh/functions
-[[ -z $fpath[(r)$_compdir] ]] && fpath=($fpath $_compdir)
 autoload -U compinit
 compinit
 
+zstyle ':completion:*' completer _complete _correct _approximate _prefix
+zstyle ':completion::prefix-1:*' completer _complete
+zstyle ':completion:incremental:*' completer _complete _correct
+zstyle ':completion:predict:*' completer _complete
 
-# General completion technique
-compstyle '*' completer _complete
-compstyle ':incremental' completer _complete
-compstyle ':predict' completer _complete
-#compstyle '*' completer _complete _correct _approximate
-#compstyle ':incremental' completer _complete _correct
-#compstyle ':predict' completer _complete
-
-# Cache functions created by _regex_arguments
-compstyle '*' cache-path ~/.zsh-cache-path
+zstyle ':completion:*' cache-path ~/.zsh/.cache-path
 
 # Expand partial paths
-compstyle ':*' expand 'yes'
-compstyle ':*' squeeze-slashes 'yes'
+zstyle ':completion:*' expand 'yes'
+zstyle ':completion:*' squeeze-slashes 'yes'
 
 # Include non-hidden directories in globbed file completions
 # for certain commands
-compstyle '::complete:*' \
-	tag-order 'globbed-files directories' all-files
-compstyle '::complete:*:tar:directories' file-patterns '*~.*(-/)'
 
 # Separate matches into groups
-compstyle '*:matches' group 'yes'
+zstyle ':completion:*:matches' group 'yes'
 
 # Describe each match group.
-compstyle ':*:descriptions' format "%B---- %d%b"
+zstyle ':completion:*:descriptions' format "%B---- %d%b"
 
-# Messages/warnings format
-compstyle ':*:messages' format '%B%U---- %d%u%b'
-compstyle ':*:warnings' format '%B%U---- no match for: %d%u%b'
+# Messages/warnings format 
+zstyle ':completion:*:messages' format '%B%U---- %d%u%b' 
+zstyle ':completion:*:warnings' format '%B%U---- no match for: %d%u%b'
 
 # Describe options in full
-compstyle '*:options' description 'yes'
-compstyle '*:options' auto-description '%d'
+zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*:options' auto-description '%d'
 
 # Common hosts
 : ${(A)_etc_hosts:=${(s: :)${(ps:\t:)${${(f)~~"$(</etc/hosts)"}%%\#*}##[:blank:]#[^[:blank:]]#}}}
@@ -193,7 +181,7 @@ hosts=(
     localhost
 )
 
-compstyle '*' hosts $hosts
+zstyle ':completion:*' hosts $hosts
 
 zshrc_load_status 'aliases and functions'
 

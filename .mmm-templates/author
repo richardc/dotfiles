@@ -3,9 +3,9 @@
 Richard Clamp <richardc@unixbeard.net>
 
 [% IF work -%]
-Copyright Fotango [% year %].  All Rights Reserved.
+Copyright [% year %] Fotango.  All Rights Reserved.
 [%- ELSE -%]
-Copyright Richard Clamp [% year %].  All Rights Reserved.
+Copyright [% year %] Richard Clamp.  All Rights Reserved.
 [%- END %]
 
 [% IF !work || free -%]

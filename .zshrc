@@ -225,4 +225,5 @@ bindkey '^[f' emacs-forward-word
 
 echo -n "\r"
 
+`xdaddy`
 echo ; fortune ; echo

@@ -1,4 +1,4 @@
-#	$Id: .j2mrc,v 1.30 2002/07/13 15:28:05 richardc Exp $	
+#	$Id: .j2mrc,v 1.31 2002/07/22 23:30:35 richardc Exp $	
 
 # I am very interested in your ideas, please add me to your mailing list
 
@@ -8,27 +8,27 @@
             barbie binky blech BooK boo_radley broquaint
             chip chromatic cwest cogent 
             darobin davorg djberg96 drhyde 
-            Elian exeunt 
+            Elian Elthek exeunt 
             garron gav gbarr geoff gizmo_mathboy gnat godoy grinder
             hex hfb 
             IlyaM ingy 
             james jdavidb jeffsu jhi jjohn jns jouke jplindstrom
             kellan KM koschei krellis 
             lachoy lenzo
-            mako132 mattriffle Matts mendel miyagawa muttley mr_stru
+            mako132 mattriffle Matts mendel merlyn miyagawa muttley mr_stru
             NatalieF nivek 
             Odud oneiron 
             pdcawley pemungkah pne pudge Purdy
             quidity 
-            rafael Ranguard redsquirrel richardc rjray robin russell 
+            rafael Ranguard redsquirrel richardc rjray robin Robrt russell 
             schwern sherab sheriff_p Simon Skud sky skyhook sphyg statebelt
-            Theory tinman tmtm tonyc TorgoX triv
+            TeeJay Theory tinman tmtm tonyc TorgoX triv
             unimatrix 
             vek vsergu
             Whammo Wob 
             ZenHam ziggy
            );
 
-@recipients = qw( richardc@unixbeard.net );
+@recipients = qw( richardc@mirth.demon.co.uk );
 
 1;

@@ -1,25 +1,31 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.12 2000/08/10 13:50:51 richardc Exp $
+;       $Id: .emacs,v 1.13 2000/08/31 16:08:38 richardc Exp $
 
-(add-to-list 'load-path "~/.stuff/elisp")
-(add-to-list 'load-path "~/.stuff/elisp/tramp/lisp")
-(require 'tramp)
-(setq tramp-default-method "scp")
+(add-to-list 'load-path "~/.elisp")
 
-(defvar running-xemacs (string-match "XEmacs\\|Lucid" emacs-version))
 
-(cond (running-xemacs
+(cond ((or (equal (system-name) "mirth") (equal (system-name) "joxer"))
+       (add-to-list 'load-path "~/.elisp/tramp/lisp")
+       (require 'tramp)
+       (setq tramp-default-method "scp")
+       )
+      )
+
+(cond ((equal (system-name) "mirth")
+       (load "mutt")
+       )
+      )    
+
+
+(cond ((string-match "XEmacs\\|Lucid" emacs-version)
        ;; yup - we're in XEmacs
        (load "vc")
 
-       (add-to-list 'Info-directory-list "~/.stuff/elisp/tramp/texi/")
+       (cond ((or (equal (system-name) "mirth") (equal (system-name) "joxer"))
+	      (add-to-list 'Info-directory-list "~/.elisp/tramp/texi/")
+	      )
+	     )
 
-       (setq efs-generate-anonymous-password "richardc@mirth.demon.co.uk")
-       
-      ;; (require 'eicq)
-      ;; (setq eicq-user-alias "me")
-      ;; (eicq-world-update)
-       
        (turn-on-lazy-shot)
        (custom-set-variables
 	'(gnuserv-program (concat exec-directory "/gnuserv"))
@@ -42,8 +48,6 @@
 	'(highline-face ((t (:background "gray30")))))
        )
       )
-
-(load "mutt")
 
 (setq cperl-indent-level 4
       line-number-mode 1

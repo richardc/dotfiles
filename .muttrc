@@ -1,4 +1,4 @@
-# $Id: .muttrc,v 1.15 2001/08/11 00:39:26 richardc Exp $
+# $Id: .muttrc,v 1.16 2001/08/11 00:49:16 richardc Exp $
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -23,8 +23,9 @@ send-hook void@slab\.org "set signature=~/.signature.unixbeard; set from=\"Richa
 send-hook yapc-europe@lists\.dircon\.co\.uk \
 			 "set signature=~/.signature.mirth; set from=\"Richard Clamp <richardc@mirth.demon.co.uk>\""
 
-set signature=~/.signature.unixbeard
-set from="Richard Clamp <richardc@unixbeard.net>"
+folder-hook .       "set signature=~/.signature.unixbeard; set from=\"Richard Clamp <richardc@unixbeard.net>\""
+folder-hook object1 "set signature=~/.signature.object1; set from=\"Richard Clamp <richardc@object1.com>\""
+
  
 source ~/Mail/gpg.rc
 

@@ -122,7 +122,6 @@ export SYBASE=/usr/local/freetds
 export QT_XFT=true
 export INFOPATH="/sw/share/info:/usr/share/info"
 export MANPATH="/sw/share/man:/usr/share/man"
-export PERL5_CPANPLUS_CONFIG="$HOME/.cpanplus/config"
 prompt_newline=$'\n%{\r%}'
 PROMPT='%B[%D{%Y-%m-%d} %*] %n@%m:%~%b$prompt_newline%# '
 

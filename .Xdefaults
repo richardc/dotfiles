@@ -13,7 +13,7 @@ xterm.vt100.background: black
 xterm.vt100.foreground: wheat
 xterm.vt100.backarrowKey: false
 xterm*metaSendsEscape: true
-xterm.font: fixed
+xterm*font: --kapl-screen-r-normal--15-150-72-72-m--iso8859-1
 wterm*font: 6x13
 wterm*saveLines: 500
 wterm*cursorColor: grey

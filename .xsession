@@ -1,6 +1,9 @@
 # 	$Id$	
-
 xrdb $HOME/.Xdefaults &
-xscreensaver &
+#xscreensaver &
 xmodmap ~/.xmodmap-`uname -n`
-exec wmaker
+#exec wmaker
+gkrellm &
+#exec gnome-session
+xterm &
+exec enlightenment

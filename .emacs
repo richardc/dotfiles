@@ -1,5 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.37 2002/08/17 12:12:35 richardc Exp $
+;       $Id: .emacs,v 1.38 2002/10/17 10:46:32 richardc Exp $
 
 (add-to-list 'load-path "~/.elisp")
 (add-to-list 'load-path "~/.elisp/tramp/lisp")
@@ -35,8 +35,8 @@
        ;; I'm not sure if I like this cond t stuff for defaults
        ;; other emacsen (probably GNU Emacs)
 
-       ;;(server-start)
-       (gnuserv-start)
+       (server-start)
+       ;(gnuserv-start)
        
        (global-font-lock-mode 1)
        ;(transient-mark-mode)

@@ -95,5 +95,5 @@
              (make-local-variable 'write-contents-hooks)
              (add-hook 'write-contents-hooks 'hacking-untabify-buffer)))
 (custom-set-variables
+ '(uniquify-buffer-name-style (quote forward) nil (uniquify))
  '(load-home-init-file t t))
-(custom-set-faces)

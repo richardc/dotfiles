@@ -18,6 +18,8 @@
 (require 'saveplace)
 (setq-default save-place t)
 
+(require 'desktop)
+
 
 (require 'tramp)
 (setq tramp-default-method "sshx")
@@ -115,3 +117,7 @@
   ;; Your init file should contain only one such instance.
  '(highline-face ((t (:background "gray30"))))
  '(mmm-default-submode-face ((t (:background "gray9")))))
+
+
+(desktop-load-default)
+(desktop-read)

@@ -1,4 +1,4 @@
-# $Id: .muttrc,v 1.26 2001/10/16 16:52:33 richardc Exp $
+# $Id: .muttrc,v 1.27 2001/12/09 15:18:40 richardc Exp $
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -56,8 +56,8 @@ set copy=yes			# always save a copy of outgoing messages
 #set delete=yes			# purge deleted messages without asking
 set edit_headers		# let me edit the message header when composing
 #set editor="jed %s -tmp -f mail_mode"
-set editor="gnuclient -nw"
-#set editor="emacsclient"
+#set editor="gnuclient -nw"
+set editor="emacsclient"
 #set editor="nano -r 72"
 #set editor=vi
 #set fast_reply			# skip initial prompts when replying

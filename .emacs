@@ -1,5 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.14 2001/06/16 22:56:34 richardc Exp $
+;       $Id: .emacs,v 1.15 2001/06/25 13:31:58 richardc Exp $
 
 (add-to-list 'load-path "~/.elisp")
 
@@ -13,7 +13,6 @@
 (setq frame-title-format (list "" 
 			       'invocation-name "@" 'system-name' ": %b"))
 
-
 (cond ((or (equal (system-name) "mirth.demon.co.uk") (equal (system-name) "joxer.uk.oven.com"))
        (add-to-list 'load-path "~/.elisp/tramp/lisp")
        (require 'tramp)
@@ -25,6 +24,8 @@
        (load "python-mode")
        (add-to-list 'load-path "~/.elisp/monk")
        (load "monk")
+       (load "mutt")
+       (server-start)
 
        (monk-dired-bind-extra-keys)
        (setq monk-volume-command "aumix"
@@ -32,8 +33,6 @@
 	     monk-dont-care-no-CD nil
 	     monk-use-face t
 	     monk-dired-monk-command 'monk-other-window)
-       
-       (load "desktop")
        )
       )    
 
@@ -106,12 +105,4 @@
           '(lambda ()
              (make-local-variable 'write-contents-hooks)
              (add-hook 'write-contents-hooks 'hacking-untabify-buffer)))
-(custom-set-variables
-  ;; custom-set-variables was added by Custom -- don't edit or cut/paste it!
-  ;; Your init file should contain only one such instance.
- '(ftp-program "sftp"))
-(custom-set-faces
-  ;; custom-set-faces was added by Custom -- don't edit or cut/paste it!
-  ;; Your init file should contain only one such instance.
- '(highline-face ((t (:background "gray30"))))
- '(mmm-default-submode-face ((t (:background "gray9")))))
+

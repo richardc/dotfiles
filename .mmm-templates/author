@@ -2,6 +2,8 @@
 
 Richard Clamp <richardc@unixbeard.net>
 
+=head1 COPYRIGHT
+
 [% IF work -%]
 Copyright [% year %] Fotango.  All Rights Reserved.
 [%- ELSE -%]

@@ -4,6 +4,7 @@ expunge = yes
 # define an account, and incoming folders
 account fotango richardc@fotango.com@mx1.fotango.com ssl3
   folder inbox INBOX
+  folder systems systems
 
 # define filters
 filter systems
@@ -30,10 +31,12 @@ filter cigm
   header List-Post "cig-meeting@"
 action move cig-meeting
 
-
-filter nagios
-  header from "nagios@argus.cig.private.net"
+filter nagios or
+  from "nagios@argus.cig.private.net"
+  from "nagios@talisker.fotango.com"
 action move systems.nagios
 
 # declare which filters to apply to which incoming folders
 job nagios,systems,team,development,rt,fit,cigm inbox
+
+#job nagios systems

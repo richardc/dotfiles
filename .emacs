@@ -1,18 +1,39 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.13 2000/08/31 16:08:38 richardc Exp $
+;       $Id: .emacs,v 1.14 2001/06/16 22:56:34 richardc Exp $
 
 (add-to-list 'load-path "~/.elisp")
 
+;; If running under screen, disable C-z.
+(if (and (getenv "STY") (not window-system))
+    (global-unset-key "\C-z"))
 
-(cond ((or (equal (system-name) "mirth") (equal (system-name) "joxer"))
+;; force our cperl mode to be the local one
+(load-file "/home/richardc/.elisp/cperl-mode.el")
+
+(setq frame-title-format (list "" 
+			       'invocation-name "@" 'system-name' ": %b"))
+
+
+(cond ((or (equal (system-name) "mirth.demon.co.uk") (equal (system-name) "joxer.uk.oven.com"))
        (add-to-list 'load-path "~/.elisp/tramp/lisp")
        (require 'tramp)
        (setq tramp-default-method "scp")
        )
       )
 
-(cond ((equal (system-name) "mirth")
-       (load "mutt")
+(cond ((equal (system-name) "mirth.demon.co.uk")
+       (load "python-mode")
+       (add-to-list 'load-path "~/.elisp/monk")
+       (load "monk")
+
+       (monk-dired-bind-extra-keys)
+       (setq monk-volume-command "aumix"
+	     monk-use-cddb-server t
+	     monk-dont-care-no-CD nil
+	     monk-use-face t
+	     monk-dired-monk-command 'monk-other-window)
+       
+       (load "desktop")
        )
       )    
 
@@ -21,7 +42,7 @@
        ;; yup - we're in XEmacs
        (load "vc")
 
-       (cond ((or (equal (system-name) "mirth") (equal (system-name) "joxer"))
+       (cond ((or (equal (system-name) "mirth") (equal (system-name) "joxer.uk.oven.com"))
 	      (add-to-list 'Info-directory-list "~/.elisp/tramp/texi/")
 	      )
 	     )
@@ -35,13 +56,11 @@
       (t 
        ;; I'm not sure if I like this cond t stuff for defaults
        ;; other emacsen (probably GNU Emacs)
-       (load "highline")
-       (highline-mode)
        
        (load "mmm-mode")
        (mmm-add-find-file-hook)
        
-       (global-font-lock-mode)
+       (global-font-lock-mode 1)
        
        (custom-set-faces
 	'(mmm-default-submode-face ((t (:background "gray9"))))
@@ -87,3 +106,12 @@
           '(lambda ()
              (make-local-variable 'write-contents-hooks)
              (add-hook 'write-contents-hooks 'hacking-untabify-buffer)))
+(custom-set-variables
+  ;; custom-set-variables was added by Custom -- don't edit or cut/paste it!
+  ;; Your init file should contain only one such instance.
+ '(ftp-program "sftp"))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom -- don't edit or cut/paste it!
+  ;; Your init file should contain only one such instance.
+ '(highline-face ((t (:background "gray30"))))
+ '(mmm-default-submode-face ((t (:background "gray9")))))

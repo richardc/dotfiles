@@ -1,43 +1,40 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.10 2000/07/24 21:32:53 richardc Exp $
+;       $Id: .emacs,v 1.11 2000/07/24 23:32:25 richardc Exp $
 
 (setq load-path (cons (expand-file-name "~/.stuff/elisp") load-path))
 
 (defvar running-xemacs (string-match "XEmacs\\|Lucid" emacs-version))
 
-;; there must be a better way to achieve this
-(if running-xemacs
-    (defun hacking-emacs-specific ()
-      "what to do for xemacs"
-      (load "vc")
+(cond (running-xemacs
+       ;; yup - we're in XEmacs
+       (load "vc")
+       
+       (require 'eicq)
+       (setq eicq-user-alias "me")
+       (eicq-world-update)
+       
+       (turn-on-lazy-shot)
+       (custom-set-variables
+	'(gnuserv-program (concat exec-directory "/gnuserv"))
+	'(toolbar-visible-p nil))
 
-      (require 'eicq)
-      (setq eicq-user-alias "me")
-      (eicq-world-update)
-
-      (turn-on-lazy-shot)
-      (custom-set-variables
-       '(gnuserv-program (concat exec-directory "/gnuserv"))
-       '(toolbar-visible-p nil))
+       )
+      (t 
+       ;; I'm not sure if I like this cond t stuff for defaults
+       ;; other emacsen (probably GNU Emacs)
+       (load "highline")
+       (highline-mode)
+       
+       (load "mmm-mode")
+       (mmm-add-find-file-hook)
+       
+       (global-font-lock-mode)
+       
+       (custom-set-faces
+	'(mmm-default-submode-face ((t (:background "gray9"))))
+	'(highline-face ((t (:background "gray30")))))
+       )
       )
-  
-  (defun hacking-emacs-specific ()
-    "what to do for gnuish emacs"
-    (load "highline")
-    (highline-mode)
-
-    (load "mmm-mode")
-    (mmm-add-find-file-hook)
-    
-    (global-font-lock-mode)
-    
-    (custom-set-faces
-     '(mmm-default-submode-face ((t (:background "gray9"))))
-     '(highline-face ((t (:background "gray30")))))
-    )
-  )
-
-(hacking-emacs-specific)
 
 (load "mutt")
 
@@ -79,4 +76,3 @@
           '(lambda ()
              (make-local-variable 'write-contents-hooks)
              (add-hook 'write-contents-hooks 'hacking-untabify-buffer)))
-

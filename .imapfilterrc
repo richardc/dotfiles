@@ -1,4 +1,5 @@
 set timeout = 120
+expunge = yes
 
 # define an account, and incoming folders
 account fotango richardc@fotango.com@mx1.fotango.com ssl3

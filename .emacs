@@ -11,6 +11,8 @@
 ;; force our cperl mode to be the local one
 (load-file "~/.elisp/cperl-mode.el")
 
+(load-file "~/.elisp/vc-svn.el")
+
 (setq frame-title-format (list "" 
 			       'invocation-name "@" 'system-name' ": %b"))
 

@@ -1,5 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.34 2002/01/08 23:02:14 richardc Exp $
+;       $Id: .emacs,v 1.35 2002/08/17 11:53:26 richardc Exp $
 
 (add-to-list 'load-path "~/.elisp")
 (add-to-list 'load-path "~/.elisp/tramp/lisp")
@@ -38,6 +38,7 @@
 (cond ((string-match "XEmacs\\|Lucid" emacs-version)
        ;; yup - we're in XEmacs
        (load "vc")
+;;       (setq tty-erase-char nil)
 
        (gnuserv-start)
        (turn-on-lazy-shot)
@@ -50,7 +51,8 @@
        ;; I'm not sure if I like this cond t stuff for defaults
        ;; other emacsen (probably GNU Emacs)
 
-       (server-start)
+       ;;(server-start)
+       (gnuserv-start)
        
        (global-font-lock-mode 1)
        ;(transient-mark-mode)
@@ -69,7 +71,7 @@
       indent-tabs-mode nil
       next-line-add-newlines nil
       diff-command "diff -u"
-      diff-switches '("-u")
+      diff-switches '("-u", "-p")
       c-default-style "linux"
       c-basic-offset 4)
 

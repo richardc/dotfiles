@@ -1,5 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.9 2000/07/19 20:43:49 richardc Exp $
+;       $Id: .emacs,v 1.10 2000/07/24 21:32:53 richardc Exp $
 
 (setq load-path (cons (expand-file-name "~/.stuff/elisp") load-path))
 
@@ -11,7 +11,14 @@
       "what to do for xemacs"
       (load "vc")
 
+      (require 'eicq)
+      (setq eicq-user-alias "me")
+      (eicq-world-update)
+
       (turn-on-lazy-shot)
+      (custom-set-variables
+       '(gnuserv-program (concat exec-directory "/gnuserv"))
+       '(toolbar-visible-p nil))
       )
   
   (defun hacking-emacs-specific ()

@@ -1,0 +1,27 @@
+logfile = /Users/richardc/.imapfilter/log
+set timeout = 120
+expunge = yes
+
+# define an account, and incoming folders
+account fotango richardc@fotango.com@mx1.fotango.com ssl3
+  folder inbox   INBOX
+
+# define filters
+filter systems
+  header List-Post "systems@"
+action move systems
+
+filter team
+  header List-Post "team@"
+action move team
+
+filter development
+  header List-Post "development@"
+action move development
+
+filter nagios
+  header from "nagios@argus.cig.private.net"
+action move systems.nagios
+
+# declare which filters to apply to which incoming folders
+job nagios,systems,team,development inbox

@@ -1,4 +1,3 @@
-logfile = /Users/richardc/.imapfilter/log
 set timeout = 120
 expunge = yes
 

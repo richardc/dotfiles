@@ -1,5 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.31 2001/11/12 15:25:34 richardc Exp $
+;       $Id: .emacs,v 1.32 2001/11/14 10:40:28 richardc Exp $
 
 (add-to-list 'load-path "~/.elisp")
 (add-to-list 'load-path "~/hck/tramp/lisp")
@@ -120,6 +120,8 @@
       )
 
 (setq cperl-indent-level 4
+      flyspell-default-dictionary "british"
+      ispell-dictionary "british"
       line-number-mode 1
       column-number-mode 1
       indent-tabs-mode nil

@@ -115,6 +115,7 @@ export CVS_RSH=ssh
 export PILOTRATE=38400
 export PATH="$HOME/bin:/sw/bin:/sw/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/X11R6/bin"
 export LANG=C
+export PAGER=less
 export FRAMEBUFFER=/dev/fb0
 export SYBASE=/usr/local/freetds
 export QT_XFT=true

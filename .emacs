@@ -1,5 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.28 2001/09/21 12:38:24 richardc Exp $
+;       $Id: .emacs,v 1.29 2001/10/07 19:10:08 richardc Exp $
 
 (add-to-list 'load-path "~/.elisp")
 (add-to-list 'load-path "~/hck/tramp/lisp")
@@ -9,7 +9,7 @@
     (global-unset-key "\C-z"))
 
 ;; force our cperl mode to be the local one
-(load-file "/home/richardc/.elisp/cperl-mode.el")
+(load-file "~/.elisp/cperl-mode.el")
 
 (setq frame-title-format (list "" 
 			       'invocation-name "@" 'system-name' ": %b"))
@@ -17,6 +17,12 @@
 (require 'tramp)
 (setq tramp-default-method "su")
 (load "mutt")
+
+;(load "erc")
+;(setq erc-server "irc.rhizomatic.net" 
+;      erc-port 6667 
+;      erc-nick "rjc_erc"
+;      erc-user-name (user-full-name))
 
 
 (cond ((string-match "XEmacs\\|Lucid" emacs-version)
@@ -155,4 +161,3 @@
           '(lambda ()
              (make-local-variable 'write-contents-hooks)
              (add-hook 'write-contents-hooks 'hacking-untabify-buffer)))
-

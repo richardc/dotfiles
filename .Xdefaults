@@ -8,6 +8,10 @@ xterm.vt100.saveLines: 500
 xterm.vt100.scrollBar: true
 xterm.vt100.rightScrollBar: true
 xterm.vt100.visualBell: true
+xterm.vt100.cursorBlink: true
+xterm.vt100.background: black
+xterm.vt100.foreground: wheat
+xterm.vt100.backarrowKey: false
 xterm.font: fixed
 wterm*font: 6x13
 wterm*saveLines: 500

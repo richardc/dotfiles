@@ -1,4 +1,4 @@
-# $Id: .muttrc,v 1.13 2001/07/18 00:39:24 richardc Exp $
+# $Id: .muttrc,v 1.14 2001/07/26 23:26:34 richardc Exp $
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -56,6 +56,7 @@ set copy=yes			# always save a copy of outgoing messages
 set edit_headers		# let me edit the message header when composing
 #set editor="jed %s -tmp -f mail_mode"
 set editor="gnuclient -nw"
+#set editor="nano -r 72"
 #set editor=vi
 #set fast_reply			# skip initial prompts when replying
 #set fcc_attach			# keep attachments in copies of sent messages?

@@ -124,7 +124,7 @@ export QT_XFT=true
 export INFOPATH="/sw/share/info:/usr/share/info"
 export MANPATH="/sw/share/man:/usr/share/man:/usr/X11R6/man"
 # we're going to drink the fink kool-aid a little
-export PERL5LIB="/sw/lib/perl5"
+export PERL5LIB="/sw/lib/perl5:/sw/lib/perl5/darwin"
 prompt_newline=$'\n%{\r%}'
 PROMPT='%B[%D{%Y-%m-%d} %*] %n@%m:%~%b$prompt_newline%# '
 

@@ -1,0 +1,4 @@
+Host localhost
+Port 2143
+RequireSSL no
+Mailbox /home/richardc/Mail/inbox

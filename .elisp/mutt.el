@@ -185,7 +185,7 @@ trailing whitespace."
 	(t
 	 ;; gnu emacs 21
 	(server-edit "Done")
-	(kill-buffer nil)
+	;;(kill-buffer nil)
 	)
 	)
   ;; no server mode

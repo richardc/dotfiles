@@ -6,15 +6,15 @@
 
 @folks = qw(
             2shortplanks
-            Abigail abw acme adam ajt ajtaylor Allison amelia ask autarch
-            babbage barbie Beatnik binky blech BooK boo_radley brian_d_foy broquaint
+            Abigail abw acme adam ajt ajtaylor Allison amelia ask autarch autrijus
+            babbage barbie Beatnik binky blech BooK boo_radley brian_d_foy broquaint bronto
             cbrooks chip chromatic cwest cogent ct
-            da darobin davorg djberg96 dws dwhite21787 drhyde
+            da darobin davorg defyance djberg96 dws dwhite21787 drhyde dc2000
             Elian Elthek ethan exeunt
             Fletch
             garron gav gbarr geoff gizmo_mathboy gnat godoy grinder graouts
             hex hfb
-            IlyaM ingy inkdroid
+            iburrell IlyaM ingy inkdroid
             james jbc jdavidb jdavidboyd jdporter jeffsu jhi jjohn jns jmerelo jmcnamara joedoc johanvdb jouke jonasbn jplindstrom
             Kake kellan KM koschei krellis
             lachoy lenzo
@@ -24,11 +24,12 @@
             pate pdcawley pemungkah petdance pne pudge Purdy
             quidity
             rafael Ranguard redsquirrel richardc rjray robin rob_au Robrt russell
-            samtregar schwern sherab sheriff_p shockme Simon Skud sky sphyg statebelt stephen
+            samtregar schwern sherab sheriff_p shockme Simon Skud sky sphyg  spur statebelt stephen
             tagg TeeJay Theory tinman tmtm tonyc toma TorgoX triv
             unimatrix
             vek VSarkiss vsergu
             WebDragon Whammo Wob
+            yudel
             ZenHam ziggy zorknapp
            );
 

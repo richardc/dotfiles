@@ -1,22 +1,27 @@
-# $Id: .muttrc,v 1.4 2000/06/26 20:50:04 richardc Exp $
+# $Id: .muttrc,v 1.5 2000/09/26 22:14:41 richardc Exp $
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 # Note: $folder should be set _before_ any other path vars where `+' or `='
 # is used because paths are expanded when parsed
 #
-set folder=~/.mail		# where i keep my mailboxes
+set folder=~/Mail		# where i keep my mailboxes
 
 source ~/.stuff/gpg.rc
 
 set query_command="lbdbq %s"
 
+#do unto others, as they just did to you
+set pgp_replyencrypt
+set pgp_replysign
+
 set from="Richard Clamp <richardc@oven.com>"
+set alternates="(richardc?@oven.com|@mirth.demon.co.uk|richardc@unixbeard.net)" 
 
 set envelope_from
 #set abort_unmodified=yes	# automatically abort replies if I don't
 				# change the message
-set alias_file=~/.mail_aliases	# where I keep my aliases
+set alias_file=~/Mail/aliases	# where I keep my aliases
 #set allow_8bit			# never do Q-P encoding on legal 8-bit chars
 #set arrow_cursor		# use -> instead of hiliting the whole line
 #set ascii_chars		# use ASCII instead of ACS chars for theads
@@ -31,7 +36,7 @@ set confirmcreate		# prompt when creating new files
 set copy=yes			# always save a copy of outgoing messages
 #set delete=yes			# purge deleted messages without asking
 set edit_headers		# let me edit the message header when composing
-set editor="emacs"	# editor to use when composing messages
+set editor="e"	# editor to use when composing messages
 #set fast_reply			# skip initial prompts when replying
 #set fcc_attach			# keep attachments in copies of sent messages?
 #set force_name			# fcc by recipient, create if mailbox doesn't exist
@@ -238,6 +243,7 @@ bind pager G bottom	# just like vi and less
 
 #send-hook mutt- 'set signature=~/.sigmutt; my_hdr From: Mutt User <user@example.com>'
 send-hook void@slab.org 'set signature=~/.signature.unixbeard; my_hdr From: Richard Clamp <richardc@unixbeard.net>'
+send-hook yapc-europe@lists.dircon.co.uk 'set signature=~/.signature.mirth; my_hdr From: Richard Clamp <richardc@mirth.demon.co.uk>'
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #
@@ -275,7 +281,7 @@ send-hook void@slab.org 'set signature=~/.signature.unixbeard; my_hdr From: Rich
 #
 #	alias <name> <address> [ , <address> ... ]
 
-source ~/.mail_aliases
+source ~/Mail/aliases
 
 #alias exam "\# to annoy michael" <user@host>
 #alias me Michael Elkins <michael> # me!
@@ -293,7 +299,7 @@ source ~/.mail_aliases
 
 #mailboxes ! +mutt-dev +mutt-users +open-pgp +wmaker +hurricane +vim +ietf \
 	+drums
-mailboxes `echo /home/richardc/.mail/inbox /home/richardc/.mail/list_*`
+mailboxes `echo /home/richardc/Mail/inbox /home/richardc/Mail/list_*`
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #

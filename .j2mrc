@@ -1,19 +1,19 @@
 # -*- CPerl -*-
-#       $Id: .j2mrc,v 1.35 2002/08/28 11:49:42 richardc Exp $
+#       $Id: .j2mrc,v 1.36 2002/09/03 15:04:26 richardc Exp $
 
 # I am very interested in your ideas, please add me to your mailing list
 
 @folks = qw(
             2shortplanks
             Abigail abw acme adam ajt ajtaylor Allison amelia ask autarch
-            barbie binky blech BooK boo_radley broquaint
+            barbie binky blech BooK boo_radley brian_d_foy broquaint
             chip chromatic cwest cogent ct
             da darobin davorg djberg96 dws drhyde
             Elian Elthek exeunt
             garron gav gbarr geoff gizmo_mathboy gnat godoy grinder graouts
             hex hfb
             IlyaM ingy
-            james jbc jdavidb jdporter jeffsu jhi jjohn jns jouke jonasbn jplindstrom
+            james jbc jdavidb jdporter jeffsu jhi jjohn jns jmcnamara jouke jonasbn jplindstrom
             kellan KM koschei krellis
             lachoy lenzo
             mako132 marcel mattriffle Matts mendel merlyn miyagawa muttley mr_stru

@@ -114,7 +114,6 @@ export CVSUMASK=002
 export CVS_RSH=ssh
 export PILOTRATE=38400
 export PATH="$HOME/bin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/X11R6/bin:/usr/games"
-export PERL5LIB=~/archive/perl_lib/local/lib/perl/5.6.1:~/archive/perl_lib/local/share/perl/5.6.1
 export LANG=C
 export PAGER=less
 export FRAMEBUFFER=/dev/fb0

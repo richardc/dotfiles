@@ -1,31 +1,32 @@
-#	$Id: .j2mrc,v 1.32 2002/08/17 11:59:49 richardc Exp $	
+# -*- CPerl -*-
+#       $Id: .j2mrc,v 1.33 2002/08/18 13:09:04 richardc Exp $
 
 # I am very interested in your ideas, please add me to your mailing list
 
 @folks = qw(
-	    2shortplanks 
-            Abigail abw acme adam ajt ajtaylor Allison amelia ask autarch 
+            2shortplanks
+            Abigail abw acme adam ajt ajtaylor Allison amelia ask autarch
             barbie binky blech BooK boo_radley broquaint
-            chip chromatic cwest cogent 
-            darobin davorg djberg96 drhyde 
-            Elian Elthek exeunt 
+            chip chromatic cwest cogent
+            da darobin davorg djberg96 dws drhyde
+            Elian Elthek exeunt
             garron gav gbarr geoff gizmo_mathboy gnat godoy grinder graouts
-            hex hfb 
-            IlyaM ingy 
-            james jbc jdavidb jdporter jeffsu jhi jjohn jns jouke jplindstrom
-            kellan KM koschei krellis 
+            hex hfb
+            IlyaM ingy
+            james jbc jdavidb jdporter jeffsu jhi jjohn jns jouke jonasbn jplindstrom
+            kellan KM koschei krellis
             lachoy lenzo
             mako132 marcel mattriffle Matts mendel merlyn miyagawa muttley mr_stru
-            NatalieF nivek 
-            Odud oneiron 
+            NatalieF nivek
+            Odud oneiron
             pdcawley pemungkah petdance pne pudge Purdy
-            quidity 
-            rafael Ranguard redsquirrel richardc rjray robin Robrt russell 
-            schwern sherab sheriff_p Simon Skud sky skyhook sphyg statebelt
+            quidity
+            rafael Ranguard redsquirrel richardc rjray robin Robrt russell
+            schwern sherab sheriff_p Simon Skud sky sphyg statebelt
             TeeJay Theory tinman tmtm tonyc TorgoX triv
-            unimatrix 
+            unimatrix
             vek vsergu
-            Whammo Wob 
+            Whammo Wob
             ZenHam ziggy
            );
 

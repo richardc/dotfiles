@@ -51,6 +51,7 @@
       )
 
 (setq cperl-indent-level 4
+      cperl-indent-parens-as-block 1
       flyspell-default-dictionary "british"
       ispell-dictionary "british"
       line-number-mode 1

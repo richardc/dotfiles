@@ -1,5 +1,5 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
-# 	$Id: .bashrc,v 1.2 2000/04/24 20:07:28 richardc Exp $	
+# 	$Id$	
 
 umask 002
 export CVSUMASK=002

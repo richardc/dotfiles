@@ -1,5 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.38 2002/10/17 10:46:32 richardc Exp $
+;       $Id$
 
 (add-to-list 'load-path "~/.elisp")
 (add-to-list 'load-path "~/.elisp/tramp/lisp")
@@ -19,10 +19,12 @@
 ;(setq tramp-verbose 10
 ;      tramp-debug-buffer t)
 (load "mutt")
+;(require 'vc)
+;(require 'vc-svn)
 
 (cond ((string-match "XEmacs\\|Lucid" emacs-version)
        ;; yup - we're in XEmacs
-       (load "vc")
+       (require 'vc)
 
        (gnuserv-start)
        (turn-on-lazy-shot)
@@ -90,3 +92,6 @@
           '(lambda ()
              (make-local-variable 'write-contents-hooks)
              (add-hook 'write-contents-hooks 'hacking-untabify-buffer)))
+(custom-set-variables
+ '(load-home-init-file t t))
+(custom-set-faces)

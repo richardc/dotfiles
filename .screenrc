@@ -1,4 +1,4 @@
-#	$rcs = ' $Id: .screenrc,v 1.8 2002/08/17 12:02:18 richardc Exp $ ' ;	
+#	$rcs = ' $Id$ ' ;	
 
 escape ^]]
 bind ^[ paste .

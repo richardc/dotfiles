@@ -1,5 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.15 2001/06/25 13:31:58 richardc Exp $
+;       $Id: .emacs,v 1.16 2001/07/18 00:39:49 richardc Exp $
 
 (add-to-list 'load-path "~/.elisp")
 
@@ -13,48 +13,27 @@
 (setq frame-title-format (list "" 
 			       'invocation-name "@" 'system-name' ": %b"))
 
-(cond ((or (equal (system-name) "mirth.demon.co.uk") (equal (system-name) "joxer.uk.oven.com"))
-       (add-to-list 'load-path "~/.elisp/tramp/lisp")
-       (require 'tramp)
-       (setq tramp-default-method "scp")
-       )
-      )
-
-(cond ((equal (system-name) "mirth.demon.co.uk")
-       (load "python-mode")
-       (add-to-list 'load-path "~/.elisp/monk")
-       (load "monk")
-       (load "mutt")
-       (server-start)
-
-       (monk-dired-bind-extra-keys)
-       (setq monk-volume-command "aumix"
-	     monk-use-cddb-server t
-	     monk-dont-care-no-CD nil
-	     monk-use-face t
-	     monk-dired-monk-command 'monk-other-window)
-       )
-      )    
+(load "python-mode")
+(load "mutt")
 
 
 (cond ((string-match "XEmacs\\|Lucid" emacs-version)
        ;; yup - we're in XEmacs
        (load "vc")
 
-       (cond ((or (equal (system-name) "mirth") (equal (system-name) "joxer.uk.oven.com"))
-	      (add-to-list 'Info-directory-list "~/.elisp/tramp/texi/")
-	      )
-	     )
-
        (turn-on-lazy-shot)
        (custom-set-variables
+	'(load-home-init-file t t)
 	'(gnuserv-program (concat exec-directory "/gnuserv"))
 	'(toolbar-visible-p nil))
-
+       (custom-set-faces)
+       (gnuserv-start)
        )
       (t 
        ;; I'm not sure if I like this cond t stuff for defaults
        ;; other emacsen (probably GNU Emacs)
+
+       (server-start)
        
        (load "mmm-mode")
        (mmm-add-find-file-hook)
@@ -73,7 +52,9 @@
       indent-tabs-mode nil
       next-line-add-newlines nil
       flyspell-default-dictionary "british"
-      c-default-style "linux")
+      diff-command "diff -u"
+      c-default-style "linux"
+      c-basic-offset 4)
 
 (iswitchb-default-keybindings)
 

@@ -122,7 +122,7 @@ HISTFILE=~/.zshhistory
 HISTSIZE=3000
 SAVEHIST=3000
 
-stty quit '^~'
+stty erase '^?' quit '^~'
 
 case $TERM in
     xterm*)

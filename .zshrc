@@ -117,6 +117,10 @@ export PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/bin:/
 export FRAMEBUFFER=/dev/fb0
 export SYBASE=/usr/local/freetds
 export QT_XFT=true
+export http_proxy=http://localhost:8080/
+export https_proxy=http://localhost:8080/
+export ftp_proxy=http://localhost:8080/
+export WWWOFFLE_PROXY=localhost:8080:8081
 
 HISTFILE=~/.zshhistory
 HISTSIZE=3000

@@ -1,5 +1,5 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.19 2001/07/18 21:57:24 richardc Exp $
+;       $Id: .emacs,v 1.20 2001/07/18 22:21:11 richardc Exp $
 
 (add-to-list 'load-path "~/.elisp")
 
@@ -87,15 +87,11 @@
 	'(mutt-header-keyword-face ((((type tty) (class color)) (:foreground "brightgreen")) 
 				     (((class color) (background dark)) (:foreground "light coral")) 
 				     (((class color) (background light)) (:foreground "green4")) (t (:bold t))))
-	'(mutt-header-value-face ((((type tty) (class color)) (:foreground "green")) 
-				     (((class color) (background dark)) (:foreground "light coral")) 
-				     (((class color) (background light)) (:foreground "green4")) (t (:bold t))))
 	'(mutt-quoted-text-face ((((type tty) (class color)) (:foreground "yellow")) 
 				  (((class color) (background dark)) (:foreground "gray80")) 
 				  (((class color) (background light)) (:foreground "blue4")) 
 				  (((class grayscale) (background light)) (:foreground "DimGray" :bold t :italic t)) 
 				  (((class grayscale) (background dark)) (:foreground "LightGray" :bold t :italic t)) (t (:bold t))))
-
 	'(yellow ((((type x) (class color) (background light)) (:foreground "yellow4")) 
 		  (((type tty) (class color)) (:foreground "brightyellow"))) t)
 	'(green ((((type x) (class color)) (:foreground "green4")) (t (:foreground "green"))) t)

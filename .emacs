@@ -2,7 +2,6 @@
 ;       $Id$
 
 (add-to-list 'load-path "~/.elisp")
-(add-to-list 'load-path "~/.elisp/tramp/lisp")
 
 ;; If running under screen, disable C-z.
 (if (and (getenv "STY") (not window-system))
@@ -17,7 +16,7 @@
 			       'invocation-name "@" 'system-name' ": %b"))
 
 (require 'tramp)
-(setq tramp-default-method "su")
+(setq tramp-default-method "ssh")
 ;(setq tramp-verbose 10
 ;      tramp-debug-buffer t)
 (load "mutt")

@@ -1,4 +1,4 @@
-# $Id: .muttrc,v 1.8 2001/06/22 00:16:59 richardc Exp $
+# $Id: .muttrc,v 1.10 2001/07/01 00:12:17 richardc Exp $
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -320,7 +320,7 @@ source ~/Mail/aliases
 
 #mailboxes ! +mutt-dev +mutt-users +open-pgp +wmaker +hurricane +vim +ietf \
 	+drums
-mailboxes `echo +inbox ~/Mail/list_*`
+mailboxes `echo +inbox ~/Mail/last_* ~/Mail/list_*`
 #mailboxes `echo +inbox ~/Mail/*/*/*`
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

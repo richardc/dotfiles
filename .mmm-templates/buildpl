@@ -1,7 +1,7 @@
 use strict;
 use Module::Build;
 Module::Build->new(
-    module_name => '',
+    module_name => '[% modulename %]',
     license     => 'perl',
     requires    => {
         'perl' => 5.006,

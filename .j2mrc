@@ -7,10 +7,11 @@
 @folks = qw(
             2shortplanks
             Abigail abw acme adam ajt ajtaylor Allison amelia ask autarch
-            barbie binky blech BooK boo_radley brian_d_foy broquaint
+            barbie Beatnik binky blech BooK boo_radley brian_d_foy broquaint
             chip chromatic cwest cogent ct
-            da darobin davorg djberg96 dws drhyde
+            da darobin davorg djberg96 dws dwhite21787 drhyde
             Elian Elthek exeunt
+            Fletch
             garron gav gbarr geoff gizmo_mathboy gnat godoy grinder graouts
             hex hfb
             IlyaM ingy
@@ -24,11 +25,11 @@
             quidity
             rafael Ranguard redsquirrel richardc rjray robin Robrt russell
             samtregar schwern sherab sheriff_p shockme Simon Skud sky sphyg statebelt
-            TeeJay Theory tinman tmtm tonyc TorgoX triv
+            tagg TeeJay Theory tinman tmtm tonyc TorgoX triv
             unimatrix
-            vek vsergu
+            vek VSarkiss vsergu
             Whammo Wob
-            ZenHam ziggy
+            ZenHam ziggy zorknapp
            );
 
 @recipients = qw( richardc@mirth.demon.co.uk );

@@ -15,7 +15,7 @@ duplicates/
 
 # W ait
 # c arbon copy
-:0 Wc: spamc.lock
+:0 Wc
 * < 256000
 | spamc -c
 
@@ -26,4 +26,4 @@ maybe_spam/
 WHERE=`where_to_guv`
 
 :0
-${MAILDIR}/${WHERE}/
+${WHERE}/

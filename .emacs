@@ -1,8 +1,8 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.32 2001/11/14 10:40:28 richardc Exp $
+;       $Id: .emacs,v 1.33 2001/12/20 15:49:27 richardc Exp $
 
 (add-to-list 'load-path "~/.elisp")
-(add-to-list 'load-path "~/hck/tramp/lisp")
+(add-to-list 'load-path "~/.elisp/tramp/lisp")
 
 ;; If running under screen, disable C-z.
 (if (and (getenv "STY") (not window-system))
@@ -16,6 +16,8 @@
 
 (require 'tramp)
 (setq tramp-default-method "su")
+;(setq tramp-verbose 10
+;      tramp-debug-buffer t)
 (load "mutt")
 
 (load "erc")

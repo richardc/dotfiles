@@ -1,17 +1,24 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id: .emacs,v 1.11 2000/07/24 23:32:25 richardc Exp $
+;       $Id: .emacs,v 1.12 2000/08/10 13:50:51 richardc Exp $
 
-(setq load-path (cons (expand-file-name "~/.stuff/elisp") load-path))
+(add-to-list 'load-path "~/.stuff/elisp")
+(add-to-list 'load-path "~/.stuff/elisp/tramp/lisp")
+(require 'tramp)
+(setq tramp-default-method "scp")
 
 (defvar running-xemacs (string-match "XEmacs\\|Lucid" emacs-version))
 
 (cond (running-xemacs
        ;; yup - we're in XEmacs
        (load "vc")
+
+       (add-to-list 'Info-directory-list "~/.stuff/elisp/tramp/texi/")
+
+       (setq efs-generate-anonymous-password "richardc@mirth.demon.co.uk")
        
-       (require 'eicq)
-       (setq eicq-user-alias "me")
-       (eicq-world-update)
+      ;; (require 'eicq)
+      ;; (setq eicq-user-alias "me")
+      ;; (eicq-world-update)
        
        (turn-on-lazy-shot)
        (custom-set-variables

@@ -1,4 +1,4 @@
-# $Id: .muttrc,v 1.31 2002/03/14 17:02:52 richardc Exp $
+# $Id: .muttrc,v 1.32 2002/03/19 12:12:31 richardc Exp $
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -68,7 +68,7 @@ set editor="emacsclient"
 #set hdr_format="%4C %Z %{%m/%d} [%2N] %-15.15F (%4c) %s"
 set hdr_format="%4C %Z %[%d/%m-%H:%M] %-15.15F (%4c) %s" # format of the index
 set hdrs			# include `my_hdr' lines in outgoing messages
-set header			# include message header when replying
+#set header			# include message header when replying
 set help			# show the help lines
 #set history=20			# number of lines of history to remember
 set hostname="mirth.demon.co.uk"	# my DNS domain

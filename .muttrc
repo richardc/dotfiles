@@ -1,4 +1,4 @@
-# $Id: .muttrc,v 1.14 2001/07/26 23:26:34 richardc Exp $
+# $Id: .muttrc,v 1.15 2001/08/11 00:39:26 richardc Exp $
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -8,7 +8,7 @@
 set folder=~/Mail		# where i keep my mailboxes
 
 # Who I masquerade as:
-set alternates="(richardc?@oven\.com|richardc@tw2\.com|@mirth\.demon\.co\.uk|richardc@unixbeard\.net)" 
+set alternates="(richardc?@oven\.com|richardc@tw2\.com|@mirth\.demon\.co\.uk|richardc@unixbeard\.net|richardc@object1.com|richard.clamp@object1.com)" 
 
 macro generic "<f10>u" ":set signature=~/.signature.unixbeard^M:set from=\"Richard Clamp <richardc@unixbeard.net>\"^M:set ?from^M"
 macro generic "<f10>m" ":set signature=~/.signature.mirth^M:set from=\"Richard Clamp <richardc@mirth.demon.co.uk>\"^M:set ?from^M"
@@ -322,7 +322,7 @@ source ~/Mail/aliases
 
 #mailboxes ! +mutt-dev +mutt-users +open-pgp +wmaker +hurricane +vim +ietf \
 	+drums
-mailboxes `echo +inbox ~/Mail/last_* ~/Mail/list_*`
+mailboxes `echo +inbox ~/Mail/object1_* ~/Mail/last_* ~/Mail/list_*`
 #mailboxes `echo +inbox ~/Mail/*/*/*`
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

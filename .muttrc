@@ -1,4 +1,4 @@
-# $Id: .muttrc,v 1.18 2001/08/17 13:18:24 richardc Exp $
+# $Id: .muttrc,v 1.19 2001/08/23 18:47:10 richardc Exp $
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -36,8 +36,6 @@ set query_command="lbdbq %s"
 set pgp_replyencrypt
 set pgp_replysign
 
-
-
 set envelope_from
 #set abort_unmodified=yes	# automatically abort replies if I don't
 				# change the message
@@ -49,7 +47,7 @@ set alias_file=~/Mail/aliases	# where I keep my aliases
 #set askcc
 set attribution="On %d, %n wrote:"	# how to attribute replies
 set autoedit			# go to the editor right away when composing
-#set auto_tag			# always operate on tagged messages
+set auto_tag			# always operate on tagged messages
 #set charset="iso-8859-1"	# character set for your terminal
 set noconfirmappend		# don't ask me if i want to append to mailboxes
 set confirmcreate		# prompt when creating new files
@@ -354,6 +352,7 @@ hdr_order date from subject to cc
 
 auto_view application/x-gunzip
 auto_view application/x-gzip
+auto_view text/html
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #

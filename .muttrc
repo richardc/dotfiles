@@ -1,4 +1,4 @@
-# $Id: .muttrc,v 1.30 2001/12/18 18:18:05 richardc Exp $
+# $Id: .muttrc,v 1.31 2002/03/14 17:02:52 richardc Exp $
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -19,13 +19,12 @@ macro pager   "<f10>m" ":set signature=~/.signature.mirth^M:set from=\"Richard C
 macro pager   "<f10>o" ":set signature=~/.signature.oven^M:set from=\"Richard Clamp <richardc@oven.com>\"^M:set ?from^M"
 
 #send-hook .             "set signature=~/.signature.oven; set from=\"Richard Clamp <richardc@oven.com>\""
-send-hook void@slab\.org "set signature=~/.signature.unixbeard; set from=\"Richard Clamp <richardc@unixbeard.net>\""
 send-hook yapc-europe@lists\.dircon\.co\.uk \
 			 "set signature=~/.signature.mirth; set from=\"Richard Clamp <richardc@mirth.demon.co.uk>\""
 
-folder-hook .       "set signature=~/.signature.unixbeard; set from=\"Richard Clamp <richardc@unixbeard.net>\"; set hostname=\"mirth.demon.co.uk\""
-folder-hook list_london.pm   "set signature=~/.signature.mirth; set from=\"Richard Clamp <richardc@mirth.demon.co.uk>\"; set hostname=\"mirth.demon.co.uk\""
-folder-hook object1 "set signature=~/.signature.object1; set from=\"Richard Clamp <richardc@object1.com>\"; set hostname=\"object1.com\"""
+folder-hook .       "set signature=~/.signature.unixbeard; set from=\"Richard Clamp <richardc@unixbeard.net>\"; set hostname=\"mirth.demon.co.uk\"; my_hdr Bcc: richardc@unixbeard.net"
+folder-hook list_london.pm   "set signature=~/.signature.mirth; set from=\"Richard Clamp <richardc@mirth.demon.co.uk>\"; set hostname=\"mirth.demon.co.uk\"; my_hdr Bcc: richardc@mirth.demon.co.uk"
+folder-hook object1 "set signature=~/.signature.object1; set from=\"Richard Clamp <richardc@object1.com>\"; set hostname=\"object1.com\"; my_hdr Bcc: richardc@object1.com"
 
 set use_domain
  
@@ -68,8 +67,8 @@ set editor="emacsclient"
 #set forward_quote		# quote the header and body of forward msgs
 #set hdr_format="%4C %Z %{%m/%d} [%2N] %-15.15F (%4c) %s"
 set hdr_format="%4C %Z %[%d/%m-%H:%M] %-15.15F (%4c) %s" # format of the index
-#set hdrs			# include `my_hdr' lines in outgoing messages
-#set header			# include message header when replying
+set hdrs			# include `my_hdr' lines in outgoing messages
+set header			# include message header when replying
 set help			# show the help lines
 #set history=20			# number of lines of history to remember
 set hostname="mirth.demon.co.uk"	# my DNS domain

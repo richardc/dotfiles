@@ -1,4 +1,4 @@
-# $Id: .muttrc,v 1.32 2002/03/19 12:12:31 richardc Exp $
+# $Id: .muttrc,v 1.33 2002/03/27 11:56:10 richardc Exp $
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -23,7 +23,7 @@ send-hook yapc-europe@lists\.dircon\.co\.uk \
 			 "set signature=~/.signature.mirth; set from=\"Richard Clamp <richardc@mirth.demon.co.uk>\""
 
 folder-hook .       "set signature=~/.signature.unixbeard; set from=\"Richard Clamp <richardc@unixbeard.net>\"; set hostname=\"mirth.demon.co.uk\"; my_hdr Bcc: richardc@unixbeard.net"
-folder-hook list_london.pm   "set signature=~/.signature.mirth; set from=\"Richard Clamp <richardc@mirth.demon.co.uk>\"; set hostname=\"mirth.demon.co.uk\"; my_hdr Bcc: richardc@mirth.demon.co.uk"
+folder-hook list_london.pm   "set signature=~/.signature.mirth; set from=\"Richard Clamp <richardc@mirth.demon.co.uk>\"; set hostname=\"mirth.demon.co.uk\"; my_hdr Bcc: richardc@unixbeard.net"
 folder-hook object1 "set signature=~/.signature.object1; set from=\"Richard Clamp <richardc@object1.com>\"; set hostname=\"object1.com\"; my_hdr Bcc: richardc@object1.com"
 
 set use_domain

@@ -114,13 +114,13 @@ umask 002
 
 export CVSUMASK=002
 export CVS_RSH=ssh
-export PILOTRATE=38400
+#export PILOTRATE=38400
 export PATH="$HOME/bin:/opt/blackdown-jdk-1.4.1/bin:/opt/Acrobat5:/usr/lib/ccache/bin:/usr/local/bin:/usr/local/sbin:/sw/bin:/sw/sbin:/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/games"
 export LANG=C
 export PAGER=less
-export FRAMEBUFFER=/dev/fb0
-export SYBASE=/usr/local/freetds
-export QT_XFT=true
+#export FRAMEBUFFER=/dev/fb0
+#export SYBASE=/usr/local/freetds
+#export QT_XFT=true
 export INFOPATH="/sw/share/info:/usr/share/info"
 export MANPATH="/sw/share/man:/usr/share/man:/usr/X11R6/man"
 # we're going to drink the fink kool-aid a little

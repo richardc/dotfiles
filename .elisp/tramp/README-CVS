@@ -1,0 +1,22 @@
+-*- text -*-
+
+                     Tramp CVS usage instructions
+
+The Tramp version number is in the `tramp-version' variable in
+tramp.el and in the $(VERSION) variable in Makefile.  You should
+update this version number whenever you make a release.  The version
+number looks like X.Y.Z where X is the major revision, Y is the minor
+revision, and Z is a patch level.
+
+Together with each version 2.3.4 there should be a CVS tag V-2-3-4 so
+that each released version can be identified.
+
+Maybe someday the version number should be auto-generated from the
+CVS tag name so that you don't have to maintain the version number
+three times.
+
+Tramp exists in three incarnations.  The CVS tree on Savannah is the
+main version, but there is also a copy in XEmacs and a copy in the
+Emacs CVS.
+
+TODO: explain how to get the main version into XEmacs and into Emacs.

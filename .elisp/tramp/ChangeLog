@@ -1,0 +1,216 @@
+2002-10-06  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	* Makefile (VERSION): Bump.
+
+2002-10-03  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	* Makefile (realclean): New target, delete info file and tarball
+	here.
+
+2002-09-29  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	* Makefile (VERSION): Bump.
+
+2002-09-28  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	* Makefile (cvs-update): New convenience target.
+	(clean): Remove info subdir, too.
+
+2002-09-27  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	Version 2.0.23 released.
+
+2002-09-22  Kai Groﬂjohann  <grossjoh@ls6.informatik.uni-dortmund.de>
+
+	Version 2.0.22 released.
+
+	* Makefile (VERSION): Bump.
+
+	Version 2.0.20 released.
+
+2002-09-16  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	* contrib/README: Explain uudecode.el.
+
+	* contrib/uudecode.el: New file.
+
+2002-09-13  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	Version 2.0.19 released.
+
+	* Makefile (VERSION): Bump.
+
+2002-09-13  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	Version 2.0.18 released.
+
+	* Makefile (VERSION): Bump
+	(MANIFEST): Ignore .#* files.
+
+2002-09-12  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	Version 2.0.17 released.
+
+	* Makefile (tar): Depend on prepversion, not tag.
+	(dist): Depend on tag.
+	(VERSION): Bump.
+
+2002-09-11  Kai Groﬂjohann  <grossjoh@ls6.informatik.uni-dortmund.de>
+
+	* Makefile (VERSION): Bump.
+
+2002-09-01  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	Version 2.0.15 released.
+
+	* Makefile (VERSION): Bump.
+	(dist): Don't try to install on local ftp server unless at
+	university account.
+
+2002-08-22  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	Version 2.0.14 released.
+
+	* Makefile (VERSION): Bump.
+
+2002-08-21  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	Version 2.0.13 released.
+
+	* Makefile (VERSION): Bump.
+
+2002-08-07  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	Version 2.0.12 released.
+
+	* Makefile (VERSION): Bump.
+
+2002-08-05  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+	
+	Version 2.0.11 released.
+
+	* Makefile (xemacs): Adjust to new directory names after moving
+	from SourceForge to Savannah.
+	(VERSION): Bump.
+
+2002-08-04  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	Version 2.0.10 released.
+
+	* Makefile (VERSION): Bump.
+
+2002-08-04  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	Version 2.0.9 released.
+
+	* Makefile (VERSION): Bump.
+
+2002-08-03  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	Version 2.0.8 released.
+
+2002-08-03  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	Version 2.0.7 released.
+
+2002-08-03  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	Version 2.0.6 released.
+
+2002-07-30  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	Version 2.0.5 released.
+
+2002-07-29  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	Version 2.0.4 released.
+
+2002-07-29  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	* Makefile (prepversion): New target, invokes itself in lisp and
+	texi subdirs.
+	(tag): New target, adds a CVS tag for the current version.
+	(dist): Invoke it.
+
+2002-07-26  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	* Makefile: Bump version, preparing for next release.  (But that
+	release is not soon.)
+
+2002-07-24  Steve Youngs  <youngs@xemacs.org>
+
+	* Makefile (all): Export $VERSION to the subdirectories.
+
+2002-07-23  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	* Makefile (VERSION): New version 2.0.3.
+
+2002-07-19  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	Version 2.0.2 released.
+	
+	* Makefile (VERSION): New version 2.0.2.
+
+2002-06-25  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	Version 2.0.1 released.
+	
+	* Makefile (VERSION): New version 2.0.1.
+
+2002-06-19  Kai Groﬂjohann  <grossjoh@ls6.informatik.uni-dortmund.de>
+
+	* tramp.texi: New todo item.
+
+2002-06-17  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	Version 2.0.0 released.
+
+	* Makefile: Include version number.
+	(MANIFEST): Don't include directory name "tramp/" in the entries.
+	(tar): Create a tramp-$(VERSION).tar.gz file.
+	(dist, savannah): tramp.tar.gz renamed to tramp-$(VERSION).tar.gz.
+
+2002-06-16  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	* Makefile (tar): Make sure tarball is world-readable.
+
+2002-06-14  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	* Makefile (MANIFEST): Write it in the source dir, not in "..".
+	(tar): Create only one tarball, don't distinguish between
+	developer release and stable release.
+	(sourceforge): Remove target.  The project has moved to Savannah.
+	(savannah): New target for uploading tarball to Savannah.
+	Also make home page.
+
+2002-01-22  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	* Makefile (xemacs): New target: copy stuff to the XEmacs package
+	source directory.
+
+2002-01-02  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	* contrib/Makefile (clean): Add target.
+	(all): Ditto.
+
+2001-12-06  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	* Makefile.XEmacs (upstream-cvs-update): Remove target.
+	Suggested by Stephen Turnbull.
+
+	* Makefile: Make it work inside XEmacs, too.  From Stephen
+	J. Turnbull <stephen@xemacs.org>.
+	(MANIFEST): New directory layout.
+
+2001-11-07  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	* Makefile (sourceforge): Submit tarballs via FTP automatically.
+
+2001-10-08  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	* Makefile (tar): Add rules for more tarballs.
+
+2001-09-07  Kai Groﬂjohann  <Kai.Grossjohann@CS.Uni-Dortmund.DE>
+
+	* Makefile (Module): Rule for submitting to SourceForge.
+

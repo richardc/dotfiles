@@ -1,0 +1,9 @@
+\initial {S}
+\entry {\code {shell-prompt-pattern}}{19}
+\initial {T}
+\entry {\code {tramp-completion-function-alist}}{17}
+\entry {\code {tramp-default-method}}{16}
+\entry {\code {tramp-default-method-alist}}{16}
+\entry {\code {tramp-remote-path}}{18}
+\entry {\code {tramp-shell-prompt-pattern}}{19}
+\entry {\code {tramp-terminal-type}}{20}

@@ -1,0 +1,10 @@
+\initial {M}
+\entry {\code {my-tramp-parse}}{18}
+\initial {T}
+\entry {\code {tramp-get-completion-function}}{17}
+\entry {\code {tramp-parse-hosts}}{18}
+\entry {\code {tramp-parse-netrc}}{18}
+\entry {\code {tramp-parse-passwd}}{18}
+\entry {\code {tramp-parse-rhosts}}{18}
+\entry {\code {tramp-parse-shosts}}{18}
+\entry {\code {tramp-set-completion-function}}{17}

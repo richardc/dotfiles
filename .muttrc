@@ -1,4 +1,4 @@
-# $Id: .muttrc,v 1.17 2001/08/13 16:58:52 richardc Exp $
+# $Id: .muttrc,v 1.18 2001/08/17 13:18:24 richardc Exp $
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -57,7 +57,8 @@ set copy=yes			# always save a copy of outgoing messages
 #set delete=yes			# purge deleted messages without asking
 set edit_headers		# let me edit the message header when composing
 #set editor="jed %s -tmp -f mail_mode"
-set editor="gnuclient -nw"
+#set editor="gnuclient -nw"
+set editor="emacsclient"
 #set editor="nano -r 72"
 #set editor=vi
 #set fast_reply			# skip initial prompts when replying
@@ -108,8 +109,8 @@ set reverse_name		# use my address as it appears in the message
 				# i am replying to
 set nosave_empty		# remove files when no messages are left
 #set save_name			# save outgoing messages by recipient, if the
-#set sendmail="/usr/bin/ssh www.unixbeard.net /usr/sbin/sendmail -oi -oem"
-set sendmail="/usr/sbin/sendmail -oi -oem"	# how to deliver mail
+set sendmail="/usr/bin/ssh localhost -p 2020 -x /usr/sbin/sendmail -oi -oem"
+#set sendmail="/usr/sbin/sendmail -oi -oem"	# how to deliver mail
 #set shell="/bin/zsh"		# program to use for shell escapes
 
 

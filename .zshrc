@@ -3,7 +3,7 @@
 # options, key bindings, etc.
 
 zshrc_load_status () {
-  echo -n "\r.zshrc load: $* ... \e[0K"
+    echo -n "\r.zshrc load: $* ... \e[0K"
 }
 
 zshrc_load_status 'setting options'
@@ -41,7 +41,7 @@ setopt \
      NO_csh_junkie_quotes \
      NO_csh_null_glob \
         equals \
-     NO_extended_glob \
+        extended_glob \
         extended_history \
         function_argzero \
         glob \
@@ -110,25 +110,40 @@ zshrc_load_status 'setting environment'
 umask 002
 
 PROMPT='%n@%m:%~%# '
-CVSUMASK=002
-PILOTRATE=38400
-CVSROOT=':pserver:richardc@china.tw2.com:/home/cvs/repository'
-PATH="/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/X11R6/bin:/usr/games"
-
+export CVSUMASK=002
+export CVS_RSH=ssh
+export PILOTRATE=38400
+export PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/bin:/usr/bin/X11:/usr/X11R6/bin:/usr/games:/opt/jdk1.3/bin:$HOME/bin"
+export FRAMEBUFFER=/dev/fb0
+export SYBASE=/usr/local/freetds
 
 HISTFILE=~/.zshhistory
 HISTSIZE=3000
 SAVEHIST=3000
 
+stty quit '^~'
+
 case $TERM in
-xterm*)
+    xterm*)
 	precmd () {
-		print -Pn "\e]0;%n@%m:%~\a"
+	    print -Pn "\e]0;%n@%m:%~\a"
 	}
 	preexec () {
-		print -Pn "\e]0;[$*] %n@%m:%~\a"
+	    print -Pn "\e]0;["
+	    print -Rn "$1"
+	    print -Pn "] %n@%m:%~\a"
 	}
-       ;;
+	;;
+    screen*)
+	precmd () {
+	    print -Pn "\e]0;screen> %n@%m:%~\a"
+	}
+	preexec () {
+	    print -Pn "\e]0;screen> ["
+	    print -Rn "$1"
+	    print -Pn "] %n@%m:%~\a"
+	}
+	;;
 esac
 
 if [[ -r ~/.zshrc.local ]]; then

@@ -1,7 +1,7 @@
 # .zshrc is sourced in interactive shells.  It
 # should contain commands to set up aliases, functions,
 # options, key bindings, etc.
-# 	$Id: .zshrc,v 1.20 2002/08/27 09:05:41 richardc Exp $	
+# 	$Id$	
 
 
 zshrc_load_status () {
@@ -120,6 +120,7 @@ export PAGER=less
 export FRAMEBUFFER=/dev/fb0
 export SYBASE=/usr/local/freetds
 export QT_XFT=true
+export MANPATH="/sw/share/man:/usr/share/man"
 prompt_newline=$'\n%{\r%}'
 PROMPT='%B[%D{%Y-%m-%d} %*] %n@%m:%~%b$prompt_newline%# '
 

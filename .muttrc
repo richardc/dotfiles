@@ -1,12 +1,6 @@
-# $Id: .muttrc,v 1.2 2000/06/19 15:44:26 richardc Exp $
+# $Id: .muttrc,v 1.3 2000/06/20 16:23:42 richardc Exp $
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-#
-# ME's personal .muttrc (Mutt 0.92.5)
-#
-# The format of this file is one command per line.  Everything after a pound
-# sign (#) is a comment, unless a backward slash (\) precedes it
-#
 
 # Note: $folder should be set _before_ any other path vars where `+' or `='
 # is used because paths are expanded when parsed
@@ -37,7 +31,7 @@ set confirmcreate		# prompt when creating new files
 set copy=yes			# always save a copy of outgoing messages
 #set delete=yes			# purge deleted messages without asking
 set edit_headers		# let me edit the message header when composing
-set editor="gnuclient"		# editor to use when composing messages
+set editor="xemacs"		# editor to use when composing messages
 #set fast_reply			# skip initial prompts when replying
 #set fcc_attach			# keep attachments in copies of sent messages?
 #set force_name			# fcc by recipient, create if mailbox doesn't exist

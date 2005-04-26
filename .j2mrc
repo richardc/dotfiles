@@ -7,9 +7,9 @@
 @folks = qw(
             2shortplanks
             Abigail abw acme adam ajt ajtaylor Allison ambs amelia ask autarch autrijus
-            babbage barbie Beatnik binky blech BooK boo_radley brian_d_foy broquaint bronto
+            babbage barbie Beatnik binky blech BooK boo_radley brian_d_foy broquaint bronto  Bernhard
             cbrandtbuffalo cbrooks chip chromatic claes cwest cogent ct
-            da darobin davorg defyance djberg96 dws dwhite21787 drhyde dc2000 domm
+            da darobin davorg defyance djberg96 dws dwhite21787 drhyde dc2000 domm Dom2
             Elian Elthek ethan exeunt
             Fletch FoolontheHill
             gabor garron gav gbarr geoff gizmo_mathboy gnat godoy grinder graouts grantm
@@ -25,7 +25,7 @@
             quidity
             rafael Ranguard redsquirrel richardc rjbs rjray robin rob_au Robrt russell
             samtregar schwern sherab sheriff_p shiflett shockme Simon Skud sky SparkyG sphyg  spur statebelt stephen sungo
-            tagg TeeJay Theory tinman tmtm tonyc toma tomhukins TorgoX triv
+            tagg tannie TeeJay Theory tinman tmtm tonyc toma tomhukins TorgoX triv
             unimatrix
             vek VSarkiss vsergu
             WebDragon Whammo Wob
@@ -33,6 +33,6 @@
             ZenHam ziggy zorknapp
            );
 
-@recipients = qw( richardc@mirth.demon.co.uk );
+@recipients = qw( richardc@unixbeard.net );
 
 1;

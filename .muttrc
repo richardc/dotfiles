@@ -31,7 +31,6 @@ folder-hook object1 "set signature=~/.signature.object1; set from=\"Richard Clam
 
 set use_domain
  
-source ~/Mail/gpg.rc
 
 set query_command="lbdbq %s"
 

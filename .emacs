@@ -8,9 +8,9 @@
     (global-unset-key "\C-z"))
 
 ;; force our cperl mode to be the local one
-(load-file "~/.elisp/cperl-mode.el")
+;;(load-file "~/.elisp/cperl-mode.el")
 
-(load-file "~/.elisp/vc-svn.el")
+;;(load-file "~/.elisp/vc-svn.el")
 
 (load-file "~/.elisp/vc-svk.el")
 
@@ -69,7 +69,8 @@
       c-default-style "linux"
       c-basic-offset 4)
 
-(iswitchb-default-keybindings)
+;;(iswitchb-default-keybindings)
+(iswitchb-mode)
 
 (defun perl-mode ()
   "overriden by a dirty hack to invoke cperl-mode"

@@ -1,6 +1,6 @@
 PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin
-MAILDIR=$HOME/Mail
-DEFAULT=$MAILDIR/inbox/
+MAILDIR=$HOME/Maildir
+DEFAULT=$MAILDIR/
 LOGFILE=$MAILDIR/from
 
 # W ait

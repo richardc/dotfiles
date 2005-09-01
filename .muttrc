@@ -5,7 +5,7 @@
 # Note: $folder should be set _before_ any other path vars where `+' or `='
 # is used because paths are expanded when parsed
 #
-set folder=~/Mail		# where i keep my mailboxes
+set folder=~/Maildir		# where i keep my mailboxes
 
 # Who I masquerade as:
 alternates "(richardc?@oven\.com|richardc@tw2\.com|@mirth\.demon\.co\.uk|richardc@unixbeard\.net|richardc@object1.com|richard.clamp@object1.com)" 
@@ -123,7 +123,7 @@ set sort=threads		# primary sorting method
 #set sort_aux=reverse-date-received	# how to sort subthreads
 #set sort_aux=last-date		# date of the last message in thread
 set sort_browser=reverse-date	# how to sort files in the dir browser
-set spoolfile=+inbox		# where my new mail is located
+set spoolfile=~/Maildir	# where my new mail is located
 #set status_format="-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?  %l]---(%s)-%>-(%P)---"
 #set status_on_top		# some people prefer the status bar on top
 #set strict_threads		# don't thread by subject
@@ -334,7 +334,7 @@ source ~/Mail/aliases
 
 #mailboxes ! +mutt-dev +mutt-users +open-pgp +wmaker +hurricane +vim +ietf \
 	+drums
-mailboxes `echo +inbox +maybe_spam ~/Mail/object1_* ~/Mail/last_* ~/Mail/list_*`
+mailboxes `echo +inbox +maybe_spam ~/Maildir/.INBOX.*`
 #mailboxes `echo +inbox ~/Mail/*/*/*`
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

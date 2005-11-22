@@ -538,7 +538,7 @@ Set file properties accordingly."
 	      (add-to-list 'vc-svk-co-paths (list (match-string 1)
 						        (match-string 2))))))))
 (defun vc-svk-co-path-p (file)
-  (block nil
+;  (block nil
     (let ((pathl))
       ;; Check file and each parent dir for svk-ness
       (while (and file (not (string-equal file "/")))
@@ -547,7 +547,8 @@ Set file properties accordingly."
 	(setq file (substring file 0 (string-match "/\\'" file)))
 	(if (setq path (assoc file (vc-svk-co-paths)))
 	        (return t)
-	    (setq file (file-name-directory file)))))))
+	    (setq file (file-name-directory file))))))
+;)
 
 (provide 'vc-svk)
 

@@ -8,11 +8,11 @@
     (global-unset-key "\C-z"))
 
 ;; force our cperl mode to be the local one
-;;(load-file "~/.elisp/cperl-mode.el")
+(load-file "~/.elisp/cperl-mode.el")
 
 ;;(load-file "~/.elisp/vc-svn.el")
 
-(load-file "~/.elisp/vc-svk.el")
+;;(load-file "~/.elisp/vc-svk.el")
 
 
 (setq frame-title-format (list "" 
@@ -21,13 +21,12 @@
 (require 'saveplace)
 (setq-default save-place t)
 
-(require 'desktop)
 
 ;;(require 'tramp)
 ;;(setq tramp-default-method "sshx")
 ;(setq tramp-verbose 10
 ;      tramp-debug-buffer t)
-(load "mutt")
+;;(load "mutt")
 
 (cond ((string-match "XEmacs\\|Lucid" emacs-version)
        ;; yup - we're in XEmacs
@@ -57,8 +56,8 @@
 
 (setq cperl-indent-level 4
       cperl-indent-parens-as-block 1
-      flyspell-default-dictionary "british"
-      ispell-dictionary "british"
+      flyspell-default-dictionary "english"
+      ispell-dictionary "english"
       line-number-mode 1
       column-number-mode 1
       indent-tabs-mode nil
@@ -122,5 +121,3 @@
  '(mmm-default-submode-face ((t (:background "gray9")))))
 
 
-(desktop-load-default)
-(desktop-read)

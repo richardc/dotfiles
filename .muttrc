@@ -41,7 +41,7 @@ set pgp_replysign
 set envelope_from
 #set abort_unmodified=yes	# automatically abort replies if I don't
 				# change the message
-set alias_file=~/Mail/aliases	# where I keep my aliases
+set alias_file=~/Maildir/aliases	# where I keep my aliases
 #set allow_8bit			# never do Q-P encoding on legal 8-bit chars
 #set arrow_cursor		# use -> instead of hiliting the whole line
 #set ascii_chars		# use ASCII instead of ACS chars for theads
@@ -316,7 +316,7 @@ bind pager G bottom	# just like vi and less
 #
 #	alias <name> <address> [ , <address> ... ]
 
-source ~/Mail/aliases
+source ~/Maildir/aliases
 
 #alias exam "\# to annoy michael" <user@host>
 #alias me Michael Elkins <michael> # me!

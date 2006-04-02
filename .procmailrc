@@ -4,16 +4,6 @@ DEFAULT=$MAILDIR/
 LOGFILE=$MAILDIR/from
 
 # W ait
-# h eaders
-# c arbon copy
-:0 Whc: msgid.lock
-| formail -D 8192 msgid.cache
-
-# a preceding rule matched
-:0 a
-duplicates/
-
-# W ait
 # c arbon copy
 :0 Wc
 * < 256000

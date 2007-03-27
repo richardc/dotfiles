@@ -56,6 +56,10 @@
 
 (setq cperl-indent-level 4
       cperl-indent-parens-as-block 1
+      cperl-close-paren-offset -4
+      cperl-continued-statment-offset 4
+      cperl-indent-parens-as-block t
+      cperl-tab-always-indent t
       flyspell-default-dictionary "english"
       ispell-dictionary "english"
       line-number-mode 1
@@ -71,10 +75,7 @@
 ;;(iswitchb-default-keybindings)
 (iswitchb-mode)
 
-(defun perl-mode ()
-  "overriden by a dirty hack to invoke cperl-mode"
-  (interactive)
-  (cperl-mode))
+(defalias 'perl-mode 'cperl-mode)
 
 (defun nice-text-mode ()
   "setup a sane mode for editing english text"

@@ -3,6 +3,8 @@
 
 (add-to-list 'load-path "~/.elisp")
 
+(global-set-key "\M-g" 'goto-line)
+
 ;; If running under screen, disable C-z.
 (if (and (getenv "STY") (not window-system))
     (global-unset-key "\C-z"))

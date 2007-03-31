@@ -3,16 +3,6 @@ MAILDIR=$HOME/Maildir
 DEFAULT=$MAILDIR/
 LOGFILE=$MAILDIR/from
 
-# W ait
-# c arbon copy
-:0 Wc
-* < 256000
-| spamc -c
-
-# e preceding rule failed
-:0 e
-maybe_spam/
-
 WHERE=`where_to_guv`
 
 :0

@@ -2,6 +2,7 @@
 ;       $Id$
 
 (add-to-list 'load-path "~/.elisp")
+ (normal-erase-is-backspace-mode)
 
 (global-set-key "\M-g" 'goto-line)
 

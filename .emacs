@@ -2,7 +2,9 @@
 ;       $Id$
 
 (add-to-list 'load-path "~/.elisp")
- (normal-erase-is-backspace-mode)
+
+;; toggle this based on the terminal misbehaviour of the day
+(normal-erase-is-backspace-mode)
 
 (global-set-key "\M-g" 'goto-line)
 
@@ -29,7 +31,7 @@
 ;;(setq tramp-default-method "sshx")
 ;(setq tramp-verbose 10
 ;      tramp-debug-buffer t)
-;;(load "mutt")
+(load "mutt")
 
 (cond ((string-match "XEmacs\\|Lucid" emacs-version)
        ;; yup - we're in XEmacs

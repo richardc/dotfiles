@@ -4,7 +4,7 @@
 (add-to-list 'load-path "~/.elisp")
 
 ;; toggle this based on the terminal misbehaviour of the day
-(normal-erase-is-backspace-mode)
+;(normal-erase-is-backspace-mode)
 
 (global-set-key "\M-g" 'goto-line)
 
@@ -13,52 +13,17 @@
     (global-unset-key "\C-z"))
 
 ;; force our cperl mode to be the local one
-(load-file "~/.elisp/cperl-mode.el")
-
-;;(load-file "~/.elisp/vc-svn.el")
-
-;;(load-file "~/.elisp/vc-svk.el")
-
+;(load-file "~/.elisp/cperl-mode.el")
 
 (setq frame-title-format (list "" 
 			       'invocation-name "@" 'system-name' ": %b"))
 
-(require 'saveplace)
-(setq-default save-place t)
-
-
-;;(require 'tramp)
-;;(setq tramp-default-method "sshx")
-;(setq tramp-verbose 10
-;      tramp-debug-buffer t)
-(load "mutt")
-
-(cond ((string-match "XEmacs\\|Lucid" emacs-version)
-       ;; yup - we're in XEmacs
-       (require 'vc)
-
-       (gnuserv-start)
-       (turn-on-lazy-shot)
-       (custom-set-variables
-	'(load-home-init-file t t)
-	'(toolbar-visible-p nil))
-       (load "xemacs-faces")
-       )
-      (t 
-       ;; I'm not sure if I like this cond t stuff for defaults
-       ;; other emacsen (probably GNU Emacs)
-       (server-start)
-       ;(gnuserv-start)
+(server-start)
+;;(gnuserv-start)
        
-       (global-font-lock-mode 1)
-       ;(transient-mark-mode)
-       
-       (custom-set-faces
-	'(mmm-default-submode-face ((t (:background "gray9"))))
-	'(highline-face ((t (:background "gray30")))))
-       )
-      )
-
+(global-font-lock-mode 1)
+(transient-mark-mode)
+(iswitchb-mode)
 (setq cperl-indent-level 4
       cperl-indent-parens-as-block 1
       cperl-close-paren-offset -4
@@ -77,17 +42,7 @@
       c-default-style "linux"
       c-basic-offset 4)
 
-;;(iswitchb-default-keybindings)
-(iswitchb-mode)
-
 (defalias 'perl-mode 'cperl-mode)
-
-(defun nice-text-mode ()
-  "setup a sane mode for editing english text"
-  (interactive)
-  (text-mode)
-  (flyspell-mode)
-  (auto-fill-mode))
 
 (defun hacking-untabify-buffer ()
   "strip trailing whitespace and untabify a buffer"
@@ -105,6 +60,14 @@
           '(lambda ()
              (make-local-variable 'write-contents-hooks)
              (add-hook 'write-contents-hooks 'hacking-untabify-buffer)))
+
+(defun nice-text-mode ()
+  "setup a sane mode for editing english text"
+  (interactive)
+  (text-mode)
+  (flyspell-mode)
+  (auto-fill-mode))
+
 (custom-set-variables
   ;; custom-set-variables was added by Custom -- don't edit or cut/paste it!
   ;; Your init file should contain only one such instance.
@@ -118,7 +81,6 @@
  '(speedbar-directory-unshown-regexp "^\\(\\.svn\\|CVS\\|RCS\\|SCCS\\)\\'")
  '(speedbar-indentation-width 2)
  '(tool-bar-mode nil nil (tool-bar))
- '(transient-mark-mode t)
  '(uniquify-buffer-name-style (quote forward) nil (uniquify)))
 (custom-set-faces
   ;; custom-set-faces was added by Custom -- don't edit or cut/paste it!

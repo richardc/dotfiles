@@ -1,5 +1,5 @@
 Emacs.geometry: 80x50
-Emacs.font: 6x13
+#Emacs.font: Monospace-8
 Emacs.foreground: wheat
 Emacs.background: black
 Emacs.cursorColor: green

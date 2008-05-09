@@ -1,9 +1,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
-# 	$Id$	
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
-
 
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
@@ -32,6 +30,8 @@ esac
 shopt -s histappend
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
+# fuck you and your auto-suggesting ways
+unset command_not_found_handle
 
 return # one day we may want programmable completion, but not soon
 

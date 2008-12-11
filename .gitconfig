@@ -1,0 +1,15 @@
+[user]
+	email = richardc@unixbeard.net
+	name = Richard Clamp
+
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    lg = log -p
+
+[url "ssh://banner.unixbeard.net/web/git.unixbeard.net/htdocs/git/"]
+    insteadOf = unixbeard:
+

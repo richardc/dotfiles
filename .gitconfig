@@ -1,18 +1,14 @@
 [core]
-	excludesfile = ~/.gitignore
+    excludesfile = ~/.gitignore
 
 [user]
-	email = richardc@unixbeard.net
-	name = Richard Clamp
+    name  = Richard Clamp
+    email = richardc@unixbeard.net
 
 [alias]
-	st = status
-    	ci = commit
-    	br = branch
-    	co = checkout
-    	df = diff
-   	lg = log -p
+    st = status
+    ci = commit
+    co = checkout
 
 [url "ssh://banner.unixbeard.net/web/git.unixbeard.net/htdocs/git/"]
-    	insteadOf = unixbeard:
-
+    insteadOf = unixbeard:

@@ -3,6 +3,9 @@ syntax on
 " More likely to steal stuff than want it auto-indented
 set paste
 
+set ruler
+set laststatus=2
+
 set noautoindent
 set nocompatible
 set background=dark
@@ -11,6 +14,8 @@ set expandtab
 set tabstop=8
 set shiftwidth=4
 set smarttab autoindent
+
+set scrolljump=5
 
 " backups without copy.  like emacs.  useful for hardlink mazes
 set bk
@@ -85,6 +90,9 @@ set smartcase
 
 " show the `best match so far' as search strings are typed:
 set incsearch
+
+" and highlight everything the search matches
+set hlsearch
 
 " * Keystrokes -- Moving Around
 

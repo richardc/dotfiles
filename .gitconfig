@@ -1,3 +1,6 @@
+[core]
+	excludesfile = ~/.gitignore
+
 [user]
 	email = richardc@unixbeard.net
 	name = Richard Clamp

@@ -7,10 +7,14 @@ set noautoindent
 set nocompatible
 set background=dark
 
+set expandtab
+set tabstop=8
+set shiftwidth=4
+set smarttab autoindent
+
 " backups without copy.  like emacs.  useful for hardlink mazes
 set bk
 set bkc=no
-
 
 set sm
 
@@ -99,6 +103,11 @@ noremap - <PageUp>
 
 " have % bounce between angled brackets, as well as t'other kinds:
 set matchpairs+=<:>
+
+" navigate through buffers
+nnoremap <C-N> :next<Enter>
+nnoremap <C-P> :prev<Enter>
+set confirm
 
 
 " * Keystrokes -- Formatting

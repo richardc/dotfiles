@@ -223,7 +223,7 @@ set backspace=eol,start,indent
 
 " have <Tab> (and <Shift>+<Tab> where it works) change the level of
 " indentation:
-inoremap <Tab> <C-T>
-inoremap <S-Tab> <C-D>
+"inoremap <Tab> <C-T>
+"inoremap <S-Tab> <C-D>
 " [<Ctrl>+V <Tab> still inserts an actual tab character.]
 

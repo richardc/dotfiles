@@ -36,6 +36,9 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # fuck you and your auto-suggesting ways
 unset command_not_found_handle
 
+# xdg-open(1) on Linux, open(1) on OSX
+[ $( uname ) == "Linux" ] && alias open=xdg-open
+
 return # one day we may want programmable completion, but not soon
 
 # enable programmable completion features (you don't need to enable

@@ -1,7 +1,123 @@
-syn on
+syntax on
+
+" More likely to steal stuff than want it auto-indented
+set paste
+
 set noautoindent
 set nocompatible
 set background=dark
+
+" backups without copy.  like emacs.  useful for hardlink mazes
 set bk
 set bkc=no
+
+
 set sm
+
+" have command-line completion <Tab> (for filenames, help topics, option names)
+" first list the available options and complete the longest common part, then
+" have further <Tab>s cycle through the possibilities:
+set wildmode=list:longest,full
+
+" use "[RO]" for "[readonly]" to save space in the message line:
+set shortmess+=r
+
+" display the current mode and partially-typed commands in the status line:
+set showmode
+set showcmd
+
+" have the mouse enabled all the time:
+"set mouse=a
+
+
+" * Text Formatting -- Specific File Formats
+
+" enable filetype detection:
+filetype on
+" recognize anything in my .Postponed directory as a news article, and anything
+" at all with a .txt extension as being human-language text [this clobbers the
+" `help' filetype, but that doesn't seem to prevent help from working
+" properly]:
+augroup filetype
+  autocmd BufNewFile,BufRead */.Postponed/* set filetype=mail
+  autocmd BufNewFile,BufRead *.txt set filetype=human
+augroup END
+
+" in human-language files, automatically format everything at 72 chars:
+autocmd FileType mail,human set formatoptions+=t textwidth=72
+
+" for C-like programming, have automatic indentation:
+autocmd FileType c,cpp,slang set cindent
+
+" for actual C (not C++) programming where comments have explicit end
+" characters, if starting a new line in the middle of a comment automatically
+" insert the comment leader characters:
+autocmd FileType c set formatoptions+=ro
+
+" for Perl programming, have things in braces indenting themselves:
+autocmd FileType perl set smartindent
+
+" for CSS, also have things in braces indented:
+autocmd FileType css set smartindent
+
+" for HTML, generally format text, but if a long line has been created leave it
+" alone when editing:
+autocmd FileType html set formatoptions+=tl
+
+" for both CSS and HTML, use genuine tab characters for indentation, to make
+" files a few bytes smaller:
+autocmd FileType html,css set noexpandtab tabstop=2
+
+" in makefiles, don't expand tabs to spaces, since actual tab characters are
+" needed, and have indentation at 8 chars to be sure that all indents are tabs
+" (despite the mappings later):
+autocmd FileType make set noexpandtab shiftwidth=8
+
+" * Search & Replace
+
+" make searches case-insensitive, unless they contain upper-case letters:
+set ignorecase
+set smartcase
+
+" show the `best match so far' as search strings are typed:
+set incsearch
+
+" * Keystrokes -- Moving Around
+
+" have the h and l cursor keys wrap between lines (like <Space> and <BkSpc> do
+" by default), and ~ covert case over line breaks; also have the cursor keys
+" wrap in insert mode:
+set whichwrap=h,l,~,[,]
+
+" page down with <Space> (like in `Lynx', `Mutt', `Pine', `Netscape Navigator',
+" `SLRN', `Less', and `More'); page up with - (like in `Lynx', `Mutt', `Pine'),
+" or <BkSpc> (like in `Netscape Navigator'):
+noremap <Space> <PageDown>
+noremap <BS> <PageUp>
+noremap - <PageUp>
+" [<Space> by default is like l, <BkSpc> like h, and - like k.]
+
+" have % bounce between angled brackets, as well as t'other kinds:
+set matchpairs+=<:>
+
+
+" * Keystrokes -- Formatting
+
+" have Q reformat the current paragraph (or selected text if there is any):
+nnoremap Q gqap
+vnoremap Q gq
+
+" * Keystrokes -- Insert Mode
+
+" allow <BkSpc> to delete line breaks, beyond the start of the current
+" insertion, and over indentations:
+set backspace=eol,start,indent
+
+" have <Tab> (and <Shift>+<Tab> where it works) change the level of
+" indentation:
+inoremap <Tab> <C-T>
+inoremap <S-Tab> <C-D>
+" [<Ctrl>+V <Tab> still inserts an actual tab character.]
+
+
+

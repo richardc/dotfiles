@@ -9,7 +9,7 @@ export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
 
 # my path, not yours
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/git/bin"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.

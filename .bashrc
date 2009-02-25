@@ -8,8 +8,10 @@ export HISTCONTROL=ignoredups
 # ... and ignore same sucessive entries.
 export HISTCONTROL=ignoreboth
 
+export WIRESHARK_APP_DIR="$HOME/Applications/Wireshark.app"
+
 # my path, not yours
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/git/bin"
+export PATH="$HOME/bin:$HOME/bin/wireshark:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/git/bin"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.

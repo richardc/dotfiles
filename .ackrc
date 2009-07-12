@@ -1,0 +1,4 @@
+--pager=less --quit-if-one-screen --RAW-CONTROL-CHARS
+--sort-files
+
+--break

@@ -59,7 +59,7 @@ set edit_headers		# let me edit the message header when composing
 #set editor="jed %s -tmp -f mail_mode"
 #set editor="gnuclient -nw"
 #set editor="emacsclient"
-set editor="editr --fallback=vim"
+set editor="vim"
 #set editor="nano -r 72"
 #set editor=vi
 #set fast_reply			# skip initial prompts when replying

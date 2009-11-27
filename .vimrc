@@ -58,13 +58,11 @@ set showcmd
 
 " * Text Formatting -- General
 
-" don't make it look like there are line breaks where there aren't:
 set nowrap
 
 " use indents of 4 spaces, and have them copied down lines:
 set shiftwidth=4
 set shiftround
-set expandtab
 set autoindent
 set tabstop=8
 

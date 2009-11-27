@@ -22,7 +22,6 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
-IPC_NAME=`cat /opt/ipc/etc/realname`
 prompt_host=`hostname -s`
 if [ -f /opt/ipc/etc/realname  ]; then
   prompt_host="$prompt_host|$( cat /opt/ipc/etc/realname )"

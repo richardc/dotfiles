@@ -10,8 +10,10 @@ export HISTCONTROL=ignoreboth
 
 export WIRESHARK_APP_DIR="$HOME/Applications/Wireshark.app"
 
+export EDITOR=vim
+
 # my path, not yours
-export PATH="$HOME/bin:$HOME/bin/wireshark:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/git/bin"
+export PATH="$HOME/bin:$HOME/bin/wireshark:/opt/ipc/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/git/bin"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -20,7 +22,13 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
-PS1='\033[1m[\D{%Y-%m-%d %H:%M:%S}] \u@\h:\w\033[0m\n\$ '
+IPC_NAME=`cat /opt/ipc/etc/realname`
+prompt_host=`hostname -s`
+if [ -f /opt/ipc/etc/realname  ]; then
+  prompt_host="$prompt_host|$( cat /opt/ipc/etc/realname )"
+fi
+
+PS1='\033[1m[\D{%Y-%m-%d %H:%M:%S}] \u@${prompt_host}:\w\033[0m\n\$ '
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in

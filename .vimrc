@@ -22,16 +22,6 @@ set showmode
 " when entering a brace flash its pair
 set showmatch
 
-" shove it through pertidy, go back to were we were
-nnoremap \pt :call PerlTidy()<CR>
-
-fun! PerlTidy()
-   let ol=line('.')
-   let oc=col('.')
-   %!perltidy -st
-   call cursor(ol, oc)
-endfun
-
 " From here to the end is kludged stolen sections from Smyler's config
 " http://www.stripey.com/vim/vimrc.html
 

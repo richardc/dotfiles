@@ -2,11 +2,13 @@
 
 escape ^]]
 bind ^[ paste .
-termcapinfo ansi 'ti@:te@:hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007'
-termcapinfo xterm 'ti@:te@:hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007'
-termcapinfo vt100 'ti@:te@:hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007'
+
+# Show '[screennum] location - title' as hardstatus
+hardstatus string "[%n] %h - %t"
+windowlist title "Num Name%=Location Flags"
+windowlist string "%03n %t%=%h %f"
+
+termcapinfo * 'ti@:te@:hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007' 'hs:ts=\E_:fs=\E\\:ds=\E_\E\\'
 vbell off
 debug off
 bind ^\
-
-defhstatus "screen: ^%t ^En"

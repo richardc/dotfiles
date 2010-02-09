@@ -48,6 +48,8 @@ unset command_not_found_handle
 # xdg-open(1) on Linux, open(1) on OSX
 [ $( uname ) == "Linux" ] && alias open=xdg-open
 
+alias vi=vim
+
 return # one day we may want programmable completion, but not soon
 
 # enable programmable completion features (you don't need to enable

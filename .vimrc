@@ -10,6 +10,10 @@ set ruler
 syntax on
 set background=dark
 
+" register syntax highlighting filetypes
+au! BufRead,BufNewFile *.haml         setfiletype haml 
+
+
 " edge resistance when scrolling
 set scrolloff=2
 

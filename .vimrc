@@ -11,7 +11,8 @@ syntax on
 set background=dark
 
 " register syntax highlighting filetypes
-au! BufRead,BufNewFile *.haml         setfiletype haml 
+au! BufRead,BufNewFile *.haml	setfiletype haml 
+au! BufRead,BufNewFile *.pp	setfiletype puppet 
 
 
 " edge resistance when scrolling

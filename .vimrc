@@ -13,7 +13,7 @@ set background=dark
 " register syntax highlighting filetypes
 au! BufRead,BufNewFile *.haml	setfiletype haml 
 au! BufRead,BufNewFile *.pp	setfiletype puppet 
-
+au! BufRead,BufNewFile *.markdown	setfiletype mkd 
 
 " edge resistance when scrolling
 set scrolloff=2

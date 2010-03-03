@@ -14,6 +14,7 @@ set background=dark
 au! BufRead,BufNewFile *.haml	setfiletype haml 
 au! BufRead,BufNewFile *.pp	setfiletype puppet 
 au! BufRead,BufNewFile *.markdown	setfiletype mkd 
+au! BufRead,BufNewFile */vhosts.d/*.conf	setfiletype apache 
 
 " edge resistance when scrolling
 set scrolloff=2

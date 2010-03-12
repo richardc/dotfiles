@@ -1,5 +1,6 @@
 [core]
-    excludesfile = /home/richardc/.gitignore
+    # works in 1.7.0, not sure exactly when in 1.6.x it was introduced
+    excludesfile = "~/.gitignore"
 
 [user]
     name  = Richard Clamp

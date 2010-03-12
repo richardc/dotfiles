@@ -20,8 +20,8 @@ au! BufRead,BufNewFile */vhosts.d/*.conf	setfiletype apache
 set scrolloff=2
 
 " backups without copy.  like emacs.  useful for hardlink mazes
-set bk
-set bkc=no
+"set bk
+"set bkc=no
 
 set showmode
 

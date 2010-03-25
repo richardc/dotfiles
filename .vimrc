@@ -54,7 +54,12 @@ set showcmd
 
 " * Text Formatting -- General
 
-set nowrap
+set wrap
+
+" line numbering, with a muted margin
+set number
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
 
 " use indents of 4 spaces, and have them copied down lines:
 set shiftwidth=4

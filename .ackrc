@@ -1,4 +1,4 @@
 --pager=less --quit-if-one-screen --RAW-CONTROL-CHARS
 --sort-files
-
+--type-set puppet=.pp
 --break

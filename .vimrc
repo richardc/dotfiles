@@ -87,7 +87,7 @@ augroup filetype
 augroup END
 
 " in human-language files, automatically format everything at 72 chars:
-autocmd FileType mail,human set formatoptions+=t textwidth=72
+autocmd FileType mail,human set formatoptions+=t textwidth=72 nonumber
 
 " for C-like programming, have automatic indentation:
 autocmd FileType c,cpp,slang set cindent

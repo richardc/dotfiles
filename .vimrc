@@ -15,6 +15,7 @@ au! BufRead,BufNewFile *.haml	setfiletype haml
 au! BufRead,BufNewFile *.pp	setfiletype puppet 
 au! BufRead,BufNewFile *.markdown	setfiletype mkd 
 au! BufRead,BufNewFile */vhosts.d/*.conf	setfiletype apache 
+au! BufRead,BufNewFile */apache/**/*.conf	setfiletype apache 
 
 " edge resistance when scrolling
 set scrolloff=2
@@ -54,7 +55,12 @@ set showcmd
 
 " * Text Formatting -- General
 
-set nowrap
+set wrap
+
+" line numbering, with a muted margin
+set number
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
 
 " use indents of 4 spaces, and have them copied down lines:
 set shiftwidth=4
@@ -81,7 +87,7 @@ augroup filetype
 augroup END
 
 " in human-language files, automatically format everything at 72 chars:
-autocmd FileType mail,human set formatoptions+=t textwidth=72
+autocmd FileType mail,human set formatoptions+=t textwidth=72 nonumber
 
 " for C-like programming, have automatic indentation:
 autocmd FileType c,cpp,slang set cindent

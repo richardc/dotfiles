@@ -50,6 +50,10 @@ unset command_not_found_handle
 
 alias vi=vim
 
+if [ -f $HOME/perl5/perlbrew/etc/bashrc ]; then
+    . $HOME/perl5/perlbrew/etc/bashrc
+fi
+
 return # one day we may want programmable completion, but not soon
 
 # enable programmable completion features (you don't need to enable

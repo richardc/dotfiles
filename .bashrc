@@ -22,12 +22,7 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
-prompt_host=$( hostname | awk -F. '{print $1}' )
-if [ -f /opt/ipc/etc/realname  ]; then
-  prompt_host="$prompt_host|$( cat /opt/ipc/etc/realname )"
-fi
-
-PS1='\033[1m[\D{%Y-%m-%d %H:%M:%S}] \u@${prompt_host}:\w\033[0m\n\$ '
+PS1='\033[1m[\D{%Y-%m-%d %H:%M:%S}] \u@\h:\w\033[0m\n\$ '
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in

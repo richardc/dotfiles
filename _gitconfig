@@ -12,6 +12,13 @@
     co = checkout
     idiff = diff --cached
     glog = log --pretty=oneline --topo-order --graph --abbrev-commit --decorate
+    ru = remote update
+
+[color]
+    diff = auto
+    branch = auto
+    status = auto
+
 
 [url "ssh://banner.unixbeard.net/web/git.unixbeard.net/htdocs/git/"]
     insteadOf = unixbeard:

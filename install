@@ -1,0 +1,38 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use File::Spec;
+use File::Basename;
+
+# TODO argument parsing
+my @what = @ARGV;
+my $home = $ENV{HOME};
+
+FILE:
+for my $source (@what) {
+    $source = File::Spec->rel2abs($source);
+    my $name = basename $source;
+    $name =~ s{^_}{.};
+    my $dest = "$home/$name";
+ 
+    print "$source => $dest\n";
+    if (-l $dest || -e $dest) {
+        print " $dest already exists\n";
+
+        if (-l $dest) {
+            my $to = readlink($dest);
+            print " it's a symlink to '$to'\n";
+            # TODO check it points to $source
+            # XXX especially don't just do this
+            unlink $dest;
+        }
+
+        if (-f $dest) {
+            print " and it's a file, leaving it alone\n";
+            # TODO diff it, and consider relinking
+            next FILE;
+        }
+    }
+    symlink $source, $dest
+        or warn "couldn't link: $!\n";
+}

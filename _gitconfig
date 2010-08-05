@@ -10,6 +10,7 @@
     st = status
     ci = commit
     co = checkout
+    br = branch
     idiff = diff --cached
     glog = log --pretty=oneline --topo-order --graph --abbrev-commit --decorate
     ru = remote update

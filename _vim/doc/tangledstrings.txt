@@ -1,0 +1,123 @@
+
+                VIM REFERENCE MANUAL    by Chris Jones
+
+
+                               TangledStrings
+
+A plugin for warning about puppet ownership of a file         *TangledStrings*
+==============================================================================
+CONTENTS                                              *TangledStringsContents*
+
+
+    1) Intro........................................|TangledStringsIntro|
+    2) Configuration................................|TangledStringsOptions|
+        2.1) Altering warning string shown..........|g:tangledstringsWarnTxt|
+        2.2) Altering normal string shown...........|g:tangledstringsNormTxt|
+        2.3) Showing alerts when loading files......|g:tangledstringsAlerts|
+    3) Author.......................................|TangledStringsAuthor|
+    4) License......................................|TangledStringsLicense|
+
+
+
+==============================================================================
+1. INTRO                                                 *TangledStringsIntro*
+
+TangledStrings is a small plugin which attempts to warn the user if a file 
+they are editing is being managed by Puppet. For more information on Puppet, 
+see:
+
+	http://www.puppetlabs.com/
+
+By warning the user about editing a Puppet-managed file, confusion and 
+frustration can be avoided because the file won't be replaced the next time 
+Puppet runs.
+
+TangledStrings has two ways it can alert the user - messages and |statusline|.
+By default it will use messages, but this can be disabled and the |statusline|
+can be enabled with something like:
+
+	set statusline=%{TangledStringsState()}
+
+
+==============================================================================
+2. CONFIGURATION-OPTIONS                               *TangledStringsOptions*
+
+Here are the available configuration options and their defaults:
+>
+	let g:tangledstringsAlerts = 1
+	let g:tangledstringsWarnTxt = "WARNING: PUPPED MANAGED FILE"
+	let g:tangledstringsNormTxt = ""
+
+
+------------------------------------------------------------------------------
+2.1                                                  *g:tangledstringsWarnTxt*
+
+This is the text that will be displayed when TangledStrings believes the 
+current file is managed by Puppet and thus probably shouldn't be edited.
+
+
+------------------------------------------------------------------------------
+2.2                                                  *g:tangledstringsNormTxt*
+
+This is the text that will be displayed when TangledStrings does not believe
+that the current file is managed by Puppet.
+
+------------------------------------------------------------------------------
+2.3                                                   *g:tangledstringsAlerts*
+
+When this option is enabled, TangledStrings will attempt to display messages
+to the user when they are opening/reading a file which is managed by Puppet.
+
+This option is enabled by default, but you can disable it like so:
+>
+	let g:tangledstringsAlerts = 0
+
+
+==============================================================================
+3. AUTHOR                                               *TangledStringsAuthor*
+
+TangledStrings was written by Chris Jones
+
+    cmsj@tenshu.net ~
+    http://www.tenshu.net/ 
+
+The code and this documentation draw heavily on those of the VIM plugin HGRev
+by Mahlon E. Smith.
+
+
+==============================================================================
+4. LICENSE                                             *TangledStringsLicense*
+
+TangledStrings is distributed under the BSD license.
+    http://www.opensource.org/licenses/bsd-license.php
+>
+    Copyright (c) 2010, Chris Jones <cmsj@tenshu.net>
+    All rights reserved.
+
+    Redistribution and use in source and binary forms, with or without
+    modification, are permitted provided that the following conditions are
+    met:
+
+        * Redistributions of source code must retain the above copyright
+          notice, this list of conditions and the following disclaimer.
+
+        * Redistributions in binary form must reproduce the above copyright
+          notice, this list of conditions and the following disclaimer in the
+          documentation and/or other materials provided with the distribution.
+
+    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+    "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+    LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+    A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+    OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+    SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
+    TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+    LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
+
+vim: set noet nosta sw=4 ts=4 ft=help :
+

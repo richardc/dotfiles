@@ -11,7 +11,7 @@ export HISTCONTROL=ignoreboth
 export EDITOR=vim
 
 # my path, not yours
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
+export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/git/bin"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -44,7 +44,6 @@ AGENT=($(find /tmp -type s -name "agent.*"))
 #[[ ${#AGENT[@]} -gt 1 ]] && killall ssh-agent && rm -rf ${AGENT[@]} && ssh-agent -t 8h && AGENT=($(find /tmp -type s -name "agent.*"))
 if [ -S ${AGENT} ] ; then
 	export SSH_AUTH_SOCK=${AGENT}
-	export SSH_AGENT_PID=$(expr `echo ${AGENT} | sed -e "s/.*agent\.\([0-9]*\)/\1/" ` + 1)
 fi
 
 # xdg-open(1) on Linux, open(1) on OSX

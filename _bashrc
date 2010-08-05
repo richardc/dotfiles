@@ -45,6 +45,7 @@ AGENT=($(find /tmp -type s -name "agent.*"))
 if [ -S ${AGENT} ] ; then
 	export SSH_AUTH_SOCK=${AGENT}
 fi
+[ $( uname) == "Darwin" ] && eval `launchctl export | grep SSH_AUTH_SOCKET`
 
 # xdg-open(1) on Linux, open(1) on OSX
 [ $( uname ) == "Linux" ] && alias open=xdg-open

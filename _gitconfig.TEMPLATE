@@ -1,10 +1,14 @@
+; templated
 [core]
-    # works in 1.7.0, not sure exactly when in 1.6.x it was introduced
-    excludesfile = "~/.gitignore"
+    excludesfile = "[% env.HOME %]/.gitignore"
 
 [user]
     name  = Richard Clamp
+[% IF env.HOSTNAME.match('net-a-porter') || env.USER.match('r.clamp') %]
+    email = richard.clamp@net-a-porter.com
+[% ELSE %]
     email = richardc@unixbeard.net
+[% END %]
 
 [alias]
     st = status

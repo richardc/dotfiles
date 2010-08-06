@@ -1,14 +1,13 @@
 #!/usr/bin/env perl
 package Dotfile;
 use Carp qw( croak );
-use Path::Class;
+use File::Basename qw( basename );
+use File::Spec::Functions qw( rel2abs );
 use Template;
 
 sub new {
     my $self  = shift;
-    my %args = @_;
-    $args{source} = file( $args{source} );
-    bless \%args, ref $self || $self;
+    bless { @_ }, ref $self || $self;
 }
 
 sub source {
@@ -18,10 +17,10 @@ sub source {
 
 sub destination {
     my $self = shift;
-    my $name = $self->source->basename;
+    my $name = basename $self->source;
     $name =~ s/^_/./;
     $name =~ s/\.TEMPLATE$//;
-    return Path::Class::file("$ENV{HOME}/$name");
+    return "$ENV{HOME}/$name";
 }
 
 sub is_templated {
@@ -32,9 +31,9 @@ sub is_templated {
 sub install_symlink {
     my $self = shift;
     if (-l $self->destination) {
-        $self->destination->remove;
+        unlink $self->destination;
     }
-    symlink $self->source->absolute, $self->destination->absolute
+    symlink rel2abs( $self->source ), rel2abs( $self->destination )
         or croak "symlink: $!";
 }
 
@@ -43,12 +42,12 @@ sub install_template {
     my $stage = $self->destination . ".$$";
 
     my $tt = Template->new;
-    $tt->process( $self->source.'', { env => \ %ENV }, $stage )
+    $tt->process( $self->source, { env => \ %ENV }, $stage )
         or croak $tt->error;
 
     if (-f $self->destination) {
         system 'diff', '-u', $self->destination, $stage;
-        $self->destination->remove;
+        unlink $self->destination;
     }
     rename $stage, $self->destination;
 }

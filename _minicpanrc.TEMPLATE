@@ -1,0 +1,2 @@
+local:  [% env.HOME %]/hck/miniCPAN/
+remote: http://cpan.etla.org/

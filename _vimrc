@@ -58,7 +58,7 @@ set showcmd
 set wrap
 
 " line numbering, with a muted margin
-set number
+"set number
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
 

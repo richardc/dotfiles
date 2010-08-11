@@ -9,6 +9,7 @@ set ruler
 
 syntax on
 set background=dark
+colorscheme manxome
 
 " register syntax highlighting filetypes
 au! BufRead,BufNewFile *.haml	setfiletype haml 

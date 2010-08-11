@@ -21,10 +21,6 @@ au! BufRead,BufNewFile */apache/**/*.conf	setfiletype apache
 " edge resistance when scrolling
 set scrolloff=2
 
-" backups without copy.  like emacs.  useful for hardlink mazes
-"set bk
-"set bkc=no
-
 set showmode
 
 " when entering a brace flash its pair
@@ -57,11 +53,6 @@ set showcmd
 " * Text Formatting -- General
 
 set wrap
-
-" line numbering, with a muted margin
-"set number
-highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
-
 
 " use indents of 4 spaces, and have them copied down lines:
 set shiftwidth=4
@@ -144,20 +135,6 @@ noremap <BS> <PageUp>
 noremap - <PageUp>
 " [<Space> by default is like l, <BkSpc> like h, and - like k.]
 
-" scroll the window (but leaving the cursor in the same place) by a couple of
-" lines up/down with <Ins>/<Del> (like in `Lynx'):
-noremap <Ins> 2<C-Y>
-noremap <Del> 2<C-E>
-" [<Ins> by default is like i, and <Del> like x.]
-
-" use <F6> to cycle through split windows (and <Shift>+<F6> to cycle backwards,
-" where possible):
-nnoremap <F6> <C-W>w
-nnoremap <S-F6> <C-W>W
-
-" use <Ctrl>+N/<Ctrl>+P to cycle through files:
-nnoremap <C-N> :next<Enter>
-nnoremap <C-P> :prev<Enter>
 
 " have % bounce between angled brackets, as well as t'other kinds:
 set matchpairs+=<:>
@@ -170,61 +147,9 @@ omap <F1> <C-C><F1>
 map! <F1> <C-C><F1>
 
 
-" * Keystrokes -- Formatting
-
-" have Q reformat the current paragraph (or selected text if there is any):
-nnoremap Q gqap
-vnoremap Q gq
-
-" have the usual indentation keystrokes still work in visual mode:
-vnoremap <C-T> >
-vnoremap <C-D> <LT>
-vmap <Tab> <C-T>
-vmap <S-Tab> <C-D>
-
-" have Y behave analogously to D and C rather than to dd and cc (which is
-" already done by yy):
-noremap Y y$
-
-
-" * Keystrokes -- Toggles
-
-" Keystrokes to toggle options are defined here.  They are all set to normal
-" mode keystrokes beginning \t but some function keys (which won't work in all
-" terminals) are also mapped.
-
-" have \tp ("toggle paste") toggle paste on/off and report the change, and
-" where possible also have <F4> do this both in normal and insert mode:
-nnoremap \tp :set invpaste paste?<CR>
-nmap <F4> \tp
-imap <F4> <C-O>\tp
-set pastetoggle=<F4>
-
-" have \tf ("toggle format") toggle the automatic insertion of line breaks
-" during typing and report the change:
-nnoremap \tf :if &fo =~ 't' <Bar> set fo-=t <Bar> else <Bar> set fo+=t <Bar>
-  \ endif <Bar> set fo?<CR>
-nmap <F3> \tf
-imap <F3> <C-O>\tf
-
-" have \tl ("toggle list") toggle list on/off and report the change:
-nnoremap \tl :set invlist list?<CR>
-nmap <F2> \tl
-
-" have \th ("toggle highlight") toggle highlighting of search matches, and
-" report the change:
-nnoremap \th :set invhls hls?<CR>
-
-
 " * Keystrokes -- Insert Mode
 
 " allow <BkSpc> to delete line breaks, beyond the start of the current
 " insertion, and over indentations:
 set backspace=eol,start,indent
-
-" have <Tab> (and <Shift>+<Tab> where it works) change the level of
-" indentation:
-"inoremap <Tab> <C-T>
-"inoremap <S-Tab> <C-D>
-" [<Ctrl>+V <Tab> still inserts an actual tab character.]
 

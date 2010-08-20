@@ -11,7 +11,15 @@ export HISTCONTROL=ignoreboth
 export EDITOR=vim
 
 # my path, not yours
-export PATH="$HOME/bin:/opt/local/bin:/opt/local/sbin:/opt/xt/xt-perl/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/git/bin"
+PATH="$HOME/bin"
+PATH="$PATH:$HOME/hck/perl-5.12.1/bin"         # handbuilt perl
+PATH="$PATH:/opt/local/bin:/opt/local/sbin"    # macports
+PATH="$PATH:/opt/xt/xt-perl/bin"               # nap machines
+PATH="$PATH:/usr/local/git/bin"                # http://code.google.com/p/git-osx-installer/
+PATH="$PATH:/usr/local/bin:/usr/local/sbin"
+PATH="$PATH:/usr/bin:/usr/sbin"
+PATH="$PATH:/bin:/sbin"
+export PATH
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.

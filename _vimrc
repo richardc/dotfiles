@@ -14,8 +14,7 @@ colorscheme manxome
 " register syntax highlighting filetypes
 au! BufRead,BufNewFile *.haml	setfiletype haml 
 au! BufRead,BufNewFile *.pp	setfiletype puppet 
-au! BufRead,BufNewFile *.md	setfiletype mkd
-au! BufRead,BufNewFile *.markdown	setfiletype mkd 
+au! BufRead,BufNewFile *.markdown,*.mkd,*.md	setfiletype mkd
 au! BufRead,BufNewFile */vhosts.d/*.conf	setfiletype apache 
 au! BufRead,BufNewFile */apache/**/*.conf	setfiletype apache 
 

@@ -11,6 +11,12 @@ syntax on
 set background=dark
 colorscheme manxome
 
+if has("gui_running")
+      set guioptions-=T       " no toolbar
+      set cursorline          " show the cursor line
+end
+
+
 " register syntax highlighting filetypes
 au! BufRead,BufNewFile *.haml	setfiletype haml 
 au! BufRead,BufNewFile *.pp	setfiletype puppet 

@@ -114,6 +114,10 @@ autocmd FileType html,css set noexpandtab tabstop=2
 " (despite the mappings later):
 autocmd FileType make set noexpandtab shiftwidth=8
 
+" for markdown files, this thing off the internet I don't understand
+"    http://plasticboy.com/markdown-vim-mode/
+autocmd FileType mkd set ai formatoptions+=tcroqn2 comments=n:>
+
 " * Search & Replace
 
 " make searches case-insensitive, unless they contain upper-case letters:

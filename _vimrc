@@ -9,7 +9,7 @@ set ruler
 
 syntax on
 set background=dark
-colorscheme manxome
+colorscheme elflord
 
 if has("gui_running")
       set guioptions-=T       " no toolbar

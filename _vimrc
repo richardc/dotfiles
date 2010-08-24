@@ -66,6 +66,8 @@ set shiftround
 set autoindent
 set tabstop=8
 
+set expandtab
+
 " normally don't automatically format `text' as it is typed, IE only do this
 " with comments, at 79 characters:
 set formatoptions-=t

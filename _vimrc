@@ -32,6 +32,23 @@ set showmode
 " when entering a brace flash its pair
 set showmatch
 
+
+" some emacs-like bindings from vimacs, should help muscle memory
+" http://github.com/andrep/vimacs/blob/master/plugin/vimacs.vim
+nnoremap <C-x><C-c> :confirm qall<CR>
+nnoremap <C-x><C-f> :edit<Space>
+nnoremap <C-x><C-s> :update<CR>
+
+nnoremap <C-x>2 <C-w>s
+nnoremap <C-x>3 <C-w>v
+nnoremap <C-x>0 <C-w>c
+nnoremap <C-x>1 <C-w>o
+nnoremap <C-x>o <C-w>w
+
+nnoremap <C-x>b     :BufExplorer<cR>
+nnoremap <C-x><C-b> :buffers<CR>
+nnoremap <C-x>k     :bdelete<Space>
+
 " From here to the end is kludged stolen sections from Smyler's config
 " http://www.stripey.com/vim/vimrc.html
 

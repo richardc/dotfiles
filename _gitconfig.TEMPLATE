@@ -18,6 +18,8 @@
     idiff = diff --cached
     lg = log --pretty=oneline --topo-order --graph --abbrev-commit --decorate
     ru = remote update
+    ; ! is both a subcommand, and from the topdir and not the cwd
+    ss = !git submodule status
 
 [color]
     diff = auto

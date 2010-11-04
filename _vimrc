@@ -17,6 +17,17 @@ if has("gui_running")
 end
 
 
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
+
+"Invisible character colors
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+
+
 " register syntax highlighting filetypes
 au! BufRead,BufNewFile *.haml	setfiletype haml 
 au! BufRead,BufNewFile *.pp	setfiletype puppet 

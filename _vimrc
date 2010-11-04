@@ -29,11 +29,11 @@ highlight SpecialKey guifg=#4a4a59
 
 
 " register syntax highlighting filetypes
-au! BufRead,BufNewFile *.haml	setfiletype haml 
-au! BufRead,BufNewFile *.pp	setfiletype puppet 
-au! BufRead,BufNewFile *.markdown,*.mkd,*.md	setfiletype mkd
-au! BufRead,BufNewFile */vhosts.d/*.conf	setfiletype apache 
-au! BufRead,BufNewFile */apache/**/*.conf	setfiletype apache 
+au! BufRead,BufNewFile *.haml                   setfiletype haml
+au! BufRead,BufNewFile *.pp                     setfiletype puppet
+au! BufRead,BufNewFile *.markdown,*.mkd,*.md    setfiletype mkd
+au! BufRead,BufNewFile */vhosts.d/*.conf        setfiletype apache
+au! BufRead,BufNewFile */apache/**/*.conf       setfiletype apache
 
 " edge resistance when scrolling
 set scrolloff=2
@@ -110,8 +110,8 @@ filetype on
 " `help' filetype, but that doesn't seem to prevent help from working
 " properly]:
 augroup filetype
-  autocmd BufNewFile,BufRead */.Postponed/* set filetype=mail
-  autocmd BufNewFile,BufRead *.txt set filetype=human
+  autocmd BufNewFile,BufRead */.Postponed/*      set filetype=mail
+  autocmd BufNewFile,BufRead *.txt              set filetype=human
 augroup END
 
 " in human-language files, automatically format everything at 72 chars:

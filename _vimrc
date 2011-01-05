@@ -1,6 +1,10 @@
 " vim, not vi
 set nocompatible
 
+" always treat things as utf-8
+set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
 
 " always show a status bar
 set laststatus=2

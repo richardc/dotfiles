@@ -67,6 +67,8 @@ fi
 
 # clean out some broken vars
 export -n LESS
+export -n TMOUT
+
 
 return # one day we may want programmable completion, but not soon
 

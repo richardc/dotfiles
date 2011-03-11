@@ -12,6 +12,7 @@ export EDITOR=vim
 
 # my path, not yours
 PATH="$HOME/bin"
+PATH="$PATH:$HOME/.gem/ruby/1.8/bin"           # ruby gems
 PATH="$PATH:$HOME/hck/perl-5.12.1/bin"         # handbuilt perl
 PATH="$PATH:/opt/local/bin:/opt/local/sbin"    # macports
 PATH="$PATH:/opt/xt/xt-perl/bin"               # nap machines

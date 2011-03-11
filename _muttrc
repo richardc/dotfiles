@@ -44,7 +44,7 @@ set envelope_from
 set alias_file=~/Maildir/aliases	# where I keep my aliases
 #set allow_8bit			# never do Q-P encoding on legal 8-bit chars
 #set arrow_cursor		# use -> instead of hiliting the whole line
-#set ascii_chars		# use ASCII instead of ACS chars for theads
+set ascii_chars		# use ASCII instead of ACS chars for theads
 #set askbcc
 #set askcc
 set attribution="On %d, %n wrote:"	# how to attribute replies

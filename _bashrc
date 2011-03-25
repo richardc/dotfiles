@@ -61,13 +61,14 @@ fi
 
 alias vi=vim
 
-# enable perlbrew
-if [ -f $HOME/perl5/perlbrew/etc/bashrc ]; then
-    . $HOME/perl5/perlbrew/etc/bashrc
-fi
+# enable perlbrew     http://search.cpan.org/perldoc?perlbrew
+[[ -s "$HOME/perl5/perlbrew/etc/bashrc" ]] && source "$HOME/perl5/perlbrew/etc/bashrc"
 
-# enable rvm
+# enable rvm          http://rvm.beginrescueend.com/
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# enable pythonbrew   https://github.com/utahta/pythonbrew
+[[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
 
 # clean out some broken vars
 export -n LESS

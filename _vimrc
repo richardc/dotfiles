@@ -6,6 +6,8 @@ set encoding=utf-8
 set termencoding=utf-8
 set fileencoding=utf-8
 
+filetype plugin indent on
+
 " always show a status bar
 set laststatus=2
 " and put line,column in it

@@ -23,7 +23,7 @@ set statusline+=%r      "read only flag
 set statusline+=%m      "modified flag
 
 " display current git branch
-" set statusline+=%{fugitive#statusline()}
+set statusline+=%{fugitive#statusline()}
 
 " display long line warnings
 set statusline+=%{StatuslineLongLineWarning()}

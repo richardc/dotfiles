@@ -6,3 +6,10 @@ _vim/bundle/pathogen:
   squashed: true
   type: git
   url: git://github.com/tpope/vim-pathogen.git
+_vim/bundle/syntastic: 
+  branch: master
+  remote: braid/-vim/bundle/syntastic
+  revision: 2c2f64fee315486d330cdbe6d2d41139b6249da1
+  squashed: true
+  type: git
+  url: git://github.com/scrooloose/syntastic.git

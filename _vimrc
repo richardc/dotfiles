@@ -8,6 +8,9 @@ set fileencoding=utf-8
 
 filetype plugin indent on
 
+" enable pathogen
+call pathogen#runtime_append_all_bundles()
+
 " always show a status bar
 set laststatus=2
 " and put line,column in it

@@ -1,4 +1,11 @@
 --- 
+_vim/bundle/fugitive: 
+  branch: master
+  remote: braid/-vim/bundle/fugitive
+  revision: 3026076ab5f60a5a3703d33a933a09d4053c0d95
+  squashed: true
+  type: git
+  url: git://github.com/tpope/vim-fugitive.git
 _vim/bundle/pathogen: 
   branch: master
   remote: braid/-vim/bundle/pathogen

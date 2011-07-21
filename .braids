@@ -13,6 +13,13 @@ _vim/bundle/fugitive:
   squashed: true
   type: git
   url: git://github.com/tpope/vim-fugitive.git
+_vim/bundle/openssl: 
+  branch: master
+  remote: braid/-vim/bundle/openssl
+  revision: b406bd9ec0ed966e32533167dcb0effe8f4b8f47
+  squashed: true
+  type: git
+  url: git://github.com/vim-scripts/openssl.vim.git
 _vim/bundle/pathogen: 
   branch: master
   remote: braid/-vim/bundle/pathogen

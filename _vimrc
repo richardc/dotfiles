@@ -8,7 +8,7 @@ set fileencoding=utf-8
 
 
 " enable pathogen
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 
 filetype plugin indent on
 

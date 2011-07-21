@@ -41,7 +41,7 @@ highlight SpecialKey guifg=#4a4a59
 " register syntax highlighting filetypes
 au! BufRead,BufNewFile *.haml                   setfiletype haml
 au! BufRead,BufNewFile *.pp                     setfiletype puppet
-au! BufRead,BufNewFile *.markdown,*.mkd,*.md    setfiletype mkd
+au! BufRead,BufNewFile *.markdown,*.mkd,*.md    setfiletype markdown
 au! BufRead,BufNewFile */vhosts.d/*.conf        setfiletype apache
 au! BufRead,BufNewFile */apache/**/*.conf       setfiletype apache
 au! BufNewFile,BufRead *.json                   setfiletype javascript

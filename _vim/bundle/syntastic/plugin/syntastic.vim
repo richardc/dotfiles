@@ -23,6 +23,10 @@ if !exists("g:syntastic_enable_signs") || !has('signs')
     let g:syntastic_enable_signs = 0
 endif
 
+if !exists("g:syntastic_enable_balloons") || !has('balloon_eval')
+    let g:syntastic_enable_balloons = 0
+endif
+
 if !exists("g:syntastic_auto_loc_list")
     let g:syntastic_auto_loc_list = 0
 endif
@@ -43,9 +47,6 @@ if !exists("g:syntastic_stl_format")
     let g:syntastic_stl_format = '[Syntax: line:%F (%t)]'
 endif
 
-"load all the syntax checkers
-runtime! syntax_checkers/*.vim
-
 "refresh and redraw all the error info for this buf when saving or reading
 autocmd bufreadpost,bufwritepost * call s:UpdateErrors()
 function! s:UpdateErrors()
@@ -53,6 +54,14 @@ function! s:UpdateErrors()
         return
     endif
     call s:CacheErrors()
+
+    if g:syntastic_enable_balloons && has('balloon_eval')
+        let b:syntastic_balloons = {}
+        for i in b:syntastic_loclist
+            let b:syntastic_balloons[i['lnum']] = i['text']
+        endfor
+        set beval bexpr=syntastic#ErrorBalloonExpr()
+    endif
 
     if g:syntastic_enable_signs
         call s:RefreshSigns()
@@ -277,6 +286,10 @@ function! SyntasticMake(options)
 endfunction
 
 function! s:Checkable(ft)
+    if !exists("g:loaded_" . a:ft . "_syntax_checker")
+        exec "runtime syntax_checkers/" . a:ft . ".vim"
+    endif
+
     return exists("*SyntaxCheckers_". a:ft ."_GetLocList") &&
                 \ index(g:syntastic_disabled_filetypes, a:ft) == -1
 endfunction
@@ -291,6 +304,9 @@ function! s:Disable(...)
     if !empty(ft) && index(g:syntastic_disabled_filetypes, ft) == -1
         call add(g:syntastic_disabled_filetypes, ft)
     endif
+
+    "will cause existing errors to be cleared
+    call s:UpdateErrors()
 endfunction
 
 "enable syntax checking for the given filetype (defaulting to current ft)
@@ -300,6 +316,13 @@ function! s:Enable(...)
     let i = index(g:syntastic_disabled_filetypes, ft)
     if i != -1
         call remove(g:syntastic_disabled_filetypes, i)
+    endif
+
+    if !&modified
+        call s:UpdateErrors()
+        redraw!
+    else
+        echom "Syntasic: enabled for the '" . ft . "' filetype. :write out to update errors"
     endif
 endfunction
 

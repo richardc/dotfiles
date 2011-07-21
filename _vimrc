@@ -44,6 +44,7 @@ au! BufRead,BufNewFile *.pp                     setfiletype puppet
 au! BufRead,BufNewFile *.markdown,*.mkd,*.md    setfiletype mkd
 au! BufRead,BufNewFile */vhosts.d/*.conf        setfiletype apache
 au! BufRead,BufNewFile */apache/**/*.conf       setfiletype apache
+au! BufNewFile,BufRead *.json                   setfiletype javascript
 
 " edge resistance when scrolling
 set scrolloff=2

@@ -27,6 +27,13 @@ _vim/bundle/pathogen:
   squashed: true
   type: git
   url: git://github.com/tpope/vim-pathogen.git
+_vim/bundle/puppet: 
+  branch: master
+  remote: braid/-vim/bundle/puppet
+  revision: 1f3b151b2d4eefc2f1d59c0d381d01d32d56eb50
+  squashed: true
+  type: git
+  url: git://github.com/ajf/puppet-vim.git
 _vim/bundle/syntastic: 
   branch: master
   remote: braid/-vim/bundle/syntastic

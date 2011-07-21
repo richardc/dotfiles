@@ -6,6 +6,13 @@ _vim/bundle/bufexplorer:
   squashed: true
   type: git
   url: git://github.com/vim-scripts/bufexplorer.zip.git
+_vim/bundle/buftabs: 
+  branch: master
+  remote: braid/-vim/bundle/buftabs
+  revision: 7176384120b58038797f698dfe622dde70be173b
+  squashed: true
+  type: git
+  url: git://github.com/vim-scripts/buftabs.git
 _vim/bundle/endwise: 
   branch: master
   remote: braid/-vim/bundle/endwise

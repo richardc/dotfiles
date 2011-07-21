@@ -9,7 +9,7 @@ _vim/bundle/fugitive:
 _vim/bundle/pathogen: 
   branch: master
   remote: braid/-vim/bundle/pathogen
-  revision: 552e5f0bf8f61eafb79df307c7dc5c9072741848
+  revision: fcf77f5101f3e589ce006c40ad3a0432735a05cf
   squashed: true
   type: git
   url: git://github.com/tpope/vim-pathogen.git

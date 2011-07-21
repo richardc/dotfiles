@@ -27,6 +27,13 @@ _vim/bundle/fugitive:
   squashed: true
   type: git
   url: git://github.com/tpope/vim-fugitive.git
+_vim/bundle/gundo: 
+  branch: master
+  remote: braid/-vim/bundle/gundo
+  revision: 8379d243f461c79e9cb60f1fe2f24f94fc7bf352
+  squashed: true
+  type: git
+  url: git://github.com/vim-scripts/Gundo.git
 _vim/bundle/haml: 
   branch: master
   remote: braid/-vim/bundle/haml

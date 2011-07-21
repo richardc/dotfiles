@@ -64,6 +64,9 @@ alias vi=vim
 # enable perlbrew     http://search.cpan.org/perldoc?perlbrew
 [[ -s "$HOME/perl5/perlbrew/etc/bashrc" ]] && source "$HOME/perl5/perlbrew/etc/bashrc"
 
+# enable local::lib   http://search.cpan.org/perldoc?local::lib
+[[ -s "$HOME/perl5/lib/perl5/local/lib.pm" ]] && eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+
 # enable rvm          http://rvm.beginrescueend.com/
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 

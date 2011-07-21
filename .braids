@@ -48,6 +48,13 @@ _vim/bundle/markdown:
   squashed: true
   type: git
   url: git://github.com/tpope/vim-markdown.git
+_vim/bundle/nerdcommenter: 
+  branch: master
+  remote: braid/-vim/bundle/nerdcommenter
+  revision: 5a9371437f97eef12325c04607de5e58b7168432
+  squashed: true
+  type: git
+  url: git://github.com/scrooloose/nerdcommenter.git
 _vim/bundle/openssl: 
   branch: master
   remote: braid/-vim/bundle/openssl

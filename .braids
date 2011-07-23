@@ -13,6 +13,13 @@ _vim/bundle/buftabs:
   squashed: true
   type: git
   url: git://github.com/vim-scripts/buftabs.git
+_vim/bundle/confluencewiki: 
+  branch: master
+  remote: braid/-vim/bundle/confluencewiki
+  revision: 3fd2ccecea85f4aaa7d2404b9dffce25ed74088d
+  squashed: true
+  type: git
+  url: git://github.com/vim-scripts/confluencewiki.vim.git
 _vim/bundle/endwise: 
   branch: master
   remote: braid/-vim/bundle/endwise

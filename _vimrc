@@ -15,6 +15,15 @@ let g:Gitv_OpenHorizontal = 1
 
 let g:CSApprox_verbose_level = 0
 
+" put gundo on the right, and patch below
+let g:gundo_right = 1
+let g:gundo_preview_bottom = 1
+
+if has("persistent_undo")
+    " save undo history between sessions
+    set undofile
+endif
+
 " put minibufexplorer at the bottom
 let g:miniBufExplSplitBelow=1
 

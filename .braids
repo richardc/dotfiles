@@ -104,3 +104,10 @@ _vim/bundle/syntastic:
   squashed: true
   type: git
   url: git://github.com/scrooloose/syntastic.git
+_vim/bundle/textile: 
+  branch: master
+  remote: braid/-vim/bundle/textile
+  revision: 5d25629d066d01f3c9e0872ac18565afbb84a6dd
+  squashed: true
+  type: git
+  url: git://github.com/timcharper/textile.vim.git

@@ -63,6 +63,12 @@ set showmode
 " when entering a brace flash its pair
 set showmatch
 
+" take longer to enter mapped key sequences
+set timeoutlen=3000
+
+" bind <C-x> to nothing so when I dither over the emacs bindings it doesn't do
+" the 'decrement number at cursor' default
+nnoremap <C-x> <Nop>
 
 " some emacs-like bindings from vimacs, should help muscle memory
 " http://github.com/andrep/vimacs/blob/master/plugin/vimacs.vim

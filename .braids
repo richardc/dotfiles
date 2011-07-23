@@ -118,13 +118,6 @@ _vim/bundle/repeat:
   squashed: true
   type: git
   url: git://github.com/tpope/vim-repeat.git
-_vim/bundle/snipmate-snippets/snippets: 
-  branch: master
-  remote: braid/-vim/bundle/snipmate-snippets/snippets
-  revision: 15cb6bf4fad5b11f83d2ddb7186aadc0604329c1
-  squashed: true
-  type: git
-  url: git://github.com/scrooloose/snipmate-snippets.git
 _vim/bundle/surround: 
   branch: master
   remote: braid/-vim/bundle/surround

@@ -27,6 +27,13 @@ _vim/bundle/confluencewiki:
   squashed: true
   type: git
   url: git://github.com/vim-scripts/confluencewiki.vim.git
+_vim/bundle/csapprox: 
+  branch: master
+  remote: braid/-vim/bundle/csapprox
+  revision: f98bf4acef9d9aa5e7f5b42eba09e259908f639b
+  squashed: true
+  type: git
+  url: git://github.com/godlygeek/csapprox.git
 _vim/bundle/endwise: 
   branch: master
   remote: braid/-vim/bundle/endwise

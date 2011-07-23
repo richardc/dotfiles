@@ -14,6 +14,8 @@ filetype plugin indent on
 
 let g:Gitv_OpenHorizontal = 1
 
+let g:CSApprox_verbose_level = 0
+
 " always show a status bar
 set laststatus=2
 " and put line,column in it

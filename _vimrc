@@ -77,6 +77,10 @@ nnoremap <C-x>b     :BufExplorer<cR>
 nnoremap <C-x><C-b> :buffers<CR>
 nnoremap <C-x>k     :bdelete<Space>
 
+" enable gundo - http://sjl.bitbucket.org/gundo.vim/
+nnoremap <F5> :GundoToggle<CR>
+map <leader>g :GundoToggle<CR>
+
 " From here to the end is kludged stolen sections from Smyler's config
 " http://www.stripey.com/vim/vimrc.html
 

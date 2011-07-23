@@ -79,6 +79,11 @@ nnoremap <C-x>b     :BufExplorer<cR>
 nnoremap <C-x><C-b> :buffers<CR>
 nnoremap <C-x>k     :bdelete<Space>
 
+nnoremap <C-x><C-n> :bnext<CR>
+nnoremap <C-x><C-p> :bprev<CR>
+nnoremap <C-x>n     :bnext<CR>
+nnoremap <C-x>p     :bprev<CR>
+
 " enable gundo - http://sjl.bitbucket.org/gundo.vim/
 nnoremap <F5> :GundoToggle<CR>
 map <leader>g :GundoToggle<CR>

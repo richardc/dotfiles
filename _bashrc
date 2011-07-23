@@ -73,6 +73,9 @@ alias vi=vim
 # enable pythonbrew   https://github.com/utahta/pythonbrew
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
 
+# use macvim as vim if we have it
+[[ -e /usr/local/bin/mvim ]] && alias vim="mvim -v"
+
 # clean out some broken vars
 export -n LESS
 export -n TMOUT

@@ -142,7 +142,7 @@ _vim/bundle/surround:
 _vim/bundle/syntastic: 
   branch: master
   remote: braid/-vim/bundle/syntastic
-  revision: 08e61a8c940356219b3a5c3f349af30fa6f78f8c
+  revision: 88dbca87c80de9b7852672907f6fc9fb935f531c
   squashed: true
   type: git
   url: git://github.com/scrooloose/syntastic.git

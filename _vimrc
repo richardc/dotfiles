@@ -27,7 +27,7 @@ au FileType git set nofoldenable
 
 syntax on
 set background=dark
-colorscheme elflord
+colorscheme vividchalk
 
 if has("gui_running")
       set guioptions-=T       " no toolbar

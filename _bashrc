@@ -47,10 +47,8 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # fuck you and your auto-suggesting ways
 unset command_not_found_handle
 
-# repopulate ssh-agent variables
-AGENT=($(find /tmp -type s -name "agent.*"))
-# 
-#[[ ${#AGENT[@]} -gt 1 ]] && killall ssh-agent && rm -rf ${AGENT[@]} && ssh-agent -t 8h && AGENT=($(find /tmp -type s -name "agent.*"))
+# repopulate SSH_AUTH_SOCK so we can talk to the ssh-agent
+AGENT=($(find /tmp -type s -name "agent.*" 2>/dev/null))
 if [ -S ${AGENT} ] ; then
 	export SSH_AUTH_SOCK=${AGENT}
 fi

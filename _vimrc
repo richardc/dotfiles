@@ -17,6 +17,9 @@ let g:Gitv_OpenHorizontal = 1
 
 let g:CSApprox_verbose_level = 0
 
+" put minibufexplorer at the bottom
+let g:miniBufExplSplitBelow=1
+
 " always show a status bar
 set laststatus=2
 " and put line,column in it
@@ -72,7 +75,7 @@ nnoremap <C-x> <Nop>
 
 " some emacs-like bindings from vimacs, should help muscle memory
 " http://github.com/andrep/vimacs/blob/master/plugin/vimacs.vim
-nnoremap <C-x><C-c> :confirm qall<CR>
+nnoremap <C-x><C-c> :qa<CR>
 nnoremap <C-x><C-f> :edit<Space>
 nnoremap <C-x><C-s> :update<CR>
 
@@ -82,8 +85,8 @@ nnoremap <C-x>0 <C-w>c
 nnoremap <C-x>1 <C-w>o
 nnoremap <C-x>o <C-w>w
 
-nnoremap <C-x>b     :BufExplorer<cR>
-nnoremap <C-x><C-b> :buffers<CR>
+nnoremap <C-x>b     :MiniBufExplorer<CR>
+nnoremap <C-x><C-b> :BufExplorer<CR>
 nnoremap <C-x>k     :bdelete<Space>
 
 nnoremap <C-x><C-n> :bnext<CR>

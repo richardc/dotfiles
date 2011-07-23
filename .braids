@@ -90,6 +90,13 @@ _vim/bundle/nerdcommenter:
   squashed: true
   type: git
   url: git://github.com/scrooloose/nerdcommenter.git
+_vim/bundle/nerdtree: 
+  branch: master
+  remote: braid/-vim/bundle/nerdtree
+  revision: 2dd198c6c412b4ddd361b43586b01981e8383239
+  squashed: true
+  type: git
+  url: git://github.com/scrooloose/nerdtree.git
 _vim/bundle/openssl: 
   branch: master
   remote: braid/-vim/bundle/openssl

@@ -19,6 +19,10 @@ set laststatus=2
 " and put line,column in it
 set ruler
 
+" don't fold by default
+set foldlevel=99
+au FileType git set nofoldenable
+
 syntax on
 set background=dark
 colorscheme elflord

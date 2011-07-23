@@ -1,6 +1,7 @@
 " vim, not vi
 set nocompatible
 
+
 " always treat things as utf-8
 set encoding=utf-8
 set termencoding=utf-8
@@ -45,14 +46,13 @@ set listchars=tab:▸\ ,eol:¬
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 
-
-" register syntax highlighting filetypes
+" register filetypes
 au! BufRead,BufNewFile *.haml                   setfiletype haml
 au! BufRead,BufNewFile *.pp                     setfiletype puppet
 au! BufRead,BufNewFile *.markdown,*.mkd,*.md    setfiletype markdown
 au! BufRead,BufNewFile */vhosts.d/*.conf        setfiletype apache
 au! BufRead,BufNewFile */apache/**/*.conf       setfiletype apache
-au! BufNewFile,BufRead *.json                   setfiletype javascript
+au! BufRead,BufNewFile *.json                   setfiletype javascript
 
 " edge resistance when scrolling
 set scrolloff=2
@@ -125,19 +125,8 @@ set formatoptions-=t
 set textwidth=79
 
 " * Text Formatting -- Specific File Formats
-
-" enable filetype detection:
-filetype on
-" recognize anything in my .Postponed directory as a news article, and anything
-" at all with a .txt extension as being human-language text [this clobbers the
-" `help' filetype, but that doesn't seem to prevent help from working
-" properly]:
-augroup filetype
-  autocmd BufNewFile,BufRead */.Postponed/*      set filetype=mail
-  autocmd BufNewFile,BufRead *.txt              set filetype=human
-augroup END
-
 " in human-language files, automatically format everything at 72 chars:
+"
 autocmd FileType mail,human set formatoptions+=t textwidth=72 nonumber
 
 " for C-like programming, have automatic indentation:
@@ -166,10 +155,6 @@ autocmd FileType html,css set noexpandtab tabstop=2
 " needed, and have indentation at 8 chars to be sure that all indents are tabs
 " (despite the mappings later):
 autocmd FileType make set noexpandtab shiftwidth=8
-
-" for markdown files, this thing off the internet I don't understand
-"    http://plasticboy.com/markdown-vim-mode/
-autocmd FileType mkd set ai formatoptions+=tcroqn2 comments=n:>
 
 " * Search & Replace
 

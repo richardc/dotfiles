@@ -1,17 +1,15 @@
 " vim, not vi
 set nocompatible
 
+" enable pathogen
+call pathogen#infect()
+
+filetype plugin indent on
 
 " always treat things as utf-8
 set encoding=utf-8
 set termencoding=utf-8
 set fileencoding=utf-8
-
-
-" enable pathogen
-call pathogen#infect()
-
-filetype plugin indent on
 
 let g:Gitv_OpenHorizontal = 1
 

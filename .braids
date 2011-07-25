@@ -107,7 +107,7 @@ _vim/bundle/openssl:
 _vim/bundle/pathogen: 
   branch: master
   remote: braid/-vim/bundle/pathogen
-  revision: fcf77f5101f3e589ce006c40ad3a0432735a05cf
+  revision: 73ba356522e3f374c7696bcc4ce5ecf011cf5998
   squashed: true
   type: git
   url: git://github.com/tpope/vim-pathogen.git

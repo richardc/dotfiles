@@ -24,8 +24,12 @@ if has("persistent_undo")
     set undofile
 endif
 
-" put minibufexplorer at the bottom
-let g:miniBufExplSplitBelow=1
+" minibufexpl
+let g:miniBufExplSplitBelow=1           " show at the bottom
+let g:miniBufExplMapWindowNavVim=1      " C-[hjkl] navigates windows
+let g:miniBufExplMapWindowNavArrows=1   " C-{Left,Right,Up,Down} navigates windows
+let g:miniBufExplMapCTabSwitchBufs=1    " C-TAB cycles buffers
+let g:miniBufExplUseSingleClick=1       " single click to switch
 
 " always show a status bar
 set laststatus=2

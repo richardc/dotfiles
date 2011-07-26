@@ -11,8 +11,10 @@ Installation
 Install to `~/.vim/autoload/pathogen.vim`.  Or copy and paste:
 
     mkdir -p ~/.vim/autoload ~/.vim/bundle
-    curl https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim\
+    curl https://raw.github.com/tpope/vim-pathogen/HEAD/autoload/pathogen.vim \
       > ~/.vim/autoload/pathogen.vim
+
+If you don't have `curl`, use `wget -O -` instead.
 
 By the way, if you're using Windows, change all occurrences of `~/.vim`
 to `~\vimfiles`.
@@ -23,6 +25,13 @@ Usage
 Add this to your vimrc:
 
     call pathogen#infect()
+
+If you're brand new to Vim and lacking a vimrc, `vim ~/.vimrc` and paste
+in the following super-minimal example:
+
+    call pathogen#infect()
+    syntax on
+    filetype plugin indent on
 
 Now any plugins you wish to install can be extracted to a subdirectory
 under `~/.vim/bundle`, and they will be added to the `'runtimepath'`.
@@ -43,16 +52,32 @@ every directory in your `'runtimepath'`.  If you really want to get
 crazy, you could even invoke `Helptags` in your vimrc.  I don't like to
 get crazy.
 
-If you're one of those OCD types that insists pathogen.vim live in
-`~/.vim/bundle` like every other plugin, you can do that if you add an
-extra line to your vimrc:
-
-    source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
-
 Finally, pathogen.vim has a rich API that can manipulate `'runtimepath'`
 and other comma-delimited path options in ways most people will never
 need to do.  If you're one of those edge cases, look at the source.
 It's well documented.
+
+FAQ
+---
+
+> Can I put pathogen.vim in a submodule like all my other plugins?
+
+Sure, stick it under `~/.vim/bundle`, and prepend the following to your
+vimrc:
+
+    source ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim
+
+> Will you accept these 14 pull requests adding a `.gitignore` for
+> `tags` so I don't see untracked changes in my dot files repository?
+
+No, but I'll teach you how to ignore `tags` globally:
+
+    git config --global core.excludesfile '~/.cvsignore'
+    echo tags >> ~/.cvsignore
+
+While any filename will work, I've chosen to follow the ancient
+tradition of `.cvsignore` because utilities like rsync use it, too.
+Clever, huh?
 
 Contributing
 ------------
@@ -76,11 +101,11 @@ Self-Promotion
 --------------
 
 Like pathogen.vim?  Follow the repository on
-[GitHub](http://github.com/tpope/vim-pathogen) and vote for it on
+[GitHub](https://github.com/tpope/vim-pathogen) and vote for it on
 [vim.org](http://www.vim.org/scripts/script.php?script_id=2332).  And if
-you're feeling especially charitable, follow tpope on
+you're feeling especially charitable, follow [tpope](http://tpo.pe/) on
 [Twitter](http://twitter.com/tpope) and
-[GitHub](http://github.com/tpope).
+[GitHub](https://github.com/tpope).
 
 License
 -------

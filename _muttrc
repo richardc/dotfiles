@@ -7,33 +7,14 @@
 #
 set folder=~/Maildir		# where i keep my mailboxes
 
-# Who I masquerade as:
-alternates "(richardc?@oven\.com|richardc@tw2\.com|@mirth\.demon\.co\.uk|richardc@unixbeard\.net|richardc@object1.com|richard.clamp@object1.com)" 
-
-macro generic "<f10>u" ":set signature=~/.signature.unixbeard^M:set from=\"Richard Clamp <richardc@unixbeard.net>\"^M:set ?from^M"
-macro generic "<f10>m" ":set signature=~/.signature.mirth^M:set from=\"Richard Clamp <richardc@mirth.demon.co.uk>\"^M:set ?from^M"
-macro generic "<f10>o" ":set signature=~/.signature.oven^M:set from=\"Richard Clamp <richardc@oven.com>\"^M:set ?from^M"
-macro generic "<f10>f" ":set signature=~/.signature.fotango^M:set from=\"Richard Clamp <richardc@fotango.com>\"^M:set ?from^M"
-
-macro pager   "<f10>u" ":set signature=~/.signature.unixbeard^M:set from=\"Richard Clamp <richardc@unixbeard.net>\"^M:set ?from^M"
-macro pager   "<f10>m" ":set signature=~/.signature.mirth^M:set from=\"Richard Clamp <richardc@mirth.demon.co.uk>\"^M:set ?from^M"
-macro pager   "<f10>o" ":set signature=~/.signature.oven^M:set from=\"Richard Clamp <richardc@oven.com>\"^M:set ?from^M"
-
-#send-hook .             "set signature=~/.signature.oven; set from=\"Richard Clamp <richardc@oven.com>\""
-send-hook yapc-europe@lists\.dircon\.co\.uk \
-			 "set signature=~/.signature.mirth; set from=\"Richard Clamp <richardc@mirth.demon.co.uk>\""
+# Who I am:
+set signature=~/.signature.unixbeard
+set from="Richard Clamp <richardc@unixbeard.net>"
 
 my_hdr Bcc: richardc@unixbeard.net
 
-folder-hook .       "set signature=~/.signature.unixbeard; set from=\"Richard Clamp <richardc@unixbeard.net>\"; set hostname=\"mirth.demon.co.uk\""
-#folder-hook list_london.pm   "set signature=~/.signature.mirth; set from=\"Richard Clamp <richardc@mirth.demon.co.uk>\"; set hostname=\"mirth.demon.co.uk\""
-folder-hook object1 "set signature=~/.signature.object1; set from=\"Richard Clamp <richardc@object1.com>\"; set hostname=\"object1.com\""
-
 set use_domain
  
-
-set query_command="lbdbq %s"
-
 #do unto others, as they just did to you
 set pgp_replyencrypt
 set pgp_replysign
@@ -333,8 +314,7 @@ source ~/Maildir/aliases
 #	mailboxes <path1> [ <path2> ... ]
 #
 
-#mailboxes ! +mutt-dev +mutt-users +open-pgp +wmaker +hurricane +vim +ietf \
-	+drums
+#mailboxes ! +mutt-dev +mutt-users +open-pgp +wmaker +hurricane +vim +ietf +drums
 mailboxes `echo +inbox +maybe_spam ~/Maildir/.INBOX.*`
 #mailboxes `echo +inbox ~/Mail/*/*/*`
 

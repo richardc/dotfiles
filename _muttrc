@@ -356,6 +356,8 @@ hdr_order date from subject to cc
 
 #lists mutt-dev mutt-users
 
+alternative_order text/plain text/enriched text/html
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #
 # Automatically use entries from ~/.mailcap to view these MIME types

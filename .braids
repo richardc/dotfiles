@@ -37,7 +37,7 @@ _vim/bundle/endwise:
 _vim/bundle/fugitive: 
   branch: master
   remote: braid/-vim/bundle/fugitive
-  revision: a0f5c0445eca54b5ce9ed90275fd49feafc998fd
+  revision: 8548a9c6214a6db27d4db623617d9d79de14ba91
   squashed: true
   type: git
   url: git://github.com/tpope/vim-fugitive.git

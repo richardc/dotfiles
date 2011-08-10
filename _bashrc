@@ -12,6 +12,11 @@ export EDITOR=vim
 
 # my path, not yours
 PATH="$HOME/bin"
+PATH="$PATH:/usr/lib/ccache"                   # ccache symlinks on debian
+
+ccache=$( echo /usr/local/Cellar/ccache/*/libexec )
+[[ -e "$ccache" ]] && PATH="$PATH:$ccache"     # ccache symlinks on OSX (brew)
+
 PATH="$PATH:$HOME/.gem/ruby/1.8/bin"           # ruby gems
 PATH="$PATH:$HOME/hck/perl-5.12.1/bin"         # handbuilt perl
 PATH="$PATH:/opt/local/bin:/opt/local/sbin"    # macports

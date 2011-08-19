@@ -148,10 +148,10 @@ function! s:Detect(path)
       call buffer.setvar('&path',s:sub(buffer.getvar('&path'),'^\.%(,|$)',''))
     endif
     if b:git_dir !~# ',' && stridx(buffer.getvar('&tags'),b:git_dir.'/tags') == -1
+      call buffer.setvar('&tags',b:git_dir.'/tags'.','.buffer.getvar('&tags'))
       if &filetype != ''
-        call buffer.setvar('&tags',buffer.getvar('&tags').','.b:git_dir.'/'.&filetype.'.tags')
+        call buffer.setvar('&tags',b:git_dir.'/'.&filetype.'.tags'.','.buffer.getvar('&tags'))
       endif
-      call buffer.setvar('&tags',buffer.getvar('&tags').','.b:git_dir.'/tags')
     endif
   endif
 endfunction
@@ -1549,7 +1549,7 @@ function! s:Browse(bang,line1,count,...) abort
       let @* = url
       return 'echomsg '.string(url)
     else
-      return 'echomsg '.string(url).'|silent Git web--browse '.shellescape(url,1)
+      return 'echomsg '.string(url).'|call fugitive#buffer().repo().git_chomp("web--browse",'.string(url).')'
     endif
   catch /^fugitive:/
     return 'echoerr v:errmsg'
@@ -1753,6 +1753,9 @@ function! s:BufReadIndexFile()
     let b:fugitive_type = 'blob'
     let b:git_dir = s:repo().dir()
     call s:ReplaceCmd(s:repo().git_command('cat-file','blob',s:buffer().sha1()))
+    if &bufhidden ==# ''
+      setlocal bufhidden=delete
+    endif
     return ''
   catch /^fugitive: rev-parse/
     silent exe 'doau BufNewFile '.s:fnameescape(bufname(''))
@@ -1849,6 +1852,9 @@ function! s:BufReadObject()
     endif
     call setpos('.',pos)
     setlocal ro noma nomod nomodeline
+    if &bufhidden ==# ''
+      setlocal bufhidden=delete
+    endif
     if b:fugitive_type !=# 'blob'
       set filetype=git
       nnoremap <buffer> <silent> a :<C-U>let b:fugitive_display_format += v:count1<Bar>exe <SID>BufReadObject()<CR>

@@ -30,7 +30,7 @@ _vim/bundle/csapprox:
 _vim/bundle/fugitive: 
   branch: master
   remote: braid/-vim/bundle/fugitive
-  revision: 8548a9c6214a6db27d4db623617d9d79de14ba91
+  revision: 8993abb9f12f76a220336cbb94acb30a07cc5e3f
   squashed: true
   type: git
   url: git://github.com/tpope/vim-fugitive.git
@@ -107,7 +107,7 @@ _vim/bundle/openssl:
 _vim/bundle/pathogen: 
   branch: master
   remote: braid/-vim/bundle/pathogen
-  revision: ede9571bc3e17924b8b78de845b117ad298bc43f
+  revision: 1e0c2b439359c0adf24e85ef8be59c453b6352f9
   squashed: true
   type: git
   url: git://github.com/tpope/vim-pathogen.git

@@ -55,7 +55,7 @@ set hdrs			# include `my_hdr' lines in outgoing messages
 #set header			# include message header when replying
 set help			# show the help lines
 #set history=20			# number of lines of history to remember
-set hostname="mirth.demon.co.uk"	# my DNS domain
+#set hostname="mirth.demon.co.uk"	# my DNS domain
 set include			# always include messages when replying
 set indent_string="> "		# how to quote replied text
 #set locale="C"			# locale to use for printing time

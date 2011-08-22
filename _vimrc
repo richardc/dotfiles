@@ -31,6 +31,10 @@ let g:miniBufExplMapWindowNavArrows=1   " C-{Left,Right,Up,Down} navigates windo
 let g:miniBufExplMapCTabSwitchBufs=1    " C-TAB cycles buffers
 let g:miniBufExplUseSingleClick=1       " single click to switch
 
+" taglist
+let g:tlist_puppet_settings = 'puppet;d:definition'
+nnoremap <F9> :TlistToggle<CR>
+
 " always show a status bar
 set laststatus=2
 " and put line,column in it

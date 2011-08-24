@@ -7,7 +7,7 @@
 
 [user]
     name  = Richard Clamp
-[% IF env.HOSTNAME.match('net-a-porter') || env.USER.match('r.clamp') %]
+[% IF env.HOSTNAME.match('dave.net-a-porter.com') %]
     email = richard.clamp@net-a-porter.com
 [% ELSE %]
     email = richardc@unixbeard.net

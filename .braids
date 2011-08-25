@@ -65,7 +65,7 @@ _vim/bundle/haml:
 _vim/bundle/liquid: 
   branch: master
   remote: braid/-vim/bundle/liquid
-  revision: 0363d0b3e3936158d105772bdda484f5df15a7e0
+  revision: d6ae02c3318a2a522d01dde555829eb6080deceb
   squashed: true
   type: git
   url: git://github.com/tpope/vim-liquid.git

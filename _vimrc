@@ -19,11 +19,6 @@ let g:CSApprox_verbose_level = 0
 let g:gundo_right = 1
 let g:gundo_preview_bottom = 1
 
-if has("persistent_undo")
-    " save undo history between sessions
-    set undofile
-endif
-
 " minibufexpl
 let g:miniBufExplSplitBelow=1           " show at the bottom
 let g:miniBufExplMapWindowNavVim=1      " C-[hjkl] navigates windows

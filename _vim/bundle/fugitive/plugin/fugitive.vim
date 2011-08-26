@@ -399,10 +399,8 @@ function! s:buffer_type(...) dict abort
     let type = 'directory'
   elseif self.spec() == ''
     let type = 'null'
-  elseif filereadable(self.spec())
-    let type = 'file'
   else
-    let type = ''
+    let type = 'file'
   endif
   if a:0
     return !empty(filter(copy(a:000),'v:val ==# type'))
@@ -999,6 +997,8 @@ function! s:Edit(cmd,bang,...) abort
     return ''
   elseif a:0
     let file = s:buffer().expand(a:1)
+  elseif expand('%') ==# ''
+    let file = ':'
   elseif s:buffer().commit() ==# '' && s:buffer().path('/') !~# '^/.git\>'
     let file = s:buffer().path(':')
   else
@@ -1408,7 +1408,7 @@ function! s:Blame(bang,line1,line2,count,args) abort
     else
       let cmd += ['--contents', '-']
     endif
-    let basecmd = call(s:repo().git_command,cmd+['--',s:buffer().path()],s:repo())
+    let basecmd = escape(call(s:repo().git_command,cmd+['--',s:buffer().path()],s:repo()),'!')
     try
       let cd = exists('*haslocaldir') && haslocaldir() ? 'lcd ' : 'cd '
       if !s:repo().bare()
@@ -1456,6 +1456,9 @@ function! s:Blame(bang,line1,line2,count,args) abort
         execute current
         execute "vertical resize ".(match(getline('.'),'\s\+\d\+)')+1)
         setlocal nomodified nomodifiable nonumber scrollbind nowrap foldcolumn=0 nofoldenable filetype=fugitiveblame
+        if exists('+relativenumber')
+          setlocal norelativenumber
+        endif
         nnoremap <buffer> <silent> <CR> :<C-U>exe <SID>BlameJump('')<CR>
         nnoremap <buffer> <silent> P    :<C-U>exe <SID>BlameJump('^'.v:count1)<CR>
         nnoremap <buffer> <silent> ~    :<C-U>exe <SID>BlameJump('~'.v:count1)<CR>
@@ -1757,6 +1760,9 @@ function! s:ReplaceCmd(cmd,...) abort
   silent edit!
   silent exe 'keepalt file '.s:fnameescape(fn)
   call delete(tmp)
+  if bufname('$') == tmp
+    silent execute 'bwipeout '.bufnr('$')
+  endif
   silent exe 'doau BufReadPost '.s:fnameescape(fn)
 endfunction
 
@@ -1799,6 +1805,8 @@ function! s:BufReadIndex()
     nnoremap <buffer> <silent> a :<C-U>let b:fugitive_display_format += 1<Bar>exe <SID>BufReadIndex()<CR>
     nnoremap <buffer> <silent> i :<C-U>let b:fugitive_display_format -= 1<Bar>exe <SID>BufReadIndex()<CR>
     nnoremap <buffer> <silent> C :<C-U>Gcommit<CR>
+    nnoremap <buffer> <silent> cA :<C-U>Gcommit --amend --reuse-message=HEAD<CR>
+    nnoremap <buffer> <silent> ca :<C-U>Gcommit --amend<CR>
     nnoremap <buffer> <silent> D :<C-U>execute <SID>StageDiff('Gvdiff')<CR>
     nnoremap <buffer> <silent> dd :<C-U>execute <SID>StageDiff('Gvdiff')<CR>
     nnoremap <buffer> <silent> dh :<C-U>execute <SID>StageDiff('Gsdiff')<CR>
@@ -1807,7 +1815,7 @@ function! s:BufReadIndex()
     nnoremap <buffer> <silent> dv :<C-U>execute <SID>StageDiff('Gvdiff')<CR>
     nnoremap <buffer> <silent> p :<C-U>execute <SID>StagePatch(line('.'),line('.')+v:count1-1)<CR>
     xnoremap <buffer> <silent> p :<C-U>execute <SID>StagePatch(line("'<"),line("'>"))<CR>
-    nnoremap <buffer> <silent> q :<C-U>bdelete<CR>
+    nnoremap <buffer> <silent> q :<C-U>if bufnr('$') == 1<Bar>quit<Bar>else<Bar>bdelete<Bar>endif<CR>
     nnoremap <buffer> <silent> R :<C-U>edit<CR>
   catch /^fugitive:/
     return 'echoerr v:errmsg'

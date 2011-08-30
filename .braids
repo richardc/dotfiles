@@ -72,7 +72,7 @@ _vim/bundle/liquid:
 _vim/bundle/markdown: 
   branch: master
   remote: braid/-vim/bundle/markdown
-  revision: ac0d7dee842a400efd279a725dded6a7dffb81cb
+  revision: ae3a2653f824bb9e969f462c5d77e035a518ea61
   squashed: true
   type: git
   url: git://github.com/tpope/vim-markdown.git

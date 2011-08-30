@@ -1,27 +1,12 @@
 " surround.vim - Surroundings
-" Author:       Tim Pope <vimNOSPAM@tpope.org>
+" Author:       Tim Pope <http://tpo.pe/>
 " Version:      1.90
 " GetLatestVimScripts: 1697 1 :AutoInstall: surround.vim
-"
-" See surround.txt for help.  This can be accessed by doing
-"
-" :helptags ~/.vim/doc
-" :help surround
-"
-" Licensed under the same terms as Vim itself.
 
-" ============================================================================
-
-" Exit quickly when:
-" - this plugin was already loaded or disabled
-" - when 'compatible' is set
-if (exists("g:loaded_surround") && g:loaded_surround) || &cp
+if exists("g:loaded_surround") || &cp
   finish
 endif
 let g:loaded_surround = 1
-
-let s:cpo_save = &cpo
-set cpo&vim
 
 " Input functions {{{1
 
@@ -49,7 +34,6 @@ function! s:inputtarget()
 endfunction
 
 function! s:inputreplacement()
-  "echo '-- SURROUND --'
   let c = s:getchar()
   if c == " "
     let c = c . s:getchar()
@@ -164,7 +148,6 @@ function! s:wrap(string,char,type,...)
   else
     let initspaces = matchstr(getline('.'),'\%^\s*')
   endif
-  " Duplicate b's are just placeholders (removed)
   let pairs = "b()B{}r[]a<>"
   let extraspace = ""
   if newchar =~ '^ '
@@ -233,12 +216,6 @@ function! s:wrap(string,char,type,...)
       let before = '\begin'.env
       let after  = '\end'.matchstr(env,'[^}]*').'}'
     endif
-    "if type ==# 'v' || type ==# 'V'
-    "let before = before ."\n\t"
-    "endif
-    "if type ==# 'v'
-    "let after  = "\n".initspaces.after
-    "endif
   elseif newchar ==# 'f' || newchar ==# 'F'
     let fnc = input('function: ')
     if fnc != ""
@@ -264,9 +241,7 @@ function! s:wrap(string,char,type,...)
     let before = ''
     let after  = ''
   endif
-  "let before = substitute(before,'\n','\n'.initspaces,'g')
   let after  = substitute(after ,'\n','\n'.initspaces,'g')
-  "let after  = substitute(after,"\n\\s*\<C-U>\\s*",'\n','g')
   if type ==# 'V' || (special && type ==# "v")
     let before = substitute(before,' \+$','','')
     let after  = substitute(after ,'^ \+','','')
@@ -321,7 +296,6 @@ endfunction
 
 function! s:insert(...) " {{{1
   " Optional argument causes the result to appear on 3 lines, not 1
-  "call inputsave()
   let linemode = a:0 ? a:1 : 0
   let char = s:inputreplacement()
   while char == "\<CR>" || char == "\<C-S>"
@@ -329,11 +303,9 @@ function! s:insert(...) " {{{1
     let linemode = linemode + 1
     let char = s:inputreplacement()
   endwhile
-  "call inputrestore()
   if char == ""
     return ""
   endif
-  "call inputsave()
   let cb_save = &clipboard
   set clipboard-=unnamed clipboard-=unnamedplus
   let reg_save = @@
@@ -350,9 +322,6 @@ function! s:insert(...) " {{{1
   if exists("g:surround_insert_tail")
     call setreg('"',g:surround_insert_tail,"a".getregtype('"'))
   endif
-  "if linemode
-  "call setreg('"',substitute(getreg('"'),'^\s\+','',''),'c')
-  "endif
   if col('.') >= col('$')
     norm! ""p
   else
@@ -502,7 +471,6 @@ function! s:opfunc(type,...) " {{{1
   set clipboard-=unnamed clipboard-=unnamedplus
   let reg_save = getreg(reg)
   let reg_type = getregtype(reg)
-  "call setreg(reg,"\n","c")
   let type = a:type
   if a:type == "char"
     silent exe 'norm! v`[o`]"'.reg.'y'
@@ -579,7 +547,6 @@ nnoremap <silent> <Plug>YSsurround :<C-U>call <SID>opfunc2(v:count1)<CR>
 " <C-U> discards the numerical argument but there's not much we can do with it
 nnoremap <silent> <Plug>Ysurround  :<C-U>set opfunc=<SID>opfunc<CR>g@
 nnoremap <silent> <Plug>YSurround  :<C-U>set opfunc=<SID>opfunc2<CR>g@
-vnoremap <silent> <Plug>Vsurround  :<C-U>call <SID>opfunc(visualmode())<CR>
 vnoremap <silent> <Plug>VSurround  :<C-U>call <SID>opfunc(visualmode(),visualmode() ==# 'V' ? 1 : 0)<CR>
 vnoremap <silent> <Plug>VgSurround :<C-U>call <SID>opfunc(visualmode(),visualmode() ==# 'V' ? 0 : 1)<CR>
 inoremap <silent> <Plug>Isurround  <C-R>=<SID>insert()<CR>
@@ -593,13 +560,6 @@ if !exists("g:surround_no_mappings") || ! g:surround_no_mappings
   nmap      yss  <Plug>Yssurround
   nmap      ySs  <Plug>YSsurround
   nmap      ySS  <Plug>YSsurround
-  if !hasmapto("<Plug>Vsurround","v") && !hasmapto("<Plug>VSurround","v")
-    if exists(":xmap")
-      xmap  s    <Plug>Vsurround
-    else
-      vmap  s    <Plug>Vsurround
-    endif
-  endif
   if !hasmapto("<Plug>VSurround","v")
     if exists(":xmap")
       xmap  S    <Plug>VSurround
@@ -617,10 +577,6 @@ if !exists("g:surround_no_mappings") || ! g:surround_no_mappings
   endif
   imap      <C-G>s <Plug>Isurround
   imap      <C-G>S <Plug>ISurround
-  "Implemented internally instead
-  "imap      <C-S><C-S> <Plug>ISurround
 endif
-
-let &cpo = s:cpo_save
 
 " vim:set ft=vim sw=2 sts=2 et:

@@ -12,19 +12,20 @@
 (if (and (getenv "STY") (not window-system))
     (global-unset-key "\C-z"))
 
-;; force our cperl mode to be the local one
-;(load-file "~/.elisp/cperl-mode.el")
-
 (setq frame-title-format (list "" 
 			       'invocation-name "@" 'system-name' ": %b"))
 
 (server-start)
-;;(gnuserv-start)
 
 ;; from puppet:ext/emacs/puppet-mode.el
 (autoload 'puppet-mode "puppet-mode" "Major mode for editing puppet manifests")
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
 
+;; from http://orgmode.org/worg/org-tutorials/orgtutorial_dto.html
+(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
+(define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map "\C-ca" 'org-agenda)
+(setq org-log-done t)
 
 ;; http://www.emacswiki.org/emacs/download/apache-mode.el;;   
 (autoload 'apache-mode "apache-mode" nil t)

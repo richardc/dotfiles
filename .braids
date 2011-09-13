@@ -128,7 +128,7 @@ _vim/bundle/repeat:
 _vim/bundle/surround: 
   branch: master
   remote: braid/-vim/bundle/surround
-  revision: c9120390d8e51e42faef420f83ef0001a20643f3
+  revision: f6c9d3beb2d11959d22b2555636aeb0c37e66aa1
   squashed: true
   type: git
   url: git://github.com/tpope/vim-surround.git

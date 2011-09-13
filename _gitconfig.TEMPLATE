@@ -13,6 +13,9 @@
     email = richardc@unixbeard.net
 [% END %]
 
+[github]
+    user = richardc
+
 [alias]
     st = status
     ci = commit

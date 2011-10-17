@@ -149,7 +149,7 @@ _vim/bundle/taglist:
 _vim/bundle/textile: 
   branch: master
   remote: braid/-vim/bundle/textile
-  revision: 5d25629d066d01f3c9e0872ac18565afbb84a6dd
+  revision: 2f831f45d42dbff41d61decb8fc71b177899f013
   squashed: true
   type: git
   url: git://github.com/timcharper/textile.vim.git

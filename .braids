@@ -125,6 +125,13 @@ _vim/bundle/repeat:
   squashed: true
   type: git
   url: git://github.com/tpope/vim-repeat.git
+_vim/bundle/sieve: 
+  branch: master
+  remote: braid/-vim/bundle/sieve
+  revision: 2e92fd5aef1d01152271a605012751b242fce3e4
+  squashed: true
+  type: git
+  url: git://github.com/vim-scripts/sieve.vim.git
 _vim/bundle/surround: 
   branch: master
   remote: braid/-vim/bundle/surround

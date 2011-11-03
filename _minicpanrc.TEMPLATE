@@ -1,2 +1,8 @@
+[% IF env.USER.match('r.clamp') %]
+local:  [% env.HOME %]/shared/miniCPAN/
+remote: http://cpanmirror.wtf.nap/
+[% ELSE %]
 local:  [% env.HOME %]/hck/miniCPAN/
 remote: http://cpan.etla.org/
+[% END %]
+

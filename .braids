@@ -86,7 +86,7 @@ _vim/bundle/minibufexpl:
 _vim/bundle/nerdcommenter: 
   branch: master
   remote: braid/-vim/bundle/nerdcommenter
-  revision: b28e7be63235982501ab7dd30c03ea7feef7b095
+  revision: 8f2af9a6d765066c5f41158beb70235245040ac7
   squashed: true
   type: git
   url: git://github.com/scrooloose/nerdcommenter.git

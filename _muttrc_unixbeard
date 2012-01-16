@@ -1,0 +1,6 @@
+set from="Richard Clamp <richardc@unixbeard.net>"
+
+my_hdr Bcc: richardc@unixbeard.net
+set folder=~/Maildir
+
+source ~/.muttrc_core

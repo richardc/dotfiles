@@ -1,0 +1,14 @@
+set from="Richard Clamp <richardc@unixbeard.net>"
+my_hdr Bcc: richardc@unixbeard.net
+
+source ~/.muttrc_core
+
+source ~/.mutt/muttrc.gmail_password
+
+set spoolfile = imaps://imap.gmail.com:993/INBOX
+
+set folder = "imaps://imap.gmail.com:993"
+set record="+[Gmail]/Sent Mail"
+set postponed="+[Gmail]/Drafts"
+
+set ssl_starttls="yes"

@@ -1,0 +1,12 @@
+set from="Richard Clamp <richard.clamp@net-a-porter.com>"
+my_hdr Bcc: richard.clamp@net-a-porter.com
+
+
+source ~/.muttrc_core
+
+source ~/.mutt/muttrc.nap_password
+
+set folder="imap://cas01-pr-whi.london.net-a-porter.com/"
+set spoolfile="imap://cas01-pr-whi.london.net-a-porter.com/INBOX"
+
+set ssl_starttls="yes"

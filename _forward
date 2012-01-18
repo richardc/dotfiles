@@ -3,24 +3,44 @@
 
 logfile $home/Maildir/from
 
-logwrite "$message_id $tod_log"
-logwrite "$message_id From: $h_from"
-logwrite "$message_id Subject: $h_subject"
+logwrite "From $sender_address $tod_log $message_id"
+logwrite "Subject: $h_subject"
 
 if $h_X-is-spam: CONTAINS "yes"
 then
-    logwrite "$message_id SPAM"
+    logwrite " => SPAM"
     save $home/Maildir/.INBOX.spam/
     finish
 endif
 
 if $h_List-Id: CONTAINS "london.pm.london.pm.org"
 then
-    logwrite "$message_id london.pm"
+    logwrite " => london.pm"
     save $home/Maildir/.INBOX.london_pm/
     finish
 endif
 
-logwrite "$message_id INBOX"
+if $h_List-Id: CONTAINS "jobs.london.pm.org"
+then
+    logwrite " => jobs"
+    save $home/Maildir/.INBOX.jobs/
+    finish
+endif
+
+if $h_List-Id: CONTAINS "jobs-discuss.london.pm.org"
+then
+    logwrite " => jobs-discuss"
+    save $home/Maildir/.INBOX.jobs-discuss/
+    finish
+endif
+
+if $h_List-Id: CONTAINS "void.slab.org"
+then
+    logwrite " => void"
+    save $home/Maildir/.INBOX.void/
+    finish
+endif
+
+logwrite " => INBOX"
 save $home/Maildir/
 finish

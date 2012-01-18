@@ -7,7 +7,7 @@ logwrite "$message_id $tod_log"
 logwrite "$message_id From: $h_from"
 logwrite "$message_id Subject: $h_subject"
 
-if $h_X-Is-Spam: CONTAINS "Yes"
+if $h_X-is-spam: CONTAINS "yes"
 then
     logwrite "$message_id SPAM"
     save $home/Maildir/.INBOX.spam/

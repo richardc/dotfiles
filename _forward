@@ -1,0 +1,26 @@
+# Exim filter - magic cookie - do not remove line
+# vi: filetype=exim
+
+logfile $home/Maildir/from
+
+logwrite "$message_id $tod_log"
+logwrite "$message_id From: $h_from"
+logwrite "$message_id Subject: $h_subject"
+
+if $h_X-Is-Spam: CONTAINS "Yes"
+then
+    logwrite "$message_id SPAM"
+    save $home/Maildir/.INBOX.spam/
+    finish
+endif
+
+if $h_List-Id: CONTAINS "london.pm.london.pm.org"
+then
+    logwrite "$message_id london.pm"
+    save $home/Maildir/.INBOX.london_pm/
+    finish
+endif
+
+logwrite "$message_id INBOX"
+save $home/Maildir/
+finish

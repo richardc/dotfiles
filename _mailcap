@@ -1,1 +1,4 @@
 text/html; w3m -T text/html '%s'; copiousoutput
+# view_attachment from http://hints.macworld.com/dlfiles/view_attachment.txt
+image/* ; view_attachment '%s' '-'
+

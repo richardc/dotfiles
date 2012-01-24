@@ -27,6 +27,13 @@ then
     finish
 endif
 
+if $h_List-Id: CONTAINS "pod-people.perl.org"
+then
+    logwrite " => pod-people"
+    save $home/Maildir/.INBOX.pod-people
+    finish
+endif
+
 logwrite " => INBOX"
 save $home/Maildir/
 finish

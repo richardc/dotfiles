@@ -13,24 +13,10 @@ then
     finish
 endif
 
-if $h_List-Id: CONTAINS "london.pm.london.pm.org"
+if $h_List-Id: matches "<(london.pm|jobs|jobs-discuss)\.london\.pm\.org>"
 then
-    logwrite " => london.pm"
-    save $home/Maildir/.INBOX.london_pm/
-    finish
-endif
-
-if $h_List-Id: CONTAINS "jobs.london.pm.org"
-then
-    logwrite " => jobs"
-    save $home/Maildir/.INBOX.jobs/
-    finish
-endif
-
-if $h_List-Id: CONTAINS "jobs-discuss.london.pm.org"
-then
-    logwrite " => jobs-discuss"
-    save $home/Maildir/.INBOX.jobs-discuss/
+    logwrite " => $1"
+    save $home/Maildir/.INBOX.$1/
     finish
 endif
 

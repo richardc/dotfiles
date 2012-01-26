@@ -20,6 +20,14 @@ then
     finish
 endif
 
+if $h_List-Id: matches "<(.*?)\.pm\.org>"
+then
+    logwrite " => $1"
+    save $home/Maildir/.INBOX.$1/
+    finish
+endif
+
+
 if $h_List-Id: CONTAINS "void.slab.org"
 then
     logwrite " => void"

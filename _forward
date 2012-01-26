@@ -30,7 +30,7 @@ endif
 if $h_List-Id: CONTAINS "pod-people.perl.org"
 then
     logwrite " => pod-people"
-    save $home/Maildir/.INBOX.pod-people
+    save $home/Maildir/.INBOX.pod-people/
     finish
 endif
 

@@ -76,13 +76,6 @@ _vim/bundle/markdown:
   squashed: true
   type: git
   url: git://github.com/tpope/vim-markdown.git
-_vim/bundle/minibufexpl: 
-  branch: master
-  remote: braid/-vim/bundle/minibufexpl
-  revision: 74e8194d6d35319ccb412e532d79a28314e4e519
-  squashed: true
-  type: git
-  url: git://github.com/fholgado/minibufexpl.vim.git
 _vim/bundle/nerdcommenter: 
   branch: master
   remote: braid/-vim/bundle/nerdcommenter

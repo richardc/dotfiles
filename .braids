@@ -79,7 +79,7 @@ _vim/bundle/markdown:
 _vim/bundle/nerdcommenter: 
   branch: master
   remote: braid/-vim/bundle/nerdcommenter
-  revision: f4d9f99f67189aa5725fdfc4c13fd33089446ccc
+  revision: 98cec44ef6e8c93f89fb7911a03d7eaa75fe1249
   squashed: true
   type: git
   url: git://github.com/scrooloose/nerdcommenter.git

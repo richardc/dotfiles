@@ -153,6 +153,13 @@ _vim/bundle/textile:
   squashed: true
   type: git
   url: git://github.com/timcharper/textile.vim.git
+_vim/bundle/vcl: 
+  branch: master
+  remote: braid/-vim/bundle/vcl
+  revision: 8cbf8a0b141e61ac29cb948edc6d2ebd9ab17b1e
+  squashed: true
+  type: git
+  url: git://github.com/smerrill/vcl-vim-plugin.git
 _vim/bundle/vividchalk: 
   branch: master
   remote: braid/-vim/bundle/vividchalk

@@ -29,8 +29,8 @@ _vim/bundle/csapprox:
   url: git://github.com/godlygeek/csapprox.git
 _vim/bundle/fugitive: 
   branch: master
-  remote: braid/-vim/bundle/fugitive
-  revision: 64716b9622e5c3fae0caec7e9589988a9da146cb
+  remote: master/braid/-vim/bundle/fugitive
+  revision: 03e138c3496926b193402f4e1542f0a99924f999
   squashed: true
   type: git
   url: git://github.com/tpope/vim-fugitive.git

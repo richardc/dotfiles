@@ -1,7 +1,7 @@
 "============================================================================
-"File:        perl.vim
+"File:        rust.vim
 "Description: Syntax checking plugin for syntastic.vim
-"Maintainer:  Anthony Carapetis <anthony.carapetis at gmail dot com>
+"Maintainer:  Chad Jablonski <chad.jablonski at gmail dot com>
 "License:     This program is free software. It comes without any warranty,
 "             to the extent permitted by applicable law. You can redistribute
 "             it and/or modify it under the terms of the Do What The Fuck You
@@ -9,21 +9,25 @@
 "             See http://sam.zoy.org/wtfpl/COPYING for more details.
 "
 "============================================================================
-if exists("loaded_perl_syntax_checker")
+if exists("loaded_rust_syntax_checker")
     finish
 endif
-let loaded_perl_syntax_checker = 1
+let loaded_rust_syntax_checker = 1
 
-"bail if the user doesnt have perl installed
-if !executable("perl")
+"bail if the user doesnt have rustc installed
+if !executable("rustc")
     finish
 endif
 
-let s:checker = 'perl ' . shellescape(expand('<sfile>:p:h') . '/efm_perl.pl') . ' -c'
+function! SyntaxCheckers_rust_GetLocList()
+    let makeprg = 'rustc --parse-only '.shellescape(expand('%'))
 
-function! SyntaxCheckers_perl_GetLocList()
-    let makeprg = s:checker . ' ' . shellescape(expand('%'))
-    let errorformat =  '%f:%l:%m'
+    let errorformat  = '%E%f:%l:%c: \\d%#:\\d%# %.%\{-}error:%.%\{-} %m,'   .
+                     \ '%W%f:%l:%c: \\d%#:\\d%# %.%\{-}warning:%.%\{-} %m,' .
+                     \ '%C%f:%l %m,' .
+                     \ '%-Z%.%#'
 
     return SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat })
 endfunction
+
+

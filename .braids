@@ -29,15 +29,15 @@ _vim/bundle/csapprox:
   url: git://github.com/godlygeek/csapprox.git
 _vim/bundle/fugitive: 
   branch: master
-  remote: braid/-vim/bundle/fugitive
-  revision: 64716b9622e5c3fae0caec7e9589988a9da146cb
+  remote: master/braid/-vim/bundle/fugitive
+  revision: 03e138c3496926b193402f4e1542f0a99924f999
   squashed: true
   type: git
   url: git://github.com/tpope/vim-fugitive.git
 _vim/bundle/git: 
   branch: master
   remote: braid/-vim/bundle/git
-  revision: d058250916346f9957e13e1a6a268d705011a993
+  revision: 1b9c234e356c4e89ade9c1d15481b86a3b812374
   squashed: true
   type: git
   url: git://github.com/tpope/vim-git.git
@@ -79,7 +79,7 @@ _vim/bundle/markdown:
 _vim/bundle/nerdcommenter: 
   branch: master
   remote: braid/-vim/bundle/nerdcommenter
-  revision: f4d9f99f67189aa5725fdfc4c13fd33089446ccc
+  revision: 98cec44ef6e8c93f89fb7911a03d7eaa75fe1249
   squashed: true
   type: git
   url: git://github.com/scrooloose/nerdcommenter.git
@@ -134,8 +134,8 @@ _vim/bundle/surround:
   url: git://github.com/tpope/vim-surround.git
 _vim/bundle/syntastic: 
   branch: master
-  remote: braid/-vim/bundle/syntastic
-  revision: 10f4d4d3e0420b03ed49f7436bbdd7f71950040a
+  remote: master/braid/-vim/bundle/syntastic
+  revision: cb6205254eb3f9a236c7619344396317b8e12d33
   squashed: true
   type: git
   url: git://github.com/scrooloose/syntastic.git
@@ -153,6 +153,13 @@ _vim/bundle/textile:
   squashed: true
   type: git
   url: git://github.com/timcharper/textile.vim.git
+_vim/bundle/vcl: 
+  branch: master
+  remote: braid/-vim/bundle/vcl
+  revision: 8cbf8a0b141e61ac29cb948edc6d2ebd9ab17b1e
+  squashed: true
+  type: git
+  url: git://github.com/smerrill/vcl-vim-plugin.git
 _vim/bundle/vividchalk: 
   branch: master
   remote: braid/-vim/bundle/vividchalk

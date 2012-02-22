@@ -13,6 +13,13 @@ then
     finish
 endif
 
+if $h_Sender: CONTAINS "owner-ny@lists.pm.org"
+then
+    logwrite " => ny_pm"
+    save $home/Maildir/.INBOX.ny_pm/
+    finish
+endif
+
 if $h_List-Id: matches "<(london.pm|jobs|jobs-discuss)\.london\.pm\.org>"
 then
     logwrite " => $1"

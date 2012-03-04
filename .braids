@@ -128,7 +128,7 @@ _vim/bundle/sieve:
 _vim/bundle/surround: 
   branch: master
   remote: braid/-vim/bundle/surround
-  revision: 4eb2cdfccc016889acfa3b5d63e8f390a87863cf
+  revision: efc017dcb4e0c95e195dd7c4fb903ecaa2a094e9
   squashed: true
   type: git
   url: git://github.com/tpope/vim-surround.git

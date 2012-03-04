@@ -114,7 +114,7 @@ _vim/bundle/puppet:
 _vim/bundle/repeat: 
   branch: master
   remote: braid/-vim/bundle/repeat
-  revision: cdffdd43816ddaeee858ae42da3ab6ddcfa25d19
+  revision: 1118a8324fa2379777b54260dc04b4c14c69bc4a
   squashed: true
   type: git
   url: git://github.com/tpope/vim-repeat.git

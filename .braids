@@ -163,7 +163,7 @@ _vim/bundle/vcl:
 _vim/bundle/vividchalk: 
   branch: master
   remote: braid/-vim/bundle/vividchalk
-  revision: 22aee9b84bf0793055b75b52bb614d567ba6fd98
+  revision: fd696065c7b27e8fca91907ba51151a887c36803
   squashed: true
   type: git
   url: git://github.com/tpope/vim-vividchalk.git

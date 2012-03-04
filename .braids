@@ -86,7 +86,7 @@ _vim/bundle/nerdcommenter:
 _vim/bundle/nerdtree: 
   branch: master
   remote: braid/-vim/bundle/nerdtree
-  revision: 2a0578227ebcc334da64f5e93137926388f71ce6
+  revision: 678bb2816874d92bca4eea46e0f5f40a15ddab68
   squashed: true
   type: git
   url: git://github.com/scrooloose/nerdtree.git

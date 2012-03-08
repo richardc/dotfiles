@@ -50,8 +50,8 @@ _vim/bundle/gitv:
   url: git://github.com/gregsexton/gitv.git
 _vim/bundle/gundo: 
   branch: master
-  remote: braid/-vim/bundle/gundo
-  revision: 890e5b1bbf1cf3e39da0cdd4104aea2a98aeb45a
+  remote: master/braid/-vim/bundle/gundo
+  revision: ee32891c126b06d70d92b6ccefe4ff9a2c4fd7d6
   squashed: true
   type: git
   url: git://github.com/vim-scripts/Gundo.git

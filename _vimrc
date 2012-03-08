@@ -181,6 +181,9 @@ autocmd FileType html,css set noexpandtab tabstop=2
 " (despite the mappings later):
 autocmd FileType make set noexpandtab shiftwidth=8
 
+" let Dean win, in puppet manifests use 2-space indents
+autocmd FileType puppet set shiftwidth=2
+
 " * Search & Replace
 
 " make searches case-insensitive, unless they contain upper-case letters:

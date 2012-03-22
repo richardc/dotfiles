@@ -374,7 +374,7 @@ function! s:HightlightErrors()
             let force_callback = has_key(item, 'force_highlight_callback') && item['force_highlight_callback']
 
             let group = item['type'] == 'E' ? 'SyntasticError' : 'SyntasticWarning'
-            if item['col'] && !force_callback
+            if get( item, 'col' ) && !force_callback
                 let lastcol = col([item['lnum'], '$'])
                 let lcol = min([lastcol, item['col']])
                 call matchadd(group, '\%'.item['lnum'].'l\%'.lcol.'c')
@@ -466,8 +466,8 @@ endfunction
 
 "load the chosen checker for the current filetype - useful for filetypes like
 "javascript that have more than one syntax checker
-function! s:LoadChecker(checker)
-    exec "runtime syntax_checkers/" . &ft . "/" . a:checker . ".vim"
+function! s:LoadChecker(checker, ft)
+    exec "runtime syntax_checkers/" . a:ft . "/" . a:checker . ".vim"
 endfunction
 
 "return a string representing the state of buffer according to
@@ -602,22 +602,24 @@ endfunction
 "well as the names of the actual syntax checker executables. The checkers
 "should be listed in order of default preference.
 "
-"if a option called 'g:syntastic_[filetype]_checker' exists then attempt to
+"a:ft should be the filetype for the checkers being loaded
+"
+"if a option called 'g:syntastic_{a:ft}_checker' exists then attempt to
 "load the checker that it points to
-function! SyntasticLoadChecker(checkers)
-    let opt_name = "g:syntastic_" . &ft . "_checker"
+function! SyntasticLoadChecker(checkers, ft)
+    let opt_name = "g:syntastic_" . a:ft . "_checker"
 
     if exists(opt_name)
         let opt_val = {opt_name}
         if index(a:checkers, opt_val) != -1 && executable(opt_val)
-            call s:LoadChecker(opt_val)
+            call s:LoadChecker(opt_val, a:ft)
         else
             echoerr &ft . " syntax not supported or not installed."
         endif
     else
         for checker in a:checkers
             if executable(checker)
-                return s:LoadChecker(checker)
+                return s:LoadChecker(checker, a:ft)
             endif
         endfor
     endif

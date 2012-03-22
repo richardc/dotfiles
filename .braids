@@ -113,8 +113,8 @@ _vim/bundle/puppet:
   url: git://github.com/ajf/puppet-vim.git
 _vim/bundle/repeat: 
   branch: master
-  remote: braid/-vim/bundle/repeat
-  revision: 1118a8324fa2379777b54260dc04b4c14c69bc4a
+  remote: master/braid/-vim/bundle/repeat
+  revision: 2914f11f7494adefaaec1d8c817a301c464c94b2
   squashed: true
   type: git
   url: git://github.com/tpope/vim-repeat.git

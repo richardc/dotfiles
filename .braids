@@ -78,8 +78,8 @@ _vim/bundle/markdown:
   url: git://github.com/tpope/vim-markdown.git
 _vim/bundle/nerdcommenter: 
   branch: master
-  remote: braid/-vim/bundle/nerdcommenter
-  revision: 98cec44ef6e8c93f89fb7911a03d7eaa75fe1249
+  remote: master/braid/-vim/bundle/nerdcommenter
+  revision: 93cdbafd7fcf862e2205ec062a2d3733a58e1259
   squashed: true
   type: git
   url: git://github.com/scrooloose/nerdcommenter.git

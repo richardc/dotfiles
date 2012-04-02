@@ -11,3 +11,4 @@ set spoolfile="+INBOX"
 set record="+Sent Items"
 
 set ssl_starttls="yes"
+set imap_keepalive=30

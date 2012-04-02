@@ -6,7 +6,7 @@ source ~/.muttrc_core
 
 source ~/.mutt/muttrc.nap_password
 
-set folder="imap://cas01-pr-whi.london.net-a-porter.com/"
+set folder="imaps://cas01-pr-whi.london.net-a-porter.com/"
 set spoolfile="+INBOX"
 set record="+Sent Items"
 

@@ -118,7 +118,7 @@ function! fugitive#extract_git_dir(path) abort
     elseif type ==# 'link' && fugitive#is_git_dir(dir)
       return resolve(dir)
     elseif type !=# '' && filereadable(dir)
-      let line = get(readfile(dir, 1), 0, '')
+      let line = get(readfile(dir, '', 1), 0, '')
       if line =~# '^gitdir: ' && fugitive#is_git_dir(line[8:-1])
         return line[8:-1]
       endif
@@ -162,6 +162,7 @@ augroup fugitive
   autocmd!
   autocmd BufNewFile,BufReadPost * call s:Detect(expand('<amatch>:p'))
   autocmd FileType           netrw call s:Detect(expand('<afile>:p'))
+  autocmd User NERDTreeInit,NERDTreeNewRoot call s:Detect(b:NERDTreeRoot.path.str())
   autocmd VimEnter * if expand('<amatch>')==''|call s:Detect(getcwd())|endif
   autocmd BufWinLeave * execute getwinvar(+bufwinnr(+expand('<abuf>')), 'fugitive_leave')
 augroup END
@@ -198,7 +199,7 @@ function! s:repo_configured_tree() dict abort
   if !has_key(self,'_tree')
     let self._tree = ''
     if filereadable(self.dir('config'))
-      let config = readfile(self.dir('config'),10)
+      let config = readfile(self.dir('config'),'',10)
       call filter(config,'v:val =~# "^\\s*worktree *="')
       if len(config) == 1
         let self._tree = matchstr(config[0], '= *\zs.*')

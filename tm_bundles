@@ -1,0 +1,22 @@
+#!/bin/sh
+set -e
+set -x
+
+mkdir -p "$HOME/Library/Application Support/TextMate/Bundles"
+cd "$HOME/Library/Application Support/TextMate/Bundles"
+
+function clone_or_pull() {
+    UPSTREAM=$1
+    CHECKOUT=$(basename $UPSTREAM .git)
+    
+    if [ -d "$CHECKOUT" ]; then
+        ( cd $CHECKOUT && git pull )
+    else
+        git clone $UPSTREAM
+    fi
+}
+
+clone_or_pull git://github.com/masterzen/puppet-textmate-bundle.git
+ln -sf puppet-textmate-bundle/Puppet.tmbundle
+clone_or_pull git://github.com/drnic/Chef.tmbundle.git
+osascript -e 'tell app "TextMate" to reload bundles'

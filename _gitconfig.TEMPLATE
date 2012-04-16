@@ -1,7 +1,4 @@
 ; templated
-[init]
-   templatedir = "[% env.HOME %]/.git_template"
-
 [core]
     excludesfile = "[% env.HOME %]/.gitignore"
 

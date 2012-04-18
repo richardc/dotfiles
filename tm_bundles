@@ -5,18 +5,24 @@ set -x
 mkdir -p "$HOME/Library/Application Support/TextMate/Bundles"
 cd "$HOME/Library/Application Support/TextMate/Bundles"
 
-function clone_or_pull() {
+function clone() {
     UPSTREAM=$1
-    CHECKOUT=$(basename $UPSTREAM .git)
+    if [ -z "$2" ]; then
+        CHECKOUT=$(basename $UPSTREAM .git)
+    else
+        CHECKOUT=$2
+    fi
     
     if [ -d "$CHECKOUT" ]; then
         ( cd $CHECKOUT && git pull )
     else
-        git clone $UPSTREAM
+        git clone $UPSTREAM $CHECKOUT
     fi
 }
 
-clone_or_pull git://github.com/masterzen/puppet-textmate-bundle.git
+clone git://github.com/masterzen/puppet-textmate-bundle.git
 ln -sf puppet-textmate-bundle/Puppet.tmbundle
-clone_or_pull git://github.com/drnic/Chef.tmbundle.git
+clone git://github.com/drnic/Chef.tmbundle.git
+clone git://github.com/drnic/github-tmbundle.git "GitHub.tmbundle"
+
 osascript -e 'tell app "TextMate" to reload bundles'

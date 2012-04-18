@@ -52,6 +52,11 @@
 (add-to-list 'auto-mode-alist '("srm\\.conf\\'"    . apache-mode))
 (add-to-list 'auto-mode-alist '("access\\.conf\\'" . apache-mode))
 (add-to-list 'auto-mode-alist '("sites-\\(available\\|enabled\\)/" . apache-mode))
+
+;; markdown mode
+(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode)
+(add-to-list 'auto-mode-alist '("\\.mkd$" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
        
 (global-font-lock-mode 1)
 (setq transient-mark-mode t)

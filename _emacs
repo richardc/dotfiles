@@ -1,5 +1,4 @@
 ;; -*- Mode: Emacs-Lisp -*-
-;       $Id$
 
 (add-to-list 'load-path "~/.elisp")
 
@@ -14,7 +13,7 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(markdown-mode)
+(defvar my-packages '(markdown-mode puppet-mode apache-mode)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
@@ -35,8 +34,7 @@
 
 (server-start)
 
-;; from puppet:ext/emacs/puppet-mode.el
-(autoload 'puppet-mode "puppet-mode" "Major mode for editing puppet manifests")
+;; puppet-mode
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
 
 ;; from http://orgmode.org/worg/org-tutorials/orgtutorial_dto.html
@@ -45,8 +43,7 @@
 (define-key global-map "\C-ca" 'org-agenda)
 (setq org-log-done t)
 
-;; http://www.emacswiki.org/emacs/download/apache-mode.el;;   
-(autoload 'apache-mode "apache-mode" nil t)
+;; apache-mode.el
 (add-to-list 'auto-mode-alist '("\\.htaccess\\'"   . apache-mode))
 (add-to-list 'auto-mode-alist '("httpd\\.conf\\'"  . apache-mode))
 (add-to-list 'auto-mode-alist '("srm\\.conf\\'"    . apache-mode))

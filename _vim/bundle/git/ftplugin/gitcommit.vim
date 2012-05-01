@@ -1,6 +1,7 @@
 " Vim filetype plugin
 " Language:	git commit file
 " Maintainer:	Tim Pope <vimNOSPAM@tpope.org>
+" Last Change:	2012 April 7
 
 " Only do this when not done yet for this buffer
 if (exists("b:did_ftplugin"))
@@ -10,7 +11,7 @@ endif
 runtime! ftplugin/git.vim
 let b:did_ftplugin = 1
 
-set nomodeline
+setlocal nomodeline
 
 let b:undo_ftplugin = 'setl modeline<'
 
@@ -28,8 +29,6 @@ if !exists("b:git_dir")
   let b:git_dir = expand("%:p:h")
 endif
 
-" Automatically diffing can be done with:
-"   autocmd BufRead *.git/COMMIT_EDITMSG DiffGitCached | wincmd p
 command! -bang -bar -buffer -complete=custom,s:diffcomplete -nargs=* DiffGitCached :call s:gitdiffcached(<bang>0,b:git_dir,<f-args>)
 
 function! s:diffcomplete(A,L,P)

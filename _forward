@@ -6,13 +6,6 @@ logfile $home/Maildir/from
 logwrite "From $sender_address $tod_log $message_id"
 logwrite "Subject: $h_subject"
 
-if $h_X-is-spam: CONTAINS "yes"
-then
-    logwrite " => SPAM"
-    save $home/Maildir/.INBOX.spam/
-    finish
-endif
-
 if $h_Sender: CONTAINS "owner-ny@lists.pm.org"
 then
     logwrite " => ny_pm"
@@ -52,6 +45,13 @@ if $h_List-Id: CONTAINS "hates-software"
 then
     logwrite " => hates-software"
     save $home/Maildir/.INBOX.hates-software/
+    finish
+endif
+
+if $h_X-is-spam: CONTAINS "yes"
+then
+    logwrite " => SPAM"
+    save $home/Maildir/.INBOX.spam/
     finish
 endif
 

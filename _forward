@@ -34,7 +34,6 @@ then
     finish
 endif
 
-
 if $h_List-Id: CONTAINS "void.slab.org"
 then
     logwrite " => void"
@@ -46,6 +45,13 @@ if $h_List-Id: CONTAINS "pod-people.perl.org"
 then
     logwrite " => pod-people"
     save $home/Maildir/.INBOX.pod-people/
+    finish
+endif
+
+if $h_List-Id: CONTAINS "hates-software"
+then
+    logwrite " => hates-software"
+    save $home/Maildir/.INBOX.hates-software/
     finish
 endif
 

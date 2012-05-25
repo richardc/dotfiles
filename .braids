@@ -37,7 +37,7 @@ _vim/bundle/fugitive:
 _vim/bundle/git: 
   branch: master
   remote: master/braid/-vim/bundle/git
-  revision: 290f5994e56477e50fe3fc0acfcb0d5973b81785
+  revision: 3d31cb0cc9470d57adf36cc3224814ccb0293cc9
   squashed: true
   type: git
   url: git://github.com/tpope/vim-git.git

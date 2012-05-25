@@ -44,7 +44,7 @@ _vim/bundle/git:
 _vim/bundle/gitv: 
   branch: master
   remote: master/braid/-vim/bundle/gitv
-  revision: 7c18a36bdfd52498c817689c87bd8c6ed4342609
+  revision: a50dc10b6dc6b8bae43095fddc4826866585d7ea
   squashed: true
   type: git
   url: git://github.com/gregsexton/gitv.git

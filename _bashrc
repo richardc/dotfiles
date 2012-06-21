@@ -67,6 +67,7 @@ fi
 
 [[ -e /usr/local/bin/hub ]] && alias git=hub
 alias vi=vim
+alias grep='grep --color=auto'
 
 # enable perlbrew     http://search.cpan.org/perldoc?perlbrew
 [[ -s "$HOME/perl5/perlbrew/etc/bashrc" ]] && source "$HOME/perl5/perlbrew/etc/bashrc"

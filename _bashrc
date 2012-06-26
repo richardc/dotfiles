@@ -86,6 +86,7 @@ alias grep='grep --color=auto'
 export -n LESS
 export -n TMOUT
 
+[[ -s "$HOME/.bashrc_local" ]] && source ~/.bashrc_local
 
 return # one day we may want programmable completion, but not soon
 

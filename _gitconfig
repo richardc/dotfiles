@@ -1,14 +1,9 @@
-; templated
 [core]
-    excludesfile = "[% env.HOME %]/.gitignore"
+    excludesfile = ~/.gitignore
 
 [user]
     name  = Richard Clamp
-[% IF env.HOSTNAME.match('dave.net-a-porter.com') %]
-    email = richard.clamp@net-a-porter.com
-[% ELSE %]
     email = richardc@unixbeard.net
-[% END %]
 
 [github]
     user = richardc
@@ -28,7 +23,6 @@
     diff = auto
     branch = auto
     status = auto
-
 
 [url "ssh://banner.unixbeard.net/web/git.unixbeard.net/htdocs/git/"]
     insteadOf = unixbeard:

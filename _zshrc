@@ -12,7 +12,7 @@ PATH="$PATH:/usr/lib64/ccache"                 # ccache symlinks on CentOS (x86_
 ccache=$( echo /usr/local/Cellar/ccache/*/libexec )
 [[ -e "$ccache" ]] && PATH="$PATH:$ccache"     # ccache symlinks on OSX (brew)
 
-PATH="$PATH:/opt/xt/xt-perl/bin"               # nap machines
+PATH="$PATH:$HOME/.rvm/bin"                    # Add RVM to PATH for scripting
 PATH="$PATH:/usr/local/bin:/usr/local/sbin"
 PATH="$PATH:/usr/bin:/usr/sbin"
 PATH="$PATH:/bin:/sbin"
@@ -59,4 +59,4 @@ alias vi=vim
 # enable pythonbrew   https://github.com/utahta/pythonbrew
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+return # Clever installer guard

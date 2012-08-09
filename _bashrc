@@ -18,6 +18,7 @@ PATH="$PATH:/usr/lib64/ccache"                 # ccache symlinks on CentOS (x86_
 ccache=$( echo /usr/local/Cellar/ccache/*/libexec )
 [[ -e "$ccache" ]] && PATH="$PATH:$ccache"     # ccache symlinks on OSX (brew)
 
+PATH="$PATH:$HOME/.rvm/bin"                    # Add RVM to PATH for scripting
 PATH="$PATH:$HOME/.npm_scratch/bin"            # npm-installed commands
 PATH="$PATH:$HOME/.gem/ruby/1.8/bin"           # ruby gems
 PATH="$PATH:$HOME/hck/perl-5.12.1/bin"         # handbuilt perl
@@ -89,13 +90,9 @@ export -n TMOUT
 
 [[ -s "$HOME/.bashrc_local" ]] && source ~/.bashrc_local
 
-return # one day we may want programmable completion, but not soon
+[[ -s /etc/bash_completion ]] && source /etc/bash_completion
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
-fi
+source $HOME/.bash_completion.d/knife/knife
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+return  # Insulate ourselves from silly installers that just append source lines
+

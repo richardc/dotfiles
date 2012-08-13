@@ -55,7 +55,8 @@ colorscheme vividchalk
 if has("gui_running")
       set guioptions-=T       " no toolbar
       set cursorline          " show the cursor line
-      set guifont=Monaco:h12  " monaco 12
+      "set guifont=Monaco:h12  " monaco 12
+      set guifont=Liberation\ Mono\ 11
 end
 
 

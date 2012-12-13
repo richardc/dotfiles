@@ -66,6 +66,8 @@ fi
 
 # xdg-open(1) on Linux, open(1) on OSX
 [ $( uname ) == "Linux" ] && alias open=xdg-open
+[ $( uname ) == "Linux" ] && alias pbcopy='xclip -selection clipboard'
+[ $( uname ) == "Linux" ] && alias pbpaste='xclip -selection clipboard -o'
 
 
 [[ -e /usr/local/bin/hub ]] && alias git=hub

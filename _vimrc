@@ -38,6 +38,7 @@ let g:syntastic_loc_list_height=5
 "let g:syntastic_check_on_open=1
 "" use the tailor ruby checker
 "let g:syntastic_ruby_checker="tailor"
+let g:syntastic_puppet_lint_arguments='--no-80chars-check'
 
 " always show a status bar
 set laststatus=2

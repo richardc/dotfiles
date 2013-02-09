@@ -34,11 +34,11 @@ nnoremap <F9> :TlistToggle<CR>
 " open a location list with syntax highlighters
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=5
-"" syntax check on file open
-"let g:syntastic_check_on_open=1
-"" use the tailor ruby checker
+" use the tailor ruby checker
 "let g:syntastic_ruby_checker="tailor"
 let g:syntastic_puppet_lint_arguments='--no-80chars-check'
+" syntax check on file open
+"let g:syntastic_check_on_open=1
 
 " always show a status bar
 set laststatus=2

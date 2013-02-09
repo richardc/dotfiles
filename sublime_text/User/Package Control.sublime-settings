@@ -3,6 +3,7 @@
 	"installed_packages":
 	[
 		"Abacus",
+		"DetectSyntax",
 		"Gist",
 		"Git",
 		"GitGutter",

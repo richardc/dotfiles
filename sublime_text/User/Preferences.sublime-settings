@@ -1,5 +1,6 @@
 {
 	"color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme",
+	"dictionary": "Packages/Language - English/en_GB.dic",
 	"find_selected_text": true,
 	"fold_buttons": false,
 	"font_face": "Ubuntu Mono",
@@ -7,8 +8,7 @@
 	[
 		"subpixel_antialias"
 	],
-	"font_size": 13.0,
-	"highlight_line": true,
+	"font_size": 12.0,
 	"ignored_packages":
 	[
 		"Vintage"
@@ -20,5 +20,6 @@
 		120
 	],
 	"theme": "Soda Dark.sublime-theme",
-	"trailing_spaces_include_current_line": false
+	"trailing_spaces_include_current_line": false,
+	"trailing_spaces_include_empty_lines": false
 }

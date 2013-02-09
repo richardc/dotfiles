@@ -26,3 +26,5 @@
 
 [url "ssh://banner.unixbeard.net/web/git.unixbeard.net/htdocs/git/"]
     insteadOf = unixbeard:
+[push]
+	default = upstream

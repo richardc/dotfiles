@@ -1,10 +1,20 @@
 # Exim filter - magic cookie - do not remove line
 # vi: filetype=exim
 
+# To test: /usr/sbin/sendmail -bf _forward < TEST_MESSAGE
+# Or in mutt pipe through: /usr/sbin/sendmail -bf _forward | less
+
 logfile $home/Maildir/from
 
 logwrite "From $sender_address $tod_log $message_id"
 logwrite "Subject: $h_subject"
+
+if $h_X-Redmine-Host: CONTAINS "projects.puppetlabs.com"
+then
+    logwrite " => puppet-redmine"
+    save $home/Maildir/.INBOX.puppet-redmine/
+    finish
+endif
 
 if $h_Sender: CONTAINS "owner-ny@lists.pm.org"
 then
@@ -13,14 +23,28 @@ then
     finish
 endif
 
+if $h_List-Id: CONTAINS "london.pm.london.pm.org"
+then
+    logwrite " => london_pm"
+    save $home/Maildir/.INBOX.london_pm/
+    finish
+endif
+
 if $h_List-Id: matches "<(london.pm|jobs|jobs-discuss)\.london\.pm\.org>"
+then
+    logwrite " => london_pm-$1"
+    save $home/Maildir/.INBOX.london_pm-$1/
+    finish
+endif
+
+if $h_List-Id: matches "<(.*?)\.pm\.org>"
 then
     logwrite " => $1"
     save $home/Maildir/.INBOX.$1/
     finish
 endif
 
-if $h_List-Id: matches "<(.*?)\.pm\.org>"
+if $h_List-Id: matches "<(.*?)\.googlegroups\.com>"
 then
     logwrite " => $1"
     save $home/Maildir/.INBOX.$1/

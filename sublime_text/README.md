@@ -1,9 +1,9 @@
-SublimeText2 puts all its user confuguration into the User package, which you
-just edit as JSON files.
+SublimeText2 puts all its user configuration into the User package, which you
+just edit as JSON files.  This directory contains the Users package, to make
+use of it install Package Control and link into:
 
-To make use of this symlink the Users module into ~/Library/Application
-Support/Sublime Text 2/Packages/User on OSX then install Package Control which
-will make sure you have the Plugins listed in the state file.
+	~/Library/Application Support/Sublime Text 2/Packages # OSX
+	~/.config/sublime-text-2/Packages # Linux
 
 This approach is based on http://mwunsch.tumblr.com/post/15742953582/sublime-
 text-2-user-settings-and-version-control rather than the other guides that

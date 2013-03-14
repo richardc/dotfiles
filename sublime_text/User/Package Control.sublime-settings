@@ -3,6 +3,7 @@
 	"installed_packages":
 	[
 		"Alignment",
+		"Delphi Style Bookmarks",
 		"DetectSyntax",
 		"Gist",
 		"Git",

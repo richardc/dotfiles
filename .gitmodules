@@ -1,6 +1,6 @@
 [submodule "_vim/bundle/syntastic"]
 	path = _vim/bundle/syntastic
-	url = git@github.com:richardc/syntastic.git
+	url = git://github.com/scrooloose/syntastic.git
 [submodule "_bash_completion.d/knife"]
 	path = _bash_completion.d/knife
 	url = git://gist.github.com/1050685.git

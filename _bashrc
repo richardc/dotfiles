@@ -10,6 +10,8 @@ export HISTCONTROL=ignoreboth
 
 export EDITOR=vim
 
+export GOPATH=$HOME/hck/go
+
 # my path, not yours
 PATH="$HOME/bin"
 PATH="$PATH:/usr/lib/ccache"                   # ccache symlinks on debian
@@ -27,6 +29,7 @@ PATH="$PATH:/opt/xt/xt-perl/bin"               # nap machines
 PATH="$PATH:/usr/local/git/bin"                # http://code.google.com/p/git-osx-installer/
 PATH="$PATH:/usr/texbin"                       # MacTeX
 PATH="$PATH:/usr/local/go/bin"                 # go
+PATH="$PATH:$GOPATH/bin"                       # installed go binaries
 PATH="$PATH:/usr/local/share/python"           # https://github.com/mxcl/homebrew/wiki/Homebrew-and-Python
 PATH="$PATH:/usr/local/bin:/usr/local/sbin"
 PATH="$PATH:/usr/bin:/usr/sbin"

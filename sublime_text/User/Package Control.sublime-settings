@@ -3,14 +3,11 @@
 	"installed_packages":
 	[
 		"Alignment",
-		"Delphi Style Bookmarks",
-		"DetectSyntax",
 		"Gist",
 		"Git",
 		"GitGutter",
 		"GitHubinator",
 		"Goto Documentation",
-		"Jimbly's Clipboard History",
 		"Package Control",
 		"Puppet",
 		"Shell Turtlestein",

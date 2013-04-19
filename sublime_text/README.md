@@ -9,3 +9,9 @@ This approach is based on http://mwunsch.tumblr.com/post/15742953582/sublime-
 text-2-user-settings-and-version-control rather than the other guides that
 suggest punting most of  ~/Library/Application Support/Sublime Text 2 into
 Dropbox.  That's way too much to VCS.
+
+On windows you can use a junction:
+
+	junction "C:\Users\richardc\AppData\Roaming\Sublim
+e Text 2\Packages\User" C:\Users\richardc\Documents\GitHub\dotfiles\sublime_text
+\User

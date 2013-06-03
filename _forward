@@ -16,6 +16,16 @@ then
     finish
 endif
 
+if $h_From: CONTAINS "<notifications@github.com>"
+then
+    if $h_List-Id: DOES NOT BEGIN "richardc/"
+    then
+        logwrite " => github_notifications"
+        save $home/Maildir/.INBOX.github_notifications/
+        finish
+    endif
+endif
+
 if $h_Sender: CONTAINS "owner-ny@lists.pm.org"
 then
     logwrite " => ny_pm"

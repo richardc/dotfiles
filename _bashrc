@@ -20,12 +20,10 @@ PATH="$PATH:/usr/lib64/ccache"                 # ccache symlinks on CentOS (x86_
 ccache=$( echo /usr/local/Cellar/ccache/*/libexec )
 [[ -e "$ccache" ]] && PATH="$PATH:$ccache"     # ccache symlinks on OSX (brew)
 
-PATH="$PATH:$HOME/.rvm/bin"                    # Add RVM to PATH for scripting
+PATH="$PATH:$HOME/.rbenv/bin"                  # rbenv
 PATH="$PATH:$HOME/.npm_scratch/bin"            # npm-installed commands
-PATH="$PATH:$HOME/.gem/ruby/1.8/bin"           # ruby gems
 PATH="$PATH:$HOME/hck/perl-5.12.1/bin"         # handbuilt perl
 PATH="$PATH:/opt/local/bin:/opt/local/sbin"    # macports
-PATH="$PATH:/opt/xt/xt-perl/bin"               # nap machines
 PATH="$PATH:/usr/local/git/bin"                # http://code.google.com/p/git-osx-installer/
 PATH="$PATH:/usr/texbin"                       # MacTeX
 PATH="$PATH:/usr/local/go/bin"                 # go
@@ -86,6 +84,9 @@ alias grep='grep --color=auto'
 
 # enable rvm          http://rvm.beginrescueend.com/
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# enable rbenv        https://github.com/sstephenson/rbenv 
+[[ -f "$HOME/.rbenv/bin/rbenv" ]] && eval "$(rbenv init -)"
 
 # enable pythonbrew   https://github.com/utahta/pythonbrew
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"

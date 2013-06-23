@@ -52,3 +52,6 @@
 [submodule "_vim/bundle/vim-vividchalk"]
 	path = _vim/bundle/vim-vividchalk
 	url = git://github.com/tpope/vim-vividchalk.git
+[submodule "_vim/bundle/ctrlp.vim"]
+	path = _vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git

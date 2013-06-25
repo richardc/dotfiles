@@ -127,9 +127,8 @@ imap <C-K> <esc> !G perl -MText::Autoformat -e "{autoformat;}"<cr>
 nmap <C-K>       !G perl -MText::Autoformat -e "{autoformat;}"<cr>
 vmap <C-K>       !G perl -MText::Autoformat -e "{autoformat;}"<cr>
 
-imap <C-N> <esc> !G perl -MText::Autoformat -e "{autoformat{all=>1};}"<cr>
-nmap <C-N>       !G perl -MText::Autoformat -e "{autoformat{all=>1};}"<cr>
-vmap <C-N>       !G perl -MText::Autoformat -e "{autoformat{all=>1};}"<cr>
+map <C-n> :NERDTreeToggle<CR>
+
 
 " From here to the end is kludged stolen sections from Smyler's config
 " http://www.stripey.com/vim/vimrc.html

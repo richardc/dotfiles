@@ -30,6 +30,11 @@ let g:miniBufExplUseSingleClick=1       " single click to switch
 let g:tlist_puppet_settings = 'puppet;d:definition'
 nnoremap <F9> :TlistToggle<CR>
 
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
+" exit if NERDTree is the last buffer open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
 " syntastic
 " open a location list with syntax highlighters
 let g:syntastic_auto_loc_list=1
@@ -126,8 +131,6 @@ map <leader>g :GundoToggle<CR>
 imap <C-K> <esc> !G perl -MText::Autoformat -e "{autoformat;}"<cr>
 nmap <C-K>       !G perl -MText::Autoformat -e "{autoformat;}"<cr>
 vmap <C-K>       !G perl -MText::Autoformat -e "{autoformat;}"<cr>
-
-map <C-n> :NERDTreeToggle<CR>
 
 
 " From here to the end is kludged stolen sections from Smyler's config

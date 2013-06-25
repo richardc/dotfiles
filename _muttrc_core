@@ -331,7 +331,7 @@ hdr_order date from subject to cc
 
 #lists mutt-dev mutt-users
 
-alternative_order text/calendar text/plain text/enriched text/html
+alternative_order text/plain text/enriched text/html
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #

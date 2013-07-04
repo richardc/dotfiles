@@ -39,9 +39,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 " open a location list with syntax highlighters
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=5
+" don't check if we're quitting
+let g:syntastic_check_on_wq=0
 " use the tailor ruby checker
 "let g:syntastic_ruby_checker="tailor"
-let g:syntastic_puppet_lint_arguments='--no-80chars-check'
+let g:syntastic_puppet_puppetlint_args='--no-80chars-check'
 " syntax check on file open
 "let g:syntastic_check_on_open=1
 

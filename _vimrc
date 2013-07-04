@@ -153,7 +153,7 @@ set showmode
 set showcmd
 
 " have the mouse enabled all the time:
-set mouse=a
+"set mouse=a
 
 " when using list, keep tabs at their full width and display `arrows':
 "execute 'set listchars+=tab:' . nr2char(187) . nr2char(183)

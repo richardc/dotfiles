@@ -15,7 +15,7 @@ export GOPATH=$HOME/hck/go
 # my path, not yours
 PATH="$HOME/bin"
 PATH="$PATH:/usr/lib/ccache"                   # ccache symlinks on debian
-PATH="$PATH:/usr/lib64/ccache"                 # ccache symlinks on CentOS (x86_64) 
+PATH="$PATH:/usr/lib64/ccache"                 # ccache symlinks on CentOS (x86_64)
 
 ccache=$( echo /usr/local/Cellar/ccache/*/libexec )
 [[ -e "$ccache" ]] && PATH="$PATH:$ccache"     # ccache symlinks on OSX (brew)
@@ -85,7 +85,7 @@ alias grep='grep --color=auto'
 # enable rvm          http://rvm.beginrescueend.com/
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# enable rbenv        https://github.com/sstephenson/rbenv 
+# enable rbenv        https://github.com/sstephenson/rbenv
 [[ -f "$HOME/.rbenv/bin/rbenv" ]] && eval "$(rbenv init -)"
 
 # enable pythonbrew   https://github.com/utahta/pythonbrew

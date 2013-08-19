@@ -99,7 +99,7 @@ export -n TMOUT
 
 [[ -s /etc/bash_completion ]] && source /etc/bash_completion
 
-source $HOME/.bash_completion.d/knife/knife
+[[ -s "$HOME/.bash_completion.d/knife/knife.sh" ]] && source $HOME/.bash_completion.d/knife/knife.sh
 
 return  # Insulate ourselves from silly installers that just append source lines
 

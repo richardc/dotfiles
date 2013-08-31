@@ -15,6 +15,9 @@
 ;; Add in your own as you wish:
 (defvar my-packages '(
 		      apache-mode
+		      clojure-mode
+		      clojure-test-mode
+		      nrepl
 		      markdown-mode
 		      magit
 		      puppet-mode

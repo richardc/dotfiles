@@ -13,15 +13,27 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(markdown-mode puppet-mode apache-mode)
+(defvar my-packages '(
+		      apache-mode
+		      markdown-mode
+		      magit
+		      puppet-mode
+		      solarized-theme
+		      )
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 
-;; toggle this based on the terminal misbehaviour of the day
-;(normal-erase-is-backspace-mode)
+;; set a color theme
+(load-theme 'solarized-dark t)
+
+;; trim trailing whitespace on save, always
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; magit
+(global-set-key (kbd "C-x g") 'magit-status)
 
 (global-set-key "\M-g" 'goto-line)
 
@@ -29,7 +41,8 @@
 (if (and (getenv "STY") (not window-system))
     (global-unset-key "\C-z"))
 
-(setq frame-title-format (list "" 
+;; name topmost buffer
+(setq frame-title-format (list ""
 			       'invocation-name "@" 'system-name' ": %b"))
 
 (server-start)
@@ -54,10 +67,16 @@
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.mkd$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
-       
+
+;; ido mode
+(require 'ido)
+(ido-mode t)
+
+;; disable the toolbar
+(tool-bar-mode -1)
+
 (global-font-lock-mode 1)
 (setq transient-mark-mode t)
-(iswitchb-mode)
 (setq cperl-indent-level 4
       cperl-indent-parens-as-block 1
       cperl-close-paren-offset -4
@@ -66,8 +85,6 @@
       cperl-tab-always-indent t
       flyspell-default-dictionary "english"
       ispell-dictionary "english"
-      line-number-mode 1
-      column-number-mode 1
       indent-tabs-mode nil
       next-line-add-newlines nil
       diff-command "diff -u"
@@ -75,6 +92,11 @@
       vc-diff-switches '("-up")
       c-default-style "linux"
       c-basic-offset 4)
+
+;; line and column number
+(setq line-number-mode 1)
+(setq column-number-mode 1)
+
 
 (defalias 'perl-mode 'cperl-mode)
 
@@ -101,25 +123,3 @@
   (text-mode)
   (flyspell-mode)
   (auto-fill-mode))
-
-(custom-set-variables
-  ;; custom-set-variables was added by Custom -- don't edit or cut/paste it!
-  ;; Your init file should contain only one such instance.
- '(case-fold-search t)
- '(current-language-environment "ASCII")
- '(global-font-lock-mode t nil (font-lock))
- '(load-home-init-file t t)
- '(menu-bar-mode nil)
- '(scroll-bar-mode nil)
- '(show-paren-mode t nil (paren))
- '(speedbar-directory-unshown-regexp "^\\(\\.svn\\|CVS\\|RCS\\|SCCS\\)\\'")
- '(speedbar-indentation-width 2)
- '(tool-bar-mode nil nil (tool-bar))
- '(uniquify-buffer-name-style (quote forward) nil (uniquify)))
-(custom-set-faces
-  ;; custom-set-faces was added by Custom -- don't edit or cut/paste it!
-  ;; Your init file should contain only one such instance.
- '(highline-face ((t (:background "gray30"))))
- '(mmm-default-submode-face ((t (:background "gray9")))))
-
-

@@ -17,6 +17,12 @@
 		      apache-mode
 		      clojure-mode
 		      clojure-test-mode
+		      exec-path-from-shell
+		      flymake
+		      flymake-easy
+		      flymake-puppet
+		      flymake-ruby
+		      flymake-shell
 		      json-mode
 		      markdown-mode
 		      magit
@@ -57,10 +63,15 @@
 (setq frame-title-format (list ""
 			       'invocation-name "@" 'system-name' ": %b"))
 
+;; set PATH by evaluting bashrc - for running Emacs.app
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
+
 (server-start)
 
 ;; puppet-mode
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
+(add-hook 'puppet-mode-hook (lambda () (flymake-puppet-load)))
 
 ;; from http://orgmode.org/worg/org-tutorials/orgtutorial_dto.html
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))

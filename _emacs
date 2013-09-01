@@ -14,10 +14,12 @@
 
 ;; Add in your own as you wish:
 (defvar my-packages '(
+		      ack-and-a-half
 		      apache-mode
 		      clojure-mode
 		      clojure-test-mode
 		      exec-path-from-shell
+		      flx-ido
 		      flymake
 		      flymake-cursor
 		      flymake-easy
@@ -28,6 +30,7 @@
 		      markdown-mode
 		      magit
 		      nrepl
+		      projectile
 		      puppet-mode
 		      ruby-mode
 		      ruby-test-mode
@@ -45,6 +48,9 @@
 
 ;; trim trailing whitespace on save, always
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; proectile - mostly from https://github.com/bbatsov/projectile/blob/master/README.md
+(projectile-global-mode)
 
 ;; magit
 (global-set-key (kbd "C-x g") 'magit-status)
@@ -92,15 +98,30 @@
 (add-to-list 'auto-mode-alist '("\\.mkd$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
 
-;; ido mode
+;; ido mode + flx-ido
+(require 'flx-ido)
 (require 'ido)
-(ido-mode t)
+(ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+(setq ido-use-faces nil)
+
+;; ack-and-a-half
+(require 'ack-and-a-half)
+;; Create shorter aliases
+(defalias 'ack 'ack-and-a-half)
+(defalias 'ack-same 'ack-and-a-half-same)
+(defalias 'ack-find-file 'ack-and-a-half-find-file)
+(defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
 
 ;; flymake-cursor - put flymake errors in the minibuffer
 (require 'flymake-cursor)
 
 ;; disable the toolbar
 (tool-bar-mode -1)
+
+;; gc less often - https://github.com/lewang/flx told me to
+(setq gc-cons-threshold 20000000)
 
 (global-font-lock-mode 1)
 (setq transient-mark-mode t)

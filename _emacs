@@ -30,11 +30,11 @@
 		      markdown-mode
 		      magit
 		      nrepl
+		      pastels-on-dark-theme
 		      projectile
 		      puppet-mode
 		      ruby-mode
 		      ruby-test-mode
-		      solarized-theme
 		      yaml-mode
 		      )
   "A list of packages to ensure are installed at launch.")
@@ -44,7 +44,7 @@
     (package-install p)))
 
 ;; set a color theme
-(load-theme 'solarized-dark t)
+(load-theme 'pastels-on-dark t)
 
 ;; trim trailing whitespace on save, always
 (add-hook 'before-save-hook 'delete-trailing-whitespace)

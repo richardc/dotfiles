@@ -19,6 +19,7 @@
 		      clojure-test-mode
 		      exec-path-from-shell
 		      flymake
+		      flymake-cursor
 		      flymake-easy
 		      flymake-puppet
 		      flymake-ruby
@@ -94,6 +95,9 @@
 ;; ido mode
 (require 'ido)
 (ido-mode t)
+
+;; flymake-cursor - put flymake errors in the minibuffer
+(require 'flymake-cursor)
 
 ;; disable the toolbar
 (tool-bar-mode -1)

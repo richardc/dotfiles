@@ -17,11 +17,15 @@
 		      apache-mode
 		      clojure-mode
 		      clojure-test-mode
-		      nrepl
+		      json-mode
 		      markdown-mode
 		      magit
+		      nrepl
 		      puppet-mode
+		      ruby-mode
+		      ruby-test-mode
 		      solarized-theme
+		      yaml-mode
 		      )
   "A list of packages to ensure are installed at launch.")
 

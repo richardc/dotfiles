@@ -80,6 +80,9 @@
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))
 (add-hook 'puppet-mode-hook (lambda () (flymake-puppet-load)))
 
+;; ruby-mode && flymake
+(add-hook 'ruby-mode-hook (lambda () (flymake-ruby-load)))
+
 ;; from http://orgmode.org/worg/org-tutorials/orgtutorial_dto.html
 (add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
 (define-key global-map "\C-cl" 'org-store-link)

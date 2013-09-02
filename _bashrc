@@ -1,3 +1,4 @@
+# -*- mode: shell-script -*-
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
 # If not running interactively, don't do anything
@@ -102,4 +103,3 @@ export -n TMOUT
 [[ -s "$HOME/.bash_completion.d/knife/knife.sh" ]] && source $HOME/.bash_completion.d/knife/knife.sh
 
 return  # Insulate ourselves from silly installers that just append source lines
-

@@ -52,6 +52,10 @@
 ;; proectile - mostly from https://github.com/bbatsov/projectile/blob/master/README.md
 (projectile-global-mode)
 
+;; uniqify buffer names better
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'post-forward)
+
 ;; magit
 (global-set-key (kbd "C-x g") 'magit-status)
 (add-hook

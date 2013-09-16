@@ -41,8 +41,8 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=5
 " don't check if we're quitting
 let g:syntastic_check_on_wq=0
-" use the tailor ruby checker
-"let g:syntastic_ruby_checker="tailor"
+" use mri and rubocop to validate ruby
+let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 let g:syntastic_puppet_puppetlint_args='--no-80chars-check'
 " syntax check on file open
 "let g:syntastic_check_on_open=1

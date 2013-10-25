@@ -43,8 +43,11 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
-;; set a color theme
-(load-theme 'pastels-on-dark t)
+;; set up colors - used to use a color theme but that doesn't work so
+;; well on emacs 22 and 23
+;(load-theme 'pastels-on-dark t)
+(set-face-foreground 'default "white")
+(set-face-background 'default "black")
 
 ;; trim trailing whitespace on save, always
 (add-hook 'before-save-hook 'delete-trailing-whitespace)

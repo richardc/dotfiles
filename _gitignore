@@ -1,5 +1,7 @@
 *~
 .*.swp
 .*.swo
+*.o
 *.pyc
 .DS_Store
+.ruby-version

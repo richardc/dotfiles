@@ -3,12 +3,10 @@
 	"installed_packages":
 	[
 		"Alignment",
-		"DetectSyntax",
 		"Git",
 		"GitGutter",
 		"GitHubinator",
 		"GoSublime",
-		"Goto Documentation",
 		"Package Control",
 		"Puppet",
 		"Shell Turtlestein",

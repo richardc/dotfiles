@@ -2,6 +2,7 @@
 	"color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme",
 	"detect_indentation": true,
 	"dictionary": "Packages/Language - English/en_GB.dic",
+	"ensure_newline_at_eof_on_save": true,
 	"find_selected_text": true,
 	"fold_buttons": false,
 	"font_face": "Monaco",

@@ -102,4 +102,30 @@ export -n TMOUT
 
 [[ -s "$HOME/.bash_completion.d/knife/knife.sh" ]] && source $HOME/.bash_completion.d/knife/knife.sh
 
+# given a directory and a file, go up until you find that file then echo the
+# name of the directory
+find_dir_upwards() {
+    FILE=$1
+    DIR=$2
+    while [[ $DIR != '/' ]]; do
+        if [[ -e $DIR/$FILE ]]; then
+            echo $DIR
+            return 0
+        else
+            DIR=`dirname $DIR`
+        fi
+    done
+    return 1
+}
+
+# set VAGRANT_DOTFILE_PATH to point alongside Vagrantfile but with hostname
+vagrant() {
+    DIR=$(find_dir_upwards Vagrantfile $PWD)
+    if [ $? ]; then
+        VAGRANT_DOTFILE_PATH="${DIR}/.vagrant-$(hostname -s)" command vagrant $*
+    else
+        command vagrant $*
+    fi
+}
+
 return  # Insulate ourselves from silly installers that just append source lines

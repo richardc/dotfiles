@@ -1,5 +1,5 @@
 {
-    "color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme",
+    "color_scheme": "Packages/User/Twilight (SL).tmTheme",
     "detect_indentation": true,
     "dictionary": "Packages/Language - English/en_GB.dic",
     "ensure_newline_at_eof_on_save": true,
@@ -22,8 +22,10 @@
         80,
         120
     ],
-    "translate_tabs_to_spaces": true,
+    "show_encoding": true,
+    "show_line_endings": true,
     "trailing_spaces_include_current_line": false,
     "trailing_spaces_include_empty_lines": false,
+    "translate_tabs_to_spaces": true,
     "trim_trailing_white_space_on_save": false
 }

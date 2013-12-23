@@ -7,10 +7,12 @@
 		"GitGutter",
 		"GitHubinator",
 		"GoSublime",
+		"lispindent",
 		"Package Control",
 		"Puppet",
 		"Shell Turtlestein",
 		"SublimeLinter",
+		"SublimeREPL",
 		"TrailingSpaces"
 	]
 }

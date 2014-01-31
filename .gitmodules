@@ -61,3 +61,12 @@
 [submodule "_vim/bundle/vim-orgmode"]
 	path = _vim/bundle/vim-orgmode
 	url = https://github.com/jceb/vim-orgmode.git
+[submodule "_vim/bundle/vim-clojure-static"]
+	path = _vim/bundle/vim-clojure-static
+	url = git://github.com/guns/vim-clojure-static.git
+[submodule "_vim/bundle/vim-classpath"]
+	path = _vim/bundle/vim-classpath
+	url = git://github.com/tpope/vim-classpath.git
+[submodule "_vim/bundle/vim-fireplace"]
+	path = _vim/bundle/vim-fireplace
+	url = git://github.com/tpope/vim-fireplace.git

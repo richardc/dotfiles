@@ -22,6 +22,8 @@
         80,
         120
     ],
+    "show_encoding": true,
+    "show_line_endings": true,
     "trailing_spaces_include_current_line": false,
     "trailing_spaces_include_empty_lines": false,
     "translate_tabs_to_spaces": true,

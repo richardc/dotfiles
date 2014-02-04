@@ -1,0 +1,6 @@
+{
+    // help it find Leiningen
+    "default_extend_env": {
+        "PATH": "/opt/local/bin:/opt/local/sbin:/usr/local/git/bin:/usr/texbin:/usr/local/go/bin:/Users/richardc/Dropbox/src/go/bin:/usr/local/share/python:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/bin:/sbin"
+    }
+}

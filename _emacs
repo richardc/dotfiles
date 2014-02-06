@@ -3,8 +3,9 @@
 (add-to-list 'load-path "~/.elisp")
 
 (require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
 (package-initialize)
 
 (require 'cl)
@@ -16,6 +17,7 @@
 (defvar my-packages '(
 		      ack-and-a-half
 		      apache-mode
+		      cider
 		      clojure-mode
 		      clojure-test-mode
 		      exec-path-from-shell
@@ -29,7 +31,6 @@
 		      json-mode
 		      markdown-mode
 		      magit
-		      nrepl
 		      pastels-on-dark-theme
 		      projectile
 		      puppet-mode

@@ -34,8 +34,10 @@
 		      pastels-on-dark-theme
 		      projectile
 		      puppet-mode
+		      rainbow-delimiters
 		      ruby-mode
 		      ruby-test-mode
+		      smartparens
 		      yaml-mode
 		      )
   "A list of packages to ensure are installed at launch.")
@@ -50,10 +52,24 @@
 (set-face-foreground 'default "white")
 (set-face-background 'default "black")
 
+;; set a bigger font size.  height is in 10th points
+(set-face-attribute 'default nil :height 160)
+
 ;; trim trailing whitespace on save, always
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-;; proectile - mostly from https://github.com/bbatsov/projectile/blob/master/README.md
+;; rainbow delimiters for all programming modes
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+
+;; cider tweaking
+(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+(setq nrepl-hide-special-buffers t)
+(setq cider-repl-result-prefix ";; => ")
+
+;; enable smartparens everywhere
+;;(smartparens-global-mode t)
+
+;; projectile - mostly from https://github.com/bbatsov/projectile/blob/master/README.md
 (projectile-global-mode)
 
 ;; uniqify buffer names better

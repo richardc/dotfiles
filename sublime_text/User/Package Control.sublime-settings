@@ -3,6 +3,7 @@
 	"installed_packages":
 	[
 		"Alignment",
+		"BracketHighlighter",
 		"Git",
 		"GitGutter",
 		"GitHubinator",

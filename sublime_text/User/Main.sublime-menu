@@ -1,0 +1,43 @@
+[
+    {
+        "id": "tools",
+        "children": [
+            {
+                "caption": "SublimeREPL",
+                "mnemonic": "r",
+                "id": "SublimeREPL",
+                "children": [
+                    {
+                        "caption": "Clojure",
+                        "id": "Clojure",
+                        "children": [
+                            {
+                                "caption": "Clojure-OurGeorge",
+                                "id": "repl_clojure_nrepl",
+                                "command": "repl_open",
+                                "args": {
+                                    "type": "subprocess",
+                                    "encoding": "utf8",
+                                    "cmd": {
+                                        "windows": ["lein.bat", "repl", ":connect", "7888"],
+                                        "linux": ["lein", "repl", ":connect", "7888"],
+                                        "osx":  ["lein", "repl", ":connect", "7888"]
+                                    },
+                                    "soft_quit": "\n(. System exit 0)\n",
+                                    "cwd": {
+                                        "windows": "c:/Clojure",
+                                        "linux": "$file_path",
+                                        "osx": "$file_path"
+                                    },
+                                    "syntax": "Packages/Clojure/Clojure.tmLanguage",
+                                    "external_id": "clojure",
+                                    "extend_env": {"INSIDE_EMACS": "1"}
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

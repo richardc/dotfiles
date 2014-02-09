@@ -2,53 +2,51 @@
 
 (add-to-list 'load-path "~/.elisp")
 
+(require 'cl)
+(require 'cl-lib)
+
+;; configure package manager
 (require 'package)
+; use these repositories
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
 (package-initialize)
 
-(require 'cl)
-
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-;; Add in your own as you wish:
-(defvar my-packages '(
-		      ack-and-a-half
-		      apache-mode
-		      cider
-		      clojure-mode
-		      clojure-test-mode
-		      exec-path-from-shell
-		      flx-ido
-		      flymake
-		      flymake-cursor
-		      flymake-easy
-		      flymake-puppet
-		      flymake-ruby
-		      flymake-shell
-		      json-mode
-		      markdown-mode
-		      magit
-		      pastels-on-dark-theme
-		      projectile
-		      puppet-mode
-		      rainbow-delimiters
-		      ruby-mode
-		      ruby-test-mode
-		      smartparens
-		      yaml-mode
-		      )
-  "A list of packages to ensure are installed at launch.")
+; packages to ensure on startup
+(setq my-packages '(
+                    ack-and-a-half
+                    apache-mode
+                    cider
+                    clojure-mode
+                    clojure-test-mode
+                    exec-path-from-shell
+                    flx-ido
+                    flymake
+                    flymake-cursor
+                    flymake-easy
+                    flymake-puppet
+                    flymake-ruby
+                    flymake-shell
+                    json-mode
+                    markdown-mode
+                    magit
+                    projectile
+                    puppet-mode
+                    rainbow-delimiters
+                    ruby-mode
+                    ruby-test-mode
+                    yaml-mode
+                    ))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 
-;; set up colors - used to use a color theme but that doesn't work so
-;; well on emacs 22 and 23
-;(load-theme 'pastels-on-dark t)
+;; set up basic colors - white on black
 (set-face-foreground 'default "white")
 (set-face-background 'default "black")
 
@@ -58,23 +56,18 @@
 ;; trim trailing whitespace on save, always
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
-;; rainbow delimiters for all programming modes
+;; rainbow delimiters
+(require 'rainbow-delimiters)
+; use for all programming modes
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
-(require 'rainbow-delimiters)
-; call out unmatched
+; call out unmatched delimiters with error face
 (set-face-attribute 'rainbow-delimiters-unmatched-face nil
                     :foreground 'unspecified
                     :inherit 'error
                     :strike-through t)
 
-; bold outermost set
-(set-face-attribute 'rainbow-delimiters-depth-1-face nil
-                    :weight 'bold)
-
 ; rotate colors by level
-(require 'cl-lib)
-
 (setq my-paren-colors
   '("hot pink" "dodger blue" "green"))
 
@@ -85,21 +78,24 @@
   (intern (format "rainbow-delimiters-depth-%d-face" index))
   (elt my-paren-colors (mod index (safe-length my-paren-colors)))))
 
-;; blink paren as you type it, show matching parens
-(setq blink-matching-paren t)
+; bold outermost set
+(set-face-attribute 'rainbow-delimiters-depth-1-face nil
+                    :weight 'bold)
+
+;; show-paren mode
 (show-paren-mode 1)
 (setq show-paren-style 'parenthesis)
+; underline and ultra-bold matching paren
 (set-face-attribute 'show-paren-match-face nil
-		    :foreground nil :background nil
-		    :weight 'ultrabold :underline t)
+                    :foreground 'unspecified
+                    :background 'unspecified
+                    :weight 'ultra-bold
+                    :underline t)
 
-;; cider tweaking
+;; cider - clojure repl
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (setq nrepl-hide-special-buffers t)
 (setq cider-repl-result-prefix ";; => ")
-
-;; enable smartparens everywhere
-;;(smartparens-global-mode t)
 
 ;; projectile - mostly from https://github.com/bbatsov/projectile/blob/master/README.md
 (projectile-global-mode)
@@ -116,6 +112,7 @@
    (setq fill-column 72)
    (turn-on-auto-fill)))
 
+;; copy the M-g default from XEmacs
 (global-set-key "\M-g" 'goto-line)
 
 ;; If running under screen, disable C-z.
@@ -123,13 +120,14 @@
     (global-unset-key "\C-z"))
 
 ;; name topmost buffer
-(setq frame-title-format (list ""
-			       'invocation-name "@" 'system-name' ": %b"))
+(setq frame-title-format
+      (list "" 'invocation-name "@" 'system-name' ": %b"))
 
 ;; set PATH by evaluting bashrc - for running Emacs.app
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
 
+;; start a server for emacsclient to connect to
 (server-start)
 
 ;; puppet-mode

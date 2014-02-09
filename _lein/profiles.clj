@@ -1,3 +1,5 @@
 {:user
- {:dependencies [[clojure-complete "0.2.3"]]
+ {:dependencies [[clojure-complete "0.2.3"]
+                 [org.clojure/tools.namespace "0.2.3"]]
+  :injections [(require '(clojure.tools.namespace repl find))]
   :plugins [[lein-kibit "0.0.8"]]}}

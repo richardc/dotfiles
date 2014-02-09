@@ -204,6 +204,11 @@
       c-default-style "linux"
       c-basic-offset 4)
 
+;; never tabs, unless it's a Makefile
+(setq-default indent-tabs-mode nil)
+(add-hook 'makefile-mode-hook
+          (lambda () (setq indent-tabs-mode t)))
+
 ;; line and column number
 (setq line-number-mode 1)
 (setq column-number-mode 1)

@@ -99,6 +99,9 @@
 (setq cider-repl-history-size 1000)
 (setq cider-repl-history-file "~/.cider_history")
 
+; rainbow-delimiters in the cider repl
+(add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
+
 
 ;; projectile - mostly from https://github.com/bbatsov/projectile/blob/master/README.md
 (projectile-global-mode)

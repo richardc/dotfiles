@@ -137,6 +137,9 @@
 ;; copy the M-g default from XEmacs
 (global-set-key "\M-g" 'goto-line)
 
+;; OSX Cmd-T should be like Sublime
+(global-set-key (kbd "s-t") 'projectile-find-file)
+
 ;; If running under screen, disable C-z.
 (if (and (getenv "STY") (not window-system))
     (global-unset-key "\C-z"))

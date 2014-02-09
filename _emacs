@@ -96,6 +96,9 @@
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (setq nrepl-hide-special-buffers t)
 (setq cider-repl-result-prefix ";; => ")
+(setq cider-repl-history-size 1000)
+(setq cider-repl-history-file "~/.cider_history")
+
 
 ;; projectile - mostly from https://github.com/bbatsov/projectile/blob/master/README.md
 (projectile-global-mode)

@@ -108,6 +108,7 @@
 (setq cider-repl-result-prefix ";; => ")
 (setq cider-repl-history-size 1000)
 (setq cider-repl-history-file "~/.cider_history")
+(setq cider-repl-use-pretty-printing t)
 
 ; rainbow-delimiters in the cider repl
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)

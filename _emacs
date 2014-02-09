@@ -61,6 +61,38 @@
 ;; rainbow delimiters for all programming modes
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
+(require 'rainbow-delimiters)
+; call out unmatched
+(set-face-attribute 'rainbow-delimiters-unmatched-face nil
+                    :foreground 'unspecified
+                    :inherit 'error
+                    :strike-through t)
+
+; bold outermost set
+(set-face-attribute 'rainbow-delimiters-depth-1-face nil
+                    :weight 'bold)
+
+; rotate colors by level
+(require 'cl-lib)
+
+(setq my-paren-colors
+  '("hot pink" "dodger blue" "green"))
+
+(cl-loop
+ for index from 1 to rainbow-delimiters-max-face-count
+ do
+ (set-face-foreground
+  (intern (format "rainbow-delimiters-depth-%d-face" index))
+  (elt my-paren-colors (mod index (safe-length my-paren-colors)))))
+
+;; blink paren as you type it, show matching parens
+(setq blink-matching-paren t)
+(show-paren-mode 1)
+(setq show-paren-style 'parenthesis)
+(set-face-attribute 'show-paren-match-face nil
+		    :foreground nil :background nil
+		    :weight 'ultrabold :underline t)
+
 ;; cider tweaking
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (setq nrepl-hide-special-buffers t)

@@ -18,7 +18,9 @@
 
 ; packages to ensure on startup
 (setq my-packages '(
+                    ac-nrepl
                     ack-and-a-half
+                    auto-complete
                     apache-mode
                     cider
                     clojure-mode
@@ -55,6 +57,14 @@
 
 ;; trim trailing whitespace on save, always
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; auto-complete
+(require 'auto-complete)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
+(require 'auto-complete-config)
+(ac-config-default)
+(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
+
 
 ;; rainbow delimiters
 (require 'rainbow-delimiters)
@@ -102,6 +112,11 @@
 ; rainbow-delimiters in the cider repl
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 
+(require 'ac-nrepl)
+(add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
+(add-hook 'cider-mode-hook 'ac-nrepl-setup)
+(eval-after-load "auto-complete"
+  '(add-to-list 'ac-modes 'cider-repl-mode))
 
 ;; projectile - mostly from https://github.com/bbatsov/projectile/blob/master/README.md
 (projectile-global-mode)

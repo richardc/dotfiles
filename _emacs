@@ -51,7 +51,7 @@
 (set-face-background 'default "black")
 
 ;; set a bigger font size.  height is in 10th points
-(set-face-attribute 'default nil :height 160)
+(set-face-attribute 'default nil :height 150)
 
 ;; trim trailing whitespace on save, always
 (add-hook 'before-save-hook 'delete-trailing-whitespace)

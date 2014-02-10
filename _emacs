@@ -36,6 +36,7 @@
                     json-mode
                     markdown-mode
                     magit
+                    midje-mode
                     projectile
                     puppet-mode
                     rainbow-delimiters
@@ -109,6 +110,10 @@
 (setq cider-repl-history-size 1000)
 (setq cider-repl-history-file "~/.cider_history")
 (setq cider-repl-use-pretty-printing t)
+
+;; midje-mode - support for midje clojure testing framework
+(require 'midje-mode)
+(add-hook 'clojure-mode-hook 'midje-mode)
 
 ; rainbow-delimiters in the cider repl
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
@@ -231,7 +236,6 @@
 ;; line and column number
 (setq line-number-mode 1)
 (setq column-number-mode 1)
-
 
 (defalias 'perl-mode 'cperl-mode)
 

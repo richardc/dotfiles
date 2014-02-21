@@ -142,6 +142,9 @@
 ;; copy the M-g default from XEmacs
 (global-set-key "\M-g" 'goto-line)
 
+;; move between windows with Cmd-arrows
+(windmove-default-keybindings 'super)
+
 ;; OSX Cmd-T should be like Sublime
 (global-set-key (kbd "s-t") 'projectile-find-file)
 

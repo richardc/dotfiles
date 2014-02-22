@@ -42,6 +42,7 @@
                     rainbow-delimiters
                     ruby-mode
                     ruby-test-mode
+                    undo-tree
                     yaml-mode
                     ))
 
@@ -123,6 +124,10 @@
 (add-hook 'cider-mode-hook 'ac-nrepl-setup)
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'cider-repl-mode))
+
+;; undo-tree
+(require 'undo-tree)
+(global-undo-tree-mode)
 
 ;; projectile - mostly from https://github.com/bbatsov/projectile/blob/master/README.md
 (projectile-global-mode)

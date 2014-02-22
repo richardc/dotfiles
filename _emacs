@@ -23,6 +23,7 @@
                     auto-complete
                     apache-mode
                     cider
+                    clojure-cheatsheet
                     clojure-mode
                     clojure-test-mode
                     exec-path-from-shell

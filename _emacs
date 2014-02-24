@@ -1,16 +1,16 @@
 ;; -*- Mode: Emacs-Lisp -*-
 
-(add-to-list 'load-path "~/.elisp")
-
 (require 'cl)
 (require 'cl-lib)
 
 ;; configure package manager
 (require 'package)
 ; use these repositories
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+(setq package-archives '(
+                         ("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+                         ("melpa" . "http://melpa.milkbox.net/packages/")
+                        ))
 (package-initialize)
 
 (when (not package-archive-contents)

@@ -49,8 +49,29 @@ let g:syntastic_puppet_puppetlint_args='--no-80chars-check'
 
 " always show a status bar
 set laststatus=2
-" and put line,column in it
-set ruler
+
+" airline - a fancy status bar
+" https://github.com/bling/vim-airline/
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" use unicode symbols for airline
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+
 
 " don't fold by default
 set foldlevel=99
@@ -88,8 +109,6 @@ au! BufRead,BufNewFile *.json                   setfiletype javascript
 
 " edge resistance when scrolling
 set scrolloff=2
-
-set showmode
 
 " when entering a brace flash its pair
 set showmatch
@@ -149,7 +168,6 @@ set wildmode=list:longest,full
 set shortmess+=r
 
 " display the current mode and partially-typed commands in the status line:
-set showmode
 set showcmd
 
 " have the mouse enabled all the time:

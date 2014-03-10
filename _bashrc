@@ -49,6 +49,10 @@ case "$TERM" in
 xterm*|rxvt*|screen)
     PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
     ;;
+screen-256color)
+    # tmux normally - set OSC title to pwd
+    PROMPT_COMMAND='printf "\033]2;$(basename $PWD)\033\\"'
+    ;;
 *)
     ;;
 esac

@@ -72,6 +72,14 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
 
+" interact with tmux - as we move between buffers set the OCS title
+if &term == "screen-256color"
+    set t_ts=]2;
+    set t_fs=[\
+
+    autocmd BufEnter * let &titlestring = expand("%:t")
+    set title
+endif
 
 " don't fold by default
 set foldlevel=99

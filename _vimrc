@@ -52,7 +52,6 @@ set laststatus=2
 
 " airline - a fancy status bar
 " https://github.com/bling/vim-airline/
-
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -90,10 +89,10 @@ set background=dark
 colorscheme vividchalk
 
 if has("gui_running")
-      set guioptions-=T       " no toolbar
-      set cursorline          " show the cursor line
-      "set guifont=Monaco:h12  " monaco 12
-      set guifont=Liberation\ Mono\ 11
+    set guioptions-=T       " no toolbar
+    set cursorline          " show the cursor line
+    "set guifont=Monaco:h12  " monaco 12
+    set guifont=Liberation\ Mono\ 11
 end
 
 

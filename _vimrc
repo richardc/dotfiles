@@ -132,7 +132,7 @@ nnoremap <C-x>0 <C-w>c
 nnoremap <C-x>1 <C-w>o
 nnoremap <C-x>o <C-w>w
 
-nnoremap <C-x>b     :MiniBufExplorer<CR>
+nnoremap <C-x>b     :CtrlPBuffer<CR>
 nnoremap <C-x><C-b> :BufExplorer<CR>
 nnoremap <C-x>k     :bdelete<Space>
 

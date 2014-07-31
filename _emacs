@@ -20,6 +20,7 @@
 (setq my-packages '(
                     ac-nrepl
                     ack-and-a-half
+                    ag
                     auto-complete
                     apache-mode
                     cider

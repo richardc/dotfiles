@@ -27,6 +27,7 @@
                     clojure-cheatsheet
                     clojure-mode
                     clojure-test-mode
+                    cmake-mode
                     exec-path-from-shell
                     flx-ido
                     flymake
@@ -169,6 +170,12 @@
 
 ;; start a server for emacsclient to connect to
 (server-start)
+
+;; cmake-mode
+(add-to-list 'auto-mode-alist
+             '(("CMakeLists\\.txt\\'" . cmake-mode))
+             '(("\\.cmake\\'" . cmake-mode)))
+
 
 ;; puppet-mode
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))

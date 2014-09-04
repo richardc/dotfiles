@@ -149,9 +149,8 @@
 
 ;; cmake-mode
 (add-to-list 'auto-mode-alist
-             '(("CMakeLists\\.txt\\'" . cmake-mode))
-             '(("\\.cmake\\'" . cmake-mode)))
-
+             '("CMakeLists\\.txt\\'" . cmake-mode)
+             '("\\.cmake\\'" . cmake-mode))
 
 ;; puppet-mode
 (add-to-list 'auto-mode-alist '("\\.pp$" . puppet-mode))

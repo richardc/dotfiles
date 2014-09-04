@@ -18,15 +18,10 @@
 
 ; packages to ensure on startup
 (setq my-packages '(
-                    ac-nrepl
-                    ack-and-a-half
                     ag
-                    auto-complete
                     apache-mode
                     cider
-                    clojure-cheatsheet
                     clojure-mode
-                    clojure-test-mode
                     cmake-mode
                     exec-path-from-shell
                     flx-ido
@@ -39,7 +34,6 @@
                     json-mode
                     markdown-mode
                     magit
-                    midje-mode
                     projectile
                     puppet-mode
                     rainbow-delimiters
@@ -62,14 +56,6 @@
 
 ;; trim trailing whitespace on save, always
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
-;; auto-complete
-(require 'auto-complete)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
-(require 'auto-complete-config)
-(ac-config-default)
-(define-key ac-mode-map (kbd "M-TAB") 'auto-complete)
-
 
 ;; rainbow delimiters
 (require 'rainbow-delimiters)
@@ -115,18 +101,8 @@
 (setq cider-repl-history-file "~/.cider_history")
 (setq cider-repl-use-pretty-printing t)
 
-;; midje-mode - support for midje clojure testing framework
-(require 'midje-mode)
-(add-hook 'clojure-mode-hook 'midje-mode)
-
 ; rainbow-delimiters in the cider repl
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
-
-(require 'ac-nrepl)
-(add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
-(add-hook 'cider-mode-hook 'ac-nrepl-setup)
-(eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'cider-repl-mode))
 
 ;; undo-tree
 (require 'undo-tree)
@@ -210,13 +186,6 @@
 (flx-ido-mode 1)
 (setq ido-use-faces nil)
 
-;; ack-and-a-half
-(require 'ack-and-a-half)
-;; Create shorter aliases
-(defalias 'ack 'ack-and-a-half)
-(defalias 'ack-same 'ack-and-a-half-same)
-(defalias 'ack-find-file 'ack-and-a-half-find-file)
-(defalias 'ack-find-file-same 'ack-and-a-half-find-file-same)
 
 ;; flymake-cursor - put flymake errors in the minibuffer
 (require 'flymake-cursor)
@@ -241,9 +210,13 @@
       next-line-add-newlines nil
       diff-command "diff -u"
       diff-switches '("-up")
-      vc-diff-switches '("-up")
-      c-default-style "linux"
+      vc-diff-switches '("-up"))
+
+
+;; C/C++ indenting rules
+(setq c-default-style "linux"
       c-basic-offset 4)
+
 
 ;; never tabs, unless it's a Makefile
 (setq-default indent-tabs-mode nil)

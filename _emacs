@@ -113,7 +113,7 @@
 
 ;; uniqify buffer names better
 (require 'uniquify)
-(setq uniquify-buffer-name-style 'post-forward)
+(setq uniquify-buffer-name-style 'forward)
 
 ;; magit
 (global-set-key (kbd "C-x g") 'magit-status)

@@ -57,6 +57,9 @@
 ;; trim trailing whitespace on save, always
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; desktop auto saves lists of open buffers, so you can restore
+(desktop-save-mode 1)
+
 ;; rainbow delimiters
 (require 'rainbow-delimiters)
 ; use for all programming modes

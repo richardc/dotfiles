@@ -97,6 +97,10 @@ alias grep='grep --color=auto'
 # enable rbenv        https://github.com/sstephenson/rbenv
 [[ -f "$HOME/.rbenv/bin/rbenv" ]] && eval "$(rbenv init -)"
 
+# enable chruby       https://github.com/postmodern/chruby
+[[ -s /usr/local/share/chruby/chruby.sh ]] && source /usr/local/share/chruby/chruby.sh
+[[ -s /usr/local/share/chruby/auto.sh ]] && source /usr/local/share/chruby/auto.sh
+
 # enable pythonbrew   https://github.com/utahta/pythonbrew
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
 

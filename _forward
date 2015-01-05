@@ -30,6 +30,13 @@ then
     finish
 endif
 
+if $h_List-Id: CONTAINS "london.pm.groups.perlists.pm"
+then
+    logwrite " => london_pm"
+    save $home/Maildir/.INBOX.london_pm/
+    finish
+endif
+
 if $h_List-Id: matches "<(london.pm|jobs|jobs-discuss)\.london\.pm\.org>"
 then
     logwrite " => london_pm-$1"

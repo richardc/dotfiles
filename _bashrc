@@ -29,11 +29,11 @@ PATH="$PATH:/usr/local/git/bin"                # http://code.google.com/p/git-os
 PATH="$PATH:/usr/texbin"                       # MacTeX
 PATH="$PATH:/usr/local/go/bin"                 # go
 PATH="$PATH:$GOPATH/bin"                       # installed go binaries
-PATH="$PATH:/usr/local/share/python"           # https://github.com/mxcl/homebrew/wiki/Homebrew-and-Python
 PATH="$PATH:/usr/local/bin:/usr/local/sbin"
 PATH="$PATH:/usr/bin:/usr/sbin"
 PATH="$PATH:/bin:/sbin"
 export PATH
+
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -63,13 +63,6 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 
 # fuck you and your auto-suggesting ways
 unset command_not_found_handle
-
-# repopulate SSH_AUTH_SOCK so we can talk to the ssh-agent
-AGENT=($(find /tmp -type s -name "agent.*" 2>/dev/null))
-if [ -S ${AGENT} ] ; then
-    export SSH_AUTH_SOCK=${AGENT}
-fi
-[ $( uname ) == "Darwin" ] && eval `launchctl export | grep SSH_AUTH_SOCK`
 
 # set up for boot2docker remoting on OSX
 # http://docs.docker.io/en/latest/installation/mac/

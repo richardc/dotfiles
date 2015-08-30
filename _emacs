@@ -8,8 +8,8 @@
 ; use these repositories
 (setq package-archives '(
                          ("gnu" . "http://elpa.gnu.org/packages/")
+                         ("melpa-stable" . "https://stable.melpa.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")
                         ))
 (package-initialize)
 

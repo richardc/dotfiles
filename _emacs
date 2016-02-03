@@ -104,6 +104,10 @@
 ; rainbow-delimiters in the cider repl
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 
+;; clojure-mode
+(require 'clojure-mode)
+(put-clojure-indent 'dotestseq 1)
+
 ;; undo-tree
 (require 'undo-tree)
 (global-undo-tree-mode)

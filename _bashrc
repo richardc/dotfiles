@@ -11,7 +11,7 @@ export HISTCONTROL=ignoreboth
 
 export EDITOR=vim
 
-export GOPATH=$HOME/Dropbox/src/go
+export GOPATH=$HOME/.go
 
 # my path, not yours
 PATH="$HOME/bin"

@@ -64,10 +64,6 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 # fuck you and your auto-suggesting ways
 unset command_not_found_handle
 
-# set up for boot2docker remoting on OSX
-# http://docs.docker.io/en/latest/installation/mac/
-[ $( uname ) == "Darwin" ] && export DOCKER_HOST=tcp://127.0.0.1:4243
-
 # xdg-open(1) on Linux, open(1) on OSX
 [ $( uname ) == "Linux" ] && alias open=xdg-open
 [ $( uname ) == "Linux" ] && alias pbcopy='xclip -selection clipboard'

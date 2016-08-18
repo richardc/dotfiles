@@ -90,8 +90,10 @@ alias grep='grep --color=auto'
 [[ -s /usr/local/share/chruby/chruby.sh ]] && source /usr/local/share/chruby/chruby.sh
 [[ -s /usr/local/share/chruby/auto.sh ]] && source /usr/local/share/chruby/auto.sh
 
-# enable pythonbrew   https://github.com/utahta/pythonbrew
-[[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
+# enable pyenv if installed
+if which pyenv >/dev/null ; then
+  eval "$(pyenv init -)"
+fi
 
 # Launch/connect to a gpg-agent
 if which gpg-agent >/dev/null; then

@@ -236,6 +236,8 @@ autocmd FileType make set noexpandtab shiftwidth=8
 " let Dean win, in puppet manifests use 2-space indents
 autocmd FileType puppet set shiftwidth=2
 
+autocmd FileType yaml set shiftwidth=2
+
 " for ruby too.  Will just need a bigger font
 autocmd FileType ruby set shiftwidth=2
 

@@ -43,6 +43,7 @@
                     yaml-mode
                     scala-mode2
                     sbt-mode
+                    go-mode
                     ))
 
 (dolist (p my-packages)

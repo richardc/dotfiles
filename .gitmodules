@@ -70,3 +70,6 @@
 [submodule "_vim/bundle/vim-airline"]
 	path = _vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline.git
+[submodule "_vim/_vim/bundle/vim-terraform"]
+	path = _vim/_vim/bundle/vim-terraform
+	url = https://github.com/hashivim/vim-terraform

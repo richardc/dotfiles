@@ -1,5 +1,10 @@
+#!bash
+# shellcheck disable=SC1090
+# SC1090 is non-constant sources, which we have many
+true
 # -*- mode: shell-script -*-
 # ~/.bashrc: executed by bash(1) for non-login shells.
+
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -65,9 +70,9 @@ PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
 unset command_not_found_handle
 
 # xdg-open(1) on Linux, open(1) on OSX
-[ $( uname ) == "Linux" ] && alias open=xdg-open
-[ $( uname ) == "Linux" ] && alias pbcopy='xclip -selection clipboard'
-[ $( uname ) == "Linux" ] && alias pbpaste='xclip -selection clipboard -o'
+[ "$( uname )" == "Linux" ] && alias open=xdg-open
+[ "$( uname )" == "Linux" ] && alias pbcopy='xclip -selection clipboard'
+[ "$( uname )" == "Linux" ] && alias pbpaste='xclip -selection clipboard -o'
 
 
 [[ -e /usr/local/bin/hub ]] && alias git=hub
@@ -78,7 +83,7 @@ alias grep='grep --color=auto'
 [[ -s "$HOME/perl5/perlbrew/etc/bashrc" ]] && source "$HOME/perl5/perlbrew/etc/bashrc"
 
 # enable local::lib   http://search.cpan.org/perldoc?local::lib
-[[ -s "$HOME/perl5/lib/perl5/local/lib.pm" ]] && eval $(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)
+[[ -s "$HOME/perl5/lib/perl5/local/lib.pm" ]] && eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 
 # enable rvm          http://rvm.beginrescueend.com/
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"

@@ -15,6 +15,7 @@ linter@1.11.16
 linter-pylama@0.5.7
 linter-shellcheck@1.2.0
 navigator-godef@1.0.4
+project-plus@0.9.0
 sort-lines@0.14.0
 tester-go@1.0.6
 

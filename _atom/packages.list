@@ -1,5 +1,6 @@
 autocomplete-go@1.1.1
 builder-go@1.0.1
+editorconfig@1.4.1
 go-config@1.2.3
 go-debug@0.1.22
 go-get@1.0.4

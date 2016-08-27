@@ -10,6 +10,7 @@ gometalinter-linter@1.1.1
 gorename@1.0.3
 language-terraform@0.7.4
 linter@1.11.16
+linter-pylama@0.5.7
 navigator-godef@1.0.4
 tester-go@1.0.6
 

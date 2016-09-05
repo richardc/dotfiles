@@ -7,14 +7,14 @@ go-config@1.2.3
 go-debug@0.1.22
 go-get@1.0.4
 go-plus@4.2.0
-godoc@0.3.1
+godoc@0.4.0
 gofmt@1.1.8
 gometalinter-linter@1.1.1
 gorename@1.0.3
 language-docker@1.1.7
 language-terraform@0.7.4
 linter@1.11.16
-linter-pylama@0.5.7
+linter-pylama@0.6.0
 linter-shellcheck@1.2.0
 merge-conflicts@1.4.4
 navigator-godef@1.0.4

@@ -1,4 +1,7 @@
 "*":
+  "bracket-matcher":
+    autocompleteBrackets: false
+    autocompleteSmartQuotes: false
   editor:
     fontSize: 12
   "exception-reporting":

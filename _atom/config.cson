@@ -4,6 +4,7 @@
     autocompleteSmartQuotes: false
   editor:
     fontSize: 12
+    showIndentGuide: true
   "exception-reporting":
     userId: "bb8e95ae-78d3-5b76-9295-6b5107160038"
   "git-diff":

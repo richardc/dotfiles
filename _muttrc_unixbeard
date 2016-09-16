@@ -1,6 +1,9 @@
 set from="Richard Clamp <richardc@unixbeard.net>"
 
 my_hdr Bcc: richardc@unixbeard.net
+set spoolfile=~/Maildir
 set folder=~/Maildir
+
+mailboxes `echo +inbox ~/Maildir/.INBOX.*`
 
 source ~/.muttrc_core

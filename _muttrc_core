@@ -57,6 +57,7 @@ set indent_string="> "		# how to quote replied text
 #set mailcap_path="~/.mailcap:/usr/local/share/mailcap"
 set nomark_old			# i don't care about whether a message is old
 set mail_check=10		# how often to poll for new mail
+set mask=""
 #set mbox=+mbox			# where to store read messages
 #set menu_scroll		# no implicit next-page/prev-page
 #set metoo			# remove my address when replying
@@ -100,7 +101,7 @@ set sort=threads		# primary sorting method
 #set sort_aux=reverse-date-received	# how to sort subthreads
 #set sort_aux=last-date		# date of the last message in thread
 set sort_browser=reverse-date	# how to sort files in the dir browser
-set spoolfile=~/Maildir	# where my new mail is located
+#set spoolfile=~/Maildir	# where my new mail is located
 #set status_format="-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?  %l]---(%s)-%>-(%P)---"
 #set status_on_top		# some people prefer the status bar on top
 #set strict_threads		# don't thread by subject
@@ -310,7 +311,7 @@ source ~/.mutt/aliases
 #
 
 #mailboxes ! +mutt-dev +mutt-users +open-pgp +wmaker +hurricane +vim +ietf +drums
-mailboxes `echo +inbox +maybe_spam ~/Maildir/.INBOX.*`
+#mailboxes `echo +inbox +maybe_spam ~/Maildir/.INBOX.*`
 #mailboxes `echo +inbox ~/Mail/*/*/*`
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

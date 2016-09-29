@@ -1,25 +1,25 @@
-autocomplete-go@1.1.1
+autocomplete-go@1.2.0
 builder-go@1.0.1
 concourse-vis@1.4.0
 editorconfig@1.4.1
-git-plus@5.17.0
-go-config@1.2.3
+git-plus@5.17.1
+go-config@1.2.4
 go-debug@0.1.22
-go-get@1.0.4
+go-get@2.1.0
 go-plus@4.2.0
-godoc@0.4.0
-gofmt@1.1.8
-gometalinter-linter@1.1.1
-gorename@1.0.3
+godoc@1.0.0
+gofmt@1.2.0
+gometalinter-linter@1.2.2
+gorename@1.1.0
 language-docker@1.1.7
 language-terraform@0.7.4
 linter@1.11.16
-linter-pylama@0.6.0
-linter-shellcheck@1.2.0
+linter-pylama@0.7.3
+linter-shellcheck@1.4.1
 merge-conflicts@1.4.4
-navigator-godef@1.0.4
+navigator-godef@1.1.0
 project-plus@0.9.0
 sort-lines@0.14.0
-tester-go@1.0.6
+tester-go@1.1.0
 
 

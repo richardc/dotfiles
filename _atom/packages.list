@@ -14,11 +14,10 @@ gorename@1.1.0
 language-docker@1.1.7
 language-terraform@0.7.4
 linter@1.11.18
-linter-pylama@0.7.4
+linter-pylama@0.7.5
 linter-shellcheck@1.4.1
 merge-conflicts@1.4.4
 navigator-go@1.1.3
-navigator-godef@1.0.4
 project-plus@0.9.0
 sort-lines@0.14.0
 tester-go@2.0.2

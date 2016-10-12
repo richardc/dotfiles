@@ -2,6 +2,11 @@
   "bracket-matcher":
     autocompleteBrackets: false
     autocompleteSmartQuotes: false
+  core:
+    disabledPackages: [
+      "metrics"
+    ]
+    telemetryConsent: "no"
   editor:
     fontSize: 12
     showIndentGuide: true

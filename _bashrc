@@ -100,6 +100,9 @@ if which pyenv >/dev/null ; then
   eval "$(pyenv init -)"
 fi
 
+# enable rustup          https://www.rustup.rs/
+[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
+
 # Launch/connect to a gpg-agent
 if which gpg-agent >/dev/null; then
   GPG_ENV_FILE="${HOME}/.gnupg/gpg-agent.env"

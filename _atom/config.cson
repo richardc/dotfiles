@@ -16,5 +16,9 @@
     showIconsInEditorGutter: true
   "go-plus":
     panelDisplayMode: "closed"
+  "tester-go":
+    runTestsOnSave: false
+  "tree-view":
+    hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false

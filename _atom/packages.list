@@ -1,7 +1,7 @@
 autocomplete-go@1.3.0
 builder-go@1.0.1
 concourse-vis@1.4.0
-editorconfig@1.5.3
+editorconfig@1.7.2
 git-plus@5.18.0
 go-config@1.2.4
 go-debug@0.1.22
@@ -14,7 +14,7 @@ gorename@1.1.0
 language-docker@1.1.7
 language-terraform@0.7.4
 linter@1.11.18
-linter-pylama@0.8.0
+linter-pylama@0.8.5
 linter-shellcheck@1.4.1
 merge-conflicts@1.4.4
 navigator-go@1.1.3

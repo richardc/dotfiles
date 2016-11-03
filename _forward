@@ -79,13 +79,6 @@ then
     finish
 endif
 
-if $h_In-Reply-To: CONTAINS "alphagov/paas-cf"
-then
-    logwrite " => forwarding travis mail"
-    deliver richard.clamp@digital.cabinet-office.gov.uk
-    finish
-endif
-
 if $h_X-is-spam: CONTAINS "yes"
 then
     logwrite " => SPAM"

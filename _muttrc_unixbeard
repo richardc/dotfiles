@@ -4,6 +4,6 @@ my_hdr Bcc: richardc@unixbeard.net
 set spoolfile=~/Maildir
 set folder=~/Maildir
 
-mailboxes `echo +inbox ~/Maildir/.INBOX.*`
+mailboxes `echo +inbox ~/Maildir/.INBOX.* ~/Maildir/.Spam`
 
 source ~/.muttrc_core

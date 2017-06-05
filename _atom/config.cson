@@ -15,7 +15,14 @@
   "git-diff":
     showIconsInEditorGutter: true
   "go-plus":
+    format:
+      tool: "gofmt"
+    panel: {}
     panelDisplayMode: "closed"
+    test:
+      coverageHighlightMode: "disabled"
+      runTestsOnSave: false
+  "linter-ui-default": {}
   "tester-go":
     runTestsOnSave: false
   "tree-view":

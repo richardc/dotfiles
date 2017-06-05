@@ -41,7 +41,7 @@
                     ruby-test-mode
                     undo-tree
                     yaml-mode
-                    scala-mode2
+                    scala-mode
                     sbt-mode
                     go-mode
                     ))
@@ -111,8 +111,8 @@
 (require 'clojure-mode)
 (put-clojure-indent 'dotestseq 1)
 
-;; scala-mode2
-(require 'scala-mode2)
+;; scala-mode
+(require 'scala-mode)
 
 ;; undo-tree
 (require 'undo-tree)

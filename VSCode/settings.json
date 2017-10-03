@@ -1,0 +1,6 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "workbench.startupEditor": "none",
+    "editor.minimap.enabled": false,
+    "window.zoomLevel": 0
+}

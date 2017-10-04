@@ -19,6 +19,8 @@
     ; ! is both a subcommand, and from the topdir and not the cwd
     ss = !git submodule status
 
+    lab = repo lab
+
 [color]
     diff = auto
     branch = auto
@@ -28,3 +30,7 @@
     insteadOf = unixbeard:
 [push]
 	default = upstream
+
+
+[include]
+        path = ~/.gitconfig-repos

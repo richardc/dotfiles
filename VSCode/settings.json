@@ -2,5 +2,11 @@
 {
     "workbench.startupEditor": "none",
     "editor.minimap.enabled": false,
-    "window.zoomLevel": 0
+    "window.zoomLevel": 0,
+    "window.nativeTabs": true,
+    "ruby.lint": {
+        "ruby": true,
+        "rubocop": true
+    },
+    "editor.renderIndentGuides": false
 }

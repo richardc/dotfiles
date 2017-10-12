@@ -1,6 +1,7 @@
 DavidAnson.vscode-markdownlint
 DotJoshJohnson.xml
 EditorConfig.EditorConfig
+PeterJausovec.vscode-docker
 ban.spellright
 bierner.markdown-mermaid
 donjayamanne.python
@@ -10,5 +11,7 @@ mauve.terraform
 ms-vscode.cpptools
 ms-vscode.Theme-MarkdownKit
 rebornix.Ruby
+spywhere.guides
+stkb.rewrap
 tht13.python
 tootone.org-mode

@@ -1,12 +1,18 @@
 // Place your settings in this file to overwrite the default settings
 {
-    "workbench.startupEditor": "none",
-    "editor.minimap.enabled": false,
-    "window.zoomLevel": 0,
-    "window.nativeTabs": true,
-    "ruby.lint": {
-        "ruby": true,
-        "rubocop": true
+    "[ruby]": {
+        "editor.tabSize": 2
     },
-    "editor.renderIndentGuides": false
+    "editor.minimap.enabled": false,
+    "editor.renderIndentGuides": false,
+    "editor.rulers": [80, 100, 120],
+    "gitlens.codeLens.enabled": false,
+    "ruby.lint": {
+        "rubocop": true,
+        "ruby": true,
+    },
+    "telemetry.enableTelemetry": false,
+    "window.nativeTabs": true,
+    "window.zoomLevel": 0,
+    "workbench.startupEditor": "none"
 }

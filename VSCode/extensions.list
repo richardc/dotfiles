@@ -5,11 +5,13 @@ PeterJausovec.vscode-docker
 ban.spellright
 bierner.markdown-mermaid
 donjayamanne.python
+eamodio.gitlens
 lextudio.restructuredtext
 lukehoban.Go
 mauve.terraform
 ms-vscode.cpptools
 ms-vscode.Theme-MarkdownKit
+qezhu.gitlink
 rebornix.Ruby
 spywhere.guides
 stkb.rewrap

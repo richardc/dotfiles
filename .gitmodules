@@ -1,9 +1,6 @@
 [submodule "_vim/bundle/syntastic"]
 	path = _vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
-[submodule "_bash_completion.d/knife"]
-	path = _bash_completion.d/knife
-        url = https://gist.github.com/1050685.git
 [submodule "_vim/bundle/vim-golang"]
 	path = _vim/bundle/vim-golang
 	url = git://github.com/jnwhiteh/vim-golang.git

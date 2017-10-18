@@ -121,6 +121,7 @@ export -n TMOUT
 
 [[ -s "$HOME/.bashrc_local" ]] && source ~/.bashrc_local
 
+[[ -s /usr/local/etc/bash_completion ]] && source /usr/local/etc/bash_completion
 [[ -s /etc/bash_completion ]] && source /etc/bash_completion
 
 [[ -s "$HOME/.bash_completion.d/knife/knife.sh" ]] && source $HOME/.bash_completion.d/knife/knife.sh

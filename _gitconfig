@@ -21,6 +21,7 @@
     ss = !git submodule status
 
     lab = repo lab
+    hub = repo hub
 
 [color]
     diff = auto

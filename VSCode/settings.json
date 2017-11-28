@@ -15,5 +15,15 @@
     "telemetry.enableTelemetry": false,
     "window.nativeTabs": true,
     "window.zoomLevel": 0,
-    "workbench.startupEditor": "none"
+    "workbench.startupEditor": "none",
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": false,
+        "suppressCommitNotFoundWarning": false,
+        "suppressFileNotUnderSourceControlWarning": false,
+        "suppressGitVersionWarning": false,
+        "suppressLineUncommittedWarning": false,
+        "suppressNoRepositoryWarning": false,
+        "suppressUpdateNotice": false,
+        "suppressWelcomeNotice": true
+    }
 }

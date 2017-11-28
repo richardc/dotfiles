@@ -2,13 +2,16 @@ DavidAnson.vscode-markdownlint
 DotJoshJohnson.xml
 EditorConfig.EditorConfig
 PeterJausovec.vscode-docker
+artdiniz.quitcontrol-vscode
 ban.spellright
 bierner.markdown-mermaid
-donjayamanne.python
 eamodio.gitlens
+haaaad.ansible
 lextudio.restructuredtext
 lukehoban.Go
 mauve.terraform
+ms-python.python
+ms-vscode.azure-account
 ms-vscode.cpptools
 ms-vscode.Theme-MarkdownKit
 qezhu.gitlink
@@ -16,4 +19,6 @@ rebornix.Ruby
 spywhere.guides
 stkb.rewrap
 tht13.python
+timonwong.shellcheck
 tootone.org-mode
+wholroyd.jinja

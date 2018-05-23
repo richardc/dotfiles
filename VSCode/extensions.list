@@ -5,14 +5,15 @@ PeterJausovec.vscode-docker
 artdiniz.quitcontrol-vscode
 ban.spellright
 bierner.markdown-mermaid
+castwide.solargraph
 eamodio.gitlens
 haaaad.ansible
 lextudio.restructuredtext
-lukehoban.Go
 mauve.terraform
 ms-python.python
 ms-vscode.azure-account
 ms-vscode.cpptools
+ms-vscode.Go
 ms-vscode.Theme-MarkdownKit
 qezhu.gitlink
 rebornix.Ruby

@@ -23,7 +23,10 @@
         "suppressGitVersionWarning": false,
         "suppressLineUncommittedWarning": false,
         "suppressNoRepositoryWarning": false,
-        "suppressUpdateNotice": false,
+        "suppressResultsExplorerNotice": false,
+        "suppressShowKeyBindingsNotice": true,
+        "suppressUpdateNotice": true,
         "suppressWelcomeNotice": true
-    }
+    },
+    "gitlens.keymap": "none"
 }

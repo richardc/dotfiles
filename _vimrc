@@ -1,9 +1,41 @@
 " vim, not vi
 set nocompatible
+filetype off
 
-" enable pathogen
-call pathogen#infect()
+" manual install step:
+"   mkdir -p ~/.vim/bundle
+"   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+"
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
+Plugin 'VundleVim/Vundle.vim' " required - self-manage Vundle
+Plugin 'tpope/vim-vividchalk'
+Plugin 'vim-airline/vim-airline'
+
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'vim-syntastic/syntastic'
+Plugin 'google/vim-searchindex'
+
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+
+" Language-specific plugins
+Plugin 'rodjek/vim-puppet'
+Plugin 'hashivim/vim-terraform'
+Plugin 'hashivim/vim-vagrant'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-rails'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
 filetype plugin indent on
 
 " always treat things as utf-8

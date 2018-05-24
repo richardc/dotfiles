@@ -22,10 +22,7 @@ export GOPATH=$HOME/.go
 PATH="$HOME/bin"
 PATH="$PATH:/usr/lib/ccache"                   # ccache symlinks on debian
 PATH="$PATH:/usr/lib64/ccache"                 # ccache symlinks on CentOS (x86_64)
-
-ccache=$( echo /usr/local/Cellar/ccache/*/libexec )
-[[ -e "$ccache" ]] && PATH="$PATH:$ccache"     # ccache symlinks on OSX (brew)
-
+PATH="$PATH:/usr/local/opt/ccache/libexec"     # ccache symlinks on OSX (homebrew)
 PATH="$PATH:$HOME/.rbenv/bin"                  # rbenv
 PATH="$PATH:$HOME/.npm_scratch/bin"            # npm-installed commands
 PATH="$PATH:$HOME/hck/perl-5.12.1/bin"         # handbuilt perl

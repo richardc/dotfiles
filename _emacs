@@ -38,14 +38,15 @@
                     projectile
                     puppet-mode
                     rainbow-delimiters
+                    racket-mode
                     ruby-mode
                     ruby-test-mode
                     undo-tree
                     yaml-mode
                     scala-mode
                     sbt-mode
-                    go-mode
-                    ))
+                    go-mode))
+
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))

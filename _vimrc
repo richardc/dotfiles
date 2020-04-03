@@ -33,6 +33,7 @@ Plugin 'hashivim/vim-terraform'
 Plugin 'hashivim/vim-vagrant'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-rails'
+Plugin 'dag/vim-fish'
 
 
 " All of your Plugins must be added before the following line

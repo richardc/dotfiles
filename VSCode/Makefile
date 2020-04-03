@@ -6,7 +6,7 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 link: ## symlinks the user settings into place
-	ln -s $$(pwd)/settings.json "${HOME}/Library/Application Support/Code/User"
+	ln -fs $$(pwd)/settings.json "${HOME}/Library/Application Support/Code/User"
 
 get: ## records current set of installed extensions to extensions.list so you can commit it
 	code --list-extensions > extensions.list

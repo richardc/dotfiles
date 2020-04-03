@@ -110,7 +110,7 @@ if &term == "screen-256color"
     set t_ts=]2;
     set t_fs=[\
 
-    autocmd BufEnter * let &titlestring = expand("%:t")
+    autocmd BufEnter * let &titlestring = "vim " . expand("%:t")
     set title
 endif
 

@@ -1,6 +1,5 @@
 [core]
     excludesfile = ~/.gitignore
-    editor = code -w
 
 [user]
     name  = Richard Clamp

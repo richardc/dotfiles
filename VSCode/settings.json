@@ -3,6 +3,13 @@
     "[ruby]": {
         "editor.tabSize": 2
     },
+    "[lua]": {
+        "editor.tabSize": 2
+    },
+    "[rust]": {
+        "editor.formatOnSave": true
+    },
+    "breadcrumbs.enabled": true,
     "editor.acceptSuggestionOnEnter": "off",
     "editor.minimap.enabled": false,
     "editor.renderIndentGuides": false,
@@ -14,7 +21,7 @@
     },
     "telemetry.enableTelemetry": false,
     "window.nativeTabs": true,
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     "workbench.startupEditor": "none",
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
@@ -28,5 +35,9 @@
         "suppressUpdateNotice": true,
         "suppressWelcomeNotice": true
     },
-    "gitlens.keymap": "none"
+    "gitlens.keymap": "none",
+    "python.formatting.provider": "black",
+    "puppet.installType": "pdk",
+    "go.useLanguageServer": true,
+    "puppet.titleBar.pdkNewModule.enable": false
 }

@@ -8,9 +8,9 @@
 ; use these repositories
 (setq package-archives '(
                          ("gnu" . "http://elpa.gnu.org/packages/")
-                         ("melpa-stable" . "https://stable.melpa.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                        ))
+                         ("melpa" . "https://melpa.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")))
+
 (package-initialize)
 
 (when (not package-archive-contents)
@@ -20,6 +20,7 @@
 (setq my-packages '(
                     ag
                     apache-mode
+                    go-autocomplete
                     cider
                     clojure-mode
                     cmake-mode
@@ -254,6 +255,17 @@
           '(lambda ()
              (make-local-variable 'write-contents-hooks)
              (add-hook 'write-contents-hooks 'hacking-untabify-buffer)))
+
+
+(auto-complete-mode 1)
+
+(with-eval-after-load 'go-mode
+   (require 'go-autocomplete))
+
+
+(add-hook 'go-mode-hook
+          '(lambda ()
+             (add-hook 'before-save-hook 'gofmt-before-save)))
 
 (defun nice-text-mode ()
   "setup a sane mode for editing english text"

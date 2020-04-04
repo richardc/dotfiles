@@ -40,7 +40,8 @@
 (scroll-bar-mode -1)
 (set-window-scroll-bars (minibuffer-window) nil nil)
 
-;; prettyify-symbols, differentiates some ambiguous symbols
+
+;; prettify-symbols, differentiates some ambiguous symbols
 (global-prettify-symbols-mode t)
 
 ;; use the spacemacs theme

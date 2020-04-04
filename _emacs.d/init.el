@@ -40,6 +40,9 @@
 (scroll-bar-mode -1)
 (set-window-scroll-bars (minibuffer-window) nil nil)
 
+;; Muscle memory, it's a real thing.  - Cmd-S to save
+(global-set-key "\M-s" 'save-buffer)
+
 
 ;; prettify-symbols, differentiates some ambiguous symbols
 (global-prettify-symbols-mode t)

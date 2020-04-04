@@ -81,6 +81,13 @@
   (add-hook 'prog-mode-hook 'turn-on-diff-hl-mode)
   (add-hook 'vc-dir-mode-hook 'turn-on-diff-hl-mode))
 
+(use-package deadgrep)
+
+(use-package company)
+(add-hook 'after-init-hook 'global-company-mode)
+
+(global-set-key (kbd "M-/") 'company-complete-common)
+
 ;; dumb-jump
 (use-package dumb-jump
 	:bind
@@ -101,9 +108,11 @@
   :config
   (setq projectile-completion-system 'ivy)
   (setq projectile-switch-project-action 'projectile-dired)
-  (setq projectile-require-project-root nil)
-  (setq frame-title-format '((:eval (projectile-project-name))))
-	(projectile-global-mode))
+  (setq projectile-require-project-root nil))
+
+
+(setq frame-title-format '((:eval (projectile-project-name))))
+(projectile-global-mode)
 
 ;; good undo stuff
 (use-package undo-tree
@@ -151,6 +160,12 @@
 	:bind
 	(("C-x g" . magit-status))
 	:config
+  (use-package with-editor)
+  (setq git-commit-summary-max-length 50)
+  (with-eval-after-load 'magit-remote
+    (magit-define-popup-action 'magit-push-popup ?P
+      'magit-push-implicitly--desc
+      'magit-push-implicitly ?p t))
 	(add-hook 'magit-log-edit-mode-hook
 						(lambda ()
 							(setq fill-column 72)

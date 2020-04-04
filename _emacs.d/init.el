@@ -152,6 +152,9 @@
 (use-package nix-mode
   :mode "\\.nix\\'")
 
+(use-package lua-mode
+  :mode "\\.lua\\'")
+
 (use-package rainbow-delimiters
   :config
 	(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)

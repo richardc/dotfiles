@@ -140,11 +140,13 @@
 (setq line-number-mode 1)
 (setq column-number-mode 1)
 
-
+;; Specific language modules:
 (use-package racket-mode)
 
-;; Silver surfer
-(use-package ag)
+(use-package json-mode)
+
+(use-package nix-mode
+  :mode "\\.nix\\'")
 
 (use-package rainbow-delimiters
   :config

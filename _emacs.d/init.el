@@ -35,9 +35,13 @@
     (load droppings)))
 
 ;; Turn off some decorations
+
+;; have to gave this on having a windowing system, but not set-window-scroll-bars.  Go figure.
+(when (display-graphic-p)
+  (scroll-bar-mode -1))
+
 (tool-bar-mode 0)
 (menu-bar-mode 0)
-(scroll-bar-mode -1)
 (set-window-scroll-bars (minibuffer-window) nil nil)
 
 ;; Muscle memory, it's a real thing.  - Cmd-S to save

@@ -1,4 +1,6 @@
 #+STARTUP: content
+# Default to tangling
+#+PROPERTY: header-args :tangle yes
 * Annotated configuration for emacs
 ** Overview
    Copied the idea from https://github.com/hrs/dotfiles but there are
@@ -6,13 +8,9 @@
    in an org-mode file, so you can navigate and edit it like any
    other note.
 
-** Bootstrap
-   init.el is a small bootstrap, that just calls this file in all its
-   org-mode goodness.
-
-   #+begin_src emacs-lisp  :tangle no
-     (org-babel-load-file "~/.emacs.d/configuration.org")
-   #+end_src
+** Setup
+   [[./init.el]] is a small bootstrap, that sets up a timer and
+   then calls this file in all its org-mode goodness.
 
    More complex versions exist that write this configuration out as the
    init.el in case you don't start with org-mode installed.
@@ -41,7 +39,8 @@
 
      (require 'use-package-ensure)
      (setq use-package-always-ensure t)
-   #+end_src
+
+  #+end_src
 
    Chase the high of compiling everthing
    #+begin_src emacs-lisp
@@ -51,7 +50,7 @@
      (setq load-prefer-newer t)
    #+end_src
 
-** looks
+** Theme, font size, window decorations
    For our theme, spacemacs-dark is alright
    #+begin_src emacs-lisp
      (use-package spacemacs-theme
@@ -97,6 +96,18 @@
    #+begin_src emacs-lisp
      (require 'paren)
      (show-paren-mode 1)
+     (setq show-paren-delay 0.0)
+   #+end_src
+
+   Visible bell
+   #+begin_src emacs-lisp
+     (setq visible-bell t)
+   #+end_src
+
+   When middle-clicking the mouse to yank from the clipboard,
+   insert the text where point is, not where the mouse cursor is.
+   #+begin_src emacs-lisp
+     (setq mouse-yank-at-point t)
    #+end_src
 
    Save your place in files
@@ -105,7 +116,6 @@
    #+end_src
 
 ** Keybindings
-
    Cmd-S to save
    #+begin_src emacs-lisp
      (global-set-key (kbd "S-s") 'save-buffer)
@@ -117,28 +127,11 @@
      (global-unset-key (kbd "C-z"))
    #+end_src
 
-** Editing
-   2-space indents, never tabs.  Unless you really have to (Makefiles)
-   #+begin_src emacs-lisp
-     (setq-default indent-tabs-mode nil)
-     (setq-default c-basic-indent 2)
-     (setq-default c-basic-offset 2)
-     (setq-default tab-width 2)
-
-     (add-hook 'makefile-mode-hook
-               (lambda () (setq indent-tabs-mode t)))
-   #+end_src
-
+** General editing
    Delete trailing whitespace, and add that final newline.
    #+begin_src emacs-lisp
      (add-hook 'before-save-hook 'delete-trailing-whitespace)
      (setq require-final-newline t)
-   #+end_src
-
-   Treat CamelCaseSubWords as separate words in every programming
-   mode
-   #+begin_src emacs-lisp :tangle yes
-     (add-hook 'prog-mode-hook 'subword-mode)
    #+end_src
 
    When opening a file, always follow symlinks.
@@ -152,10 +145,58 @@
                'executable-make-buffer-file-executable-if-script-p)
    #+end_src
 
+
+   Offer to create parent directories on save
+   #+begin_src emacs-lisp :tangle yes
+     (add-hook 'before-save-hook
+               (lambda ()
+                 (when buffer-file-name
+                   (let ((dir (file-name-directory buffer-file-name)))
+                     (when (and (not (file-exists-p dir))
+                                (y-or-n-p (format "Directory %s does not exist. Create it?" dir)))
+                       (make-directory dir t))))))
+   #+end_src
+
+   Transient mark mode
+   #+begin_src emacs-lisp :tangle yes
+     (transient-mark-mode t)
+   #+end_src
+
+   Ask if you're sure that you want to close Emacs.
+   #+begin_src emacs-lisp :tangle yes
+     (setq confirm-kill-emacs 'y-or-n-p)
+   #+end_src
+
+   When something changes a file, automatically refresh the
+   buffer containing that file so they can't get out of sync.
+   #+begin_src emacs-lisp :tangle yes
+     (global-auto-revert-mode t)
+   #+end_src
+
+
    Start looking for files in home
    #+begin_src emacs-lisp :tangle yes
      (setq default-directory "~/")
    #+end_src
+
+** Programming related defaults
+   2-space indents, never tabs.  Unless you really have to (Makefiles)
+   #+begin_src emacs-lisp
+     (setq-default c-basic-indent 2)
+     (setq-default c-basic-offset 2)
+     (setq-default tab-width 2)
+     (setq-default indent-tabs-mode nil)
+
+     (add-hook 'makefile-mode-hook
+               (lambda () (setq indent-tabs-mode t)))
+   #+end_src
+
+   Treat CamelCaseSubWords as separate words in every programming mode
+   #+begin_src emacs-lisp :tangle yes
+     (add-hook 'prog-mode-hook 'subword-mode)
+   #+end_src
+
+
 
 ** which-key
    Handy reminder for what's bound to what
@@ -450,6 +491,7 @@
        :bind
        ("M-x" . 'counsel-M-x)
        ("C-s" . 'swiper)
+       ("C-r" . 'swiper-backward)
 
        :config
        (use-package flx)

@@ -1,0 +1,479 @@
+#+STARTUP: content
+* Annotated configuration for emacs
+** Overview
+   Copied the idea from https://github.com/hrs/dotfiles but there are
+   many versions of this knocking about.  You write your config out
+   in an org-mode file, so you can navigate and edit it like any
+   other note.
+
+** Bootstrap
+   init.el is a small bootstrap, that just calls this file in all its
+   org-mode goodness.
+
+   #+begin_src emacs-lisp  :tangle no
+     (org-babel-load-file "~/.emacs.d/configuration.org")
+   #+end_src
+
+   More complex versions exist that write this configuration out as the
+   init.el in case you don't start with org-mode installed.
+
+* Configuration
+** package and use-package
+   https://github.com/jwiegley/use-package is great for keeping
+   settings grouped in with the package that they configure.  Also the
+   lazy loading is neat.
+
+   First we set up some package repos, and initialize them
+   #+begin_src emacs-lisp
+     (require 'package)
+     (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/"))
+     (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+     (package-initialize)
+   #+end_src
+
+   Basic use-package bootstrap.  Install it, use package at the backend.
+   #+begin_src emacs-lisp
+     (unless (package-installed-p 'use-package)
+       (package-refresh-contents)
+       (package-install 'use-package))
+     (eval-when-compile
+       (require 'use-package))
+
+     (require 'use-package-ensure)
+     (setq use-package-always-ensure t)
+   #+end_src
+
+   Chase the high of compiling everthing
+   #+begin_src emacs-lisp
+     (use-package auto-compile
+       :config (auto-compile-on-load-mode))
+
+     (setq load-prefer-newer t)
+   #+end_src
+
+** looks
+   For our theme, spacemacs-dark is alright
+   #+begin_src emacs-lisp
+     (use-package spacemacs-theme
+       :defer t
+       :init (load-theme 'spacemacs-dark t))
+   #+end_src
+
+   I'm getting too old for small fonts.  Also I have a reasonable sized screen most everywhere.
+   #+begin_src emacs-lisp
+     ;; height in 10th points
+     (set-face-attribute 'default nil :height 150)
+
+     (setq initial-frame-alist '((width . 120) (height . 55)))
+   #+end_src
+
+   Turn off some decorations
+   #+begin_src emacs-lisp
+     (when (display-graphic-p)
+       (scroll-bar-mode -1))
+
+     (tool-bar-mode 0)
+     (menu-bar-mode 0)
+     (set-window-scroll-bars (minibuffer-window) nil nil)
+   #+end_src
+
+   Prettify-symbols is handy, disambuguate O0 etc
+   #+begin_src emacs-lisp
+     (global-prettify-symbols-mode t)
+   #+end_src
+
+   Gently highlight the current line
+   #+begin_src emacs-lisp
+     (global-hl-line-mode)
+   #+end_src
+
+   Show *both* line number and column.  Extravagant.
+   #+begin_src emacs-lisp
+     (setq line-number-mode 1)
+     (setq column-number-mode 1)
+   #+end_src
+
+   Show matching parens
+   #+begin_src emacs-lisp
+     (require 'paren)
+     (show-paren-mode 1)
+   #+end_src
+
+   Save your place in files
+   #+begin_src emacs-lisp
+     (save-place-mode t)
+   #+end_src
+
+** Keybindings
+
+   Cmd-S to save
+   #+begin_src emacs-lisp
+     (global-set-key (kbd "S-s") 'save-buffer)
+   #+end_src
+
+   Unbind C-z - minimizing the gui isn't that useful.  We'll probably
+   rebind it to undo later.
+   #+begin_src emacs-lisp
+     (global-unset-key (kbd "C-z"))
+   #+end_src
+
+** Editing
+   2-space indents, never tabs.  Unless you really have to (Makefiles)
+   #+begin_src emacs-lisp
+     (setq-default indent-tabs-mode nil)
+     (setq-default c-basic-indent 2)
+     (setq-default c-basic-offset 2)
+     (setq-default tab-width 2)
+
+     (add-hook 'makefile-mode-hook
+               (lambda () (setq indent-tabs-mode t)))
+   #+end_src
+
+   Delete trailing whitespace, and add that final newline.
+   #+begin_src emacs-lisp
+     (add-hook 'before-save-hook 'delete-trailing-whitespace)
+     (setq require-final-newline t)
+   #+end_src
+
+   Treat CamelCaseSubWords as separate words in every programming
+   mode
+   #+begin_src emacs-lisp :tangle yes
+     (add-hook 'prog-mode-hook 'subword-mode)
+   #+end_src
+
+   When opening a file, always follow symlinks.
+   #+begin_src emacs-lisp :tangle yes
+     (setq vc-follow-symlinks t)
+   #+end_src
+
+   Make files with shebang lines executable on save
+   #+begin_src emacs-lisp :tangle yes
+     (add-hook 'after-save-hook
+               'executable-make-buffer-file-executable-if-script-p)
+   #+end_src
+
+   Start looking for files in home
+   #+begin_src emacs-lisp :tangle yes
+     (setq default-directory "~/")
+   #+end_src
+
+** which-key
+   Handy reminder for what's bound to what
+
+   #+begin_src emacs-lisp
+     (use-package which-key
+       :config
+       (which-key-mode)
+       (setq which-key-idle-delay 0.5))
+   #+end_src
+
+** undo-fu
+   Undo/redo
+   #+begin_src emacs-lisp
+     (use-package undo-fu
+       :bind
+       (("C-z" . undo-fu-only-undo)
+        ("C-S-z" . undo-fu-only-redo)
+        ("s-z" .  undo-fu-only-undo)
+        ("s-r" . undo-fu-only-redo)))
+   #+end_src
+
+** Smart open-line
+   Copied from https://github.com/freetonik/emacs-dotfiles in turn from bbatsov
+
+   #+begin_src emacs-lisp
+     (defun smart-open-line ()
+       "Insert an empty line after the current line. Position the cursor at its beginning, according to the current mode."
+       (interactive)
+       (move-end-of-line nil)
+       (newline-and-indent))
+
+     (defun smart-open-line-above ()
+       "Insert an empty line above the current line. Position the cursor at it's beginning, according to the current mode."
+       (interactive)
+       (move-beginning-of-line nil)
+       (newline-and-indent)
+       (forward-line -1)
+       (indent-according-to-mode))
+
+     (global-set-key (kbd "s-<return>") 'smart-open-line)
+     (global-set-key (kbd "s-S-<return>") 'smart-open-line-above)
+   #+end_src
+
+** Smart join-line
+   Join lines whether you’re in a region or not.
+   Copied from https://github.com/freetonik/emacs-dotfiles
+
+
+   #+begin_src emacs-lisp
+     (defun smart-join-line (beg end)
+       "If in a region, join all the lines in it. If not, join the current line with the next line."
+       (interactive "r")
+       (if mark-active
+           (join-region beg end)
+         (top-join-line)))
+
+     (defun top-join-line ()
+       "Join the current line with the next line."
+       (interactive)
+       (delete-indentation 1))
+
+     (defun join-region (beg end)
+       "Join all the lines in the region."
+       (interactive "r")
+       (if mark-active
+           (let ((beg (region-beginning))
+                 (end (copy-marker (region-end))))
+             (goto-char beg)
+             (while (< (point) end)
+               (join-line 1)))))
+
+     (global-set-key (kbd "s-j") 'smart-join-line)
+   #+end_src
+
+** indent-buffer
+   Sometimes, you need a hammer
+   #+begin_src emacs-lisp :tangle yes
+     (defun indent-buffer ()
+       (interactive)
+       (indent-region (point-min) (point-max)))
+   #+end_src
+** Moody
+   A rather fancy modeline
+
+   #+begin_src emacs-lisp
+     (use-package moody
+       :config
+       (setq x-underline-at-descent-line t)
+       (moody-replace-mode-line-buffer-identification)
+       (moody-replace-vc-mode))
+   #+end_src
+
+** Minions
+   Compact display of minor modes
+
+   #+begin_src emacs-lisp
+     (use-package minions
+       :config
+       (minions-mode 1))
+   #+end_src
+
+** diff-hl
+
+   Shows diff markers in the margin
+
+   #+begin_src emacs-lisp
+     (use-package diff-hl
+       :config
+       (global-diff-hl-mode))
+
+   #+end_src
+
+** dumb-jump
+   Jump-to-symbol
+
+   #+begin_src emacs-lisp
+     (use-package dumb-jump
+       :bind
+       (("M-." . dumb-jump-go))
+       :config
+       (setq dumb-jump-selector 'ivy))
+   #+end_src
+
+** deadgrep
+   Interface to ripgrep
+
+   #+begin_src emacs-lisp
+     (use-package deadgrep)
+   #+end_src
+
+** yasnippet and yasnippet-snippets
+   Snippets.  Basic use: type name of snippet, hit tab
+
+   Full manual: http://joaotavora.github.io/yasnippet/
+
+   #+begin_src emacs-lisp
+     (use-package yasnippet
+       :config
+       (setq yas-snippet-dirs
+             '("~/.emacs.d/snippets"))
+       (yas-global-mode 1))
+     ;; library of prebuilt snippets
+     (use-package yasnippet-snippets)
+   #+end_src
+
+** paredit
+   lisp editing goodness
+   #+begin_src emacs-lisp
+     (use-package paredit)
+   #+end_src
+
+** rainbow-delimiters
+   Nice colorful delimiters changing color by level.  A lisp must-have
+   #+begin_src emacs-lisp
+     (use-package rainbow-delimiters
+       :hook
+       (prog-mode . rainbow-delimiters-mode)
+       :config
+
+       ;; call out unmatched delimiters with error face
+       (set-face-attribute 'rainbow-delimiters-unmatched-face nil
+                           :foreground 'unspecified
+                           :inherit 'error
+                           :strike-through t)
+
+       ;; bold outermost set
+       (set-face-attribute 'rainbow-delimiters-depth-1-face nil
+                           :weight 'bold))
+
+   #+end_src
+
+** Lisp settings
+   #+begin_src emacs-lisp :tangle yes
+     (setq lispy-mode-hooks
+           '(clojure-mode-hook
+             emacs-lisp-mode-hook
+             lisp-mode-hook
+             scheme-mode-hook))
+
+     (dolist (hook lispy-mode-hooks)
+       (add-hook hook (lambda ()
+                        (setq show-paren-style 'expression)
+                        (paredit-mode)
+                        (rainbow-delimiters-mode))))
+   #+end_src
+
+** org-mode
+   There's a lot to attack here
+
+   Let tab inside source chunks use the embedded mode
+   #+begin_src emacs-lisp
+     (setq org-src-tab-acts-natively t)
+   #+end_src
+
+
+
+** Bulk stuff
+
+   from the last init.el rewrite.  Needs breaking into sections
+
+   #+begin_src emacs-lisp
+     (use-package company)
+     (add-hook 'after-init-hook 'global-company-mode)
+
+     (global-set-key (kbd "M-/") 'company-complete-common)
+
+     ;; flycheck
+     (use-package let-alist)
+     (use-package flycheck)
+
+     ;; projectile, emulting a ctrl-p
+     (use-package projectile
+       :bind
+       (("C-c v" . deadgrep)
+        ("C-p" . projectile-find-file))
+
+       :config
+       (setq projectile-completion-system 'ivy)
+       (setq projectile-switch-project-action 'projectile-dired)
+       (setq projectile-require-project-root nil))
+
+
+     (setq frame-title-format '((:eval (projectile-project-name))))
+     (projectile-global-mode)
+
+     ;; Specific language modules:
+     (use-package racket-mode)
+
+     (use-package json-mode)
+
+     (use-package nix-mode
+       :mode "\\.nix\\'")
+
+     (use-package lua-mode
+       :mode "\\.lua\\'")
+
+
+     (use-package magit
+       :bind
+       (("C-x g" . magit-status))
+       :config
+       (use-package with-editor)
+       (setq git-commit-summary-max-length 50)
+       (with-eval-after-load 'magit-remote
+         (magit-define-popup-action 'magit-push-popup ?P
+                                    'magit-push-implicitly--desc
+                                    'magit-push-implicitly ?p t))
+       (add-hook 'magit-log-edit-mode-hook
+                 (lambda ()
+                   (setq fill-column 72)
+                   (turn-on-auto-fill))))
+
+
+     ;; Writing words
+     ;; spellchecking
+
+     (use-package flyspell
+       :config
+       (add-hook 'text-mode-hook 'turn-on-auto-fill)
+       (add-hook 'git-commit-mode-hook 'flyspell-mode))
+
+     ;; Markdown with GitHub Flavoured Markdown
+
+     (use-package markdown-mode
+       :commands gfm-mode
+
+       :mode (("\\.md$" . gfm-mode))
+
+       :config
+       (setq markdown-command "pandoc --standalone --mathjax --from=markdown")
+       (custom-set-faces
+        '(markdown-code-face ((t nil)))))
+
+
+     ;; File management
+
+     (use-package dired-hide-dotfiles
+       :config
+       (dired-hide-dotfiles-mode)
+       (define-key dired-mode-map "." 'dired-hide-dotfiles-mode))
+
+     (setq-default dired-listing-switches "-lhvA")
+
+     (use-package async
+       :config
+       (dired-async-mode 1))
+
+     ;; Ivy, Counsel.   Completion framework
+
+     (use-package counsel
+       :bind
+       ("M-x" . 'counsel-M-x)
+       ("C-s" . 'swiper)
+
+       :config
+       (use-package flx)
+       (use-package smex)
+
+       (ivy-mode 1)
+       (setq ivy-use-virtual-buffers t)
+       (setq ivy-count-format "(%d/%d) ")
+       (setq ivy-initial-inputs-alist nil)
+       (setq ivy-re-builders-alist
+             '((swiper . ivy--regex-plus)
+               (t . ivy--regex-fuzzy))))
+
+   #+end_src
+
+** Finally
+
+   Ask config mode to keep it's helpful settings out of the init.el.  For the way I
+   want to use it, it's state we can just ignore, so we don't even load
+   it back up.
+
+   #+BEGIN_SRC emacs-lisp
+     (let ((droppings "~/.emacs.d/custom.el"))
+       (setq custom-file droppings)
+       (when (file-exists-p droppings)
+         (load droppings)))
+   #+END_SRC

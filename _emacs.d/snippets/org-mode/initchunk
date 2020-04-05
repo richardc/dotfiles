@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: initchunk
+# key: initchunk
+# --
+** Template
+
+Describe
+
+#+begin_src emacs-lisp
+#+end_src

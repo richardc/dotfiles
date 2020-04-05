@@ -8,3 +8,4 @@ transient
 places
 custom.el
 configuration.el
+smex-items

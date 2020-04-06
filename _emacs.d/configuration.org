@@ -541,7 +541,8 @@
 
        (setq projectile-completion-system 'ivy)
        (setq projectile-switch-project-action 'projectile-dired)
-       (setq projectile-require-project-root nil))
+       (setq projectile-require-project-root nil)
+       (projectile-global-mode))
    #+end_src
 
 * Terminal

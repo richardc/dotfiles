@@ -230,14 +230,14 @@
    #+end_src
 
 ** =C-w= backward-kill-word
-#+begin_src emacs-lisp
-  (global-set-key (kbd "C-w") 'backward-kill-word)
-#+end_src
+   #+begin_src emacs-lisp
+     (global-set-key (kbd "C-w") 'backward-kill-word)
+   #+end_src
 
 ** =M-o= other-window
-#+begin_src emacs-lisp
-  (global-set-key (kbd "M-o") 'other-window)
-#+end_src
+   #+begin_src emacs-lisp
+     (global-set-key (kbd "M-o") 'other-window)
+   #+end_src
 
 * Editing
 ** EditorConfig to the rescue

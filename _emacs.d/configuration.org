@@ -544,6 +544,30 @@
        (setq projectile-require-project-root nil))
    #+end_src
 
+* Terminal
+  Going to try not to go outside of emacs
+
+** =multi-term=
+   #+begin_src emacs-lisp
+     (use-package multi-term)
+     (global-set-key (kbd "C-c t") 'multi-term)
+   #+end_src
+
+** disable evil
+   #+begin_src emacs-lisp
+     (evil-set-initial-state 'term-mode 'emacs)
+   #+end_src
+
+** hook
+   Allow clicking of links.
+   Disable yas
+   #+begin_src emacs-lisp
+     (add-hook 'term-mode-hook
+	       (lambda ()
+		 (goto-address-mode)
+		 (define-key term-raw-map (kbd "M-o") 'other-window)
+		 (setq yas-dont-activate t)))
+   #+end_src
 * File management
 ** Dired
    #+begin_src emacs-lisp

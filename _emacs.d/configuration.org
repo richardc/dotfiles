@@ -634,6 +634,12 @@
 		  '("el" "#+begin_src emacs-lisp\n  ?\n#+end_src"))
    #+end_src
 
+** =ob-shell=
+   Allows for execution of shell blocks in org files.
+
+   #+begin_src emacs-lisp
+     (require 'ob-shell)
+   #+end_src
 
 * Finally
 

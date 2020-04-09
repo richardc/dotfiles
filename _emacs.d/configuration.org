@@ -110,7 +110,13 @@
      (use-package goto-chg)
    #+end_src
 
-
+** =exec-path-from-shell=
+   #+begin_src emacs-lisp
+     (use-package exec-path-from-shell
+       :config
+       (when (memq window-system '(mac ns))
+	 (exec-path-from-shell-initialize)))
+   #+end_src
 * UI
 ** Theme
    For our theme, spacemacs-dark is alright

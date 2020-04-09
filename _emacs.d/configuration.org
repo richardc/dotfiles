@@ -346,7 +346,7 @@
 			(paredit-mode))))
    #+end_src
 
-** Racket
+** racket
    #+begin_src emacs-lisp
      (use-package racket-mode)
    #+end_src
@@ -367,6 +367,12 @@
      (use-package lua-mode
        :mode "\\.lua\\'")
    #+end_src
+
+** arduino
+   #+begin_src emacs-lisp
+     (use-package arduino-mode)
+   #+end_src
+
 * Writing words
 ** Flyspell
    #+begin_src emacs-lisp

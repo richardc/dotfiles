@@ -376,7 +376,10 @@
 * Writing words
 ** Flyspell
    #+begin_src emacs-lisp
+     (setq ispell-program-name "aspell")
+
      (use-package flyspell
+       :hook (text-mode . flyspell-mode)
        :config
        (add-hook 'text-mode-hook 'turn-on-auto-fill)
        (add-hook 'git-commit-mode-hook 'flyspell-mode))

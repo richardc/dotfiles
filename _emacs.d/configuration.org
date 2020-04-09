@@ -31,10 +31,10 @@
    #+begin_src emacs-lisp
      (require 'package)
      (setq package-archives
-	   '(("melpa" . "https://melpa.org/packages/")
-	     ("gnu"   . "https://elpa.gnu.org/packages/")))
+           '(("melpa" . "https://melpa.org/packages/")
+             ("gnu"   . "https://elpa.gnu.org/packages/")))
      (if (version< emacs-version "26.3")
-	 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3"))
+         (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3"))
      (package-initialize)
    #+end_src
 
@@ -94,7 +94,7 @@
        :config
        (add-hook 'org-mode-hook 'evil-org-mode)
        (add-hook 'evil-org-mode-hook
-		 (lambda () (evil-org-set-key-theme)))
+                 (lambda () (evil-org-set-key-theme)))
        (require 'evil-org-agenda)
        (evil-org-agenda-set-keys))
    #+end_src
@@ -115,7 +115,7 @@
      (use-package exec-path-from-shell
        :config
        (when (memq window-system '(mac ns))
-	 (exec-path-from-shell-initialize)))
+         (exec-path-from-shell-initialize)))
    #+end_src
 * UI
 ** Theme
@@ -174,12 +174,12 @@
        :if (display-graphic-p)
        :config
        (let ((line (face-attribute 'mode-line :underline)))
-	 (set-face-attribute 'mode-line          nil :overline   line)
-	 (set-face-attribute 'mode-line-inactive nil :overline   line)
-	 (set-face-attribute 'mode-line-inactive nil :underline  line)
-	 (set-face-attribute 'mode-line          nil :box        nil)
-	 (set-face-attribute 'mode-line-inactive nil :box        nil)
-	 (set-face-attribute 'mode-line-inactive nil :background "#f9f2d9"))
+         (set-face-attribute 'mode-line          nil :overline   line)
+         (set-face-attribute 'mode-line-inactive nil :overline   line)
+         (set-face-attribute 'mode-line-inactive nil :underline  line)
+         (set-face-attribute 'mode-line          nil :box        nil)
+         (set-face-attribute 'mode-line-inactive nil :box        nil)
+         (set-face-attribute 'mode-line-inactive nil :background "#f9f2d9"))
        (setq x-underline-at-descent-line t)
        (moody-replace-mode-line-buffer-identification)
        (moody-replace-vc-mode))
@@ -265,18 +265,18 @@
    Make files with shebang lines executable on save
    #+begin_src emacs-lisp :tangle yes
      (add-hook 'after-save-hook
-	       'executable-make-buffer-file-executable-if-script-p)
+               'executable-make-buffer-file-executable-if-script-p)
    #+end_src
 
 ** Create parent directories
    #+begin_src emacs-lisp :tangle yes
      (add-hook 'before-save-hook
-	       (lambda ()
-		 (when buffer-file-name
-		   (let ((dir (file-name-directory buffer-file-name)))
-		     (when (and (not (file-exists-p dir))
-				(y-or-n-p (format "Directory %s does not exist. Create it?" dir)))
-		       (make-directory dir t))))))
+               (lambda ()
+                 (when buffer-file-name
+                   (let ((dir (file-name-directory buffer-file-name)))
+                     (when (and (not (file-exists-p dir))
+                                (y-or-n-p (format "Directory %s does not exist. Create it?" dir)))
+                       (make-directory dir t))))))
    #+end_src
 
 ** Transient mark mode
@@ -322,28 +322,28 @@
 
        ;; call out unmatched delimiters with error face
        (set-face-attribute 'rainbow-delimiters-unmatched-face nil
-			   :foreground 'unspecified
-			   :inherit 'error
-			   :strike-through t)
+                           :foreground 'unspecified
+                           :inherit 'error
+                           :strike-through t)
 
        ;; bold outermost set
        (set-face-attribute 'rainbow-delimiters-depth-1-face nil
-			   :weight 'bold))
+                           :weight 'bold))
 
    #+end_src
 
 ** Lisps
    #+begin_src emacs-lisp
      (setq lispy-mode-hooks
-	   '(clojure-mode-hook
-	     emacs-lisp-mode-hook
-	     lisp-mode-hook
-	     scheme-mode-hook))
+           '(clojure-mode-hook
+             emacs-lisp-mode-hook
+             lisp-mode-hook
+             scheme-mode-hook))
 
      (dolist (hook lispy-mode-hooks)
        (add-hook hook (lambda ()
-			(setq-local show-paren-style 'expression)
-			(paredit-mode))))
+                        (setq-local show-paren-style 'expression)
+                        (paredit-mode))))
    #+end_src
 
 ** racket
@@ -395,7 +395,7 @@
        :config
        (setq markdown-command "pandoc --standalone --mathjax --from=markdown")
        (custom-set-faces
-	'(markdown-code-face ((t nil)))))
+        '(markdown-code-face ((t nil)))))
    #+end_src
 
 * Utilities
@@ -438,8 +438,8 @@
        "If in a region, join all the lines in it. If not, join the current line with the next line."
        (interactive "r")
        (if mark-active
-	   (join-region beg end)
-	 (top-join-line)))
+           (join-region beg end)
+         (top-join-line)))
 
      (defun top-join-line ()
        "Join the current line with the next line."
@@ -450,11 +450,11 @@
        "Join all the lines in the region."
        (interactive "r")
        (if mark-active
-	   (let ((beg (region-beginning))
-		 (end (copy-marker (region-end))))
-	     (goto-char beg)
-	     (while (< (point) end)
-	       (join-line 1)))))
+           (let ((beg (region-beginning))
+                 (end (copy-marker (region-end))))
+             (goto-char beg)
+             (while (< (point) end)
+               (join-line 1)))))
 
      (global-set-key (kbd "s-j") 'smart-join-line)
    #+end_src
@@ -489,7 +489,7 @@
        :bind ("M-j" . yas-expand)
        :config
        (setq yas-snippet-dirs
-	     '("~/.emacs.d/snippets" yasnippet-snippets-dir))
+             '("~/.emacs.d/snippets" yasnippet-snippets-dir))
        (yas-global-mode 1)
        (setq yas-indent-line 'auto))
 
@@ -532,10 +532,10 @@
        (setq git-commit-summary-max-length 50)
 
        (add-hook 'magit-log-edit-mode-hook
-		 (lambda ()
-		   (setq-local fill-column 72)
-		   (turn-on-auto-fill))
-		 (add-hook 'with-editor-mode-hook 'evil-insert-state)))
+                 (lambda ()
+                   (setq-local fill-column 72)
+                   (turn-on-auto-fill))
+                 (add-hook 'with-editor-mode-hook 'evil-insert-state)))
    #+end_src
 ** =git-timemachine=
    #+begin_src emacs-lisp
@@ -586,10 +586,10 @@
    Disable yas
    #+begin_src emacs-lisp
      (add-hook 'term-mode-hook
-	       (lambda ()
-		 (goto-address-mode)
-		 (define-key term-raw-map (kbd "M-o") 'other-window)
-		 (setq-local yas-dont-activate t)))
+               (lambda ()
+                 (goto-address-mode)
+                 (define-key term-raw-map (kbd "M-o") 'other-window)
+                 (setq-local yas-dont-activate t)))
    #+end_src
 * File management
 ** Dired
@@ -626,8 +626,8 @@
        (setq ivy-count-format "(%d/%d) ")
        (setq ivy-initial-inputs-alist nil)
        (setq ivy-re-builders-alist
-	     '((swiper . ivy--regex-plus)
-	       (t . ivy--regex-fuzzy))))
+             '((swiper . ivy--regex-plus)
+               (t . ivy--regex-fuzzy))))
    #+end_src
 
 ** treemacs
@@ -636,7 +636,7 @@
        :defer t
        :init
        (with-eval-after-load 'winum
-	 (define-key winum-keymap (kbd "M-0") #'treemacs-select-window)))
+         (define-key winum-keymap (kbd "M-0") #'treemacs-select-window)))
 
      (use-package treemacs-evil
        :after treemacs evil)
@@ -676,7 +676,7 @@
 
    #+begin_src emacs-lisp
      (add-to-list 'org-structure-template-alist
-		  '("el" "#+begin_src emacs-lisp\n  ?\n#+end_src"))
+                  '("el" "#+begin_src emacs-lisp\n  ?\n#+end_src"))
    #+end_src
 
 ** =ob-shell=
@@ -693,18 +693,18 @@
    #+begin_src emacs-lisp
      (defvar chrome-bookmarks-file
        (cl-find-if
-	#'file-exists-p
-	;; Base on `helm-chrome-file'
-	(list
-	 "~/Library/Application Support/Google/Chrome/Profile 1/Bookmarks"
-	 "~/Library/Application Support/Google/Chrome/Default/Bookmarks"
-	 "~/AppData/Local/Google/Chrome/User Data/Default/Bookmarks"
-	 "~/.config/google-chrome/Default/Bookmarks"
-	 "~/.config/chromium/Default/Bookmarks"
-	 (substitute-in-file-name
-	  "$LOCALAPPDATA/Google/Chrome/User Data/Default/Bookmarks")
-	 (substitute-in-file-name
-	  "$USERPROFILE/Local Settings/Application Data/Google/Chrome/User Data/Default/Bookmarks")))
+        #'file-exists-p
+        ;; Base on `helm-chrome-file'
+        (list
+         "~/Library/Application Support/Google/Chrome/Profile 1/Bookmarks"
+         "~/Library/Application Support/Google/Chrome/Default/Bookmarks"
+         "~/AppData/Local/Google/Chrome/User Data/Default/Bookmarks"
+         "~/.config/google-chrome/Default/Bookmarks"
+         "~/.config/chromium/Default/Bookmarks"
+         (substitute-in-file-name
+          "$LOCALAPPDATA/Google/Chrome/User Data/Default/Bookmarks")
+         (substitute-in-file-name
+          "$USERPROFILE/Local Settings/Application Data/Google/Chrome/User Data/Default/Bookmarks")))
        "Path to Google Chrome Bookmarks file (it's JSON).")
 
      (defun chrome-bookmarks-insert-as-org ()
@@ -713,34 +713,34 @@
        (require 'json)
        (require 'org)
        (let ((data (let ((json-object-type 'alist)
-			 (json-array-type  'list)
-			 (json-key-type    'symbol)
-			 (json-false       nil)
-			 (json-null        nil))
-		     (json-read-file chrome-bookmarks-file)))
-	     level)
-	 (cl-labels ((fn
-		      (al)
-		      (pcase (alist-get 'type al)
-			("folder"
-			 (insert
-			  (format "%s %s\n"
-				  (make-string level ?*)
-				  (alist-get 'name al)))
-			 (cl-incf level)
-			 (mapc #'fn (alist-get 'children al))
-			 (cl-decf level))
-			("url"
-			 (insert
-			  (format "%s %s\n"
-				  (make-string level ?*)
-				  (org-make-link-string
-				   (alist-get 'url al)
-				   (alist-get 'name al))))))))
-	   (setq level 1)
-	   (fn (alist-get 'bookmark_bar (alist-get 'roots data)))
-	   (setq level 1)
-	   (fn (alist-get 'other (alist-get 'roots data))))))
+                         (json-array-type  'list)
+                         (json-key-type    'symbol)
+                         (json-false       nil)
+                         (json-null        nil))
+                     (json-read-file chrome-bookmarks-file)))
+             level)
+         (cl-labels ((fn
+                      (al)
+                      (pcase (alist-get 'type al)
+                        ("folder"
+                         (insert
+                          (format "%s %s\n"
+                                  (make-string level ?*)
+                                  (alist-get 'name al)))
+                         (cl-incf level)
+                         (mapc #'fn (alist-get 'children al))
+                         (cl-decf level))
+                        ("url"
+                         (insert
+                          (format "%s %s\n"
+                                  (make-string level ?*)
+                                  (org-make-link-string
+                                   (alist-get 'url al)
+                                   (alist-get 'name al))))))))
+           (setq level 1)
+           (fn (alist-get 'bookmark_bar (alist-get 'roots data)))
+           (setq level 1)
+           (fn (alist-get 'other (alist-get 'roots data))))))
    #+end_src
 
 * Finally

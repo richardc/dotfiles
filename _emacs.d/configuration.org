@@ -556,6 +556,13 @@
        (setq projectile-require-project-root nil)
        (projectile-global-mode))
    #+end_src
+** simpleclip
+   Keep the kill-ring and the clipboard distinct.
+   #+begin_src emacs-lisp
+     (use-package simpleclip
+       :init
+       (simpleclip-mode 1))
+   #+end_src
 
 * Terminal
   Going to try not to go outside of emacs

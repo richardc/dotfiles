@@ -620,6 +620,29 @@
 	       (t . ivy--regex-fuzzy))))
    #+end_src
 
+** treemacs
+   #+begin_src emacs-lisp
+     (use-package treemacs
+       :defer t
+       :init
+       (with-eval-after-load 'winum
+	 (define-key winum-keymap (kbd "M-0") #'treemacs-select-window)))
+
+     (use-package treemacs-evil
+       :after treemacs evil)
+
+     (use-package treemacs-projectile
+       :after treemacs projectile)
+
+     (use-package treemacs-icons-dired
+       :after treemacs dired
+       :config (treemacs-icons-dired-mode))
+
+     (use-package treemacs-magit
+       :after treemacs magit)
+   #+end_src
+
+
 * Org-mode
 ** Pretty bullets
    #+begin_src emacs-lisp

@@ -775,7 +775,7 @@ Allows for execution of shell blocks in org files.
 
 ** Spread the love with =outshine=
 #+begin_src emacs-lisp
-  (use-package outshine)
+(use-package outshine)
 #+end_src
 ** Import Chrome bookmarks
 Copied from

@@ -1,6 +1,7 @@
 # -*- mode: sh; -*-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# * oh-my-zsh
+# ** core
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -64,7 +65,7 @@ ZSH_THEME="blinks"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-export FZF_DEFAULT_OPTS='--bind ctrl-k:kill-line'
+# ** plugins
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -86,35 +87,67 @@ plugins=(
   mosh
   timer
 )
-
+# ** make configuration active
 source $ZSH/oh-my-zsh.sh
 
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
+# * hand configuration
+# ** aliases
 # Wipe out all aliases
 unalias ${(k)aliases[*]}
+
+# ** environment
+export FZF_DEFAULT_OPTS='--bind ctrl-k:kill-line'
+export GOPATH=~/.go
+export ZSH_THEME_TERM_TITLE_IDLE="zsh %~"
+
+# ** path
+# check results with print -l $path
+
+# make path unique
+typeset -U path
+
+# reset
+path=()
+
+# personal scripts
+path=(~/bin)
+
+# ccache stubs
+path+=(
+  /usr/lib/ccache # debian
+  /usr/lib64/ccache # CentOS
+  /usr/local/opt/ccache/libexec # OSX (homebrew)
+)
+
+# standard paths
+path+=(
+  /usr/local/bin
+  /usr/bin
+  /bin
+  /usr/local/sbin
+  /usr/sbin
+  /sbin
+)
+
+# MacTex
+path+=(/Library/TeX/texbin)
+
+# PuppetLabs pdk and bolt
+path+=(
+  /opt/puppetlabs/pdk/bin
+  /opt/puppetlabs/bin
+)
+
+# XQuartz
+path+=(/opt/X11/bin)
+
+# Go Utilities
+path+=($GOPATH/bin)
+
+# ** oh-my-zsh title setting fixup
+# wrap [[https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/termsupport.zsh][title]]
+# tell it we're using an xterm, as tmux does support setting window titles
+# =tmux-256color= isn't widely available, otherwise we could just patch the code properly
+
+# monkeypatch title in-place
+functions[title]="TERM=xterm;${functions[title]}"

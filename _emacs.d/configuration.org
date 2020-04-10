@@ -367,6 +367,49 @@ must-have.  Good with other languages too.
     :mode "\\.lua\\'")
 #+end_src
 
+** ruby
+Many things grab-bagged from [[https://github.com/hrs/dotfiles/blob/master/emacs/.emacs.d/configuration.org#ruby-and-rspec][hrs]]. To be tidied.
+
+#+begin_src emacs-lisp
+  (setq ruby-align-to-stmt-keywords '(def if))
+
+  (use-package chruby)
+
+  (use-package yard-mode)
+  (use-package ruby-end)
+
+  (use-package rspec-mode)
+
+  (add-hook 'ruby-mode-hook
+            (lambda ()
+              (setq ruby-insert-encoding-magic-comment nil)
+              (yas-minor-mode)
+              (rspec-mode)
+              (yard-mode)
+              (flycheck-mode)
+              (local-set-key "\r" 'newline-and-indent)
+              (setq rspec-command-options "--color --order random")
+              (chruby-use-corresponding)))
+
+  (defun hrs/add-auto-mode (mode &rest patterns)
+    "Add entries to `auto-mode-alist' to use `MODE' for all given file `PATTERNS'."
+    (dolist (pattern patterns)
+      (add-to-list 'auto-mode-alist (cons pattern mode))))
+
+  (hrs/add-auto-mode
+   'ruby-mode
+   "\\Gemfile$"
+   "\\.rake$"
+   "\\.gemspec$"
+   "\\Guardfile$"
+   "\\Rakefile$"
+   "\\Vagrantfile$"
+   "\\Vagrantfile.local$")
+(add-hook 'rspec-compilation-mode-hook
+          (lambda ()
+            (make-local-variable 'compilation-scroll-output)
+            (setq compilation-scroll-output 'first-error)))
+#+end_src
 ** arduino
 #+begin_src emacs-lisp
   (use-package arduino-mode)

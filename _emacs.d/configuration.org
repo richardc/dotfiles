@@ -437,7 +437,10 @@ Many things grab-bagged from [[https://github.com/hrs/dotfiles/blob/master/emacs
 #+begin_src emacs-lisp
 (use-package arduino-mode)
 #+end_src
-
+** apache
+#+begin_src emacs-lisp
+  (use-package apache-mode)
+#+end_src
 * Writing words
 ** Flyspell
 #+begin_src emacs-lisp

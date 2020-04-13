@@ -1,6 +1,24 @@
 #+title: ergodone:richardc
 #+startup: content
 
+
+* Build me
+
+#+BEGIN_SRC sh :tangle rebuild-keyboards.sh
+#!/bin/sh
+set -e
+set -x
+QMK=~/src/qmk_firmware
+mkdir -p $QMK/keyboards/ergodox_ez/keymaps/richardc
+org2qmk ergodone_richardc.org keymap > $QMK/keyboards/ergodox_ez/keymaps/richardc/keymap.c
+(cd $QMK && make ergodox_ez:richardc)
+
+mkdir -p $QMK/keyboards/ergodone/keymaps/richardc
+org2qmk ergodone_richardc.org keymap > $QMK/keyboards/ergodone/keymaps/richardc/keymap.c
+(cd $QMK && make ergodone:richardc)
+#+END_SRC
+
+
 * C preamble
 
 #+begin_src c
@@ -26,81 +44,27 @@ enum custom_keycodes {
 :END:
 
 /Left Hand/
-| ~=~             | 1           | 2           | 3    | 4     | 5 | left     |
-| delete          | q           | w           | e    | r     | t | TG(SYMB) |
-| backspace       | a           | s           | d    | f     | g |          |
-| shift_l         | CTL_T(KC_Z) | x           | c    | v     | b | hyper    |
-| LT(SYMB,KC_GRV) | '           | alt_shift_l | left | right |   |          |
+| escape  | 1 | 2      | 3     | 4     | 5 | [    |
+| tab     | q | w      | e     | r     | t | -    |
+| ctrl_l  | a | s      | d     | f     | g |      |
+| shift_l | z | x      | c     | v     | b | noop |
+| `       | ' | ctrl_l | alt_l | cmd_l |   |      |
 
-|       | ALT_T(KC_APP) | gui_l |
-|       |               | home  |
-| space | backspace     | end   |
+|       | home  | end    |
+|       |       | noop   |
+| space | enter | delete |
 
 /Right Hand/
-| right    | 6 | 7  | 8    | 9 | 0                 | ~-~            |
-| TG(SYMB) | y | u  | i    | o | p                 | \              |
-|          | h | j  | k    | l | LT(MDIA, KC_SCLN) | GUI_T(KC_QUOT) |
-| meh      | n | m  | ,    | . | CTL_T(KC_SLSH)    | shift_r        |
-|          |   | up | down | [ | ]                 | TT(SYMB)       |
+| ]    | 6 | 7    | 8    | 9  | 0     | \         |
+| ~=~  | y | u    | i    | o  | p     | backspace |
+|      | h | j    | k    | l  | ;     | enter     |
+| noop | n | m    | ,    | .  | /     | shift_r   |
+|      |   | left | down | up | right | noop      |
 
-| alt_r | CTL_T(KC_ESC) |       |
-| pgup  |               |       |
-| pgdn  | tab           | enter |
+| pgup | pgdn  |       |
+| noop |       |       |
+| noop | enter | space |
 
-** Symbol layer
-:PROPERTIES:
-:LAYER:    SYMB
-:END:
-
-/Left hand/
-| VRSN | f1        | f2 | f3 | f4 | f5    | "" |
-| ""   | !         | @  | {  | }  | \vert | "" |
-| ""   | shifted_# | $  | (  | )  | `     |    |
-| ""   | %         | ^  | [  | ]  | ~     | "" |
-| EPRM | ""        | "" | "" | "" |       |    |
-
-|         | RGB_MOD | "" |
-|         |         | "" |
-| RGB_VAD | RGB_VAI | "" |
-
-
-/Right hand/
-| "" | f6   | f7 | f8 | f9 | f10 | f11 |
-| "" | up   |  7 |  8 |  9 | *   | f12 |
-|    | down |  4 |  5 |  6 | +   | ""  |
-| "" | &    |  1 |  2 |  3 | \   | ""  |
-|    |      | "" |  . |  0 | ~=~ | ""  |
-
-| RGB_TOG | RGB_SLD |         |
-| ""      |         |         |
-| ""      | RGB_HUD | RGB_HUI |
-
-** Media and mouse keys layer
-:PROPERTIES:
-:LAYER:    MDIA
-:END:
-
-Left hand
-| "" | "" | ""         | ""            | ""            | "" | "" |
-| "" | "" | ""         | mouse_up      | ""            | "" | "" |
-| "" | "" | mouse_left | mouse_down    | mouse_right   | "" |    |
-| "" | "" | ""         | ""            | ""            | "" | "" |
-| "" | "" | ""         | mouse_button1 | mouse_button2 |    |    |
-
-|    | "" | "" |
-|    |    | "" |
-| "" | "" | "" |
-
-Right Hand
-| "" | "" | ""        | ""             | ""         | "" | ""   |
-| "" | "" | ""        | ""             | ""         | "" | ""   |
-|    | "" | ""        | ""             | ""         | "" | play |
-| "" | "" | ""        | previous_track | next_track | "" | ""   |
-|    |    | volume_up | volume_down    | mute       | "" | ""   |
-
-| "" | "" |      |
-| "" |    |      |
-| "" | "" | back |
 
 
 * C postamble

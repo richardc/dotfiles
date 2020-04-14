@@ -9,13 +9,14 @@
 set -e
 set -x
 QMK=~/src/qmk_firmware
-mkdir -p $QMK/keyboards/ergodox_ez/keymaps/richardc
-org2qmk ergodone_richardc.org keymap > $QMK/keyboards/ergodox_ez/keymaps/richardc/keymap.c
-(cd $QMK && make ergodox_ez:richardc)
 
 mkdir -p $QMK/keyboards/ergodone/keymaps/richardc
 org2qmk ergodone_richardc.org keymap > $QMK/keyboards/ergodone/keymaps/richardc/keymap.c
 (cd $QMK && make ergodone:richardc)
+
+mkdir -p $QMK/keyboards/ergodox_ez/keymaps/richardc
+org2qmk ergodone_richardc.org keymap > $QMK/keyboards/ergodox_ez/keymaps/richardc/keymap.c
+(cd $QMK && make ergodox_ez:richardc)
 #+END_SRC
 
 

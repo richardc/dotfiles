@@ -26,10 +26,6 @@ org2qmk ergodone_richardc.org keymap > $QMK/keyboards/ergodox_ez/keymaps/richard
 #include QMK_KEYBOARD_H
 #include "version.h"
 
-#define BASE 0 // default layer
-#define SYMB 1 // symbols
-#define MDIA 2 // media keys
-
 enum custom_keycodes {
 		      PLACEHOLDER = SAFE_RANGE, // can always be here
 		      EPRM,
@@ -39,32 +35,60 @@ enum custom_keycodes {
 #+end_src
 
 * Keyboard Layers
-** default layer
+** layer 0
 :PROPERTIES:
-:LAYER:    BASE
+:LAYER:    0
 :END:
 
 /Left Hand/
-| escape  | 1 | 2      | 3     | 4     | 5 | [    |
-| tab     | q | w      | e     | r     | t | -    |
-| ctrl_l  | a | s      | d     | f     | g |      |
-| shift_l | z | x      | c     | v     | b | noop |
-| `       | ' | ctrl_l | alt_l | cmd_l |   |      |
+| `       | 1      | 2     | 3     | 4    | 5 | noop |
+| tab     | q      | w     | e     | r    | t | noop |
+| escape  | a      | s     | d     | f    | g |      |
+| shift_l | z      | x     | c     | v    | b | noop |
+| TT(1) | ctrl_l | alt_l | cmd_l | noop |   |      |
 
-|       | home  | end    |
+|       | noop  | noop   |
 |       |       | noop   |
 | space | enter | delete |
 
 /Right Hand/
-| ]    | 6 | 7    | 8    | 9  | 0     | \         |
-| ~=~  | y | u    | i    | o  | p     | backspace |
-|      | h | j    | k    | l  | ;     | enter     |
-| noop | n | m    | ,    | .  | /     | shift_r   |
-|      |   | left | down | up | right | noop      |
+| ~-~  | 6 | 7     | 8 | 9 | 0 | backspace |
+| ~=~  | y | u     | i | o | p | enter     |
+|      | h | j     | k | l | ; | \         |
+| noop | n | m     | , | . | / | shift_r   |
+|      |   | TT(1) | [ | ] | ' | ctrl_l    |
 
-| pgup | pgdn  |       |
-| noop |       |       |
-| noop | enter | space |
+| home | end   |       |
+| pgup |       |       |
+| pgdn | enter | space |
+
+
+** layer 1 arrow keys, mouse stuff
+:PROPERTIES:
+:LAYER:    1
+:END:
+
+/Left Hand/
+| "" | "" | "" | "" | "" | "" | "" |
+| "" | "" | "" | "" | "" | "" | "" |
+| "" | "" | "" | "" | "" | "" |    |
+| "" | "" | "" | "" | "" | "" | "" |
+| "" | "" | "" | "" | "" |    |    |
+
+|    | "" | "" |
+|    |    | "" |
+| "" | "" | "" |
+
+/Right Hand/
+| "" | ""   | ""   | "" | ""    | "" | EPRM |
+| "" | ""   | ""   | "" | ""    | "" | ""   |
+|    | left | down | up | right | "" | ""   |
+| "" | ""   | ""   | "" | ""    | "" | ""   |
+|    |      | ""   | "" | ""    | "" | ""   |
+
+| "" | "" |    |
+| "" |    |    |
+| "" | "" | "" |
 
 
 

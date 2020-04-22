@@ -112,6 +112,15 @@ path=()
 # personal scripts
 path=(~/bin)
 
+# NixOS
+path+=(
+  /run/wrappers/bin
+  ~/.nix-profile/bin
+  /etc/profiles/per-user/$USERNAME/bin
+  /nix/var/nix/profilles/default/bin
+  /run/current-system/sw/bin
+)
+
 # ccache stubs
 path+=(
   /usr/lib/ccache # debian

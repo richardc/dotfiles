@@ -153,6 +153,14 @@ path+=(/opt/X11/bin)
 # Go Utilities
 path+=($GOPATH/bin)
 
+# ** environment managers
+# pyenv
+which pyenv > /dev/null && eval "$(pyenv init -)"
+
+# perl local::lib - installs under ~/perl5
+eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
+
+
 # ** oh-my-zsh title setting fixup
 # wrap [[https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/termsupport.zsh][title]]
 # tell it we're using an xterm, as tmux does support setting window titles

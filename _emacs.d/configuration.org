@@ -769,7 +769,15 @@ Quickly insert a block of elisp: =<el= =TAB= as with any structure
 	     '("el" "#+begin_src emacs-lisp\n  ?\n#+end_src"))
 #+end_src
 
-** =ob-shell=
+** Babel languages
+*** ob-calc
+Allows calc blocks
+
+#+begin_src emacs-lisp
+(require 'ob-calc)
+#+end_src
+
+*** =ob-shell=
 Allows for execution of shell blocks in org files.
 
 #+begin_src emacs-lisp

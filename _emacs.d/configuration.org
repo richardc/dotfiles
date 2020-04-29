@@ -224,6 +224,18 @@ Save your place in files
 (save-place-mode t)
 #+end_src
 
+** Buffer naming with =uniquify=
+When we have multiple NOTES.md, name the buffers directory/NOTES.md
+rather than the default NOTES.md<directory>
+
+#+begin_src emacs-lisp
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+(setq uniquify-separator "/")
+(setq uniquify-after-kill-buffer-p t)    ; rename after killing uniquified
+(setq uniquify-ignore-buffers-re "^\\*") ; don't muck with special buffers
+#+end_src
+
 
 * Keybindings
 ** Save

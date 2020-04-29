@@ -236,6 +236,11 @@ rather than the default NOTES.md<directory>
 (setq uniquify-ignore-buffers-re "^\\*") ; don't muck with special buffers
 #+end_src
 
+** y-or-n
+Use y or n prompts in place of yes or no ones.
+#+begin_src emacs-lisp
+(fset 'yes-or-no-p 'y-or-n-p)
+#+end_src
 
 * Keybindings
 ** Save

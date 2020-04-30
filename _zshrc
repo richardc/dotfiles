@@ -85,7 +85,6 @@ plugins=(
   git
   golang
   mosh
-  timer
 )
 # ** make configuration active
 source $ZSH/oh-my-zsh.sh

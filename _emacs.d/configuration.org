@@ -458,6 +458,13 @@ Many things grab-bagged from [[https://github.com/hrs/dotfiles/blob/master/emacs
 #+begin_src emacs-lisp
 (use-package apache-mode)
 #+end_src
+
+** OpenSCAD
+3d modelling with [[http://www.openscad.org/][OpenSCAD]]
+#+begin_src emacs-lisp
+(use-package scad-mode)
+#+end_src
+
 * Writing words
 ** Flyspell
 #+begin_src emacs-lisp

@@ -375,6 +375,11 @@ must-have.  Good with other languages too.
 (use-package json-mode)
 #+end_src
 
+** toml
+#+begin_src emacs-lisp
+  (use-package toml-mode)
+#+end_src
+
 ** nix
 #+begin_src emacs-lisp
 (use-package nix-mode

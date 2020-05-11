@@ -81,7 +81,6 @@ plugins=(
   # copy the contents of a file to clipboard
   copyfile
   docker
-  fzf
   git
   golang
   mosh
@@ -91,11 +90,10 @@ source $ZSH/oh-my-zsh.sh
 
 # * hand configuration
 # ** aliases
-# Wipe out all aliases
+# Wipe out all aliases.  oh-my-zsh plugins export so many it's confusing
 unalias ${(k)aliases[*]}
 
 # ** environment
-export FZF_DEFAULT_OPTS='--bind ctrl-k:kill-line'
 export GOPATH=~/.go
 export ZSH_THEME_TERM_TITLE_IDLE="zsh %~"
 

@@ -157,6 +157,9 @@ which pyenv > /dev/null && eval "$(pyenv init -)"
 # perl local::lib - installs under ~/perl5
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 
+# ** aliases
+# miniverse with a non-default miniverse root
+alias miniverse='miniverse --miniverse ~/src/3d-printing/things'
 
 # ** oh-my-zsh title setting fixup
 # wrap [[https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/termsupport.zsh][title]]

@@ -12,7 +12,6 @@
     "breadcrumbs.enabled": true,
     "editor.acceptSuggestionOnEnter": "off",
     "editor.minimap.enabled": false,
-    "editor.renderIndentGuides": false,
     "editor.rulers": [80, 100, 120],
     "gitlens.codeLens.enabled": false,
     "ruby.lint": {
@@ -39,5 +38,9 @@
     "python.formatting.provider": "black",
     "puppet.installType": "pdk",
     "go.useLanguageServer": true,
-    "puppet.titleBar.pdkNewModule.enable": false
+    "puppet.titleBar.pdkNewModule.enable": false,
+    "editor.guides.indentation": false,
+    "workbench.colorTheme": "Night Owl",
+    "editor.fontFamily": "'mononoki Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
+    "editor.inlayHints.enabled": "offUnlessPressed"
 }

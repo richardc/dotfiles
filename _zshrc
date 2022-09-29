@@ -73,7 +73,6 @@ ZSH_THEME="random"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  chruby
   # copy current command-line with ctrl-o
   copybuffer
   # copy current directory path

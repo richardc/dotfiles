@@ -26,7 +26,8 @@ local config = {
 	},
 
 	-- Set colorscheme to use
-	colorscheme = "night-owl",
+	colorscheme = "default_theme",
+	-- colorscheme = "night-owl",
 
 	-- Override highlight groups in any theme
 	highlights = {
@@ -118,6 +119,9 @@ local config = {
 		servers = {
 			-- "pyright"
 		},
+		skip_setup = {
+			"rust_analyzer",
+		},
 		-- easily add or disable built in mappings added during LSP attaching
 		mappings = {
 			n = {
@@ -204,6 +208,16 @@ local config = {
 			--     require("lsp_signature").setup()
 			--   end,
 			-- },
+			--
+			{
+				"simrat39/rust-tools.nvim",
+				after = "mason-lspconfig.nvim", -- make sure to load after mason-lspconfig
+				config = function()
+					require("rust-tools").setup({
+						server = astronvim.lsp.server_settings("rust_analyzer"), -- get the server settings and built in capabilities/on_attach
+					})
+				end,
+			},
 		},
 		-- All other entries override the require("<key>").setup({...}) call for default plugins
 		["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
@@ -235,7 +249,7 @@ local config = {
 		},
 		-- use mason-lspconfig to configure LSP installations
 		["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
-			ensure_installed = { "sumneko_lua" },
+			ensure_installed = { "sumneko_lua", "rust_analyzer" },
 		},
 		-- use mason-tool-installer to configure DAP/Formatters/Linter installation
 		["mason-tool-installer"] = { -- overrides `require("mason-tool-installer").setup(...)`

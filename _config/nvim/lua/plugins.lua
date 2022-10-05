@@ -36,6 +36,14 @@ packer.startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use {
+    'nvim-telescope/telescope.nvim',
+    branch = "0.1.x",
+    requires = {
+      "nvim-lua/plenary.nvim"
+    }
+  }
+
+  use {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
     requires = {
@@ -49,6 +57,7 @@ packer.startup(function(use)
     end,
   }
 
+
   use {
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -59,12 +68,7 @@ packer.startup(function(use)
 
   use "gpanders/editorconfig.nvim"
 
-  use {
-    "folke/which-key.nvim",
-    config = function()
-      require("which-key").setup()
-    end,
-  }
+  use { "folke/which-key.nvim", config = get_config("which-key") }
 
   use({ "EdenEast/nightfox.nvim", config = get_config("themes.nightfox") })
 

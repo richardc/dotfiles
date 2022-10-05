@@ -57,6 +57,34 @@ packer.startup(function(use)
     end,
   }
 
+  use({
+    "TimUntersberger/neogit",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      {
+        "sindrets/diffview.nvim",
+        cmd = {
+          "DiffviewOpen",
+          "DiffviewClose",
+          "DiffviewToggleFiles",
+          "DiffviewFocusFiles",
+        },
+        config = get_config("git.diffview"),
+      },
+    },
+    cmd = "Neogit",
+    config = get_config("git.neogit"),
+  })
+
+  use({ "f-person/git-blame.nvim", config = get_config("git.git-blame") })
+
+  use({
+    "lewis6991/gitsigns.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = get_config("git.gitsigns"),
+  })
+
+  use { "tpope/vim-fugitive" }
 
   use { "echasnovski/mini.nvim", branch = "main", config = get_config("mini") }
 

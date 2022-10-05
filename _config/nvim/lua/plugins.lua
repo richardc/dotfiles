@@ -58,19 +58,13 @@ packer.startup(function(use)
   }
 
 
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-    config = function()
-      require('lualine').setup()
-    end,
-  }
+  use { "echasnovski/mini.nvim", branch = "main", config = get_config("mini") }
 
   use "gpanders/editorconfig.nvim"
 
   use { "folke/which-key.nvim", config = get_config("which-key") }
 
-  use({ "EdenEast/nightfox.nvim", config = get_config("themes.nightfox") })
+  use { "EdenEast/nightfox.nvim", config = get_config("themes.nightfox") }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

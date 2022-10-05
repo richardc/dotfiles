@@ -55,6 +55,11 @@ packer.startup(function(use)
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
     requires = {
+      {
+        -- only needed if you want to use the commands with "_with_window_picker" suffix
+        "s1n7ax/nvim-window-picker",
+        config = get_config("nvim-window-picker"),
+      },
       "nvim-lua/plenary.nvim",
       "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
@@ -71,12 +76,18 @@ packer.startup(function(use)
   })
 
   use("nvim-treesitter/nvim-treesitter-textobjects")
-
   use("RRethy/nvim-treesitter-endwise")
-
   use({ "David-Kunz/markid" })
-
   use("p00f/nvim-ts-rainbow")
+  use({ "mfussenegger/nvim-treehopper" })
+
+  use({
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  })
+
 
   use({
     "hrsh7th/nvim-cmp",
@@ -166,8 +177,6 @@ packer.startup(function(use)
     config = get_config("todo"),
   })
 
-  use { "echasnovski/mini.nvim", branch = "main", config = get_config("mini") }
-
   use "gpanders/editorconfig.nvim"
 
   use({ "ahmedkhalf/project.nvim", config = get_config("project") })
@@ -177,6 +186,74 @@ packer.startup(function(use)
   use({ "RRethy/vim-illuminate", config = get_config("illuminate") })
 
   use { "EdenEast/nightfox.nvim", config = get_config("themes.nightfox") }
+
+  use({ "ray-x/go.nvim", requires = "ray-x/guihua.lua", config = get_config("go"), ft = { "go" } })
+
+  use({ "rcarriga/nvim-notify", config = get_config("notify") })
+
+  use { "echasnovski/mini.nvim", branch = "main", config = get_config("mini") }
+
+  use({ "edluffy/specs.nvim", config = get_config("specs") })
+
+  use({
+    "goolord/alpha-nvim",
+    requires = { "kyazdani42/nvim-web-devicons" },
+    config = get_config("alpha.alpha"),
+  })
+
+  use({ "SmiteshP/nvim-navic" })
+
+  use({
+    "j-hui/fidget.nvim",
+    config = function()
+      require("fidget").setup({ window = {
+        blend = 0,
+      } })
+    end,
+  })
+
+  use({
+    "https://gitlab.com/yorickpeterse/nvim-pqf.git",
+    config = function()
+      require("pqf").setup()
+    end,
+  })
+
+  use({
+    "anuvyklack/hydra.nvim",
+    requires = "anuvyklack/keymap-layer.nvim", -- needed only for pink hydras
+    commit = "ea91aa820a6cecc57bde764bb23612fff26a15de",
+    config = get_config("hydra"),
+  })
+
+  use({
+    "mfussenegger/nvim-dap",
+    requires = {
+      "mfussenegger/nvim-dap-python",
+      "leoluz/nvim-dap-go",
+      "rcarriga/nvim-dap-ui",
+      "theHamsta/nvim-dap-virtual-text",
+    },
+    config = function()
+      require("config.dap").setup()
+    end,
+  })
+
+  use({
+    "aarondiel/spread.nvim",
+    after = "nvim-treesitter",
+    config = get_config("spread"),
+  })
+
+  use({
+    "anuvyklack/windows.nvim",
+    requires = {
+      "anuvyklack/middleclass",
+      "anuvyklack/animation.nvim",
+    },
+    config = get_config("windows"),
+  })
+
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

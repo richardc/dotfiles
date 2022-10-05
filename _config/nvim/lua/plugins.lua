@@ -50,6 +50,7 @@ packer.startup(function(use)
   use({ "nvim-telescope/telescope-packer.nvim" })
   use({ "nvim-telescope/telescope-ui-select.nvim" })
 
+  -- Treesitter and related syntax tools
   use {
     "nvim-neo-tree/neo-tree.nvim",
     branch = "v2.x",
@@ -60,7 +61,6 @@ packer.startup(function(use)
     },
     config = get_config("neo-tree"),
   }
-
 
   use({ "windwp/nvim-autopairs", config = get_config("nvim-autopairs") })
 
@@ -74,7 +74,23 @@ packer.startup(function(use)
 
   use("RRethy/nvim-treesitter-endwise")
 
+  use("p00f/nvim-ts-rainbow")
 
+  use({
+    "hrsh7th/nvim-cmp",
+    requires = {
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-calc",
+      "lukas-reineke/cmp-rg",
+      "hrsh7th/cmp-nvim-lsp-signature-help",
+    },
+    config = get_config("cmp"),
+  })
+
+  -- Git
   use({
     "TimUntersberger/neogit",
     requires = {
@@ -103,6 +119,17 @@ packer.startup(function(use)
   })
 
   use { "tpope/vim-fugitive" }
+
+  -- LSP and pals
+  use({ "neovim/nvim-lspconfig", config = get_config("lsp.lsp") })
+
+  use({ "onsails/lspkind-nvim" })
+
+  use({
+    "jose-elias-alvarez/null-ls.nvim",
+    requires = { { "nvim-lua/plenary.nvim" } },
+    config = get_config("lsp.null-ls"),
+  })
 
   use { "echasnovski/mini.nvim", branch = "main", config = get_config("mini") }
 

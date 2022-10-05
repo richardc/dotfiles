@@ -74,6 +74,8 @@ packer.startup(function(use)
 
   use("RRethy/nvim-treesitter-endwise")
 
+  use({ "David-Kunz/markid" })
+
   use("p00f/nvim-ts-rainbow")
 
   use({
@@ -120,6 +122,16 @@ packer.startup(function(use)
 
   use { "tpope/vim-fugitive" }
 
+  use({
+    "kevinhwang91/nvim-bqf",
+    requires = {
+      "junegunn/fzf",
+      module = "nvim-bqf",
+    },
+    ft = "qf",
+    config = get_config("nvim-bqf"),
+  })
+
   -- LSP and pals
   use({ "neovim/nvim-lspconfig", config = get_config("lsp.lsp") })
 
@@ -131,6 +143,29 @@ packer.startup(function(use)
     config = get_config("lsp.null-ls"),
   })
 
+  use({
+    "simrat39/symbols-outline.nvim",
+    cmd = { "SymbolsOutline" },
+    config = get_config("symbols-outline"),
+  })
+
+  use({
+    "lukas-reineke/indent-blankline.nvim",
+    event = "BufReadPre",
+    config = get_config("indent-blankline"),
+  })
+
+  use({
+    "akinsho/nvim-toggleterm.lua",
+    config = get_config("toggleterm"),
+  })
+
+  use({
+    "folke/todo-comments.nvim",
+    requires = "nvim-lua/plenary.nvim",
+    config = get_config("todo"),
+  })
+
   use { "echasnovski/mini.nvim", branch = "main", config = get_config("mini") }
 
   use "gpanders/editorconfig.nvim"
@@ -138,6 +173,8 @@ packer.startup(function(use)
   use({ "ahmedkhalf/project.nvim", config = get_config("project") })
 
   use { "folke/which-key.nvim", config = get_config("which-key") }
+
+  use({ "RRethy/vim-illuminate", config = get_config("illuminate") })
 
   use { "EdenEast/nightfox.nvim", config = get_config("themes.nightfox") }
 

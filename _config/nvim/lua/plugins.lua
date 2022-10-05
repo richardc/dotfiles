@@ -61,6 +61,20 @@ packer.startup(function(use)
     config = get_config("neo-tree"),
   }
 
+
+  use({ "windwp/nvim-autopairs", config = get_config("nvim-autopairs") })
+
+  use({
+    "nvim-treesitter/nvim-treesitter",
+    config = get_config("treesitter"),
+    run = ":TSUpdate",
+  })
+
+  use("nvim-treesitter/nvim-treesitter-textobjects")
+
+  use("RRethy/nvim-treesitter-endwise")
+
+
   use({
     "TimUntersberger/neogit",
     requires = {

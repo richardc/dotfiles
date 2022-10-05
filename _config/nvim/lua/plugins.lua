@@ -40,8 +40,15 @@ packer.startup(function(use)
     branch = "0.1.x",
     requires = {
       "nvim-lua/plenary.nvim"
-    }
+    },
+    config = get_config("telescope"),
   }
+
+  use({ "crispgm/telescope-heading.nvim" })
+  use({ "nvim-telescope/telescope-symbols.nvim" })
+  use({ "nvim-telescope/telescope-file-browser.nvim" })
+  use({ "nvim-telescope/telescope-packer.nvim" })
+  use({ "nvim-telescope/telescope-ui-select.nvim" })
 
   use {
     "nvim-neo-tree/neo-tree.nvim",
@@ -89,6 +96,8 @@ packer.startup(function(use)
   use { "echasnovski/mini.nvim", branch = "main", config = get_config("mini") }
 
   use "gpanders/editorconfig.nvim"
+
+  use({ "ahmedkhalf/project.nvim", config = get_config("project") })
 
   use { "folke/which-key.nvim", config = get_config("which-key") }
 

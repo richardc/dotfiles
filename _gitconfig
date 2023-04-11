@@ -8,6 +8,9 @@
 [github]
     user = richardc
 
+[init]
+    defaultBranch = main
+
 [alias]
     st = status
     ci = commit

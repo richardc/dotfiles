@@ -126,6 +126,10 @@ path+=(
   /usr/local/opt/ccache/libexec # OSX (homebrew)
 )
 
+# Rust stuff via rustup
+path+=($HOME/.cargo/bin)
+
+
 # MacPorts
 path+=(/opt/local/bin)
 
@@ -153,9 +157,6 @@ path+=(/opt/X11/bin)
 
 # Go Utilities
 path+=($GOPATH/bin)
-
-# Rust stuff
-path+=($HOME/.cargo/bin)
 
 # dotnet core
 path+=(/usr/local/share/dotnet)

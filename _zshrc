@@ -126,6 +126,9 @@ path+=(
   /usr/local/opt/ccache/libexec # OSX (homebrew)
 )
 
+# MacPorts
+path+=(/opt/local/bin)
+
 # standard paths
 path+=(
   /usr/local/bin

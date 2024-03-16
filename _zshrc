@@ -175,13 +175,3 @@ alias ms='miniverse store'
 
 # muscle memory
 alias vi=nvim
-
-# ** oh-my-zsh title setting fixup
-# wrap [[https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/termsupport.zsh][title]]
-# tell it we're using an xterm, as tmux does support setting window titles
-# =tmux-256color= isn't widely available, otherwise we could just patch the code properly
-
-# monkeypatch title in-place
-functions[title]="TERM=xterm;${functions[title]}"
-
-export PATH="$HOME/.poetry/bin:$PATH"

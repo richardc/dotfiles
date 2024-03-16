@@ -42,5 +42,12 @@
     "editor.guides.indentation": false,
     "workbench.colorTheme": "Night Owl",
     "editor.fontFamily": "'mononoki Nerd Font Mono', Menlo, Monaco, 'Courier New', monospace",
-    "editor.inlayHints.enabled": "offUnlessPressed"
+    "editor.inlayHints.fontFamily": "'mononokiNerdFontCompleteM-Italic'",
+    "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
+    "rust-analyzer.inlayHints.reborrowHints.enable": "mutable",
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "arduino.useArduinoCli": true,
+    "auto-build.defaultEnv.name": "mega2560",
+    "auto-build.build.silent": false,
+    "go.toolsManagement.autoUpdate": true
 }

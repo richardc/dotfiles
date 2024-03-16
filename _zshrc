@@ -96,7 +96,7 @@ unalias ${(k)aliases[*]}
 # ** environment
 export GOPATH=~/.go
 export ZSH_THEME_TERM_TITLE_IDLE="zsh %~"
-export EDITOR=vim
+export EDITOR=nvim
 
 # ** path
 # check results with print -l $path
@@ -174,7 +174,7 @@ alias miniverse='miniverse --token "$(cat ~/.miniverse-token)" --miniverse ~/src
 alias ms='miniverse store'
 
 # muscle memory
-alias vi=vim
+alias vi=nvim
 
 # ** oh-my-zsh title setting fixup
 # wrap [[https://github.com/ohmyzsh/ohmyzsh/blob/master/lib/termsupport.zsh][title]]

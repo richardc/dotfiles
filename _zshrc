@@ -162,7 +162,7 @@ path+=(/usr/local/share/dotnet)
 which pyenv > /dev/null && eval "$(pyenv init -)"
 
 # perl local::lib - installs under ~/perl5
-eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
+[ -d "$HOME/perl5" ] && eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 
 # asdf vm manager
 [ -d "$HOME/.asdf" ] && . "$HOME/.asdf/asdf.sh"

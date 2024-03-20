@@ -94,7 +94,6 @@ source $ZSH/oh-my-zsh.sh
 unalias ${(k)aliases[*]}
 
 # ** environment
-export GOPATH=~/.go
 export ZSH_THEME_TERM_TITLE_IDLE="zsh %~"
 export EDITOR=nvim
 
@@ -155,9 +154,6 @@ path+=(
 # XQuartz
 path+=(/opt/X11/bin)
 
-# Go Utilities
-path+=($GOPATH/bin)
-
 # dotnet core
 path+=(/usr/local/share/dotnet)
 
@@ -167,6 +163,13 @@ which pyenv > /dev/null && eval "$(pyenv init -)"
 
 # perl local::lib - installs under ~/perl5
 eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
+
+# asdf vm manager
+[ -d "$HOME/.asdf" ] && . "$HOME/.asdf/asdf.sh"
+
+# GoLang plugin
+[ -d "$HOME/.asdf/plugins/golang" ] && . ~/.asdf/plugins/golang/set-env.zsh
+
 
 # ** aliases
 # miniverse with a non-default miniverse root, and a semi-secret api token

@@ -31,6 +31,9 @@ typeset -U path
 if [[ -v NIX_PATH ]]; then
 	# NixOS, for now just prepend ~/bin to $path
 	path=(~/bin $path)
+
+	# Rust stuff via rustup
+	path+=($HOME/.cargo/bin)
 else
 	# reset
 	path=()

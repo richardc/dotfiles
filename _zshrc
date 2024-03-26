@@ -105,3 +105,8 @@ SAVEHIST=5000
 
 # ** Other zsh features
 setopt extended_glob # extended globbing
+
+# ** Bootstrap starship
+if has starship ; then
+  eval "$(starship init zsh)"
+fi

@@ -95,13 +95,15 @@ alias miniverse='miniverse --token "$(cat ~/.miniverse-token)" --miniverse ~/src
 alias ms='miniverse store'
 
 # ** History management
-setopt share_history
+HISTFILE="$HOME/.zsh_history"
+setopt append_history
 setopt extended_history
-setopt hist_ignore_dups
 setopt hist_expire_dups_first
+setopt hist_ignore_dups
 setopt hist_ignore_space
-HISTSIZE=5000
-SAVEHIST=5000
+setopt share_history
+HISTSIZE=50000
+SAVEHIST=10000
 
 # ** Other zsh features
 setopt extended_glob # extended globbing

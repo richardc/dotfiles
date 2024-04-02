@@ -273,6 +273,15 @@ require('lazy').setup({
     end,
   },
 
+  {
+    'stevearc/oil.nvim',
+    opts = {},
+    keys = { { '-', '<CMD>Oil<CR>', desc = 'Open parent directory' } },
+    dependencies = {
+      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
+    },
+  },
+
   -- NOTE: Plugins can specify dependencies.
   --
   -- The dependencies are proper plugin specifications as well - anything

@@ -98,6 +98,9 @@ vim.g.have_nerd_font = false
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
+-- No folding
+vim.opt.foldenable = false
+
 -- Make line numbers default
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
@@ -565,6 +568,7 @@ require('lazy').setup({
       }
 
       require('lspconfig').rust_analyzer.setup {}
+      require('lspconfig').lua_ls.setup {}
 
       -- Ensure the servers and tools above are installed
       --  To check the current status of installed tools and/or manually install
@@ -846,7 +850,7 @@ require('lazy').setup({
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the

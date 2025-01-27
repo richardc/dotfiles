@@ -1,0 +1,4 @@
+# vim: set ft=toml
+[env]
+LIBRARY_PATH = "/opt/local/lib"
+Z3_SYS_Z3_HEADER = "/opt/local/include/z3.h"
